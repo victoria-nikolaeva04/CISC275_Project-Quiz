@@ -39,6 +39,9 @@ function App() {
         >
           Learn React
         </a>
+        <hr></hr>
+        <br></br>
+        <p>Team Manager: Victoria Nikolaeva</p>
       </header>
       <Form>
         <Form.Label>API Key:</Form.Label>
