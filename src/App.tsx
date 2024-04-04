@@ -27,28 +27,37 @@ function App() {
   }
   return (
     <div className="App">
-      
       <header className="App-header">
-      <div>
-          <Container>
-            <Row className = "Horizontal-questions">
-              <Col className = "Question-1">
-                <Button>1</Button>
-              </Col>
-              <Col className = "Question-2">
-                <Button>2</Button>
-              </Col>
-            </Row>
-          </Container>
-        </div>
-
         <hr></hr>
  
         <p>
           hai :3
         </p>
       </header>
-      
+
+      <div className = "Question-row">
+          <Container>
+            <Row>
+              <Col className = "Question-3" xs={2}>
+                  <Button>3</Button>
+                </Col>
+                <Col className = "Question-4" xs={2}>
+                  <Button>4</Button>
+                </Col>
+                <Col className = "Question-5" xs={2}>
+                  <Button>5</Button>
+                </Col>
+                <Col className = "Question-6" xs={2}>
+                  <Button>6</Button>
+                </Col>
+                <Col className = "Question-7" xs={2}>
+                  <Button>7</Button>
+                </Col>
+            </Row>
+          </Container>
+        </div>
+
+
       <Form>
         <Form.Label>API Key:</Form.Label>
         <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
