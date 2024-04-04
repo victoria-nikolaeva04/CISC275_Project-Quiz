@@ -27,31 +27,55 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div className="logo-header">
+          <image></image>
+        </div>
+        <h1>THE CAREER QUIZ!</h1>
+        <nav>
+          <button>Home</button>
+          <button>Basic Quiz</button>
+          <button>Detailed Quiz</button>
+          <button>About</button>
+        </nav>
         <hr></hr>
-        <br></br>
-        <p>
-          Team Manager: Victoria Nikolaeva
-          Team Members: Giovanna Scozzaro, Dustine Trieu, Duy Duc Tran
-        </p>
       </header>
-      <Form>
-        <Form.Label>API Key:</Form.Label>
-        <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
-        <br></br>
-        <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
-      </Form>
+
+      <body>
+        <div className="homepage_body">
+          <div className="homepage_quiz_section">
+            <div className="homepage_box">
+              <image></image>
+              <h3>EASY PEASY LEMON SQUEEZY</h3>
+              <p>This is the basic version of the quiz</p>
+            </div>
+            <button>Take Basic Questions</button>
+          </div>
+
+          <div className="homepage_quiz_section">
+            <div className="homepage_box">
+              <image></image>
+              <h3>HAR HAR HARD</h3>
+              <p>This is the detailed version of the quiz</p>
+            </div>
+            <button>Take Detailed Questions</button>
+          </div>
+        </div>
+        
+
+        <hr></hr>
+      </body>
+
+      <footer>
+        <p className="team-name-footer">@SWE DREAM TEAM</p>
+        <p className="contact-info-footer">@contact info</p>
+        <hr></hr>
+        <Form className="API_footer">
+          <Form.Label>API Key: </Form.Label>
+          <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
+          <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
+        </Form>
+      </footer>
+      
     </div>
   );
 }

@@ -3,7 +3,7 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 40%;
   pointer-events: none;
 }
 
@@ -15,7 +15,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,8 +24,48 @@
   color: white;
 }
 
+nav{
+  display: flex;
+  flex-direction:row;
+  text-align: justify;
+  padding-left: 8px;
+}
+
+button{
+  padding: 5px;
+  margin: 5px;
+  text-align: justify;
+}
+
+.homepage_body{
+  display: flex;
+  flex-direction: row;
+}
+
+.homepage_quiz_section{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 5%;
+
+}
+
+.homepage_box{
+  display: flex;
+  flex-direction: column;
+  background-color: #282c34;
+  padding: 20px;
+}
+
+
+
+
 .App-link {
   color: #61dafb;
+}
+
+.API-footer{
+  padding: 5px;
 }
 
 @keyframes App-logo-spin {
