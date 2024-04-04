@@ -43,7 +43,7 @@ function App() {
         <br></br>
         <p>
           Team Manager: Victoria Nikolaeva
-          Team Members: Giovanna Scozzaro, Dustine Trieu
+          Team Members: Giovanna Scozzaro, Dustine Trieu, Duy Duc Tran
         </p>
       </header>
       <Form>
