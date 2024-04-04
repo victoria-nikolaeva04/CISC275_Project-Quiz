@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Button, Form } from 'react-bootstrap';
+import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
@@ -44,9 +44,35 @@ function App() {
         <hr></hr>
         <br></br>
         <p>
-          Team Manager: Victoria Nikolaeva
-          Team Members: Giovanna Scozzaro, Dustine Trieu, Duy Duc Tran
+          hai :3
         </p>
+        <div>
+          <Container>
+            <Row>
+              <Col>
+                <Button>1</Button>
+              </Col>
+              <Col>
+                <Button>2</Button>
+              </Col>
+              <Col>
+                <Button>3</Button>
+              </Col>
+              <Col>
+                <Button>4</Button>
+              </Col>
+              <Col>
+                <Button>5</Button>
+              </Col>
+              <Col>
+                <Button>6</Button>
+              </Col>
+              <Col>
+                <Button>7</Button>
+              </Col>
+            </Row>
+          </Container>
+        </div>
       </header>
       <Form>
         <Form.Label>API Key:</Form.Label>
