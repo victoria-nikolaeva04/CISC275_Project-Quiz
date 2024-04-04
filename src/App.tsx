@@ -32,33 +32,23 @@ function App() {
       <div>
           <Container>
             <Row className = "Horizontal-questions">
-              <Col className = "Question-1" xs={2}>
+              <Col className = "Question-1">
                 <Button>1</Button>
               </Col>
-              <Col className = "Question-2" xs={2}>
+              <Col className = "Question-2">
                 <Button>2</Button>
               </Col>
             </Row>
           </Container>
         </div>
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
 
         <hr></hr>
-        <br></br>
+ 
         <p>
           hai :3
         </p>
       </header>
+      
       <Form>
         <Form.Label>API Key:</Form.Label>
         <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
