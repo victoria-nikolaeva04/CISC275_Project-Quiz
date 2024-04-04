@@ -27,7 +27,9 @@
 }
 
 .Horizontal-questions {
-  display: flex;
+  display: flex; 
+  margin-left: 50vh;
+  margin-right: 50vh;
 }
 
 .Question-3,
