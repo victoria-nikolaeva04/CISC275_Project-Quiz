@@ -27,41 +27,46 @@ function App() {
   }
   return (
     <div className="App">
+      <div className="Question-row">
+        <Container>
+          <Row className="Horizontal-questions">
+          <Col className="Question-1" xs={2}>
+              <Button>1</Button>
+            </Col>
+            <Col className="Question-2" xs={2}>
+              <Button>2</Button>
+            </Col>
+            <Col className="Question-3" xs={2}>
+              <Button>3</Button>
+            </Col>
+            <Col className="Question-4" xs={2}>
+              <Button>4</Button>
+            </Col>
+            <Col className="Question-5" xs={2}>
+              <Button>5</Button>
+            </Col>
+            <Col className="Question-6" xs={2}>
+              <Button>6</Button>
+            </Col>
+            <Col className="Question-7" xs={2}>
+              <Button>7</Button>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+
+      <div className="Question-text">
+        <p>Enter question text here</p>
+      </div>
+
+
+
       <header className="App-header">
-        <hr></hr>
  
         <p>
           hai :3
         </p>
       </header>
-
-      <div className="Question-row">
-  <Container>
-    <Row className="Horizontal-questions">
-    <Col className="Question-1" xs={2}>
-        <Button>1</Button>
-      </Col>
-      <Col className="Question-2" xs={2}>
-        <Button>2</Button>
-      </Col>
-      <Col className="Question-3" xs={2}>
-        <Button>3</Button>
-      </Col>
-      <Col className="Question-4" xs={2}>
-        <Button>4</Button>
-      </Col>
-      <Col className="Question-5" xs={2}>
-        <Button>5</Button>
-      </Col>
-      <Col className="Question-6" xs={2}>
-        <Button>6</Button>
-      </Col>
-      <Col className="Question-7" xs={2}>
-        <Button>7</Button>
-      </Col>
-    </Row>
-  </Container>
-</div>
 
 
       <Form>
