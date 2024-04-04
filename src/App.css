@@ -28,14 +28,23 @@
 
 .Horizontal-questions {
   display: flex; 
-  margin-left: 50vh;
-  margin-right: 50vh;
+  margin-left: 75vh;
+  margin-right: 75vh;
 }
 
+.Question-1,
+.Question-2,
 .Question-3,
 .Question-4,
 .Question-5,
 .Question-6,
 .Question-7 {
   flex: 1;
+  padding-left: 1vh;
+  padding-right: 1vh;
+}
+
+.btn {
+  border-radius: 50%;
+  size: 150%;
 }
