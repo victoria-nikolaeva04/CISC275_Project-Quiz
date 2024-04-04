@@ -27,8 +27,35 @@ function App() {
   }
   return (
     <div className="App">
+      
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <div>
+          <Container>
+            <Row className = "Horizontal-questions">
+              <Col className = "Question-1" xs={2}>
+                <Button>1</Button>
+              </Col>
+              <Col className = "Question-2" xs={2}>
+                <Button>2</Button>
+              </Col>
+              <Col className = "Question-3" xs={2}>
+                <Button>3</Button>
+              </Col>
+              <Col className = "Question-4" xs={2}>
+                <Button>4</Button>
+              </Col>
+              <Col className = "Question-5" xs={2}>
+                <Button>5</Button>
+              </Col>
+              <Col className = "Question-6" xs={2}>
+                <Button>6</Button>
+              </Col>
+              <Col className = "Question-7" xs={2}>
+                <Button>7</Button>
+              </Col>
+            </Row>
+          </Container>
+        </div>
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
@@ -46,33 +73,6 @@ function App() {
         <p>
           hai :3
         </p>
-        <div>
-          <Container>
-            <Row className = "Horizontal-questions">
-              <Col className = "Question-1">
-                <Button>1</Button>
-              </Col>
-              <Col className = "Question-2">
-                <Button>2</Button>
-              </Col>
-              <Col className = "Question-3">
-                <Button>3</Button>
-              </Col>
-              <Col className = "Question-4">
-                <Button>4</Button>
-              </Col>
-              <Col className = "Question-5">
-                <Button>5</Button>
-              </Col>
-              <Col className = "Question-6">
-                <Button>6</Button>
-              </Col>
-              <Col className = "Question-7">
-                <Button>7</Button>
-              </Col>
-            </Row>
-          </Container>
-        </div>
       </header>
       <Form>
         <Form.Label>API Key:</Form.Label>
