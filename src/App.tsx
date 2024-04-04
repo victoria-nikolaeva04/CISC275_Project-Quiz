@@ -41,7 +41,10 @@ function App() {
         </a>
         <hr></hr>
         <br></br>
-        <p>Team Manager: Victoria Nikolaeva</p>
+        <p>
+          Team Manager: Victoria Nikolaeva
+          Team Members: Giovanna Scozzaro,
+        </p>
       </header>
       <Form>
         <Form.Label>API Key:</Form.Label>
