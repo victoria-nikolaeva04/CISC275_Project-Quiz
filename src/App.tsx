@@ -55,7 +55,7 @@ function App() {
         </Container>
       </div>
 
-      <div className="Question-text">
+      <div className="Question-textbox">
         <p>Enter question text here</p>
       </div>
 
