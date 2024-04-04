@@ -48,26 +48,26 @@ function App() {
         </p>
         <div>
           <Container>
-            <Row>
-              <Col>
+            <Row className = "Horizontal-questions">
+              <Col className = "Question-1">
                 <Button>1</Button>
               </Col>
-              <Col>
+              <Col className = "Question-2">
                 <Button>2</Button>
               </Col>
-              <Col>
+              <Col className = "Question-3">
                 <Button>3</Button>
               </Col>
-              <Col>
+              <Col className = "Question-4">
                 <Button>4</Button>
               </Col>
-              <Col>
+              <Col className = "Question-5">
                 <Button>5</Button>
               </Col>
-              <Col>
+              <Col className = "Question-6">
                 <Button>6</Button>
               </Col>
-              <Col>
+              <Col className = "Question-7">
                 <Button>7</Button>
               </Col>
             </Row>
