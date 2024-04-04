@@ -32,10 +32,10 @@ function App() {
         </div>
         <h1>THE CAREER QUIZ!</h1>
         <nav>
-          <button>Home</button>
-          <button>Basic Quiz</button>
-          <button>Detailed Quiz</button>
-          <button>About</button>
+          <button className='nav-btn'>Home</button>
+          <button className='nav-btn'>Basic Quiz</button>
+          <button className='nav-btn'>Detailed Quiz</button>
+          <button className='nav-btn'>About</button>
         </nav>
         <hr></hr>
       </header>
@@ -60,20 +60,27 @@ function App() {
             <button className="homepage_buttons">Take Detailed Questions</button>
           </div>
         </div>
-        
-
+        <br></br>
+        <br></br>
+        <br></br>
         <hr></hr>
       </body>
 
       <footer>
-        <p className="team-name-footer">@SWE DREAM TEAM</p>
-        <p className="contact-info-footer">@contact info</p>
+        <div className="footer_decorative">
+          <p className="team-name-footer">@SWE DREAM TEAM</p>
+          <p className="contact-info-footer">@contact info</p>
+        </div>
+        
         <hr></hr>
-        <Form className="API_footer">
-          <Form.Label>API Key: </Form.Label>
-          <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
-          <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
-        </Form>
+        <div className="API_footer">
+          <Form>
+            <Form.Label>API Key: </Form.Label>
+            <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
+            <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
+          </Form>
+        </div>
+        
       </footer>
       
     </div>
