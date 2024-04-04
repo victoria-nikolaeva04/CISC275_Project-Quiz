@@ -27,26 +27,55 @@
 nav{
   display: flex;
   flex-direction:row;
-  text-align: justify;
-  padding-left: 8px;
+  text-align: center;
+  justify-content: space-around;
 }
 
 button{
   padding: 5px;
   margin: 5px;
-  text-align: justify;
+  text-align: center;
 }
 
 .homepage_body{
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+@media (max-width: 900px){
+  .homepage_body{
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .homepage_quiz_section{
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+    margin-left: 7%;
+  }
+
+  .homepage_box{
+    display: flex;
+    flex-direction: column;
+    background-color: #282c34;
+    text-align: center;
+    padding: 5%;
+  }
 }
 
 .homepage_quiz_section{
   display: flex;
   flex-direction: column;
-  text-align: center;
-  margin: 5%;
+  margin-top: 3%;
+  margin-right: 10%;
+  justify-content: space-evenly;
 
 }
 
@@ -54,7 +83,9 @@ button{
   display: flex;
   flex-direction: column;
   background-color: #282c34;
-  padding: 20px;
+  text-align: center;
+  padding: 45%;
+  width: 200px;
 }
 
 

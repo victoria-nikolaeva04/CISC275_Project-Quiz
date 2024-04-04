@@ -48,16 +48,16 @@ function App() {
               <h3>EASY PEASY LEMON SQUEEZY</h3>
               <p>This is the basic version of the quiz</p>
             </div>
-            <button>Take Basic Questions</button>
+            <button className="homepage_buttons">Take Basic Questions</button>
           </div>
 
           <div className="homepage_quiz_section">
             <div className="homepage_box">
               <image></image>
-              <h3>HAR HAR HARD</h3>
+              <h3>HAR HAR HAR HAR HAR HARD</h3>
               <p>This is the detailed version of the quiz</p>
             </div>
-            <button>Take Detailed Questions</button>
+            <button className="homepage_buttons">Take Detailed Questions</button>
           </div>
         </div>
         
