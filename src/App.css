@@ -26,6 +26,14 @@
   background-color: #282c34;
 }
 
-.Question-1, .Question-2, .Question-3, .Question-4, .Question-5, .Question-6, .Question-7 {
-  width: 20%;
+.Horizontal-questions {
+  display: flex;
+}
+
+.Question-3,
+.Question-4,
+.Question-5,
+.Question-6,
+.Question-7 {
+  flex: 1;
 }

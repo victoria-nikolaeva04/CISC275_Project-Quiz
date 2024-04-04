@@ -35,27 +35,18 @@ function App() {
         </p>
       </header>
 
-      <div className = "Question-row">
-          <Container>
-            <Row>
-              <Col className = "Question-3" xs={2}>
-                  <Button>3</Button>
-                </Col>
-                <Col className = "Question-4" xs={2}>
-                  <Button>4</Button>
-                </Col>
-                <Col className = "Question-5" xs={2}>
-                  <Button>5</Button>
-                </Col>
-                <Col className = "Question-6" xs={2}>
-                  <Button>6</Button>
-                </Col>
-                <Col className = "Question-7" xs={2}>
-                  <Button>7</Button>
-                </Col>
-            </Row>
-          </Container>
-        </div>
+      <div className="Question-row">
+  <Container>
+    <Row className="Horizontal-questions">
+      <Col className="Question-3" xs={6}>
+        <Button>3</Button>
+      </Col>
+      <Col className="Question-4" xs={6}>
+        <Button>4</Button>
+      </Col>
+    </Row>
+  </Container>
+</div>
 
 
       <Form>
