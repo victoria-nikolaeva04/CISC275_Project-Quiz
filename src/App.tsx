@@ -38,21 +38,6 @@ function App() {
               <Col className = "Question-2" xs={2}>
                 <Button>2</Button>
               </Col>
-              <Col className = "Question-3" xs={2}>
-                <Button>3</Button>
-              </Col>
-              <Col className = "Question-4" xs={2}>
-                <Button>4</Button>
-              </Col>
-              <Col className = "Question-5" xs={2}>
-                <Button>5</Button>
-              </Col>
-              <Col className = "Question-6" xs={2}>
-                <Button>6</Button>
-              </Col>
-              <Col className = "Question-7" xs={2}>
-                <Button>7</Button>
-              </Col>
             </Row>
           </Container>
         </div>

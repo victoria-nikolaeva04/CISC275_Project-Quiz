@@ -30,10 +30,9 @@
 
 
 .Horizontal-questions {
-  height: 100%;
+  height: auto;
 }
 
-.Question-1 {
-  height: 100%;
+.Question-1, .Question-2, .Question-3, .Question-4, .Question-5, .Question-6, .Question-7 {
   width: 20%;
 }
