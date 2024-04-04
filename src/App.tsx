@@ -59,15 +59,9 @@ function App() {
         <p>Enter question text here</p>
       </div>
 
-
-
-      <header className="App-header">
- 
-        <p>
-          hai :3
-        </p>
-      </header>
-
+      <div>
+        <p>Add Question Options Here</p>
+      </div>
 
       <Form>
         <Form.Label>API Key:</Form.Label>
