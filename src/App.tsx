@@ -59,8 +59,33 @@ function App() {
         <p>Enter question text here</p>
       </div>
 
-      <div>
-        <p>Add Question Options Here</p>
+      <div className="Answer-choices">
+        <div>
+            <Container>
+              <Row className="Answer-row">
+                  <Form.Check
+                      type="radio"
+                      name="emotions"
+                      //onChange={updateEmotion}
+                      id="emotion-check-happy"
+                      label="Answer Choice 1"
+                      value="happy"
+                      inline
+                      //checked={emotion === "happy"}
+                  />
+                  <Form.Check
+                      type="radio"
+                      name="emotions"
+                      //onChange={updateEmotion}
+                      id="emotion-check-sad"
+                      label="Answer Choice 2"
+                      value="sad"
+                      inline
+                      //checked={emotion === "sad"}
+                  />
+              </Row>
+            </Container>     
+          </div>
       </div>
 
       <Form>
