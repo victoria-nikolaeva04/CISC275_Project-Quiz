@@ -27,6 +27,9 @@ function App() {
   }
   return (
     <div className="App">
+      <header>
+        Detailed Questions
+      </header>
       <div className="Question-row">
         <Container>
           <Row className="Horizontal-questions">
@@ -60,7 +63,6 @@ function App() {
       </div>
 
       <div className="Answer-choices">
-        
             <Container className="Extend-width">
               <Row className="Answer-row">
                   <Form.Check
@@ -84,8 +86,7 @@ function App() {
                       //checked={emotion === "sad"}
                   />
               </Row>
-            </Container>     
-         
+            </Container>       
       </div>
 
       <Form>
