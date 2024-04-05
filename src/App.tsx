@@ -60,8 +60,8 @@ function App() {
       </div>
 
       <div className="Answer-choices">
-        <div>
-            <Container>
+        
+            <Container className="Extend-width">
               <Row className="Answer-row">
                   <Form.Check
                       type="radio"
@@ -85,7 +85,7 @@ function App() {
                   />
               </Row>
             </Container>     
-          </div>
+         
       </div>
 
       <Form>

@@ -67,12 +67,22 @@
 .Answer-choices {
   display: flex;
   height: 40vh;
+  width: 100%;
 }
 
 .Answer-row {
-  display: flex; 
-  margin-left: 10%;
-  margin-right: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 20px;
+}
+
+.Extend-width {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   padding-top: 20px;
 }
 
