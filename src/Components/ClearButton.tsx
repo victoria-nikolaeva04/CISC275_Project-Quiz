@@ -1,11 +1,24 @@
-import React, { useState } from "react";
-import { Button, Form } from "react-bootstrap";
+import React, { useState } from 'react';
 
+const ClearButton: React.FC = () => {
+  const [inputValue, setInputValue] = useState('');
 
-export function ClearButton(): JSX.Element{
-    const [text, setText] = useState("");
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(e.target.value);
+  };
 
-    return<div>
-        <button onClick={() => setText("")}>Clear</button>
-    </div>; 
-}
+  const handleClear = () => {
+    setInputValue('');
+  };
+
+  return (
+    <div>
+      <input type="text" value={inputValue} onChange={handleChange} />
+      <button type="button" onClick={handleClear}>
+        Clear
+      </button>
+    </div>
+  );
+};
+
+export default ClearButton;
