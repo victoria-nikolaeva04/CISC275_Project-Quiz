@@ -1,0 +1,50 @@
+/* Styling for the main container */
+.questionnaire-container {
+    margin: 20px;
+  }
+/* Styling for the heading */
+.questionnaire-heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+/* Styling for each question */
+.question {
+    margin-bottom: 15px;
+  }
+/* Styling for the question text */
+.question-text {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+/* Styling for the answer options */
+.answer-options {
+    display: flex;
+    flex-direction: column;
+  }
+  
+/* Styling for each answer option */
+.answer-option {
+    margin-bottom: 5px;
+  }
+  
+/* Styling for the radio button input */
+.radio-input {
+    margin-right: 10px;
+  }
+  
+/* Styling for the submit button */
+.submit-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  /* Styling for the submit button on hover */
+.submit-button:hover {
+    background-color: #0056b3;
+  }
+  
