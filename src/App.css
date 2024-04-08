@@ -2,6 +2,17 @@
 .App-header {
   background-color: #282c34;
   min-height: 20vh;
+  display: grid;
+  align-items: center; 
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 5px;
+}
+
+.image{
+  max-width: calc(10px + 2vmin);
+}
+
+.text{
   display: flex;
   flex-direction: column;
   align-items: center;

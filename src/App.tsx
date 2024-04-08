@@ -29,22 +29,25 @@ function App() {
   return (
     <><div className="App">
       <header className="App-header">
-        <div className="logo-header">
-        <img
-                  src={temp_image}
-                  alt="logo"
-                  id="logo-pic"
-              />
+        <div className="image">
+          <img
+              src={temp_image}
+              alt="logo"
+              id="logo-pic"
+          />
         </div>
-        <h1>THE CAREER QUIZ!</h1>
-        <nav>
-          <button className='nav-btn'>Home</button>
-          <button className='nav-btn'>Basic Quiz</button>
-          <button className='nav-btn'>Detailed Quiz</button>
-          <button className='nav-btn'>About</button>
-        </nav>
-        <hr></hr>
+        <div className="text">
+          <h1>THE CAREER QUIZ!</h1>
+          <nav>
+            <button className='nav-btn'>Home</button>
+            <button className='nav-btn'>Basic Quiz</button>
+            <button className='nav-btn'>Detailed Quiz</button>
+            <button className='nav-btn'>About</button>
+          </nav>
+        </div>
       </header>
+
+      <hr></hr>
 
       <body>
         <div className="homepage_body">
