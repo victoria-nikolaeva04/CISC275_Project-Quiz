@@ -41,7 +41,7 @@ function App() {
           Learn React
         </a>
         <hr></hr>
-        {/*<ClearButton></ClearButton>*/}
+        {<ClearButton></ClearButton>}
         <hr></hr>
         <br></br>
         <p>
