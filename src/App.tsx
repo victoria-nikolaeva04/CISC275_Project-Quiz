@@ -87,10 +87,15 @@ function App() {
 
       <footer>
         <div className="footer_decorative">
+        <img
+            src={temp_image}
+            alt="Hard Pic"
+            className ="footer-logo"
+        />
           <p className="team-name-footer">@SWE DREAM TEAM</p>
-          <p className="contact-info-footer">@contact info</p>
+          <p className="contact-info-footer" style={{ textAlign: "right" }}>@contact info</p>
         </div>
-
+        
         <hr></hr>
         <div className="API_footer">
           <Form>
