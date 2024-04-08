@@ -5,11 +5,11 @@
   display: grid;
   align-items: center; 
   grid-template-columns: 1fr 1fr 1fr;
-  column-gap: 5px;
+  column-gap: 2px;
 }
 
 .image{
-  max-width: calc(10px + 2vmin);
+  max-width: calc(10% + 3vmin);
 }
 
 .text{
@@ -18,6 +18,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+  margin-bottom: 3px;
   color: white;
 }
 
@@ -99,7 +100,12 @@ nav{
 }
 
 #logo-pic{
-  width: 30vh;
+  max-width: calc(20vmin - 5%);
+  margin-right: calc(25vw - 5%);
+  margin-left : calc(10vw - 5%);
+  margin-bottom: 5px;
+  margin-top: 5px;
+  
 }
 
 .image-structure{
