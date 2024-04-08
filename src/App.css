@@ -110,13 +110,8 @@ nav{
     max-width: 100%;
     margin-top: 20px;
     margin-bottom: 2vh;
-    margin-left: calc(20% - 2vw);
-    margin-right: calc(20% - 2vw);
-  }
-
-  .contact-info-footer{
-    text-align: end; 
-    margin-left: calc(35% - 20vw)
+    margin-left: calc(25% - 2vw);
+    margin-right: calc(0.5% - 2vw);
   }
 
 }
@@ -159,6 +154,6 @@ nav{
 }
 
 .contact-info-footer{
-  text-align: end; 
-  margin-left: calc(80% - 2vw)
+  width:100%;
+  text-align:right;
 }
