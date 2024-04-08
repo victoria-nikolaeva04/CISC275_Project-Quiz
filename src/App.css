@@ -125,8 +125,18 @@ nav{
 }
 
 .footer_decorative{
+  
+}
+
+#logo-text-footer{
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
+
+}
+
+.contact-info-footer{
+  text-align-last: start;
+  align-self: center;
 }
