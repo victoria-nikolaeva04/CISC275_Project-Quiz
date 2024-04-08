@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import temp_image from "./images/temp_image.png";
 import logo from './logo.svg';
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
 import Questionnaire from './basicQuestion';
-import { Route, Link, Routes } from 'react-router-dom';
+
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
 const saveKeyData = "MYKEY";
@@ -26,10 +27,14 @@ function App() {
     setKey(event.target.value);
   }
   return (
-    <div className="App">
+    <><div className="App">
       <header className="App-header">
         <div className="logo-header">
-          <image></image>
+        <img
+                  src={temp_image}
+                  alt="logo"
+                  id="logo-pic"
+              />
         </div>
         <h1>THE CAREER QUIZ!</h1>
         <nav>
@@ -45,20 +50,30 @@ function App() {
         <div className="homepage_body">
           <div className="homepage_quiz_section">
             <div className="homepage_box">
-              <image></image>
+            <img
+                  src={temp_image}
+                  alt="Easy Pic"
+                  className ="image-structure"
+              />
+
               <h3>EASY PEASY LEMON SQUEEZY</h3>
               <p>This is the basic version of the quiz</p>
             </div>
-            <button className="homepage_buttons">Take Basic Questions</button>
+            <Button className="homepage_buttons">Take Basic Questions</Button>
           </div>
 
           <div className="homepage_quiz_section">
             <div className="homepage_box">
-              <image></image>
+            <img
+                  src={temp_image}
+                  alt="Hard Pic"
+                  className ="image-structure"
+              />
+
               <h3>HAR HAR HAR HAR HAR HARD</h3>
               <p>This is the detailed version of the quiz</p>
             </div>
-            <button className="homepage_buttons">Take Detailed Questions</button>
+            <Button className="homepage_buttons">Take Detailed Questions</Button>
           </div>
         </div>
         <br></br>
@@ -72,7 +87,7 @@ function App() {
           <p className="team-name-footer">@SWE DREAM TEAM</p>
           <p className="contact-info-footer">@contact info</p>
         </div>
-        
+
         <hr></hr>
         <div className="API_footer">
           <Form>
@@ -81,10 +96,13 @@ function App() {
             <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
           </Form>
         </div>
-        
+
       </footer>
-      
-    </div>
+        {/*
+           <Link to="/basic-quiz"><Button>Basic Quiz</Button></Link>
+           <Routes><Route path="/basic-quiz" element={<Questionnaire />} /></Routes>
+        */}
+    </div></>
   );
 }
 export default App;
