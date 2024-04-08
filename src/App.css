@@ -101,6 +101,12 @@ nav{
     padding: 20vw;
     box-shadow: 3px 5px 10px grey;
   }
+
+  .contact-info-footer{
+    text-align: end; 
+    margin-left: calc(35% - 20vw)
+  }
+
 }
 
 #logo-pic{
@@ -125,18 +131,22 @@ nav{
 }
 
 .footer_decorative{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
   
 }
 
 #logo-text-footer{
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
   align-items: center;
+  flex-wrap: nowrap;
 
 }
 
 .contact-info-footer{
-  text-align-last: start;
-  align-self: center;
+  text-align: end; 
+  margin-left: calc(80% - 2vw)
 }
