@@ -51,40 +51,23 @@ function AboutMe() {
       <hr></hr>
 
       <body>
-        <div className="homepage_body">
-          <div className="homepage_quiz_section">
-            <div className="homepage_box">
-            <img
-                  src={temp_image}
-                  alt="Easy Pic"
-                  className ="image-structure"
-              />
+        <div className='AboutMe-body'></div>
+            <h3>MEET THE TEAM!</h3>
+                <p>Will be continued soon...</p>
+                <div className="team-image">
+                    <img
+                        src={temp_image}
+                        alt="TeamPhoto"
+                        id="team-pic"
+                    />
+                </div>
 
-              <h3>EASY PEASY LEMON SQUEEZY</h3>
-              <p>This is the basic version of the quiz</p>
-            </div>
-            <Button className="homepage_buttons">Take Basic Questions</Button>
-          </div>
-
-          <div className="homepage_quiz_section">
-            <div className="homepage_box">
-            <img
-                  src={temp_image}
-                  alt="Hard Pic"
-                  className ="image-structure"
-              />
-
-              <h3>HAR HAR HAR HAR HAR HARD</h3>
-              <p>This is the detailed version of the quiz</p>
-            </div>
-            <Button className="homepage_buttons">Take Detailed Questions</Button>
-          </div>
-        </div>
-        <br></br>
-        <br></br>
-        <br></br>
-        <hr></hr>
+        
       </body>
+      <br></br>
+      <br></br>
+      <br></br>
+      <hr></hr>
 
       <footer>
         <div className="footer_decorative">
