@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
+import { ChangeDetailedQuestion } from "./ChangeDetailedQuestion";
 
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
@@ -63,30 +64,7 @@ function App() {
       </div>
 
       <div className="Answer-choices">
-            <Container className="Extend-width">
-              <Row className="Answer-row">
-                  <Form.Check
-                      type="radio"
-                      name="emotions"
-                      //onChange={updateEmotion}
-                      id="emotion-check-happy"
-                      label="Answer Choice 1"
-                      value="happy"
-                      inline
-                      //checked={emotion === "happy"}
-                  />
-                  <Form.Check
-                      type="radio"
-                      name="emotions"
-                      //onChange={updateEmotion}
-                      id="emotion-check-sad"
-                      label="Answer Choice 2"
-                      value="sad"
-                      inline
-                      //checked={emotion === "sad"}
-                  />
-              </Row>
-            </Container>       
+      <ChangeDetailedQuestion></ChangeDetailedQuestion>
       </div>
 
       <Form>
