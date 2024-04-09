@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import temp_image from "./images/temp_image.png";
-import './App.css';
+import './AboutMe.css';
 import { Button, Form } from 'react-bootstrap';
+
 //import Questionnaire from './basicQuestion';
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
@@ -12,7 +13,7 @@ if (prevKey !== null) {
   keyData = JSON.parse(prevKey);
 }
 
-function App() {
+function AboutMe() {
   const [key, setKey] = useState<string>(keyData); //for api key input
   
   //sets the local storage item to the api key the user inputed
@@ -26,7 +27,7 @@ function App() {
     setKey(event.target.value);
   }
   return (
-    <><div className="App">
+    <><div className="AboutMe">
       <header className="App-header">
         <div className="image">
           <img
@@ -117,4 +118,4 @@ function App() {
     </div></>
   );
 }
-export default App;
+export default AboutMe;
