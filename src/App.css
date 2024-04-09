@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Diphylleia&display=swap');
+
+.App{
+  background-color: whitesmoke;
+  font-family:'Diphylleia', serif;
+}
+
 
 .App-header {
   background-color: #282c34;
@@ -35,6 +42,9 @@ nav{
   padding: 2vh;
   margin: 2px;
   text-align: center;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 .homepage_buttons{
@@ -47,6 +57,9 @@ nav{
   margin-right: 10%;
   max-width: 100%;
   box-shadow: 3px 5px 10px grey;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 .homepage_body{

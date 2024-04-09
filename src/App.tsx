@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import temp_image from "./images/temp_image.png";
-import logo from './logo.svg';
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
-import Questionnaire from './basicQuestion';
+//import Questionnaire from './basicQuestion';
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
@@ -37,7 +36,7 @@ function App() {
           />
         </div>
         <div className="text">
-          <h1>THE CAREER QUIZ!</h1>
+          <h1>Career Quest</h1> 
           <nav>
             <button className='nav-btn'>Home</button>
             <button className='nav-btn'>Basic Quiz</button>
