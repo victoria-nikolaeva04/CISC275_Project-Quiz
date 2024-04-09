@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import { HashRouter as Router, Route, Link} from 'react-router-dom'
 
 export function BasicButton(): JSX.Element{
-    const [buttonClick, setClick]= useState<boolean>(false);
 
-    const handleEditModeChange = () => {
-        setClick(!buttonClick);
-    }
+    function ButtonLink({ to, children }) {
+        return <Link to={to}><button>{children}</button></Link>;
+        // to prop = the link destination
+        // children prop = button text
+      }
+
     return<div>
-        <Button onClick ={() => console.log("I am logged")}>Basic Questions</Button>
+        <ButtonLink to = ""> Basic Questions</ButtonLink>
     </div>; 
 }

@@ -11,7 +11,7 @@ const ClearButton: React.FC = () => {
   const handleClear = () => {
     setInputValue('');
   };
-
+  
   return (
     <div>
         <Form.Group controlId="clear"><Form.Label></Form.Label>
