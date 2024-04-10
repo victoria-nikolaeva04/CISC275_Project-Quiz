@@ -46,7 +46,9 @@ function App() {
           </a>
           <hr></hr>
           {/*<ClearButton></ClearButton>*/}
-          {/*<ButtonLink to={'/Pages/Home'} className={'My-button'}>Children Text Here</ButtonLink>*/}
+          {<ButtonLink to={'/Pages/Home'} className={'My-button'}>Home Button</ButtonLink>}
+          {<ButtonLink to={'/Pages/Contact'} className={'My-button'}>Contact Button</ButtonLink>}
+
           <hr></hr>
           <br></br>
           <p>
