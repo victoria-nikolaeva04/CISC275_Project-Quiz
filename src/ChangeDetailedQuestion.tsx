@@ -6,13 +6,14 @@ import './App.css'; // need to make a sep file for this
 
 export function ChangeDetailedQuestion(): JSX.Element {
     //const [detailedQuestion, changePrompt] = useState<string>("");
-    const [question, setQuestion] = useState<string>("First question");
+    const [question, setQuestion] = useState<string>("Insert Question 1 here");
+
 
     function changeQuestion(questionNum: number): void {
         if(questionNum === 1){
-            setQuestion("Question 1");
+            setQuestion("Insert Question 1 here");
         } else if(questionNum === 2){
-            setQuestion("Question 2");
+            setQuestion("Insert Question 2 here");
         } else if(questionNum === 3){
             setQuestion("Question 3");
         } else if(questionNum === 4){
@@ -61,26 +62,29 @@ export function ChangeDetailedQuestion(): JSX.Element {
       <div className="Question-textbox">
         <p>{question}</p>
       </div>
+
+
         <div style={{ display: 'flex', justifyContent: 'center' }}>
+            {question === "Insert Question 1 here" && (
                 <Container style={{ width: '75%', justifyContent: 'center' }} >
                 <Row className="First-answer-row" style={{ display: 'flex', justifyContent: 'center', height: '10vw' }}>
                         <Form.Check
                             type="radio"
-                            name="emotions"
+                            name= "Question 1"
                             //onChange={updateEmotion}
                             id="emotion-check-happy"
-                            label="Answer Choice 1"
-                            value="happy"
+                            label= "1A"
+                            //value="happy"
                             inline
                             //checked={emotion === "happy"}
                         />
                         <Form.Check
                             type="radio"
-                            name="emotions"
+                            name= "Question 1"
                             //onChange={updateEmotion}
-                            id="emotion-check-sad"
-                            label="Answer Choice 2"
-                            value="sad"
+                            //id="emotion-check-sad"
+                            label= "1B"
+                            //value="sad"
                             inline
                             //checked={emotion === "sad"}
                         />
@@ -89,26 +93,79 @@ export function ChangeDetailedQuestion(): JSX.Element {
                     <Row className="First-answer-row" style={{ display: 'flex', justifyContent: 'center', height: '10vw' }}>
                         <Form.Check
                             type="radio"
-                            name="emotions"
+                            name= "Question 1"
                             //onChange={updateEmotion}
-                            id="emotion-check-happy"
-                            label="Answer Choice 3"
-                            value="happy"
+                            //id="emotion-check-happy"
+                            label= "1C"
+                            //value="happy"
                             inline
                             //checked={emotion === "happy"}
                         />
                         <Form.Check
                             type="radio"
-                            name="emotions"
+                            name= "Question 1"
                             //onChange={updateEmotion}
-                            id="emotion-check-sad"
-                            label="Answer Choice 4"
-                            value="sad"
+                            //id="emotion-check-sad"
+                            label="1D"
+                            //value={answerD}
                             inline
                             //checked={emotion === "sad"}
                         />
                     </Row>
+                    
                     </Container>       
+                    )}
+
+                {question === "Insert Question 2 here" && (   
+                <Container style={{ width: '75%', justifyContent: 'center' }} >
+                <Row className="First-answer-row" style={{ display: 'flex', justifyContent: 'center', height: '10vw' }}>
+                        <Form.Check
+                            type="radio"
+                            name="Question 2"
+                            //onChange={updateEmotion}
+                            //id="emotion-check-happy"
+                            label= "2A"
+                            //value="he"
+                            inline
+                            //checked={emotion === "happy"}
+                        />
+                        <Form.Check
+                            type="radio"
+                            name="Question 2"
+                            //onChange={updateEmotion}
+                            //id="emotion-check-sad"
+                            label= "2B"
+                            //value="sad"
+                            inline
+                            //checked={emotion === "sad"}
+                        />
+                    </Row>
+
+                    <Row className="First-answer-row" style={{ display: 'flex', justifyContent: 'center', height: '10vw' }}>
+                        <Form.Check
+                            type="radio"
+                            name="Question 2"
+                            //onChange={updateEmotion}
+                            //id="emotion-check-happy"
+                            label= "2C"
+                            //value="happy"
+                            inline
+                            //checked={emotion === "happy"}
+                        />
+                        <Form.Check
+                            type="radio"
+                            name="Question 2"
+                            //onChange={updateEmotion}
+                            //id="emotion-check-sad"
+                            label= "2D"
+                            //value={answerD}
+                            inline
+                            //checked={emotion === "sad"}
+                        />
+                    </Row>
+                    
+                    </Container>       
+                    )}
             </div>
         </span>
         </div>
