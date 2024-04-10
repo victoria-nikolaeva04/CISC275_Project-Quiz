@@ -34,32 +34,32 @@ export function ChangeDetailedQuestion(): JSX.Element {
         <Container>
           <Row className="Horizontal-questions">
           <Col className="Question-1" xs={2}>
-              <Button>1</Button>
+              <Button onClick={() => changeQuestion(1)}>1</Button>
             </Col>
             <Col className="Question-2" xs={2}>
-              <Button>2</Button>
+              <Button onClick={() => changeQuestion(2)}>2</Button>
             </Col>
             <Col className="Question-3" xs={2}>
-              <Button>3</Button>
+              <Button onClick={() => changeQuestion(3)}>3</Button>
             </Col>
             <Col className="Question-4" xs={2}>
-              <Button>4</Button>
+              <Button onClick={() => changeQuestion(4)}>4</Button>
             </Col>
             <Col className="Question-5" xs={2}>
-              <Button>5</Button>
+              <Button onClick={() => changeQuestion(5)}>5</Button>
             </Col>
             <Col className="Question-6" xs={2}>
-              <Button>6</Button>
+              <Button onClick={() => changeQuestion(6)}>6</Button>
             </Col>
             <Col className="Question-7" xs={2}>
-              <Button>7</Button>
+              <Button onClick={() => changeQuestion(7)}>7</Button>
             </Col>
           </Row>
         </Container>
       </div>
 
       <div className="Question-textbox">
-        <p>Enter question text here</p>
+        <p>{question}</p>
       </div>
         <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <Container style={{ width: '75%', justifyContent: 'center' }} >
