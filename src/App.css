@@ -92,3 +92,9 @@
   margin-left: 50%;
   margin-right: 50%;
 }
+
+.First-answer-row {
+  display: flex;
+  height: 40vh;
+  width: 50%;
+}
