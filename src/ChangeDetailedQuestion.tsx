@@ -5,15 +5,13 @@ import './App.css'; // need to make a sep file for this
 
 
 export function ChangeDetailedQuestion(): JSX.Element {
-    //const [detailedQuestion, changePrompt] = useState<string>("");
-    const [question, setQuestion] = useState<string>("Insert Question 1 here");
-
+    const [question, setQuestion] = useState<string>("Imagine you are assigned to a project team in which you will be creating a marketing campaign for a new product launch. Which aspect of the project would you most enjoy focusing on?");
 
     function changeQuestion(questionNum: number): void {
         if(questionNum === 1){
-            setQuestion("Insert Question 1 here");
+            setQuestion("Imagine you are assigned to a project team in which you will be creating a marketing campaign for a new product launch. Which aspect of the project would you most enjoy focusing on?");
         } else if(questionNum === 2){
-            setQuestion("Insert Question 2 here");
+            setQuestion("Imagine you are assigned to a project team in which you will be creating a ");
         } else if(questionNum === 3){
             setQuestion("Question 3");
         } else if(questionNum === 4){
@@ -28,97 +26,89 @@ export function ChangeDetailedQuestion(): JSX.Element {
             setQuestion("Question 8");
         }
     }
+
     return (
         <div style={{ width: '100%' }}>
-        <span>
-        <div className="Question-row">
-        <Container>
-          <Row className="Horizontal-questions">
-          <Col className="Question-1" xs={2}>
-              <Button onClick={() => changeQuestion(1)}>1</Button>
-            </Col>
-            <Col className="Question-2" xs={2}>
-              <Button onClick={() => changeQuestion(2)}>2</Button>
-            </Col>
-            <Col className="Question-3" xs={2}>
-              <Button onClick={() => changeQuestion(3)}>3</Button>
-            </Col>
-            <Col className="Question-4" xs={2}>
-              <Button onClick={() => changeQuestion(4)}>4</Button>
-            </Col>
-            <Col className="Question-5" xs={2}>
-              <Button onClick={() => changeQuestion(5)}>5</Button>
-            </Col>
-            <Col className="Question-6" xs={2}>
-              <Button onClick={() => changeQuestion(6)}>6</Button>
-            </Col>
-            <Col className="Question-7" xs={2}>
-              <Button onClick={() => changeQuestion(7)}>7</Button>
-            </Col>
-          </Row>
-        </Container>
-      </div>
+            <span>
+                <div className="Question-row">
+                <Container>
+                <Row className="Horizontal-questions">
+                <Col className="Question-1" xs={2}>
+                    <Button onClick={() => changeQuestion(1)}>1</Button>
+                    </Col>
+                    <Col className="Question-2" xs={2}>
+                    <Button onClick={() => changeQuestion(2)}>2</Button>
+                    </Col>
+                    <Col className="Question-3" xs={2}>
+                    <Button onClick={() => changeQuestion(3)}>3</Button>
+                    </Col>
+                    <Col className="Question-4" xs={2}>
+                    <Button onClick={() => changeQuestion(4)}>4</Button>
+                    </Col>
+                    <Col className="Question-5" xs={2}>
+                    <Button onClick={() => changeQuestion(5)}>5</Button>
+                    </Col>
+                    <Col className="Question-6" xs={2}>
+                    <Button onClick={() => changeQuestion(6)}>6</Button>
+                    </Col>
+                    <Col className="Question-7" xs={2}>
+                    <Button onClick={() => changeQuestion(7)}>7</Button>
+                    </Col>
+                </Row>
+                </Container>
+            </div>
 
-      <div className="Question-textbox">
-        <p>{question}</p>
-      </div>
+            <div className="Question-textbox">
+                <p>{question}</p>
+            </div>
 
 
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-            {question === "Insert Question 1 here" && (
-                <Container style={{ width: '75%', justifyContent: 'center' }} >
-                <Row className="First-answer-row" style={{ display: 'flex', justifyContent: 'center', height: '10vw' }}>
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+                {question === "Imagine you are assigned to a project team in which you will be creating a marketing campaign for a new product launch. Which aspect of the project would you most enjoy focusing on?" && (
+                <Container style={{ width: '75%', justifyContent: 'center' }}>
+                    <Row className="First-answer-row" style={{ display: 'flex', marginLeft: 'auto', marginRight: 'auto', height: 'auto' }}>
                         <Form.Check
                             type="radio"
-                            name= "Question 1"
-                            //onChange={updateEmotion}
+                            name="Question1"
                             id="emotion-check-happy"
-                            label= "1A"
-                            //value="happy"
+                            label="Crafting a compelling message and storytelling to communicate the product's unique value, helping it resonate with the target audience."
                             inline
-                            //checked={emotion === "happy"}
+                            style={{ display: 'inline-block', width: '50%', border: '1px solid #ccc', padding: '20px', borderRadius: '5px', margin: '5px 0' }}
                         />
                         <Form.Check
                             type="radio"
-                            name= "Question 1"
-                            //onChange={updateEmotion}
-                            //id="emotion-check-sad"
-                            label= "1B"
-                            //value="sad"
+                            name="Question1"
+                            id="emotion-check-sad"
+                            label="Collaborating with creative teams to design visually appealing graphics, videos, and other multimedia content that capture attention and drive engagement."
                             inline
-                            //checked={emotion === "sad"}
+                            style={{ display: 'inline-block', width: '50%', border: '1px solid #ccc', padding: '20px', borderRadius: '5px', margin: '5px 0' }}
                         />
                     </Row>
 
-                    <Row className="First-answer-row" style={{ display: 'flex', justifyContent: 'center', height: '10vw' }}>
+                    <Row className="Second-answer-row" style={{ display: 'flex', marginLeft: 'auto', marginRight: 'auto', height: 'auto' }}>
                         <Form.Check
                             type="radio"
-                            name= "Question 1"
-                            //onChange={updateEmotion}
-                            //id="emotion-check-happy"
-                            label= "1C"
-                            //value="happy"
+                            name="Question1"
+                            id="emotion-check-neutral"
+                            label="Providing strategic direction and guidance to team members, ensuring alignment with overall campaign objectives and messaging consistency across different channels."
                             inline
-                            //checked={emotion === "happy"}
+                            style={{ display: 'inline-block', width: '50%', border: '1px solid #ccc', padding: '20px', borderRadius: '5px', margin: '5px 0' }}
                         />
                         <Form.Check
                             type="radio"
-                            name= "Question 1"
-                            //onChange={updateEmotion}
-                            //id="emotion-check-sad"
-                            label="1D"
-                            //value={answerD}
+                            name="Question1"
+                            id="emotion-check-confused"
+                            label="Conducting market research and consumer behavior analysis to identify key insights and opportunities, informing campaign strategies and tactics for maximum impact."
                             inline
-                            //checked={emotion === "sad"}
+                            style={{ display: 'inline-block', width: '50%', border: '1px solid #ccc', padding: '20px', borderRadius: '5px', margin: '5px 0' }}
                         />
                     </Row>
-                    
-                    </Container>       
-                    )}
+                </Container>
+                )}
 
                 {question === "Insert Question 2 here" && (   
                 <Container style={{ width: '75%', justifyContent: 'center' }} >
-                <Row className="First-answer-row" style={{ display: 'flex', justifyContent: 'center', height: '10vw' }}>
+                    <Row className="First-answer-row" style={{ display: 'flex', justifyContent: 'center', height: '10vw' }}>
                         <Form.Check
                             type="radio"
                             name="Question 2"
@@ -163,11 +153,11 @@ export function ChangeDetailedQuestion(): JSX.Element {
                             //checked={emotion === "sad"}
                         />
                     </Row>
-                    
+                        
                     </Container>       
                     )}
-            </div>
-        </span>
+                </div>
+            </span>
         </div>
     );
 }
