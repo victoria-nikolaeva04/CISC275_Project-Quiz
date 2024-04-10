@@ -53,17 +53,18 @@ function AboutMe() {
       <body>
         <div className='AboutMe-body'></div>
             <h3>MEET THE TEAM!</h3>
-                <p>Will be continued soon...</p>
+            <div className="text-image-AboutMe">
+            <p className="team-text">Will be continued soon...</p>
                 <div className="team-image">
                     <img
                         src={temp_image}
                         alt="TeamPhoto"
                         id="team-pic"
                     />
-                </div>
-
-        
+            </div>      
+            </div>  
       </body>
+
       <br></br>
       <br></br>
       <br></br>
