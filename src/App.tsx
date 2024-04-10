@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
-import  ClearButton  from './Components/ClearButton';
-import LinkButton from './Components/BasicNavigate'
+import ClearButton from './Components/ClearButton';
+import ButtonLink from './Components/ButtonLink';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Import BrowserRouter and other necessary components
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
@@ -26,38 +27,41 @@ function App() {
   function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
     setKey(event.target.value);
   }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <hr></hr>
-        {/*<ClearButton></ClearButton>*/}
-        {/*<LinkButton to={''} className={''}>Children Text Here</LinkButton>*/}
-        <hr></hr>
-        <br></br>
-        <p>
-          Team Manager: Victoria Nikolaeva
-          Team Members: Giovanna Scozzaro, Dustine Trieu, Duy Duc Tran
-        </p>
-      </header>
-      <Form>
-        <Form.Label>API Key:</Form.Label>
-        <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
-        <br></br>
-        <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
-      </Form>
-    </div>
+    <Router> 
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <p>
+            Edit <code>src/App.tsx</code> and save to reload.
+          </p>
+          <a
+            className="App-link"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn React
+          </a>
+          <hr></hr>
+          {/*<ClearButton></ClearButton>*/}
+          {/*<ButtonLink to={'/Pages/Home'} className={'My-button'}>Children Text Here</ButtonLink>*/}
+          <hr></hr>
+          <br></br>
+          <p>
+            Team Manager: Victoria Nikolaeva
+            Team Members: Giovanna Scozzaro, Dustine Trieu, Duy Duc Tran
+          </p>
+        </header>
+        <Form>
+          <Form.Label>API Key:</Form.Label>
+          <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
+          <br></br>
+          <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
+        </Form>
+      </div>
+    </Router>
   );
 }
 
