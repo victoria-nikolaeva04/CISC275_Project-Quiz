@@ -11,7 +11,7 @@ export function ChangeDetailedQuestion(): JSX.Element {
         if(questionNum === 1){
             setQuestion("Imagine you are assigned to a project team in which you will be creating a marketing campaign for a new product launch. Which aspect of the project would you most enjoy focusing on?");
         } else if(questionNum === 2){
-            setQuestion("Imagine you are assigned to a project team in which you will be creating a ");
+            setQuestion("Describe the overarching goals, values, and aspirations that resonate with you. Consider the impact you aim to make and the principles that guide your actions and decisions.");
         } else if(questionNum === 3){
             setQuestion("Question 3");
         } else if(questionNum === 4){
@@ -106,55 +106,46 @@ export function ChangeDetailedQuestion(): JSX.Element {
                 </Container>
                 )}
 
-                {question === "Insert Question 2 here" && (   
-                <Container style={{ width: '75%', justifyContent: 'center' }} >
-                    <Row className="First-answer-row" style={{ display: 'flex', justifyContent: 'center', height: '10vw' }}>
+                {question === "Describe the overarching goals, values, and aspirations that resonate with you. Consider the impact you aim to make and the principles that guide your actions and decisions." && (   
+                <Container style={{ width: '75%', justifyContent: 'center' }}>
+                    <Row className="First-answer-row" style={{ display: 'flex', marginLeft: 'auto', marginRight: 'auto', height: 'auto' }}>
                         <Form.Check
                             type="radio"
-                            name="Question 2"
-                            //onChange={updateEmotion}
-                            //id="emotion-check-happy"
-                            label= "2A"
-                            //value="he"
+                            name="Question2"
+                            id="emotion-check-happy"
+                            label="I aspire to be a visionary leader and trailblazer in my field, pushing the boundaries of innovation and driving positive change that leaves a lasting legacy, inspiring others to follow in my footsteps and make a difference in the world."
                             inline
-                            //checked={emotion === "happy"}
+                            style={{ display: 'inline-block', width: '50%', border: '1px solid #ccc', padding: '20px', borderRadius: '5px', margin: '5px 0' }}
                         />
                         <Form.Check
                             type="radio"
-                            name="Question 2"
-                            //onChange={updateEmotion}
-                            //id="emotion-check-sad"
-                            label= "2B"
-                            //value="sad"
+                            name="Question2"
+                            id="emotion-check-sad"
+                            label="I am driven by a deep-seated desire to make a meaningful impact on society and contribute to the greater good, leveraging my skills, resources, and influence to address pressing social and environmental challenges and create a more equitable and sustainable future for all."
                             inline
-                            //checked={emotion === "sad"}
+                            style={{ display: 'inline-block', width: '50%', border: '1px solid #ccc', padding: '20px', borderRadius: '5px', margin: '5px 0' }}
                         />
                     </Row>
 
-                    <Row className="First-answer-row" style={{ display: 'flex', justifyContent: 'center', height: '10vw' }}>
+                    <Row className="Second-answer-row" style={{ display: 'flex', marginLeft: 'auto', marginRight: 'auto', height: 'auto' }}>
                         <Form.Check
                             type="radio"
-                            name="Question 2"
-                            //onChange={updateEmotion}
-                            //id="emotion-check-happy"
-                            label= "2C"
-                            //value="happy"
+                            name="Question2"
+                            id="emotion-check-neutral"
+                            label="I am committed to personal and professional growth, continuously challenging myself to learn, evolve, and expand my horizons, striving for excellence and mastery in my craft while fostering a culture of continuous improvement and lifelong learning."
                             inline
-                            //checked={emotion === "happy"}
+                            style={{ display: 'inline-block', width: '50%', border: '1px solid #ccc', padding: '20px', borderRadius: '5px', margin: '5px 0' }}
                         />
                         <Form.Check
                             type="radio"
-                            name="Question 2"
-                            //onChange={updateEmotion}
-                            //id="emotion-check-sad"
-                            label= "2D"
-                            //value={answerD}
+                            name="Question2"
+                            id="emotion-check-confused"
+                            label="Providing strategic direction and guidance to team members, ensuring alignment with overall campaign objectives and messaging consistency across different channels."
                             inline
-                            //checked={emotion === "sad"}
+                            style={{ display: 'inline-block', width: '50%', border: '1px solid #ccc', padding: '20px', borderRadius: '5px', margin: '5px 0' }}
                         />
                     </Row>
-                        
-                    </Container>       
+                </Container>
                     )}
                 </div>
             </span>
