@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
-import temp_image from "./images/temp_image.png";
+import logo  from "./images/CISC-Logo.png";
+import simple_logo  from "./images/CISC-Footer-Logo.png";
+import github from "./images/CISC-Footer-GIT.png";
+import easy_cat  from "./images/CISC-GPS-Easy.png";
+import hard_cat from "./images/CISC-MAP-Hard.png";
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
 //import Questionnaire from './basicQuestion';
@@ -30,7 +34,7 @@ function App() {
       <header className="App-header">
         <div className="image">
           <img
-              src={temp_image}
+              src={logo}
               alt="logo"
               id="logo-pic"
           />
@@ -54,7 +58,7 @@ function App() {
           <div className="homepage_quiz_section">
             <div className="homepage_box">
             <img
-                  src={temp_image}
+                  src={easy_cat}
                   alt="Easy Pic"
                   className ="image-structure"
               />
@@ -68,7 +72,7 @@ function App() {
           <div className="homepage_quiz_section">
             <div className="homepage_box">
             <img
-                  src={temp_image}
+                  src={hard_cat}
                   alt="Hard Pic"
                   className ="image-structure"
               />
@@ -89,13 +93,19 @@ function App() {
         <div className="footer_decorative">
           <div id="logo-text-footer">
               <img
-                src={temp_image}
+                src={simple_logo}
                 alt="Hard Pic"
                 className ="footer-logo"
               />
                <p className="team-name-footer">@SWE TEAM</p>
           </div>
-          <a href='https://github.com/VikiNiki123/starter_helpi' className="contact-info-footer">GITHUB</a>
+          <a href='https://github.com/VikiNiki123/starter_helpi' className="contact-info-footer">
+            <img
+                    src={github}
+                    alt="GitHub"
+                    className ="footer-logo"
+                />
+          </a>
         </div>
         
 

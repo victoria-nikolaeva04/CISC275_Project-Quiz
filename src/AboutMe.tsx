@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import temp_image from "./images/temp_image.png";
+import logo  from "./images/CISC-Logo.png";
+import simple_logo  from "./images/CISC-Footer-Logo.png";
+import temp from "./images/temp_image.png"
+import github from "./images/CISC-Footer-GIT.png";
 import './AboutMe.css';
 import { Button, Form } from 'react-bootstrap';
 
@@ -31,7 +34,7 @@ function AboutMe() {
       <header className="App-header">
         <div className="image">
           <img
-              src={temp_image}
+              src={logo}
               alt="logo"
               id="logo-pic"
           />
@@ -57,7 +60,7 @@ function AboutMe() {
             <p className="team-text">Will be continued soon...</p>
                 <div className="team-image">
                     <img
-                        src={temp_image}
+                        src={temp}
                         alt="TeamPhoto"
                         id="team-pic"
                     />
@@ -74,13 +77,19 @@ function AboutMe() {
         <div className="footer_decorative">
           <div id="logo-text-footer">
               <img
-                src={temp_image}
+                src={simple_logo}
                 alt="Hard Pic"
                 className ="footer-logo"
               />
                <p className="team-name-footer">@SWE TEAM</p>
           </div>
-          <a href='https://github.com/VikiNiki123/starter_helpi' className="contact-info-footer">GITHUB</a>
+          <a href='https://github.com/VikiNiki123/starter_helpi' className="contact-info-footer">
+            <img
+                    src={github}
+                    alt="GitHub"
+                    className ="footer-logo"
+                />
+          </a>
         </div>
         
 
