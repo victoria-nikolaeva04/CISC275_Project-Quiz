@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import logo  from "./images/CISC-Logo.png";
 import simple_logo  from "./images/CISC-Footer-Logo.png";
 import github from "./images/CISC-Footer-GIT.png";
-import easy_cat  from "./images/CISC-GPS-Easy.png";
-import hard_cat from "./images/CISC-MAP-Hard.png";
+import temp from "./images/temp_image.png";
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
 //import Questionnaire from './basicQuestion';
@@ -52,46 +51,21 @@ function App() {
       </header>
 
       <body>
-        <div className="homepage_body">
-          <div className="homepage_quiz_section">
-            <div className="homepage_box">
-            <img
-                  src={easy_cat}
-                  alt="Easy Pic"
-                  className ="image-structure"
-              />
+        <div className="aboutMe_body">
+            <h3>MEET THE TEAM</h3>
+            <div className="container">
+                <div className="team-image">
+                    <img
+                        src={temp}
+                        alt="logo"
+                        id="logo-pic"
+                    />
+                </div>
 
-              <h3>THE EASY ROUTE</h3>
-              <p>
-                This is the basic version of our career quiz. It consists of simple multiple choice
-                The purpose of this quiz is meant to have more generic questions with a more limited answer
-                choices. It prioritized to be answered relatively quickly and easy to answer with a quick glance.
-                This can be useful for those that already have confidence within their desired career and want
-                reassurance or need specification in what they want.
-              </p>
+                <div className="team-text">
+                    <p>This is the team page</p>
+                </div>
             </div>
-            <Button className="homepage_buttons">Take Basic Questions</Button>
-          </div>
-
-          <div className="homepage_quiz_section">
-            <div className="homepage_box">
-            <img
-                  src={hard_cat}
-                  alt="Hard Pic"
-                  className ="image-structure"
-              />
-
-              <h3>THE JOURNEY</h3>
-              <p>
-                The Journey is meant to be more thought-provoking type of quiz. This quiz is designed to have
-                more complex and demanding questions that needs a deep reflection into your own soul to respond
-                to these questions. This is meant for those that have the time and patience. These questions more
-                reflect questions that follow more a personailty style rather than those of 'would-you-rathers' to
-                really encourage a deeper connection with the results.
-              </p>
-            </div>
-            <Button className="homepage_buttons">Take Detailed Questions</Button>
-          </div>
         </div>
         <br></br>
         <br></br>
