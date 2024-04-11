@@ -66,7 +66,7 @@ export function ChangeDetailedQuestion(): JSX.Element {
             <div style={{ display: 'flex', justifyContent: 'center' }}>
                 {question === "Imagine you are assigned to a project team in which you will be creating a marketing campaign for a new product launch. Which aspect of the project would you most enjoy focusing on?" && (
                 <Container style={{ width: '75%', justifyContent: 'center' }}>
-                    <Row className="First-answer-row" style={{ display: 'flex', marginLeft: 'auto', marginRight: 'auto', height: 'auto' }}>
+                    <Row style={{ display: 'flex', marginLeft: 'auto', marginRight: 'auto', height: 'auto' }}>
                         <Form.Check
                             type="radio"
                             name="Question1"
@@ -85,7 +85,7 @@ export function ChangeDetailedQuestion(): JSX.Element {
                         />
                     </Row>
 
-                    <Row className="Second-answer-row" style={{ display: 'flex', marginLeft: 'auto', marginRight: 'auto', height: 'auto' }}>
+                    <Row style={{ display: 'flex', marginLeft: 'auto', marginRight: 'auto', height: 'auto' }}>
                         <Form.Check
                             type="radio"
                             name="Question1"
@@ -108,7 +108,7 @@ export function ChangeDetailedQuestion(): JSX.Element {
 
                 {question === "Describe the overarching goals, values, and aspirations that resonate with you. Consider the impact you aim to make and the principles that guide your actions and decisions." && (   
                 <Container style={{ width: '75%', justifyContent: 'center' }}>
-                    <Row className="First-answer-row" style={{ display: 'flex', marginLeft: 'auto', marginRight: 'auto', height: 'auto' }}>
+                    <Row style={{ display: 'flex', marginLeft: 'auto', marginRight: 'auto', height: 'auto' }}>
                         <Form.Check
                             type="radio"
                             name="Question2"
@@ -127,7 +127,7 @@ export function ChangeDetailedQuestion(): JSX.Element {
                         />
                     </Row>
 
-                    <Row className="Second-answer-row" style={{ display: 'flex', marginLeft: 'auto', marginRight: 'auto', height: 'auto' }}>
+                    <Row style={{ display: 'flex', marginLeft: 'auto', marginRight: 'auto', height: 'auto' }}>
                         <Form.Check
                             type="radio"
                             name="Question2"
