@@ -139,7 +139,7 @@ export function ChangeDetailedQuestion(): JSX.Element {
                             type="radio"
                             name="Question2"
                             id="answer-2-a"
-                            label={<span style={{ display: 'inline-block', textAlign: 'center' }}>I aspire to be a visionary leader and trailblazer in my field, pushing the boundaries of innovation and driving positive change that leaves a lasting legacy, inspiring others to follow in my footsteps and make a difference in the world.</span>}
+                            label={<span style={{ display: 'inline-block', textAlign: 'center' }}>I want to be a leader in my field, pushing the boundaries of innovation and driving positive change. I want to help inspire others to make a difference in the world.</span>}
                             inline
                             className="custom-radio"
                             onChange={() => handleAnswerSelection('Question2', 'answer-2-a')}
@@ -149,7 +149,7 @@ export function ChangeDetailedQuestion(): JSX.Element {
                             type="radio"
                             name="Question2"
                             id="answer-2-b"
-                            label={<span style={{ display: 'inline-block', textAlign: 'center' }}>I am driven by a deep-seated desire to make a meaningful impact on society and contribute to the greater good, leveraging my skills, resources, and influence to address pressing social and environmental challenges and create a more equitable and sustainable future for all.</span>}
+                            label={<span style={{ display: 'inline-block', textAlign: 'center' }}>I am driven by the desire to make a meaningful impact on society and contribute to the greater good, using my skills to address challenges and create a more equitable and sustainable future.</span>}
                             inline
                             className="custom-radio"
                             onChange={() => handleAnswerSelection('Question2', 'answer-2-b')}
@@ -162,7 +162,7 @@ export function ChangeDetailedQuestion(): JSX.Element {
                             type="radio"
                             name="Question2"
                             id="answer-2-c"
-                            label={<span style={{ display: 'inline-block', textAlign: 'center' }}>I am committed to personal and professional growth, continuously challenging myself to learn, evolve, and expand my horizons, striving for excellence and mastery in my craft while fostering a culture of continuous improvement and lifelong learning.</span>}
+                            label={<span style={{ display: 'inline-block', textAlign: 'center' }}>I am committed to personal growth, continuously challenging myself to learn, evolve, striving for excellence and mastery in my craft. I believe learning is lifelong.</span>}
                             inline
                             className="custom-radio"
                             onChange={() => handleAnswerSelection('Question2', 'answer-2-c')}
@@ -172,7 +172,7 @@ export function ChangeDetailedQuestion(): JSX.Element {
                             type="radio"
                             name="Question2"
                             id="answer-2-d"
-                            label={<span style={{ display: 'inline-block', textAlign: 'center' }}>Providing strategic direction and guidance to team members, ensuring alignment with overall campaign objectives and messaging consistency across different channels.</span>}
+                            label={<span style={{ display: 'inline-block', textAlign: 'center' }}>I want to provide strategic direction and guidance to team members, ensuring completion of objectives and consistency across our projects.</span>}
                             inline
                             className="custom-radio"
                             onChange={() => handleAnswerSelection('Question2', 'answer-2-d')}
