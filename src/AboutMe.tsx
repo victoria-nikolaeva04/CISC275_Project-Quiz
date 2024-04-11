@@ -3,7 +3,7 @@ import logo  from "./images/CISC-Logo.png";
 import simple_logo  from "./images/CISC-Footer-Logo.png";
 import github from "./images/CISC-Footer-GIT.png";
 import temp from "./images/temp_image.png";
-import './App.css';
+import './AboutMe.css';
 import { Button, Form } from 'react-bootstrap';
 //import Questionnaire from './basicQuestion';
 
@@ -54,19 +54,19 @@ function App() {
         <div className="aboutMe_body">
             <h3>MEET THE TEAM</h3>
             <div className="container">
+                <div className="team-text">
+                    <p>This is the team page</p>
+                </div>
                 <div className="team-image">
                     <img
                         src={temp}
                         alt="logo"
-                        id="logo-pic"
+                        id="team-image"
                     />
-                </div>
-
-                <div className="team-text">
-                    <p>This is the team page</p>
                 </div>
             </div>
         </div>
+
         <br></br>
         <br></br>
         <br></br>
