@@ -98,3 +98,16 @@
   height: 40vh;
   width: 50%;
 }
+
+.custom-radio {
+  display: inline-block;
+  width: 50%;
+  height: 100px;
+  border: 1px solid #ccc;
+  padding-top: 15px;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px; /* Add margin-bottom to maintain spacing */
+  border-radius: 15px;
+  text-align: center;
+}
