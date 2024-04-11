@@ -1,13 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Diphylleia&display=swap');
-
 .App{
-  background-color: whitesmoke;
+  background-color: #D3D9E7;
   font-family:'Diphylleia', serif;
+  color: #F6F6F6;
 }
 
-
 .App-header {
-  background-color: #282c34;
+  background-color: #6B7AA3;
   min-height: 20vh;
   display: grid;
   align-items: center; 
@@ -16,9 +14,10 @@
 }
 
 .image{
-  max-width: calc(50% - 25vmin);
+  max-width: calc(75% - 100vmin);
   margin-bottom: 5px;
   margin-top: 5px;
+
 }
 
 .text{
@@ -45,6 +44,12 @@ nav{
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  background-color: #F09738;
+  color: black;
+}
+
+.nav-btn:hover{
+  background-color: #EE6B2C;
 }
 
 .homepage_buttons{
@@ -56,10 +61,17 @@ nav{
   margin-left: 10%;
   margin-right: 10%;
   max-width: 100%;
+  padding: 10px;
   box-shadow: 3px 5px 10px grey;
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  background-color: #F09738;
+  color: black;
+}
+
+.homepage_buttons:hover{
+  background-color: #EE6B2C;
 }
 
 .homepage_body{
@@ -83,7 +95,7 @@ nav{
 .homepage_box{
   display: flex;
   flex-direction: column;
-  background-color: #282c34;
+  background-color: #8D99BA;
   text-align: center;
   padding: 5vw;
   width: 20vw;
@@ -112,7 +124,6 @@ nav{
   .homepage_box{
     display: flex;
     flex-direction: column;
-    background-color: #282c34;
     text-align: center;
     width: 25vw;
     padding: 20vw;
@@ -133,21 +144,26 @@ nav{
   max-width: calc(20vmin - 5%);
   margin-right: calc(25vw - 5%);
   margin-left : calc(10vw - 5%);
-  margin-bottom: 5px;
   margin-top: 5px;
   
 }
 
 .image-structure{
-  width: 15vh;
+  width: 20vh;
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
+footer{
+  background-color: #6B7AA3;
+  height: 100%;
+  padding: 15px;
+  text-align: center;
+}
+
 .footer-logo{
-  width: 75px;
-  border-radius: 50%;
+  width: 80px;
 }
 
 .footer_decorative{
@@ -163,8 +179,8 @@ nav{
 
 .contact-info-footer{
   width:100%;
+  height: auto;
   text-align:right;
   margin-top: 25px;
   margin-right: 10px;
-  
 }

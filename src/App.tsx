@@ -40,7 +40,7 @@ function App() {
           />
         </div>
         <div className="text">
-          <h1>Career Quest</h1> 
+          <h1>Career Cat-ylist Quiz</h1> 
           <nav>
             <button className='nav-btn'>Home</button>
             <button className='nav-btn'>Basic Quiz</button>
@@ -64,7 +64,10 @@ function App() {
               />
 
               <h3>EASY PEASY LEMON SQUEEZY</h3>
-              <p>This is the basic version of the quiz</p>
+              <p>An easy quiz is typically characterized by questions that assess fundamental knowledge or comprehension of a subject. These quizzes often feature 
+                multiple-choice, true/false, or fill-in-the-blank questions that can be answered relatively quickly and confidently by most participants. The aim of 
+                an easy quiz is to provide a gentle introduction to the topic, allowing learners to assess their grasp of basic concepts and build confidence in their 
+                understanding before progressing to more challenging material.</p>
             </div>
             <Button className="homepage_buttons">Take Basic Questions</Button>
           </div>
@@ -78,7 +81,10 @@ function App() {
               />
 
               <h3>HAR HAR HAR HAR HAR HARD</h3>
-              <p>This is the detailed version of the quiz</p>
+              <p>Conversely, a hard quiz is designed to present participants with complex and demanding questions that necessitate critical thinking, deep understanding, 
+                and sometimes lateral thinking skills. These quizzes frequently incorporate open-ended inquiries, problem-solving scenarios, or questions that require 
+                synthesizing information from various sources. Hard quizzes are commonly employed to evaluate advanced knowledge, encourage analytical reasoning, and 
+                push participants to go beyond surface-level understanding, offering a thorough examination of their expertise in a specific subject area.</p>
             </div>
             <Button className="homepage_buttons">Take Detailed Questions</Button>
           </div>
@@ -86,7 +92,6 @@ function App() {
         <br></br>
         <br></br>
         <br></br>
-        <hr></hr>
       </body>
 
       <footer>
@@ -107,9 +112,6 @@ function App() {
                 />
           </a>
         </div>
-        
-
-        <hr></hr>
         <div className="API_footer">
           <Form>
             <Form.Label>API Key: </Form.Label>
