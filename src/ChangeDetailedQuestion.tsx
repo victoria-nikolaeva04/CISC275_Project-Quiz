@@ -6,6 +6,10 @@ import './App.css'; // need to make a sep file for this
 
 export function ChangeDetailedQuestion(): JSX.Element {
     const [question, setQuestion] = useState<string>("Imagine you are assigned to a project team in which you will be creating a marketing campaign for a new product launch. Which aspect of the project would you most enjoy focusing on?");
+    const [selectedAnswers, setSelectedAnswers] = useState({
+        Question1: '',
+        Question2: ''
+    });
 
     function changeQuestion(questionNum: number): void {
         if(questionNum === 1){
@@ -26,6 +30,13 @@ export function ChangeDetailedQuestion(): JSX.Element {
             setQuestion("Question 8");
         }
     }
+
+    const handleAnswerSelection = (questionName: string, answerId: string) => {
+        setSelectedAnswers({
+            ...selectedAnswers,
+            [questionName]: answerId
+        });
+    };
 
     return (
         <div style={{ width: '100%' }}>
@@ -69,19 +80,23 @@ export function ChangeDetailedQuestion(): JSX.Element {
                     <Row style={{ display: 'flex', marginLeft: 'auto', marginRight: 'auto', height: 'auto' }}>
                         <Form.Check
                             type="radio"
-                            name="Question1"
-                            id="emotion-check-happy"
+                            name="Question1a"
+                            id="question-1-a"
                             label="Crafting a compelling message and storytelling to communicate the product's unique value, helping it resonate with the target audience."
                             inline
                             style={{ display: 'inline-block', width: '50%', border: '1px solid #ccc', padding: '20px', borderRadius: '5px', margin: '5px 0' }}
+                            onChange={() => handleAnswerSelection('Question1', 'question-1-a')}
+                            checked={selectedAnswers.Question1 === 'question-1-a'}
                         />
                         <Form.Check
                             type="radio"
                             name="Question1"
-                            id="emotion-check-sad"
+                            id="question-1-b"
                             label="Collaborating with creative teams to design visually appealing graphics, videos, and other multimedia content that capture attention and drive engagement."
                             inline
                             style={{ display: 'inline-block', width: '50%', border: '1px solid #ccc', padding: '20px', borderRadius: '5px', margin: '5px 0' }}
+                            onChange={() => handleAnswerSelection('Question1', 'question-1-b')}
+                            checked={selectedAnswers.Question1 === 'question-1-b'}
                         />
                     </Row>
 
