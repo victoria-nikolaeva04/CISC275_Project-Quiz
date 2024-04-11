@@ -182,6 +182,9 @@ export function ChangeDetailedQuestion(): JSX.Element {
                 </Container>
                     )}
                 </div>
+                <div>
+                    <Button>Get Answers</Button>
+                </div>
             </span>
         </div>
     );
