@@ -2,7 +2,7 @@
 
 .App{
   background-color: #D3D9E7;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: #F6F6F6;
   text-align: center;
 }
@@ -17,7 +17,7 @@
 }
 
 .image{
-  max-width: calc(75% - 100vmin);
+  max-width: calc(200% - 100vw);
   margin-bottom: 5px;
   margin-top: 5px;
 }
@@ -27,9 +27,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(20px + 2vmin);
   margin-bottom: 3px;
-  color: white;
+  color: #003555;
 }
 
 nav{
@@ -190,4 +190,20 @@ footer{
   text-align:right;
   margin-top: 25px;
   margin-right: 10px;
+}
+
+.Submit-Button {
+  margin-top: 20px;
+  margin-left: 5px;
+  padding: 10px 15px;
+  font-size: 12px;
+  background-color: #F09738;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.Submit-Button:hover{
+  background-color: #EE6B2C;
 }
