@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import './App.css';
+import './DetailedQuestions.css';
 import { Button, Container, Row , Col, Form} from "react-bootstrap";
-import './App.css'; // need to make a sep file for this
 
 
-export function ChangeDetailedQuestion(): JSX.Element {
+export function DetailedQuestions(): JSX.Element {
     const [question, setQuestion] = useState<string>("Imagine you are assigned to a project team in which you will be creating a marketing campaign for a new product launch. Which aspect of the project would you most enjoy focusing on?");
     const [selectedAnswers, setSelectedAnswers] = useState({
         Question1: '',
@@ -74,6 +73,13 @@ export function ChangeDetailedQuestion(): JSX.Element {
                     </Col>
                 </Row>
                 </Container>
+            </div>
+
+            <div className="Progress-bar">
+                <div className="Progress-14">
+                    <p> </p>
+                </div>
+                <p>Progress Bar</p>
             </div>
 
             <div className="Question-textbox">
@@ -182,10 +188,12 @@ export function ChangeDetailedQuestion(): JSX.Element {
                 </Container>
                     )}
                 </div>
-                <div>
+                <div style={{marginBottom: '50px', marginTop: '20px'}}>
                     <Button>Get Answers</Button>
                 </div>
             </span>
         </div>
     );
 }
+export default DetailedQuestions; 
+

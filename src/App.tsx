@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Button, Col, Container, Form, Row } from 'react-bootstrap';
-import { ChangeDetailedQuestion } from "./ChangeDetailedQuestion";
-
+import { Button, Form } from 'react-bootstrap';
+import { DetailedQuestions } from "./DetailedQuestions";
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
@@ -28,16 +27,40 @@ function App() {
   }
   return (
     <div className="App">
-      <header>
-        Detailed Questions
-      </header>
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.tsx</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
 
-      
+        <hr></hr>
+        <br></br>
+        <p>
+          Team Manager: Victoria Nikolaeva
+          Team Members: Giovanna Scozzaro, Dustine Trieu, Duy Duc Tran
+        </p>
+      </header>
+      <Form>
+        <Form.Label>API Key:</Form.Label>
+        <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
+        <br></br>
+        <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
+      </Form>
 
       <div className="Answer-choices">
-      <ChangeDetailedQuestion></ChangeDetailedQuestion>
+      <DetailedQuestions></DetailedQuestions>
       </div>
     </div>
+
+    
   );
 }
 
