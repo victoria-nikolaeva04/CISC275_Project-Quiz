@@ -2,7 +2,7 @@ import React from 'react'
 
 function BasicQuestion() {
   return (
-    <div>Contacts
+    <div>BasicQuestion
         <header>Hello world</header>
     </div>
     
