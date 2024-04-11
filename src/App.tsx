@@ -51,8 +51,6 @@ function App() {
         </div>
       </header>
 
-      <hr></hr>
-
       <body>
         <div className="homepage_body">
           <div className="homepage_quiz_section">
