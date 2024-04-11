@@ -61,11 +61,14 @@ function App() {
                   className ="image-structure"
               />
 
-              <h3>EASY PEASY LEMON SQUEEZY</h3>
-              <p>An easy quiz is typically characterized by questions that assess fundamental knowledge or comprehension of a subject. These quizzes often feature 
-                multiple-choice, true/false, or fill-in-the-blank questions that can be answered relatively quickly and confidently by most participants. The aim of 
-                an easy quiz is to provide a gentle introduction to the topic, allowing learners to assess their grasp of basic concepts and build confidence in their 
-                understanding before progressing to more challenging material.</p>
+              <h3>THE EASY ROUTE</h3>
+              <p>
+                This is the basic version of our career quiz. It consists of simple multiple choice
+                The purpose of this quiz is meant to have more generic questions with a more limited answer
+                choices. It prioritized to be answered relatively quickly and easy to answer with a quick glance.
+                This can be useful for those that already have confidence within their desired career and want
+                reassurance or need specification in what they want.
+              </p>
             </div>
             <Button className="homepage_buttons">Take Basic Questions</Button>
           </div>
@@ -78,11 +81,14 @@ function App() {
                   className ="image-structure"
               />
 
-              <h3>HAR HAR HAR HAR HAR HARD</h3>
-              <p>Conversely, a hard quiz is designed to present participants with complex and demanding questions that necessitate critical thinking, deep understanding, 
-                and sometimes lateral thinking skills. These quizzes frequently incorporate open-ended inquiries, problem-solving scenarios, or questions that require 
-                synthesizing information from various sources. Hard quizzes are commonly employed to evaluate advanced knowledge, encourage analytical reasoning, and 
-                push participants to go beyond surface-level understanding, offering a thorough examination of their expertise in a specific subject area.</p>
+              <h3>THE JOURNEY</h3>
+              <p>
+                The Journey is meant to be more thought-provoking type of quiz. This quiz is designed to have
+                more complex and demanding questions that needs a deep reflection into your own soul to respond
+                to these questions. This is meant for those that have the time and patience. These questions more
+                reflect questions that follow more a personailty style rather than those of 'would-you-rathers' to
+                really encourage a deeper connection with the results.
+              </p>
             </div>
             <Button className="homepage_buttons">Take Detailed Questions</Button>
           </div>

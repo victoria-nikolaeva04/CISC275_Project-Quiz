@@ -20,7 +20,6 @@
   max-width: calc(75% - 100vmin);
   margin-bottom: 5px;
   margin-top: 5px;
-
 }
 
 .text{
@@ -53,6 +52,11 @@ nav{
 
 .nav-btn:hover{
   background-color: #EE6B2C;
+}
+
+h3{
+  color: #C92A00;
+  font-style: bold;
 }
 
 .homepage_buttons{
