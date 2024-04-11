@@ -89,7 +89,7 @@ export function ChangeDetailedQuestion(): JSX.Element {
                             type="radio"
                             name="Question1"
                             id="answer-1-a"
-                            label="Crafting a compelling message and storytelling to communicate the product's unique value, helping it resonate with the target audience."
+                            label={<span style={{ display: 'inline-block', textAlign: 'center' }}>Crafting a compelling message and storytelling to communicate the product's unique value, helping it resonate with the target audience.</span>}
                             inline
                             className="custom-radio"
                             onChange={() => handleAnswerSelection('Question1', 'answer-1-a')}
@@ -99,7 +99,7 @@ export function ChangeDetailedQuestion(): JSX.Element {
                             type="radio"
                             name="Question1"
                             id="answer-1-b"
-                            label="Collaborating with creative teams to design visually appealing graphics, videos, and other multimedia content that capture attention and drive engagement."
+                            label={<span style={{ display: 'inline-block', textAlign: 'center' }}>Collaborating with creative teams to design visually appealing graphics, videos, and other multimedia content that capture attention and drive engagement.</span>}
                             inline
                             className="custom-radio"
                             onChange={() => handleAnswerSelection('Question1', 'answer-1-b')}
@@ -112,7 +112,7 @@ export function ChangeDetailedQuestion(): JSX.Element {
                             type="radio"
                             name="Question1"
                             id="answer-1-c"
-                            label="Providing strategic direction and guidance to team members, ensuring alignment with overall campaign objectives and messaging consistency across different channels."
+                            label={<span style={{ display: 'inline-block', textAlign: 'center' }}>Providing strategic direction and guidance to team members, ensuring alignment with overall campaign objectives and messaging consistency across different channels.</span>}
                             inline
                             className="custom-radio"
                             onChange={() => handleAnswerSelection('Question1', 'answer-1-c')}
@@ -122,7 +122,7 @@ export function ChangeDetailedQuestion(): JSX.Element {
                             type="radio"
                             name="Question1"
                             id="answer-1-d"
-                            label="Conducting market research and consumer behavior analysis to identify key insights and opportunities, informing campaign strategies and tactics for maximum impact."
+                            label={<span style={{ display: 'inline-block', textAlign: 'center' }}>Conducting market research and consumer behavior analysis to identify key insights and opportunities, informing campaign strategies and tactics for maximum impact.</span>}
                             inline
                             className="custom-radio"
                             onChange={() => handleAnswerSelection('Question1', 'answer-1-d')}
@@ -139,7 +139,7 @@ export function ChangeDetailedQuestion(): JSX.Element {
                             type="radio"
                             name="Question2"
                             id="answer-2-a"
-                            label="I aspire to be a visionary leader and trailblazer in my field, pushing the boundaries of innovation and driving positive change that leaves a lasting legacy, inspiring others to follow in my footsteps and make a difference in the world."
+                            label={<span style={{ display: 'inline-block', textAlign: 'center' }}>I aspire to be a visionary leader and trailblazer in my field, pushing the boundaries of innovation and driving positive change that leaves a lasting legacy, inspiring others to follow in my footsteps and make a difference in the world.</span>}
                             inline
                             className="custom-radio"
                             onChange={() => handleAnswerSelection('Question2', 'answer-2-a')}
@@ -149,7 +149,7 @@ export function ChangeDetailedQuestion(): JSX.Element {
                             type="radio"
                             name="Question2"
                             id="answer-2-b"
-                            label="I am driven by a deep-seated desire to make a meaningful impact on society and contribute to the greater good, leveraging my skills, resources, and influence to address pressing social and environmental challenges and create a more equitable and sustainable future for all."
+                            label={<span style={{ display: 'inline-block', textAlign: 'center' }}>I am driven by a deep-seated desire to make a meaningful impact on society and contribute to the greater good, leveraging my skills, resources, and influence to address pressing social and environmental challenges and create a more equitable and sustainable future for all.</span>}
                             inline
                             className="custom-radio"
                             onChange={() => handleAnswerSelection('Question2', 'answer-2-b')}
@@ -162,7 +162,7 @@ export function ChangeDetailedQuestion(): JSX.Element {
                             type="radio"
                             name="Question2"
                             id="answer-2-c"
-                            label="I am committed to personal and professional growth, continuously challenging myself to learn, evolve, and expand my horizons, striving for excellence and mastery in my craft while fostering a culture of continuous improvement and lifelong learning."
+                            label={<span style={{ display: 'inline-block', textAlign: 'center' }}>I am committed to personal and professional growth, continuously challenging myself to learn, evolve, and expand my horizons, striving for excellence and mastery in my craft while fostering a culture of continuous improvement and lifelong learning.</span>}
                             inline
                             className="custom-radio"
                             onChange={() => handleAnswerSelection('Question2', 'answer-2-c')}
@@ -172,7 +172,7 @@ export function ChangeDetailedQuestion(): JSX.Element {
                             type="radio"
                             name="Question2"
                             id="answer-2-d"
-                            label="Providing strategic direction and guidance to team members, ensuring alignment with overall campaign objectives and messaging consistency across different channels."
+                            label={<span style={{ display: 'inline-block', textAlign: 'center' }}>Providing strategic direction and guidance to team members, ensuring alignment with overall campaign objectives and messaging consistency across different channels.</span>}
                             inline
                             className="custom-radio"
                             onChange={() => handleAnswerSelection('Question2', 'answer-2-d')}

@@ -102,12 +102,12 @@
 .custom-radio {
   display: inline-block;
   width: 50%;
-  height: 100px;
+  height: 125px;
   border: 1px solid #ccc;
   padding-top: 15px;
   margin-right: 10px;
   margin-left: 10px;
-  margin-bottom: 10px; /* Add margin-bottom to maintain spacing */
+  margin-bottom: 10px; 
   border-radius: 15px;
   text-align: center;
 }
