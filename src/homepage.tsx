@@ -4,7 +4,7 @@ import simple_logo  from "./images/CISC-Footer-Logo.png";
 import github from "./images/CISC-Footer-GIT.png";
 import easy_cat  from "./images/CISC-GPS-Easy.png";
 import hard_cat from "./images/CISC-MAP-Hard.png";
-import './App.css';
+import './homepage.css';
 import { Button, Form } from 'react-bootstrap';
 //import Questionnaire from './basicQuestion';
 
@@ -37,7 +37,6 @@ function App() {
               src={logo}
               alt="logo"
               id="logo-pic"
-
           />
         </div>
         <div className="text">
