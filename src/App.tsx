@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
-import Navbar from './navbar';
+
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
 const saveKeyData = "MYKEY";
@@ -24,7 +24,9 @@ function App() {
   function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
     setKey(event.target.value);
   }
+
   return (
+    <Router> 
       <div className="App">
         <Navbar />
         <header className="App-header">
@@ -40,6 +42,14 @@ function App() {
           >
             Learn React
           </a>
+          <hr></hr>
+          {<ClearButton></ClearButton>}
+          {<ButtonLink to={'https://www.youtube.com/watch?v=dQw4w9WgXcQ'} className={'My-button'}>Home Button</ButtonLink>}
+          {<ButtonLink to={'/Pages'} className={'My-button'}>Detail Question</ButtonLink>}
+          {<ButtonLink to={'/Pages/BasicQuestion'} className={'My-button'}>Basic Question</ButtonLink>}
+
+          <hr></hr>
+          <br></br>
           <hr />
           <br />
           <p>
@@ -50,6 +60,11 @@ function App() {
         <Form>
           <Form.Label>API Key:</Form.Label>
           <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
+          <br></br>
+          <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
+        </Form>
+      </div>
+    </Router>
           <br />
           <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
         </Form>
