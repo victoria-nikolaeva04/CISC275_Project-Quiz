@@ -77,7 +77,7 @@ export function ChangeDetailedQuestion(): JSX.Element {
             </div>
 
             <div className="Question-textbox">
-                <p>{question}</p>
+                <p className="Question-textbox-text">{question}</p>
             </div>
 
 

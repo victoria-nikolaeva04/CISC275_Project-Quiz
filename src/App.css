@@ -64,6 +64,10 @@
   border-radius: 25px;
 }
 
+.Question-textbox-text {
+  padding: 20px;
+  font-size: large;
+}
 .Answer-choices {
   display: flex;
   height: 40vh;
