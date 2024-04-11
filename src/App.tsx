@@ -6,6 +6,7 @@ import ClearButton from './Components/ClearButton';
 import ButtonLink from './Components/ButtonLink';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Import BrowserRouter and other necessary components
 import Questionnaire from './basicQuestion';
+
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
 const saveKeyData = "MYKEY";
@@ -31,6 +32,7 @@ function App() {
   return (
     <Router> 
       <div className="App">
+        <Navbar />
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
@@ -69,6 +71,8 @@ function App() {
           <br />
           <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
        </Router>
+        </Form>
+      </div>
   );
 }
 export default App;
