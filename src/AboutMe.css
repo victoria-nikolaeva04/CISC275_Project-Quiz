@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
-.App{
+.AboutMe{
   background-color: #D3D9E7;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: #F6F6F6;
-  text-align: center;
+  height: 100%;
+  min-height: 100vh;
+  min-width: calc(100vw - 2vmin);
 }
 
 .App-header {
@@ -12,9 +14,9 @@
   min-height: 20vh;
   display: grid;
   align-items: center; 
+  text-align: center;
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 2px;
-
 }
 
 .text{
@@ -57,7 +59,7 @@ nav{
 
 h3{
   text-align: left;
-  color: #C92A00;
+  color: #6B7AA3;
   font-style: bold;
   font-size: 25px;
 }
@@ -67,27 +69,31 @@ h3{
   flex-direction: row;
   background-color: #F09738;
   padding: 10px;
+  border-radius: 16px;
 }
 
 .team-image{
   flex: 1;
   max-width: 50%;
   margin-left: 5px;
+  text-align: left;
 }
 
 .team-image img{
-  max-width: 75%;
+  max-width: 50%;
   height: auto;
+  margin-left: 20%;
 }
 
 .team-text{
   flex: 1;
   padding: 5px 20px;
   background-color: #EE6B2C;
+  border-radius: 20px;
 }
 
 #logo-pic{
-  max-width: 75%;
+  max-width: 60%;
   margin-right: calc(25vw - 5%);
   margin-left : calc(10vw - 5%);
   margin-top: 5px;
@@ -96,8 +102,27 @@ h3{
 
 @media screen and (max-width: 910px){
     #logo-pic{
-        max-width: 75%;
+        max-width: 60%;
     }
+
+    .container {
+        flex-direction: column;
+      }
+    
+      .team-image{
+        margin-top: 20px;
+        max-width: 100%;
+      }
+
+      .team-text{
+        max-width: 100%;
+      }
+    
+      .team-text{
+        padding: 20px;
+      }
+
+
 }
 
 .image-structure{

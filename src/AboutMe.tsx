@@ -29,7 +29,7 @@ function App() {
     setKey(event.target.value);
   }
   return (
-    <><div className="App">
+    <><div className="AboutMe">
       <header className="App-header">
         <div className="image">
           <img
@@ -56,6 +56,13 @@ function App() {
             <div className="container">
                 <div className="team-text">
                     <p>This is the team page</p>
+                    <p>Team Members:</p>
+                    <ul>
+                        <li>Victoria</li>
+                        <li>Gia</li>
+                        <li>Dustin</li>
+                        <li>Dustine</li>
+                    </ul>
                 </div>
                 <div className="team-image">
                     <img
@@ -77,7 +84,7 @@ function App() {
           <div id="logo-text-footer">
               <img
                 src={simple_logo}
-                alt="Hard Pic"
+                alt="small-logo"
                 className ="footer-logo"
               />
                <p className="team-name-footer">@SWE TEAM</p>
