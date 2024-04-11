@@ -80,23 +80,23 @@ export function ChangeDetailedQuestion(): JSX.Element {
                     <Row style={{ display: 'flex', marginLeft: 'auto', marginRight: 'auto', height: 'auto' }}>
                         <Form.Check
                             type="radio"
-                            name="Question1a"
-                            id="question-1-a"
+                            name="Question1"
+                            id="answer-1-a"
                             label="Crafting a compelling message and storytelling to communicate the product's unique value, helping it resonate with the target audience."
                             inline
                             style={{ display: 'inline-block', width: '50%', border: '1px solid #ccc', padding: '20px', borderRadius: '5px', margin: '5px 0' }}
-                            onChange={() => handleAnswerSelection('Question1', 'question-1-a')}
-                            checked={selectedAnswers.Question1 === 'question-1-a'}
+                            onChange={() => handleAnswerSelection('Question1', 'answer-1-a')}
+                            checked={selectedAnswers.Question1 === 'answer-1-a'}
                         />
                         <Form.Check
                             type="radio"
                             name="Question1"
-                            id="question-1-b"
+                            id="answer-1-b"
                             label="Collaborating with creative teams to design visually appealing graphics, videos, and other multimedia content that capture attention and drive engagement."
                             inline
                             style={{ display: 'inline-block', width: '50%', border: '1px solid #ccc', padding: '20px', borderRadius: '5px', margin: '5px 0' }}
-                            onChange={() => handleAnswerSelection('Question1', 'question-1-b')}
-                            checked={selectedAnswers.Question1 === 'question-1-b'}
+                            onChange={() => handleAnswerSelection('Question1', 'answer-1-b')}
+                            checked={selectedAnswers.Question1 === 'answer-1-b'}
                         />
                     </Row>
 
@@ -104,18 +104,22 @@ export function ChangeDetailedQuestion(): JSX.Element {
                         <Form.Check
                             type="radio"
                             name="Question1"
-                            id="emotion-check-neutral"
+                            id="answer-1-c"
                             label="Providing strategic direction and guidance to team members, ensuring alignment with overall campaign objectives and messaging consistency across different channels."
                             inline
                             style={{ display: 'inline-block', width: '50%', border: '1px solid #ccc', padding: '20px', borderRadius: '5px', margin: '5px 0' }}
+                            onChange={() => handleAnswerSelection('Question1', 'answer-1-c')}
+                            checked={selectedAnswers.Question1 === 'answer-1-c'}
                         />
                         <Form.Check
                             type="radio"
                             name="Question1"
-                            id="emotion-check-confused"
+                            id="answer-1-d"
                             label="Conducting market research and consumer behavior analysis to identify key insights and opportunities, informing campaign strategies and tactics for maximum impact."
                             inline
                             style={{ display: 'inline-block', width: '50%', border: '1px solid #ccc', padding: '20px', borderRadius: '5px', margin: '5px 0' }}
+                            onChange={() => handleAnswerSelection('Question1', 'answer-1-d')}
+                            checked={selectedAnswers.Question1 === 'answer-1-d'}
                         />
                     </Row>
                 </Container>
@@ -127,18 +131,22 @@ export function ChangeDetailedQuestion(): JSX.Element {
                         <Form.Check
                             type="radio"
                             name="Question2"
-                            id="emotion-check-happy"
+                            id="answer-2-a"
                             label="I aspire to be a visionary leader and trailblazer in my field, pushing the boundaries of innovation and driving positive change that leaves a lasting legacy, inspiring others to follow in my footsteps and make a difference in the world."
                             inline
                             style={{ display: 'inline-block', width: '50%', border: '1px solid #ccc', padding: '20px', borderRadius: '5px', margin: '5px 0' }}
+                            onChange={() => handleAnswerSelection('Question2', 'answer-2-a')}
+                            checked={selectedAnswers.Question2 === 'answer-2-a'}
                         />
                         <Form.Check
                             type="radio"
                             name="Question2"
-                            id="emotion-check-sad"
+                            id="answer-2-b"
                             label="I am driven by a deep-seated desire to make a meaningful impact on society and contribute to the greater good, leveraging my skills, resources, and influence to address pressing social and environmental challenges and create a more equitable and sustainable future for all."
                             inline
                             style={{ display: 'inline-block', width: '50%', border: '1px solid #ccc', padding: '20px', borderRadius: '5px', margin: '5px 0' }}
+                            onChange={() => handleAnswerSelection('Question2', 'answer-2-b')}
+                            checked={selectedAnswers.Question2 === 'answer-2-b'}
                         />
                     </Row>
 
@@ -146,18 +154,22 @@ export function ChangeDetailedQuestion(): JSX.Element {
                         <Form.Check
                             type="radio"
                             name="Question2"
-                            id="emotion-check-neutral"
+                            id="answer-2-c"
                             label="I am committed to personal and professional growth, continuously challenging myself to learn, evolve, and expand my horizons, striving for excellence and mastery in my craft while fostering a culture of continuous improvement and lifelong learning."
                             inline
                             style={{ display: 'inline-block', width: '50%', border: '1px solid #ccc', padding: '20px', borderRadius: '5px', margin: '5px 0' }}
+                            onChange={() => handleAnswerSelection('Question2', 'answer-2-c')}
+                            checked={selectedAnswers.Question2 === 'answer-2-c'}
                         />
                         <Form.Check
                             type="radio"
                             name="Question2"
-                            id="emotion-check-confused"
+                            id="answer-2-d"
                             label="Providing strategic direction and guidance to team members, ensuring alignment with overall campaign objectives and messaging consistency across different channels."
                             inline
                             style={{ display: 'inline-block', width: '50%', border: '1px solid #ccc', padding: '20px', borderRadius: '5px', margin: '5px 0' }}
+                            onChange={() => handleAnswerSelection('Question2', 'answer-2-d')}
+                            checked={selectedAnswers.Question2 === 'answer-2-d'}
                         />
                     </Row>
                 </Container>
