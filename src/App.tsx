@@ -5,9 +5,7 @@ import { Button, Form } from 'react-bootstrap';
 import ClearButton from './Components/ClearButton';
 import ButtonLink from './Components/ButtonLink';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Import BrowserRouter and other necessary components
-
 import Questionnaire from './basicQuestion';
-import { Route, Link, Routes } from 'react-router-dom';
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
 const saveKeyData = "MYKEY";
@@ -68,13 +66,9 @@ function App() {
           <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
         </Form>
       </div>
-    </Router>
           <br />
           <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
-        </Form>
-        <Link to="/basic-quiz"><Button>Basic Quiz</Button></Link>
-        <Routes><Route path="/basic-quiz" element={<Questionnaire />} /></Routes>
-      </div>
+       </Router>
   );
 }
 export default App;
