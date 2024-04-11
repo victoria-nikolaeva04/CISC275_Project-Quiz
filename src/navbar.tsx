@@ -4,6 +4,9 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import './navbar.css'
+import ButtonLink from './Components/ButtonLink';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Import BrowserRouter and other necessary components
+
 function CollapsibleNavbar() {
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
@@ -13,7 +16,8 @@ function CollapsibleNavbar() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link onClick={() => window.location.href = "./basicQuestion.tsx"}>Basic quiz</Nav.Link>
-            <Nav.Link href="#pricing">Detail quiz</Nav.Link>
+            <Nav.Link href="#pricing">
+              </Nav.Link>
             <NavDropdown title="My result" id="collapsible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">See more college majors</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
