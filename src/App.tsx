@@ -46,8 +46,8 @@ function App() {
           </a>
           <hr></hr>
           {<ClearButton></ClearButton>}
-          {<ButtonLink to={'https://youtu.be/6GEI3PpXEAo?si=U9diJVztEB_yqLjL'} className={'My-button'}>Home Button</ButtonLink>}
-          {<ButtonLink to={'https://www.google.com/url?sa=i&url=https%3A%2F%2Fsilly-cat.fandom.com%2Fwiki%2FMr._Fresh&psig=AOvVaw0FhNL565VkMWi8Jrj4maLA&ust=1712892633854000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCMi60rqcuYUDFQAAAAAdAAAAABAE'} className={'My-button'}>Basic Question</ButtonLink>}
+          {<ButtonLink to={'https://www.youtube.com/watch?v=dQw4w9WgXcQ'} className={'My-button'}>Home Button</ButtonLink>}
+          {<ButtonLink to={'/Pages'} className={'My-button'}>Detail Question</ButtonLink>}
           {<ButtonLink to={'/Pages/BasicQuestion'} className={'My-button'}>Basic Question</ButtonLink>}
 
           <hr></hr>
