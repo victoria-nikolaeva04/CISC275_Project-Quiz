@@ -45,9 +45,10 @@ function App() {
             Learn React
           </a>
           <hr></hr>
-          {/*<ClearButton></ClearButton>*/}
+          {<ClearButton></ClearButton>}
           {<ButtonLink to={'/Pages/Home'} className={'My-button'}>Home Button</ButtonLink>}
-          {<ButtonLink to={'/Pages/Contact'} className={'My-button'}>Contact Button</ButtonLink>}
+          {<ButtonLink to={'/Pages/BasicQuestion'} className={'My-button'}>Basic Question</ButtonLink>}
+          {<ButtonLink to={'/Pages/DetailQuestion'} className={'My-button'}>Detailed Question</ButtonLink>}
 
           <hr></hr>
           <br></br>
