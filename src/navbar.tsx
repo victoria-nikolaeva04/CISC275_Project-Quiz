@@ -15,10 +15,11 @@ function CollapsibleNavbar() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
+          <Nav.Link as={Link} to="/App">App</Nav.Link>
             <Nav.Link as={Link} to="/BasicQuestion">Basic Question</Nav.Link>
-            <Nav.Link as={Link} to="/App">App</Nav.Link>
             <NavDropdown title="My result" id="collapsible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">See more college majors</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/basicresult" >See basic results</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">See more college majors</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">Career path</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Salaries</NavDropdown.Item>
               <NavDropdown.Divider />

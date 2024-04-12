@@ -32,6 +32,7 @@ function App() {
 
   return (
       <div className="App">
+        <CollapsibleNavbar></CollapsibleNavbar>
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
@@ -49,9 +50,7 @@ function App() {
           {/*<ClearButton></ClearButton>*/}
           {/*<ButtonLink to={'https://www.youtube.com/watch?v=dQw4w9WgXcQ'} className={'My-button'}>Home Button</ButtonLink>*/}
           {/*<ButtonLink to={'/'} className={'My-button'}>Detail Question</ButtonLink>*/}
-          {/*<ButtonLink to={'/Pages/BasicQuestion'} className={'My-button'}>Basic Question</ButtonLink>*/}
-          <CollapsibleNavbar></CollapsibleNavbar>
-          <hr></hr>
+          {/*<ButtonLink to={'/Pages/BasicQuestion'} className={'My-button'}>Basic Question</ButtonLink>*/}          <hr></hr>
           <br></br>
           <p>
             Team Manager: Victoria Nikolaeva
