@@ -11,10 +11,15 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
+  <Router>
   <React.StrictMode>
-    <CollapsibleNavbar></CollapsibleNavbar>
-    <App/>
+    <Routes>
+          <Route path="/basicQuestion" element={<Questionnaire />} />
+          <Route path="/App" element={<App/>} />
+          {/* Add more routes as needed */}
+          </Routes>
   </React.StrictMode>
+  </Router>
 );
 
 // If you want to start measuring performance in your app, pass a brick
