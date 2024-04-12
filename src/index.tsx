@@ -5,24 +5,24 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import CollapsibleNavbar from './navbar'
 import Questionnaire from './basicQuestion';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Import BrowserRouter and other necessary components
+import { BrowserRouter as Router, Routes, Route, HashRouter } from 'react-router-dom'; // Import BrowserRouter and other necessary components
 import BasicResult from './basicresult';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <Router>
-  <React.StrictMode>
-  <App></App>
-    <Routes>
+  <HashRouter>
+    <CollapsibleNavbar></CollapsibleNavbar>
+     <Routes>
           <Route path="/basicQuestion" element={<Questionnaire />} />
           <Route path="/App" element={<App/>} />
           <Route path="/basicresult" element={<BasicResult/>} />
           {/* Add more routes as needed */}
           </Routes>
+  <React.StrictMode>
   </React.StrictMode>
-  </Router>
+  </HashRouter>
 );
 
 // If you want to start measuring performance in your app, pass a brick

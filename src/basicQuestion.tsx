@@ -43,7 +43,6 @@ const Questionnaire: React.FC = () => {
 
   return (
     <div>
-      <CollapsibleNavbar/>
       <div className="questionnaire-container">
         <h1 className="questionnaire-heading">Basic Questions</h1>
         {questions.map((question, questionIndex) => (

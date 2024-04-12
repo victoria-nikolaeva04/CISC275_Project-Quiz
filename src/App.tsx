@@ -32,7 +32,6 @@ function App() {
 
   return (
       <div className="App">
-        <CollapsibleNavbar></CollapsibleNavbar>
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
