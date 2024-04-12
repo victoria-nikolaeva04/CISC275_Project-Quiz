@@ -14,6 +14,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <Router>
   <React.StrictMode>
+  <App></App>
     <Routes>
           <Route path="/basicQuestion" element={<Questionnaire />} />
           <Route path="/App" element={<App/>} />
