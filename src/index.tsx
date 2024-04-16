@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import CollapsibleNavbar from './navbar'
 import Questionnaire from './basicQuestion';
-import { BrowserRouter as Router, Routes, Route, HashRouter } from 'react-router-dom'; // Import BrowserRouter and other necessary components
+import { BrowserRouter as HashRouter,Routes, Route} from 'react-router-dom'; // Import BrowserRouter and other necessary components
 import BasicResult from './basicresult';
 
 const root = ReactDOM.createRoot(

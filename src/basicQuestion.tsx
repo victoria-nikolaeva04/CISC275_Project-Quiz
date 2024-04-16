@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './basicQuestion.css';
-import CollapsibleNavbar from './navbar';
 const questions = [
   {
     question: 'Question 1: If you have a year paid-time off and the company gives you money to pursue every interest you want, what would you choose to do with that time?',
