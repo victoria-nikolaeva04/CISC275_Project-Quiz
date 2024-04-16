@@ -6,7 +6,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import './navbar.css'
 import { Link } from 'react-router-dom'; // Import BrowserRouter and other necessary components
 
-function CollapsibleNavbar() {
+export function CollapsibleNavbar() {
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
       <Container>
