@@ -66,5 +66,5 @@ function App() {
       </div>
   );
 }
-export default DetailedQuestions; 
+export default App; 
 
