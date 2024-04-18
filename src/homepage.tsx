@@ -6,6 +6,7 @@ import easy_cat  from "./images/CISC-GPS-Easy.png";
 import hard_cat from "./images/CISC-MAP-Hard.png";
 import './homepage.css';
 import { Button, Form } from 'react-bootstrap';
+import CollapsibleNavbar from './navbar';
 
 //import Questionnaire from './basicQuestion';
 
@@ -32,6 +33,7 @@ function Homepage() {
   }
   return (
     <><div className="App">
+      <CollapsibleNavbar></CollapsibleNavbar>
       <header className="App-header">
         <div className="image">
           <img
