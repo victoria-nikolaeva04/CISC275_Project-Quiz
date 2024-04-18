@@ -7,6 +7,8 @@ import hard_cat from "./images/CISC-MAP-Hard.png";
 import './homepage.css';
 import { Button, Form } from 'react-bootstrap';
 import CollapsibleNavbar from './navbar';
+import { Link } from 'react-router-dom'; // Import BrowserRouter and other necessary components
+
 
 //import Questionnaire from './basicQuestion';
 
@@ -45,9 +47,16 @@ function Homepage() {
         <div className="text">
           <h1>Career Cat-ylist Quiz</h1> 
           <nav>
-            <button className='nav-btn'>Home</button>
+            <Link to ="/homepage">
+            <Button className='nav-btn'>Home</Button>
+            </Link>
+            <Link to ="basicQuestion">
             <button className='nav-btn'>Basic Quiz</button>
+            </Link>
+            <Link to = "/DetailedQuestion">
             <button className='nav-btn'>Detailed Quiz</button>
+            </Link>
+          
             <button className='nav-btn'>About</button>
             
           </nav>

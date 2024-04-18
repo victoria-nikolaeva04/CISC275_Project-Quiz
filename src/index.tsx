@@ -16,7 +16,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <HashRouter>
-    <Homepage></Homepage>
+  <CollapsibleNavbar></CollapsibleNavbar>
      <Routes>
           <Route path="/basicQuestion" element={<Questionnaire />} />
           <Route path="/App" element={<App/>} />
