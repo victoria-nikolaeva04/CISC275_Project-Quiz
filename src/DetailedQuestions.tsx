@@ -134,7 +134,7 @@ export function DetailedQuestions(): JSX.Element {
 
                 {question === "Describe the overarching goals, values, and aspirations that resonate with you. Consider the impact you aim to make and the principles that guide your actions and decisions." && (   
                 <Container style={{ width: '75%', justifyContent: 'center' }}>
-                    <Row style={{ display: 'flex'}}>
+                    <Row style={{ display: 'flex', width: "50%"}}>
                         <Form.Check
                             type="radio"
                             name="Question2"
@@ -157,7 +157,7 @@ export function DetailedQuestions(): JSX.Element {
                         />
                     </Row>
 
-                    <Row style={{ display: 'flex', marginLeft: 'auto', marginRight: 'auto', height: 'auto' }}>
+                    <Row style={{ display: 'flex', marginLeft: 'auto', marginRight: 'auto', height: 'auto', width: '50%'}}>
                         <Form.Check
                             type="radio"
                             width="100%"
@@ -191,7 +191,7 @@ export function DetailedQuestions(): JSX.Element {
                 <p>Progress Bar</p>
             </div>
 
-                <div style={{marginBottom: '50px', marginTop: '20px'}}>
+                <div style={{marginBottom: '50px', marginTop: '20px' }}>
                     <Button>Get Answers</Button>
                 </div>
             </span>
