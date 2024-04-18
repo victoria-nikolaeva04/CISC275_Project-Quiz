@@ -44,6 +44,12 @@ function App() {
           </a>
           <hr />
           <br />
+          <hr></hr>
+          {/*<ClearButton></ClearButton>*/}
+          {/*<ButtonLink to={'https://www.youtube.com/watch?v=dQw4w9WgXcQ'} className={'My-button'}>Home Button</ButtonLink>*/}
+          {/*<ButtonLink to={'/'} className={'My-button'}>Detail Question</ButtonLink>*/}
+          {/*<ButtonLink to={'/Pages/BasicQuestion'} className={'My-button'}>Basic Question</ButtonLink>*/}          <hr></hr>
+          <br></br>
           <p>
             Team Manager: Victoria Nikolaeva
             Team Members: Giovanna Scozzaro, Dustine Trieu, Duy Duc Tran
@@ -57,7 +63,12 @@ function App() {
         </Form>
         <Link to="/basic-quiz"><Button>Basic Quiz</Button></Link>
         <Routes><Route path="/basic-quiz" element={<Questionnaire />} /></Routes>
+          <br></br>
+          <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
+        </Form>
+       main
       </div>
   );
 }
+
 export default App;
