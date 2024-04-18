@@ -7,6 +7,7 @@ import CollapsibleNavbar from './navbar'
 import Questionnaire from './basicQuestion';
 import { BrowserRouter as HashRouter,Routes, Route} from 'react-router-dom'; // Import BrowserRouter and other necessary components
 import BasicResult from './basicresult';
+import DetailedQuestions from './DetailedQuestions';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -17,6 +18,7 @@ root.render(
      <Routes>
           <Route path="/basicQuestion" element={<Questionnaire />} />
           <Route path="/App" element={<App/>} />
+          <Route path="/DetailedQuestions" element={<DetailedQuestions/>} />
           <Route path="/basicresult" element={<BasicResult/>} />
           {/* Add more routes as needed */}
           </Routes>

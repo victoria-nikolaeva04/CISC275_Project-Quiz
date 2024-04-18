@@ -16,6 +16,7 @@ export function CollapsibleNavbar() {
           <Nav className="me-auto">
           <Nav.Link as={Link} to="/App">App</Nav.Link>
             <Nav.Link as={Link} to="/BasicQuestion">Basic Question</Nav.Link>
+            <Nav.Link as={Link} to="/DetailedQuestion">Detail Question</Nav.Link>
             <NavDropdown title="My result" id="collapsible-nav-dropdown">
               <NavDropdown.Item as={Link} to="/basicresult" >See basic results</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">See more college majors</NavDropdown.Item>
