@@ -75,13 +75,6 @@ export function DetailedQuestions(): JSX.Element {
                 </Container>
             </div>
 
-            <div className="Progress-bar">
-                <div className="Progress-14">
-                    <p> </p>
-                </div>
-                <p>Progress Bar</p>
-            </div>
-
             <div className="Question-textbox">
                 <p className="Question-textbox-text">{question}</p>
             </div>
@@ -95,7 +88,8 @@ export function DetailedQuestions(): JSX.Element {
                             type="radio"
                             name="Question1"
                             id="answer-1-a"
-                            label={<span style={{ display: 'inline-block', textAlign: 'center' }}>Crafting a compelling message and storytelling to communicate the product's unique value, helping it resonate with the target audience.</span>}
+                            label={<span style={{ display: 'inline-block', textAlign: 'center', padding: '10px' }}>
+                                Crafting a compelling message and storytelling to communicate the product's unique value, helping it resonate with the target audience.</span>}
                             inline
                             className="custom-radio"
                             onChange={() => handleAnswerSelection('Question1', 'answer-1-a')}
@@ -105,7 +99,7 @@ export function DetailedQuestions(): JSX.Element {
                             type="radio"
                             name="Question1"
                             id="answer-1-b"
-                            label={<span style={{ display: 'inline-block', textAlign: 'center' }}>Collaborating with creative teams to design visually appealing graphics, videos, and other multimedia content that capture attention and drive engagement.</span>}
+                            label={<span style={{ display: 'inline-block', textAlign: 'center', padding: '10px' }}>Collaborating with creative teams to design visually appealing graphics, videos, and other multimedia content that capture attention and drive engagement.</span>}
                             inline
                             className="custom-radio"
                             onChange={() => handleAnswerSelection('Question1', 'answer-1-b')}
@@ -118,7 +112,7 @@ export function DetailedQuestions(): JSX.Element {
                             type="radio"
                             name="Question1"
                             id="answer-1-c"
-                            label={<span style={{ display: 'inline-block', textAlign: 'center' }}>Providing strategic direction and guidance to team members, ensuring alignment with overall campaign objectives and messaging consistency across different channels.</span>}
+                            label={<span style={{ display: 'inline-block', textAlign: 'center', padding: '10px' }}>Providing strategic direction and guidance to team members, ensuring alignment with overall campaign objectives and messaging consistency across different channels.</span>}
                             inline
                             className="custom-radio"
                             onChange={() => handleAnswerSelection('Question1', 'answer-1-c')}
@@ -128,7 +122,7 @@ export function DetailedQuestions(): JSX.Element {
                             type="radio"
                             name="Question1"
                             id="answer-1-d"
-                            label={<span style={{ display: 'inline-block', textAlign: 'center' }}>Conducting market research and consumer behavior analysis to identify key insights and opportunities, informing campaign strategies and tactics for maximum impact.</span>}
+                            label={<span style={{ display: 'inline-block', textAlign: 'center', padding: '10px' }}>Conducting market research and consumer behavior analysis to identify key insights and opportunities, informing campaign strategies and tactics for maximum impact.</span>}
                             inline
                             className="custom-radio"
                             onChange={() => handleAnswerSelection('Question1', 'answer-1-d')}
@@ -166,6 +160,7 @@ export function DetailedQuestions(): JSX.Element {
                     <Row style={{ display: 'flex', marginLeft: 'auto', marginRight: 'auto', height: 'auto' }}>
                         <Form.Check
                             type="radio"
+                            width="100%"
                             name="Question2"
                             id="answer-2-c"
                             label={<span style={{ display: 'inline-block', textAlign: 'center' }}>I am committed to personal growth, continuously challenging myself to learn, evolve, striving for excellence and mastery in my craft. I believe learning is lifelong.</span>}
@@ -180,7 +175,7 @@ export function DetailedQuestions(): JSX.Element {
                             id="answer-2-d"
                             label={<span style={{ display: 'inline-block', textAlign: 'center' }}>I want to provide strategic direction and guidance to team members, ensuring completion of objectives and consistency across our projects.</span>}
                             inline
-                            className="custom-radio"
+                            className={"custom-radio"}
                             onChange={() => handleAnswerSelection('Question2', 'answer-2-d')}
                             checked={selectedAnswers.Question2 === 'answer-2-d'}
                         />
@@ -188,6 +183,14 @@ export function DetailedQuestions(): JSX.Element {
                 </Container>
                     )}
                 </div>
+
+                <div className="Progress-bar">
+                <div className="Progress-14">
+                    <p> </p>
+                </div>
+                <p>Progress Bar</p>
+            </div>
+
                 <div style={{marginBottom: '50px', marginTop: '20px'}}>
                     <Button>Get Answers</Button>
                 </div>

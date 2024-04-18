@@ -60,8 +60,9 @@
   }
   
   .Question-textbox-text {
-    padding: 20px;
-    font-size: large;
+    padding: 30px;
+    font-size: x-large;
+    text-align: center;
   }
   .Answer-choices {
     display: flex;
@@ -100,13 +101,31 @@
   
   .custom-radio {
     display: inline-block;
-    width: 50%;
+    width: 96%;
     height: 125px;
     border: 1px solid #ccc;
     padding-top: 15px;
-    margin-right: 10px;
+    margin-right: 20px;
     margin-left: 10px;
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
     border-radius: 15px;
     text-align: center;
   }
+
+  .custom-radio:hover {
+    opacity: 0.8; /* Reduce opacity on hover */
+    background-color: #f0f0f0; /* Change background color on hover */
+    transition: background-color 0.3s ease; /* Add transition for smooth background color change */
+  }
+
+
+  .custom-radio input[type="radio"]:checked + .custom-radio {
+    background-color: #99ccff; /* Change background color when selected */
+  }
+  
+  input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
