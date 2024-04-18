@@ -3,10 +3,11 @@
   }
   
   .Horizontal-questions {
-    display: flex; 
+    align-content: center;
     margin-left: 10%;
     margin-right: 10%;
     padding-top: 20px;
+    width: 100%;
   }
   
   .Question-1,
