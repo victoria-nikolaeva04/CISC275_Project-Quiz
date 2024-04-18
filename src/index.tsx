@@ -18,7 +18,7 @@ root.render(
      <Routes>
           <Route path="/basicQuestion" element={<Questionnaire />} />
           <Route path="/App" element={<App/>} />
-          <Route path="/DetailedQuestions" element={<DetailedQuestions/>} />
+          <Route path="/DetailedQuestion" element={<DetailedQuestions/>} />
           <Route path="/basicresult" element={<BasicResult/>} />
           {/* Add more routes as needed */}
           </Routes>
