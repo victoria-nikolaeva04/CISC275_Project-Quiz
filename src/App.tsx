@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
 import logo  from "./images/CISC-Logo.png";
-import simple_logo  from "./images/CISC-Footer-Logo.png";
-import github from "./images/CISC-Footer-GIT.png";
-import easy_cat  from "./images/CISC-GPS-Easy.png";
-import hard_cat from "./images/CISC-MAP-Hard.png";
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
-//import Questionnaire from './basicQuestion';
+import Questionnaire from './basicQuestion';
+import { Route, Link, Routes } from 'react-router-dom';
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
@@ -29,108 +26,49 @@ function App() {
   function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
     setKey(event.target.value);
   }
+
   return (
-    <><div className="App">
-      <header className="App-header">
-        <div className="image">
-          <img
-              src={logo}
-              alt="logo"
-              id="logo-pic"
-          />
-        </div>
-        <div className="text">
-          <h1>Career Cat-ylist Quiz</h1> 
-          <nav>
-            <button className='nav-btn'>Home</button>
-            <button className='nav-btn'>Basic Quiz</button>
-            <button className='nav-btn'>Detailed Quiz</button>
-            <button className='nav-btn'>About</button>
-            
-          </nav>
-        </div>
-      </header>
-
-      <body>
-        <div className="homepage_body">
-          <div className="homepage_quiz_section">
-            <div className="homepage_box">
-            <img
-                  src={easy_cat}
-                  alt="Easy Pic"
-                  className ="image-structure"
-              />
-
-              <h3>THE EASY ROUTE</h3>
-              <p>
-                This is the basic version of our career quiz. It consists of simple multiple choice
-                The purpose of this quiz is meant to have more generic questions with a more limited answer
-                choices. It prioritized to be answered relatively quickly and easy to answer with a quick glance.
-                This can be useful for those that already have confidence within their desired career and want
-                reassurance or need specification in what they want.
-              </p>
-            </div>
-            <Button className="homepage_buttons">Take Basic Questions</Button>
-          </div>
-
-          <div className="homepage_quiz_section">
-            <div className="homepage_box">
-            <img
-                  src={hard_cat}
-                  alt="Hard Pic"
-                  className ="image-structure"
-              />
-
-              <h3>THE JOURNEY</h3>
-              <p>
-                The Journey is meant to be more thought-provoking type of quiz. This quiz is designed to have
-                more complex and demanding questions that needs a deep reflection into your own soul to respond
-                to these questions. This is meant for those that have the time and patience. These questions more
-                reflect questions that follow more a personailty style rather than those of 'would-you-rathers' to
-                really encourage a deeper connection with the results.
-              </p>
-            </div>
-            <Button className="homepage_buttons">Take Detailed Questions</Button>
-          </div>
-        </div>
-        <br></br>
-        <br></br>
-        <br></br>
-      </body>
-
-      <footer>
-        <div className="footer_decorative">
-          <div id="logo-text-footer">
-              <img
-                src={simple_logo}
-                alt="Hard Pic"
-                className ="footer-logo"
-              />
-               <p className="team-name-footer">@SWE TEAM</p>
-          </div>
-          <a href='https://github.com/VikiNiki123/starter_helpi' className="contact-info-footer">
-            <img
-                    src={github}
-                    alt="GitHub"
-                    className ="footer-logo"
-                />
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <p>
+            Edit <code>src/App.tsx</code> and save to reload.
+          </p>
+          <a
+            className="App-link"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn React
           </a>
-        </div>
-        <div className="API_footer">
-          <Form>
-            <Form.Label>API Key: </Form.Label>
-            <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
-            <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
-          </Form>
-        </div>
-
-      </footer>
-        {/*
-           <Link to="/basic-quiz"><Button>Basic Quiz</Button></Link>
-           <Routes><Route path="/basic-quiz" element={<Questionnaire />} /></Routes>
-        */}
-        <br></br>
-    </div></>
+          <hr />
+          <br />
+          <hr></hr>
+          {/*<ClearButton></ClearButton>*/}
+          {/*<ButtonLink to={'https://www.youtube.com/watch?v=dQw4w9WgXcQ'} className={'My-button'}>Home Button</ButtonLink>*/}
+          {/*<ButtonLink to={'/'} className={'My-button'}>Detail Question</ButtonLink>*/}
+          {/*<ButtonLink to={'/Pages/BasicQuestion'} className={'My-button'}>Basic Question</ButtonLink>*/}          <hr></hr>
+          <br></br>
+          <p>
+            Team Manager: Victoria Nikolaeva
+            Team Members: Giovanna Scozzaro, Dustine Trieu, Duy Duc Tran
+          </p>
+        </header>
+        <Form>
+          <Form.Label>API Key:</Form.Label>
+          <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
+          <br />
+          <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
+        </Form>
+        <Link to="/basic-quiz"><Button>Basic Quiz</Button></Link>
+        <Routes><Route path="/basic-quiz" element={<Questionnaire />} /></Routes>
+          <br></br>
+          <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
+        </Form>
+       main
+      </div>
   );
 }
+
 export default App;
