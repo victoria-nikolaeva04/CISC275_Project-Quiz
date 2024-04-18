@@ -5,6 +5,7 @@ import github from "./images/CISC-Footer-GIT.png";
 import temp from "./images/temp_image.png";
 import './AboutMe.css';
 import { Button, Form } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 //import Questionnaire from './basicQuestion';
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
@@ -15,7 +16,7 @@ if (prevKey !== null) {
   keyData = JSON.parse(prevKey);
 }
 
-function App() {
+function AboutMe() {
   const [key, setKey] = useState<string>(keyData); //for api key input
   
   //sets the local storage item to the api key the user inputed
@@ -41,11 +42,18 @@ function App() {
         <div className="text">
           <h1>Career Cat-ylist Quiz</h1> 
           <nav>
-            <button className='nav-btn'>Home</button>
-            <button className='nav-btn'>Basic Quiz</button>
-            <button className='nav-btn'>Detailed Quiz</button>
-            <button className='nav-btn'>About</button>
-            
+            <Link to ="/homepage">
+            <Button className='nav-btn'>Home</Button>
+            </Link>
+            <Link to ="/basicQuestion">
+            <Button className='nav-btn'>Basic Quiz</Button>
+            </Link>
+            <Link to = "/DetailedQuestion">
+            <Button className='nav-btn'>Detailed Quiz</Button>
+            </Link>
+            <Link to ="/AboutMe">
+            <Button className='nav-btn'>About</Button>
+            </Link>
           </nav>
         </div>
       </header>
@@ -114,4 +122,4 @@ function App() {
     </div></>
   );
 }
-export default App;
+export default AboutMe;
