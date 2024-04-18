@@ -1,12 +1,10 @@
 import React from 'react';
 import { Container, Col, Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
-import CollapsibleNavbar from './navbar';
 import './basicresult.css';
 function BasicResult() {
   return (
     <div>
-    <CollapsibleNavbar/>
     <Container className ="result-area">
       <h1>Career Analysis</h1>
         <Col md={6}>
