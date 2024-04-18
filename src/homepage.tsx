@@ -35,7 +35,6 @@ function Homepage() {
   }
   return (
     <><div className="App">
-      <CollapsibleNavbar></CollapsibleNavbar>
       <header className="App-header">
         <div className="image">
           <img

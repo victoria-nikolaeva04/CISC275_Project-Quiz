@@ -22,6 +22,7 @@ root.render(
           <Route path="/App" element={<App/>} />
           <Route path="/DetailedQuestion" element={<DetailedQuestions/>} />
           <Route path="/basicresult" element={<BasicResult/>} />
+          <Route path="/homepage" element={<Homepage/>} />
           {/* Add more routes as needed */}
           </Routes>
   <React.StrictMode>
