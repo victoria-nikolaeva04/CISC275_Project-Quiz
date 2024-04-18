@@ -6,6 +6,7 @@ import easy_cat  from "./images/CISC-GPS-Easy.png";
 import hard_cat from "./images/CISC-MAP-Hard.png";
 import './homepage.css';
 import { Button, Form } from 'react-bootstrap';
+
 //import Questionnaire from './basicQuestion';
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
@@ -16,7 +17,7 @@ if (prevKey !== null) {
   keyData = JSON.parse(prevKey);
 }
 
-function App() {
+function Homepage() {
   const [key, setKey] = useState<string>(keyData); //for api key input
   
   //sets the local storage item to the api key the user inputed
@@ -133,4 +134,4 @@ function App() {
     </div></>
   );
 }
-export default App;
+export default Homepage;
