@@ -18,6 +18,7 @@ root.render(
   <HashRouter>
   <CollapsibleNavbar></CollapsibleNavbar>
      <Routes>
+          <Route path="/" element={<Homepage />} /> 
           <Route path="/basicQuestion" element={<Questionnaire />} />
           <Route path="/App" element={<App/>} />
           <Route path="/DetailedQuestion" element={<DetailedQuestions/>} />
