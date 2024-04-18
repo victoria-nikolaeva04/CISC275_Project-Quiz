@@ -48,17 +48,18 @@ function Homepage() {
             <Link to ="/homepage">
             <Button className='nav-btn'>Home</Button>
             </Link>
-            <Link to ="basicQuestion">
-            <button className='nav-btn'>Basic Quiz</button>
+            <Link to ="/basicQuestion">
+            <Button className='nav-btn'>Basic Quiz</Button>
             </Link>
             <Link to = "/DetailedQuestion">
-            <button className='nav-btn'>Detailed Quiz</button>
+            <Button className='nav-btn'>Detailed Quiz</Button>
             </Link>
             <Link to ="/AboutMe">
-            <button className='nav-btn'>About</button>
+            <Button className='nav-btn'>About</Button>
             </Link>
           </nav>
         </div>
+        
       </header>
 
       <body>
