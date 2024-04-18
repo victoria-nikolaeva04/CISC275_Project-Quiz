@@ -2,10 +2,6 @@ import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
-import ClearButton from './Components/ClearButton';
-import ButtonLink from './Components/ButtonLink';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Import BrowserRouter and other necessary components
-import Questionnaire from './basicQuestion';
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
@@ -30,7 +26,6 @@ function App() {
   }
 
   return (
-    <Router> 
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
@@ -49,19 +44,13 @@ function App() {
           {/*<ClearButton></ClearButton>*/}
           {/*<ButtonLink to={'https://www.youtube.com/watch?v=dQw4w9WgXcQ'} className={'My-button'}>Home Button</ButtonLink>*/}
           {/*<ButtonLink to={'/'} className={'My-button'}>Detail Question</ButtonLink>*/}
-          {/*<ButtonLink to={'/Pages/BasicQuestion'} className={'My-button'}>Basic Question</ButtonLink>*/}
-
-          <hr></hr>
+          {/*<ButtonLink to={'/Pages/BasicQuestion'} className={'My-button'}>Basic Question</ButtonLink>*/}          <hr></hr>
           <br></br>
           <p>
             Team Manager: Victoria Nikolaeva
             Team Members: Giovanna Scozzaro, Dustine Trieu, Duy Duc Tran
           </p>
         </header>
-        <Routes>
-          <Route path="/basicQuestion" element={<Questionnaire />} />
-          {/* Add more routes as needed */}
-          </Routes>
         <Form>
           <Form.Label>API Key:</Form.Label>
           <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
@@ -69,7 +58,6 @@ function App() {
           <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
         </Form>
       </div>
-    </Router>
   );
 }
 
