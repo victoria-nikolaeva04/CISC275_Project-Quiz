@@ -15,7 +15,7 @@ if (prevKey !== null) {
   keyData = JSON.parse(prevKey);
 }
 
-function App() {
+function AboutMe() {
   const [key, setKey] = useState<string>(keyData); //for api key input
   
   //sets the local storage item to the api key the user inputed
@@ -114,4 +114,4 @@ function App() {
     </div></>
   );
 }
-export default App;
+export default AboutMe;

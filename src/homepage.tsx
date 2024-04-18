@@ -6,7 +6,6 @@ import easy_cat  from "./images/CISC-GPS-Easy.png";
 import hard_cat from "./images/CISC-MAP-Hard.png";
 import './homepage.css';
 import { Button, Form } from 'react-bootstrap';
-import CollapsibleNavbar from './navbar';
 import { Link } from 'react-router-dom'; // Import BrowserRouter and other necessary components
 
 
@@ -55,9 +54,9 @@ function Homepage() {
             <Link to = "/DetailedQuestion">
             <button className='nav-btn'>Detailed Quiz</button>
             </Link>
-          
+            <Link to ="/AboutMe">
             <button className='nav-btn'>About</button>
-            
+            </Link>
           </nav>
         </div>
       </header>
