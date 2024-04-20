@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import './DetailedQuestions.css';
-import { Button, Container, Row , Col, Form} from "react-bootstrap";
+import { Button, Container, Row , Col, Form, ButtonGroup, ToggleButton} from "react-bootstrap";
 
 
 export function DetailedQuestions(): JSX.Element {
@@ -30,6 +30,21 @@ export function DetailedQuestions(): JSX.Element {
         }
     }
 
+  const [checked, setChecked] = useState(false);
+  const [radioValue, setRadioValue] = useState('1');
+
+  const answers = [
+    {
+      answers: ['Crafting a compelling message and storytelling to communicate the products unique value, helping it resonate with the target audience.', 
+      'Collaborating with creative teams to design visually appealing graphics, videos, and other multimedia content that capture attention and drive engagement.', 
+      'Providing strategic direction and guidance to team members, ensuring alignment with overall campaign objectives and messaging consistency across different channels.', 
+      'Conducting market research and consumer behavior analysis to identify key insights and opportunities, informing campaign strategies and tactics for maximum impact.']
+    },
+    ]
+    
+
+
+
     const handleAnswerSelection = (questionName: string, answerId: string) => {
         setSelectedAnswers({
             ...selectedAnswers,
@@ -43,7 +58,7 @@ export function DetailedQuestions(): JSX.Element {
         }
         */
     };
-
+      
     return (
         <div style={{ width: '100%' }}>
             <span>
@@ -81,6 +96,31 @@ export function DetailedQuestions(): JSX.Element {
 
 
             <div style={{ display: 'flex', justifyContent: 'center' }}>
+    {question === "Imagine you are assigned to a project team in which you will be creating a marketing campaign for a new product launch." && (
+        <Container style={{ width: '75%', justifyContent: 'center' }}>
+            {answers.map((answer, i) => (
+                <Row key={i} style={{ display: 'flex', marginLeft: 'auto', marginRight: 'auto', height: 'auto' }}>
+                    <Form.Check
+                        type="radio"
+                        name="Question1"
+                        id={`answer-1-${answer}`}
+                        label={<span style={{ display: 'inline-block', textAlign: 'center', padding: '10px' }}>{answer.label}</span>}
+                        inline
+                        className="custom-radio"
+                        onChange={() => handleAnswerSelection('Question1', answer)}
+                        checked={selectedAnswers.Question1 === answer}
+                    />
+                </Row>
+            ))}
+        </Container>
+    )}
+</div>
+
+
+
+
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+                
                 {question === "Imagine you are assigned to a project team in which you will be creating a marketing campaign for a new product launch. Which aspect of the project would you most enjoy focusing on?" && (
                 <Container style={{ width: '75%', justifyContent: 'center' }}>
                     <Row style={{ display: 'flex'}}>
