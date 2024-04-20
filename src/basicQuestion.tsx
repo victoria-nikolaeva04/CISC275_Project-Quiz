@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './basicQuestion.css';
+
 const questions = [
   {
     question: 'Question 1: If you have a year paid-time off and the company gives you money to pursue every interest you want, what would you choose to do with that time?',
@@ -30,40 +31,60 @@ const questions = [
     answers: ['Learn pottery', 'Learn programming', 'Travel', 'Go to workshops and make more connections', 'I do not know yet, will go with the flow', 'Learn several sports']
   },
 ];
+  // Add more questions here...
 
-const Questionnaire: React.FC = () => {
-  const [selectedAnswers, setSelectedAnswers] = useState<string[]>(Array(questions.length).fill(''));
-  // Function to handle selecting an answer
-    const handleAnswerSelection = (questionIndex: number, answerIndex: number) => {
-    const newSelectedAnswers = [...selectedAnswers];
-    newSelectedAnswers[questionIndex] = questions[questionIndex].answers[answerIndex];
-    setSelectedAnswers(newSelectedAnswers);
-  };
-
-  return (
-    <div>
-      <div className="questionnaire-container">
-        <h1 className="questionnaire-heading">Basic Questions</h1>
-        {questions.map((question, questionIndex) => (
-          <div key={questionIndex} className="question">
-            <h3 className="question-text">{question.question}</h3>
+  const Questionnaire: React.FC = () => {
+    const [selectedAnswers, setSelectedAnswers] = useState<string[]>(Array(questions.length).fill(''));
+    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  
+    const handleAnswerSelection = (answerIndex: number) => {
+      const newSelectedAnswers = [...selectedAnswers];
+      newSelectedAnswers[currentQuestionIndex] = questions[currentQuestionIndex].answers[answerIndex];
+      setSelectedAnswers(newSelectedAnswers);
+    };
+  
+    const handleNextQuestion = () => {
+      if (currentQuestionIndex < questions.length - 1) {
+        setCurrentQuestionIndex(currentQuestionIndex + 1);
+      }
+    };
+  
+    const handlePreviousQuestion = () => {
+      if (currentQuestionIndex > 0) {
+        setCurrentQuestionIndex(currentQuestionIndex - 1);
+      }
+    };
+  
+    return (
+      <div>
+        <div className="questionnaire-container">
+          <h1 className="questionnaire-heading">BASIC QUESTION</h1>
+          <div key={currentQuestionIndex} className="question">
+            <h3 className="question-text">{questions[currentQuestionIndex].question}</h3>
             <div className="answer-options">
-              {question.answers.map((answer, answerIndex) => (
+              {questions[currentQuestionIndex].answers.map((answer, answerIndex) => (
                 <button
                   key={answerIndex}
-                  onClick={() => handleAnswerSelection(questionIndex, answerIndex)}
-                  className={`answer-option ${selectedAnswers[questionIndex] === answer ? 'selected' : ''}`}
+                  onClick={() => handleAnswerSelection(answerIndex)}
+                  className={`answer-option ${selectedAnswers[currentQuestionIndex] === answer ? 'selected' : ''}`}
                 >
                   {answer}
                 </button>
               ))}
             </div>
           </div>
-        ))}
-        <button onClick={() => console.log(selectedAnswers)} className="submit-button">Submit</button>
+          {currentQuestionIndex > 0 && (
+            <button onClick={handlePreviousQuestion} className="previous-button">Previous</button>
+          )}
+          {currentQuestionIndex === questions.length - 1 && (
+            <button onClick={() => console.log(selectedAnswers)} className="submit-button">Submit</button>
+          )}
+           {currentQuestionIndex !== questions.length - 1 && (
+          <button onClick={handleNextQuestion} className="next-button">Next</button>
+        )}
+        </div>
       </div>
-    </div>
-  );
-};
-
-export default Questionnaire;
+    );
+  };
+  
+  export default Questionnaire;
