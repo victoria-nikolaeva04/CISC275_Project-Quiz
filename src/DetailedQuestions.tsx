@@ -40,7 +40,7 @@ export function DetailedQuestions(): JSX.Element {
         }
     ];
 
-    const handleAnswerSelection = (answer: string) => { // Saves answer selections
+    const handleAnswerSelection = (answer: string) => { // Saves answer selection
         setSelectedAnswers({ ...selectedAnswers, [`Question${questionIndex + 1}`]: answer });
     };
 
@@ -63,22 +63,40 @@ export function DetailedQuestions(): JSX.Element {
             </div>
 
             <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <Container style={{ width: '75%', justifyContent: 'center' }}>
-                    {questions[questionIndex].possibleAnswers.map((possibleAnswer, j) => (
-                        <Row key={j} style={{ display: 'flex', marginLeft: 'auto', marginRight: 'auto', height: 'auto' }}>
-                            <Form.Check
-                                type="radio"
-                                name="selectedAnswer"
-                                id={`answer-${j}`}
-                                label={<span style={{ display: 'inline-block', textAlign: 'center', padding: '10px' }}>{possibleAnswer}</span>}
-                                inline
-                                className="custom-radio"
-                                onChange={() => handleAnswerSelection(possibleAnswer)}
-                                checked={selectedAnswers[`Question${questionIndex + 1}`] === possibleAnswer}
-                            />
-                        </Row>
-                    ))}
-                </Container>
+            <Container style={{ width: '75%', justifyContent: 'center' }}>
+    <Row style={{ display: 'flex', marginLeft: 'auto', marginRight: 'auto', height: 'auto', width: '100%' }}>
+        {questions[questionIndex].possibleAnswers.slice(0, 2).map((possibleAnswer, j) => (
+            <Col key={j} style={{ width: '50%' }}>
+                <Form.Check
+                    type="radio"
+                    name="selectedAnswer"
+                    id={`answer-${j+2}`}
+                    label={<span style={{ display: 'inline-block', textAlign: 'center', padding: '10px' }}>{possibleAnswer}</span>}
+                    className="custom-radio"
+                    onChange={() => handleAnswerSelection(possibleAnswer)}
+                    checked={selectedAnswers[`Question${questionIndex + 1}`] === possibleAnswer}
+                />
+            </Col>
+        ))}
+    </Row>
+
+    <Row style={{ display: 'flex', marginLeft: 'auto', marginRight: 'auto', height: 'auto', width: '100%' }}>
+        {questions[questionIndex].possibleAnswers.slice(2, 4).map((possibleAnswer, j) => (
+            <Col key={j} style={{ width: '50%' }}>
+                <Form.Check
+                    type="radio"
+                    name="selectedAnswer"
+                    id={`answer-${j}`}
+                    label={<span style={{ display: 'inline-block', textAlign: 'center', padding: '10px' }}>{possibleAnswer}</span>}
+                    className="custom-radio"
+                    onChange={() => handleAnswerSelection(possibleAnswer)}
+                    checked={selectedAnswers[`Question${questionIndex + 1}`] === possibleAnswer}
+                />
+            </Col>
+        ))}
+    </Row>
+</Container>
+
             </div>
         </div>
     );
