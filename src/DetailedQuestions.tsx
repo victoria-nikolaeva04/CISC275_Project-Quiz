@@ -4,7 +4,7 @@ import { Button, Container, Row , Col, Form } from "react-bootstrap";
 
 export function DetailedQuestions(): JSX.Element {
     const [questionIndex, setQuestionIndex] = useState<number>(0);
-    const [selectedAnswers, setSelectedAnswers] = useState<{ [key: string]: string }>({});
+    const [selectedAnswers, setSelectedAnswers] = useState<{ [key: string]: string }>({}); // Dictionary implementation in state, question -> selected answer
 
     const questions = [
         {
@@ -38,10 +38,9 @@ export function DetailedQuestions(): JSX.Element {
             question: "K",
             possibleAnswers: ['Answer 1 for question 3', 'Answer 2 for question 3', 'Answer 3 for question 3', 'Answer 3 for question 2']
         }
-        // Add more question objects as needed
     ];
 
-    const handleAnswerSelection = (answer: string) => {
+    const handleAnswerSelection = (answer: string) => { // Saves answer selections
         setSelectedAnswers({ ...selectedAnswers, [`Question${questionIndex + 1}`]: answer });
     };
 
