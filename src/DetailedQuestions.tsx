@@ -64,7 +64,7 @@ export function DetailedQuestions(): JSX.Element {
 
             <div style={{ display: 'flex', justifyContent: 'center' }}>
             <Container style={{ width: '75%', justifyContent: 'center' }}>
-    <Row style={{ display: 'flex', marginLeft: 'auto', marginRight: 'auto', height: 'auto', width: '100%' }}>
+    <Row style={{ display: 'flex', height: 'auto', width: '100%' }}>
         {questions[questionIndex].possibleAnswers.slice(0, 2).map((possibleAnswer, j) => (
             <Col key={j} style={{ width: '50%' }}>
                 <Form.Check
@@ -80,7 +80,7 @@ export function DetailedQuestions(): JSX.Element {
         ))}
     </Row>
 
-    <Row style={{ display: 'flex', marginLeft: 'auto', marginRight: 'auto', height: 'auto', width: '100%' }}>
+    <Row style={{ display: 'flex', height: 'auto', width: '100%' }}>
         {questions[questionIndex].possibleAnswers.slice(2, 4).map((possibleAnswer, j) => (
             <Col key={j} style={{ width: '50%' }}>
                 <Form.Check
