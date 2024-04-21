@@ -47,7 +47,7 @@ nav{
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  background-color: #F09738;
+  /*background-color: #F09738;*/
   color: black;
   font-size: 14px;
 }
