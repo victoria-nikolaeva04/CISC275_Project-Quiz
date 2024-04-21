@@ -57,6 +57,7 @@ const questions = [
   
     return (
       <div>
+         <img className="cat-logo" alt = "con meo cute"></img>
         <div className="questionnaire-container">
           <h1 className="questionnaire-heading">BASIC QUESTION</h1>
           <div key={currentQuestionIndex} className="question">
@@ -79,10 +80,10 @@ const questions = [
           {currentQuestionIndex === questions.length - 1 && (
             <button onClick={() => console.log(selectedAnswers)} className="submit-button">Submit</button>
           )}
-           {currentQuestionIndex !== questions.length - 1 && (
-          <button onClick={handleNextQuestion} className="next-button">Next</button>
-        )}
-        </div>
+          {currentQuestionIndex !== questions.length - 1 && (
+            <button onClick={handleNextQuestion} className="next-button">Next</button>
+          )}        
+          </div>
       </div>
     );
   };
