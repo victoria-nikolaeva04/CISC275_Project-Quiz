@@ -64,6 +64,7 @@ h3{
   font-size: 25px;
 }
 
+/*
 .container{
   display: flex;
   flex-direction: row;
@@ -71,6 +72,7 @@ h3{
   padding: 10px;
   border-radius: 16px;
 }
+*/
 
 .team-image{
   flex: 1;

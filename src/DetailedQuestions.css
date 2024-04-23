@@ -1,18 +1,24 @@
 body {
-  background-color: #F2EDDA;
+  background-color: white;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .Question-row {
-    background-color:white;
+    margin-top: 20px; 
   }
+
   
   .Horizontal-questions {
-    align-content: center;
-    margin-left: 10%;
-    margin-right: 10%;
     padding-top: 20px;
+    padding-bottom: 20px;
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    border-radius: 16px;
+    background-color: #121212;
   }
+
   
   .Question-1,
   .Question-2,
@@ -35,13 +41,14 @@ body {
     margin-left: 20%;
     margin-right: 20%;
     margin-top: 2%;
-    margin-bottom: 3%;
-    background-color: #61dafb;
+    margin-bottom: 1%;
+    background-color: #F0BA66;
     height: 40vh;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 25px;
+    outline: 3px solid #121212; /* Example outline with solid style, 2px width, and #F0BA66 color */
   }
   
   .Progress-bar {
@@ -117,20 +124,16 @@ body {
   }
 
   .custom-radio:hover {
-    opacity: 0.8; /* Reduce opacity on hover */
-    background-color: #f0f0f0; /* Change background color on hover */
+    opacity: 0.9; /* Reduce opacity on hover */
+    background-color: #F0BA66; /* Change background color on hover */
     transition: background-color 0.3s ease; /* Add transition for smooth background color change */
   }
 
 
-  .custom-radio input[type="radio"]:checked + .custom-radio {
-    background-color: #99ccff; /* Change background color when selected */
-  }
   
-  /*
   input[type="radio"] {
     position: absolute;
     opacity: 0;
     pointer-events: none;
   }
-*/
+

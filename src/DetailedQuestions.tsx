@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import './DetailedQuestions.css';
+import button_image  from "./images/catbuttonAGAIN.png";
 import { Button, Container, Row , Col, Form } from "react-bootstrap";
 
 export function DetailedQuestions(): JSX.Element {
@@ -46,13 +47,15 @@ export function DetailedQuestions(): JSX.Element {
 
     return (
         <div style={{ width: '100%' }}>
-            <div className="Question-row">
-                <Container>
+            <div>
+                <Container className="Question-row">
                     <Row className="Horizontal-questions">
                         {questions.map((_, index) => (
-                            <Col className={`Question-${index + 1}`} xs={2} key={index}>
-                                <Button onClick={() => setQuestionIndex(index)}>{index + 1}</Button>
-                            </Col>
+                            <Col style={{ display: 'flex', justifyContent: 'center', backgroundImage: '{button_image}' }} className={`Question-${index + 1}`} xs={2} key={index}>
+<Button onClick={() => setQuestionIndex(index)} style={{ color: "black", backgroundColor: "white", backgroundImage: `url(${button_image})` }}>
+  {index + 1}
+</Button>
+                        </Col>
                         ))}
                     </Row>
                 </Container>
@@ -63,19 +66,21 @@ export function DetailedQuestions(): JSX.Element {
             </div>
 
             <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <Container style={{ width: '75%', justifyContent: 'center' }}>
+            <Container className = "Answer-row" style={{ width: '75%', justifyContent: 'center', display: 'flex'}}>
     <Row style={{ display: 'flex', height: 'auto', width: '100%' }}>
         {questions[questionIndex].possibleAnswers.slice(0, 2).map((possibleAnswer, j) => (
-            <Col key={j} style={{ width: '50%'}}>
-                <Form.Check
-                    type="radio"
-                    name="selectedAnswer"
-                    id={`answer-${j+2}`}
-                    label={<span style={{ display: 'inline-block', textAlign: 'center', padding: '10px' }}>{possibleAnswer}</span>}
-                    className="custom-radio"
-                    onChange={() => handleAnswerSelection(possibleAnswer)}
-                    checked={selectedAnswers[`Question${questionIndex + 1}`] === possibleAnswer}
-                />
+<Col key={j} style={{ width: '50%'}}>
+<Form.Check
+    type="radio"
+    name="selectedAnswer"
+    id={`answer-${j+2}`}
+    label={<span style={{ display: 'inline-block', textAlign: 'center', padding: '10px', backgroundColor: selectedAnswers[`Question${questionIndex + 1}`] === possibleAnswer ? '#F0BA66' : 'transparent' }}>{possibleAnswer}</span>}
+    className="custom-radio"
+    onChange={() => handleAnswerSelection(possibleAnswer)}
+    checked={selectedAnswers[`Question${questionIndex + 1}`] === possibleAnswer}
+/>
+
+
             </Col>
         ))}
     </Row>
@@ -87,15 +92,15 @@ export function DetailedQuestions(): JSX.Element {
 
 
             <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <Container style={{ width: '75%', justifyContent: 'center' }}>
+            <Container className = "Answer-row" style={{ width: '75%', justifyContent: 'center', display: 'flex'}}>
     <Row style={{ display: 'flex', height: 'auto', width: '100%' }}>
         {questions[questionIndex].possibleAnswers.slice(2, 4).map((possibleAnswer, j) => (
-            <Col key={j} style={{ width: '50%' }}>
+            <Col key={j} style={{ width: '50%', marginLeft: "1px", marginRight: "1px" }}>
                 <Form.Check
                     type="radio"
                     name="selectedAnswer"
                     id={`answer-${j}`}
-                    label={<span style={{ display: 'inline-block', textAlign: 'center', padding: '10px' }}>{possibleAnswer}</span>}
+                    label={<span style={{ display: 'inline-block', textAlign: 'center', padding: '10px', backgroundColor: selectedAnswers[`Question${questionIndex + 1}`] === possibleAnswer ? '#F0BA66' : 'transparent' }}>{possibleAnswer}</span>}
                     className="custom-radio"
                     onChange={() => handleAnswerSelection(possibleAnswer)}
                     checked={selectedAnswers[`Question${questionIndex + 1}`] === possibleAnswer}
