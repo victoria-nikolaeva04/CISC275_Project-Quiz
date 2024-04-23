@@ -10,14 +10,15 @@ export function DetailedQuestions(): JSX.Element {
     const questions = [
         {
             question: "Imagine you are assigned to a project team in which you will be creating a marketing campaign for a new product launch. Which aspect of the project would you most enjoy focusing on?",
-            possibleAnswers: ['Crafting a compelling message and storytelling to communicate the product\'s unique value, helping it resonate with the target audience.', 
+            possibleAnswers: ['Crafting a compelling message and storytelling to communicate the product\'s unique value, helping it resonate and connect with the target audience, such as in a commercial.', 
             'Collaborating with creative teams to design visually appealing graphics, videos, and other multimedia content that capture attention and drive engagement.', 
             'Providing strategic direction and guidance to team members, ensuring alignment with overall campaign objectives and messaging consistency across different channels.', 
             'Conducting market research and consumer behavior analysis to identify key insights and opportunities, informing campaign strategies and tactics for maximum impact.']
         },
         {
             question: "Describe the overarching goals, values, and aspirations that resonate with you. Consider the impact you aim to make and the principles that guide your actions and decisions.",
-            possibleAnswers: ['Answer 1 for question 2', 'Answer 2 for question 2', 'Answer 3 for question 2', 'Answer 3 for question 2']
+            possibleAnswers: ['I aspire to be a leader in my field, innovating and driving positive change, inspiring others to make a difference in the world.', 'I am driven by a desire to make an impact on society, addressing social and environmental challenges and creating sustainable future for all.', 
+            'I am committed to personal and professional growth, continuously challenging myself to learn, striving for excellence and continuous improvement.', 'I prioritize work-life balance and well-being, valuing fulfillment, happiness, and harmony in all aspects of my life. My life does not have to revolve around my career.']
         },
         {
             question: "Meow",
@@ -52,7 +53,7 @@ export function DetailedQuestions(): JSX.Element {
                     <Row className="Horizontal-questions">
                         {questions.map((_, index) => (
                             <Col style={{ display: 'flex', justifyContent: 'center', backgroundImage: '{button_image}' }} className={`Question-${index + 1}`} xs={2} key={index}>
-<Button onClick={() => setQuestionIndex(index)} style={{ color: "black", backgroundColor: "white", backgroundImage: `url(${button_image})` }}>
+<Button onClick={() => setQuestionIndex(index)} style={{ color: "black", backgroundColor: "#F4A2A2", backgroundImage: `url(${button_image})` }}>
   {index + 1}
 </Button>
                         </Col>

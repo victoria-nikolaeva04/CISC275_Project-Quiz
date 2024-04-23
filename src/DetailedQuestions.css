@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 body {
-  background-color: white;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color:#F2EDDA;
+  font-family: 'Roboto';
 }
 
 .Question-row {
@@ -16,7 +18,6 @@ body {
     flex-direction: row;
     padding: 10px;
     border-radius: 16px;
-    background-color: #121212;
   }
 
   
@@ -42,13 +43,13 @@ body {
     margin-right: 20%;
     margin-top: 2%;
     margin-bottom: 1%;
-    background-color: #F0BA66;
+    background-color: #FAC264;
     height: 40vh;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 25px;
-    outline: 3px solid #121212; /* Example outline with solid style, 2px width, and #F0BA66 color */
+    outline: 3px solid #FF914D; /* Example outline with solid style, 2px width, and #F0BA66 color */
   }
   
   .Progress-bar {
@@ -125,8 +126,10 @@ body {
 
   .custom-radio:hover {
     opacity: 0.9; /* Reduce opacity on hover */
-    background-color: #F0BA66; /* Change background color on hover */
+    background-color: #F4A2A2; /* Change background color on hover */
     transition: background-color 0.3s ease; /* Add transition for smooth background color change */
+    outline: 3px solid #f57474; /* Example outline with solid style, 2px width, and #F0BA66 color */
+
   }
 
 
