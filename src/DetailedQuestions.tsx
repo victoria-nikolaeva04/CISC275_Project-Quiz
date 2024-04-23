@@ -66,7 +66,7 @@ export function DetailedQuestions(): JSX.Element {
             <Container style={{ width: '75%', justifyContent: 'center' }}>
     <Row style={{ display: 'flex', height: 'auto', width: '100%' }}>
         {questions[questionIndex].possibleAnswers.slice(0, 2).map((possibleAnswer, j) => (
-            <Col key={j} style={{ width: '50%' }}>
+            <Col key={j} style={{ width: '50%'}}>
                 <Form.Check
                     type="radio"
                     name="selectedAnswer"
@@ -79,7 +79,15 @@ export function DetailedQuestions(): JSX.Element {
             </Col>
         ))}
     </Row>
+</Container>
 
+
+
+            </div>
+
+
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <Container style={{ width: '75%', justifyContent: 'center' }}>
     <Row style={{ display: 'flex', height: 'auto', width: '100%' }}>
         {questions[questionIndex].possibleAnswers.slice(2, 4).map((possibleAnswer, j) => (
             <Col key={j} style={{ width: '50%' }}>
@@ -97,8 +105,13 @@ export function DetailedQuestions(): JSX.Element {
     </Row>
 </Container>
 
+
+
             </div>
         </div>
+
+        
+        
     );
 }
 
