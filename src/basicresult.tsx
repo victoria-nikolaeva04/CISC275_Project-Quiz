@@ -1,24 +1,14 @@
 import React from 'react';
-import { Container, Col, Card } from 'react-bootstrap';
+import { Container, Row, Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import './basicresult.css';
 function BasicResult() {
   return (
     <div>
-    <Container className ="result-area">
-      <h1>Career Analysis</h1>
-        <Col md={6}>
-          <Card>
-            <Card.Body>
-              <Card.Title>Quiz Result Analysis</Card.Title>
-              <Card.Text>
-                Analyzing your career quiz result...
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col md={6}>
-          <Card>
+    <Container className ="job-and-salary-area">
+        <Row md={6}>
+          <Card className="salary">
+            <img className="cat-logo" alt="con meo"></img>
             <Card.Body>
               <Card.Title>Average Salaries</Card.Title>
               <Card.Text>
@@ -26,7 +16,7 @@ function BasicResult() {
               </Card.Text>
             </Card.Body>
           </Card>
-          <Card>
+          <Card className="job">
             <Card.Body>
               <Card.Title>Available Jobs</Card.Title>
               <Card.Text>
@@ -34,7 +24,7 @@ function BasicResult() {
               </Card.Text>
             </Card.Body>
           </Card>
-        </Col>
+        </Row>
 
     </Container>
     </div>

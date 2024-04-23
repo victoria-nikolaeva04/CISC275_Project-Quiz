@@ -8,8 +8,8 @@ import { Link } from 'react-router-dom'; // Import BrowserRouter and other neces
 
 export function CollapsibleNavbar() {
   return (
-    <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
-      <Container>
+    <Navbar collapseOnSelect expand="lg" id = "vertical" className="bg-body-tertiary" style={{color: '#0f14b7'}}>
+      <Container id="container">
         <Navbar.Brand as={Link} to="/homepage">Career Quiz</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
