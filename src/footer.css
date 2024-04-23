@@ -1,0 +1,39 @@
+footer{
+    background-color:#68BFD6;
+    display: flex;
+    flex-direction: row;
+    color: whitesmoke;
+    font-family: 'Minecraft2';
+    padding: 10px;
+    justify-content: space-evenly;
+}
+
+.footer-logo .footer-API .footer-gitHub{
+    text-align: center;
+}
+
+.footer-logo .footer-gitHub{
+    width: 90px;
+}
+
+.footer-API{
+    width: 100%;
+    margin: 7px 42% 5px 42%;
+    flex-grow: 2;
+}
+
+.Submit-Button {
+    margin-top: 20px;
+    margin-left: 5px;
+    padding: 10px 15px;
+    font-size: 12px;
+    background-color: #F09738;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.Submit-Button:hover{
+    background-color: #EE6B2C;
+}

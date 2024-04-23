@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import easy_cat  from "./images/Lying_down_Calico_Cat_with_Red_Collar.webp";
 import hard_cat from "./images/Calico_Cat.webp";
 import './App.css';
+import Footer from './footer';
 import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom'; // Import BrowserRouter and other necessary components
 
@@ -59,7 +60,7 @@ const Homepage: React.FC = () => {
             />
             </div>
 
-            <Button className="homepage_buttons">Take Basic Questions</Button>
+            <Button className="homepage-buttons">Take Basic Questions</Button>
           </div>
 
           <div className="homepage-quiz-section">
@@ -79,10 +80,11 @@ const Homepage: React.FC = () => {
                     className ="image-structure"
                 />
               </div>
-            <Button className="homepage_buttons">Take Detailed Questions</Button>
+            <Button className="homepage-buttons">Take Detailed Questions</Button>
           </div>
         </div>
       </body>
+      <Footer></Footer>
     </div></>
   );
 }

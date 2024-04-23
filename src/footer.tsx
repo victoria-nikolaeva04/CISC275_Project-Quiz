@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import simple_logo  from "./images/CISC-Footer-Logo.png";
 import github from "./images/CISC-Footer-GIT.png";
 import { Button, Form } from 'react-bootstrap';
+import './footer.css';
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
@@ -26,8 +27,8 @@ function Footer() {
   }
   return(
     <footer>
-        <div className="footer_decorative">
-          <div id="logo-text-footer">
+        <div className="footer">
+          <div id="footer-logo">
               <img
                 src={simple_logo}
                 alt="Hard Pic"
@@ -35,23 +36,25 @@ function Footer() {
               />
                <p className="team-name-footer">@SWE TEAM</p>
           </div>
-          <a href='https://github.com/VikiNiki123/starter_helpi' className="contact-info-footer">
-            <img
-                    src={github}
-                    alt="GitHub"
-                    className ="footer-logo"
-                />
-          </a>
-        </div>
-        <div className="API_footer">
+        
+        <div className="footer-API">
           <Form>
             <Form.Label>API Key: </Form.Label>
             <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
             <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
           </Form>
         </div>
-
-      </footer>
+            <div className='footer-gitHub'>
+                <a href='https://github.com/VikiNiki123/starter_helpi' className="contact-info-footer">
+                    <img
+                        src={github}
+                        alt="GitHub"
+                        className ="footer-logo"
+                    />
+                </a>
+            </div>
+        </div>
+    </footer>
   );
 }
 export default Footer;
