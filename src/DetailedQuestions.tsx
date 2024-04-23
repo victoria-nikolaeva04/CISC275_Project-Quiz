@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import './DetailedQuestions.css';
 import button_image  from "./images/catbuttonAGAIN.png";
+import cat_header  from "./images/cat-header-box.png";
+
 import { Button, Container, Row , Col, Form } from "react-bootstrap";
 
 export function DetailedQuestions(): JSX.Element {
@@ -48,6 +50,10 @@ export function DetailedQuestions(): JSX.Element {
 
     return (
         <div style={{ width: '100%' }}>
+
+<img className="Cat-header" alt="Cat header"></img>
+
+
             <div>
                 <Container className="Question-row">
                     <Row className="Horizontal-questions">
@@ -60,7 +66,7 @@ export function DetailedQuestions(): JSX.Element {
                         ))}
                     </Row>
                 </Container>
-            </div>
+            </div>        
 
             <div className="Question-textbox">
                 <p className="Question-textbox-text">{questions[questionIndex].question}</p>
@@ -75,7 +81,7 @@ export function DetailedQuestions(): JSX.Element {
     type="radio"
     name="selectedAnswer"
     id={`answer-${j+2}`}
-    label={<span style={{ display: 'inline-block', textAlign: 'center', padding: '10px', backgroundColor: selectedAnswers[`Question${questionIndex + 1}`] === possibleAnswer ? '#F0BA66' : 'transparent' }}>{possibleAnswer}</span>}
+    label={<span style={{ display: 'inline-block', textAlign: 'center', padding: '10px', backgroundColor: selectedAnswers[`Question${questionIndex + 1}`] === possibleAnswer ? '#f1c4c4' : 'transparent' }}>{possibleAnswer}</span>}
     className="custom-radio"
     onChange={() => handleAnswerSelection(possibleAnswer)}
     checked={selectedAnswers[`Question${questionIndex + 1}`] === possibleAnswer}
@@ -101,7 +107,7 @@ export function DetailedQuestions(): JSX.Element {
                     type="radio"
                     name="selectedAnswer"
                     id={`answer-${j}`}
-                    label={<span style={{ display: 'inline-block', textAlign: 'center', padding: '10px', backgroundColor: selectedAnswers[`Question${questionIndex + 1}`] === possibleAnswer ? '#F0BA66' : 'transparent' }}>{possibleAnswer}</span>}
+                    label={<span style={{ display: 'inline-block', textAlign: 'center', padding: '10px', backgroundColor: selectedAnswers[`Question${questionIndex + 1}`] === possibleAnswer ? '#f1c4c4' : 'transparent' }}>{possibleAnswer}</span>}
                     className="custom-radio"
                     onChange={() => handleAnswerSelection(possibleAnswer)}
                     checked={selectedAnswers[`Question${questionIndex + 1}`] === possibleAnswer}

@@ -122,16 +122,24 @@ body {
     margin-bottom: 10px;
     border-radius: 15px;
     text-align: center;
+    background-color: #F4A2A2;
   }
 
   .custom-radio:hover {
     opacity: 0.9; /* Reduce opacity on hover */
     background-color: #F4A2A2; /* Change background color on hover */
     transition: background-color 0.3s ease; /* Add transition for smooth background color change */
-    outline: 3px solid #f57474; /* Example outline with solid style, 2px width, and #F0BA66 color */
+    outline: 3px solid #f1c4c4; /* Example outline with solid style, 2px width, and #F0BA66 color */
+
+  }
+  .custom-radio.selected{
+    background-color: #000 !important;
 
   }
 
+ custom-radio form-check {
+  background-color: #61dafb;
+ }
 
   
   input[type="radio"] {
@@ -140,3 +148,10 @@ body {
     pointer-events: none;
   }
 
+
+  .Cat-header {
+    content: url('images/cat-header-box.png');
+    max-width: 500px;
+    position: relative;
+    margin-left: 36%;
+  }
