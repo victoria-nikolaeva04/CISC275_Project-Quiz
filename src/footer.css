@@ -6,6 +6,7 @@ footer{
     font-family: 'Minecraft2';
     padding: 10px;
     justify-content: space-evenly;
+    align-items: center;
 }
 
 .footer-logo .footer-API .footer-gitHub{
