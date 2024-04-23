@@ -1,5 +1,5 @@
 .navbar.bg-body-tertiary {
-    background-color: #0f14b7!important;
+    background-color: #68BFD6!important;
     padding: 18px 0 !important;
   }
   
@@ -19,8 +19,9 @@
     font-weight: 300;
     font-style: normal;
   }
+  
   #container{
-    background-color:#0f14b7 !important;
+    background-color:#68BFD6 !important;
   }
   
   .navbar-nav .nav-link:hover,
@@ -72,4 +73,8 @@
   }
   .navbar-dropdown{
     background-color:#000;
+  }
+
+  #logo-pic{
+    width: 25%;
   }

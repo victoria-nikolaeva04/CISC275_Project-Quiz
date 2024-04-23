@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import logo  from "./images/CISC-Logo.png";
 import simple_logo  from "./images/CISC-Footer-Logo.png";
 import github from "./images/CISC-Footer-GIT.png";
-import easy_cat  from "./images/CISC-GPS-Easy.png";
-import hard_cat from "./images/CISC-MAP-Hard.png";
-import './homepage.css';
+import easy_cat  from "./images/Lying_down_Calico_Cat_with_Red_Collar.webp";
+import hard_cat from "./images/Calico_Cat.webp";
+import './App.css';
 import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom'; // Import BrowserRouter and other necessary components
 
@@ -34,6 +33,7 @@ function Homepage() {
   }
   return (
     <><div className="App">
+      {/*
       <header className="App-header">
         <div className="image">
           <img
@@ -43,7 +43,7 @@ function Homepage() {
           />
         </div>
         <div className="text">
-          <h1>Career Cat-ylist Quiz</h1> 
+          <h1>Cat-ylist Career</h1> 
           <nav>
             <Link to ="/homepage">
             <Button className='nav-btn'>Home</Button>
@@ -59,8 +59,8 @@ function Homepage() {
             </Link>
           </nav>
         </div>
-        
       </header>
+  */}
 
       <body>
         <div className="homepage_body">
@@ -72,7 +72,7 @@ function Homepage() {
                   className ="image-structure"
               />
 
-              <h3>THE EASY ROUTE</h3>
+              <h3 className='heading'>THE EASY ROUTE</h3>
               <p>
                 This is the basic version of our career quiz. It consists of simple multiple choice
                 The purpose of this quiz is meant to have more generic questions with a more limited answer
@@ -92,7 +92,7 @@ function Homepage() {
                   className ="image-structure"
               />
 
-              <h3>THE JOURNEY</h3>
+              <h3 className='heading'>THE JOURNEY</h3>
               <p>
                 The Journey is meant to be more thought-provoking type of quiz. This quiz is designed to have
                 more complex and demanding questions that needs a deep reflection into your own soul to respond
