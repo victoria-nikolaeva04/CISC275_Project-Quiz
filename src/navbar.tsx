@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import logo  from "./images/CISC-Logo.png";
+import catHeader from "./images/cat-header-box.png"
 import './navbar.css'
 import { Link } from 'react-router-dom'; // Import BrowserRouter and other necessary components
 
@@ -10,7 +11,14 @@ export function CollapsibleNavbar() {
   return (
     <Navbar collapseOnSelect expand="lg" id = "vertical" className="bg-body-tertiary" style={{color: '#0f14b7'}}>
       <Container id="container">
-        <Navbar.Brand as={Link} to="/homepage">Cat-ylist Career</Navbar.Brand>
+        <div className="cat-header-img">
+          <img
+              src={catHeader} 
+              alt="cat-header"
+              id="cat-header"
+          />
+          <Navbar.Brand as={Link} to="/homepage">Cat-ylist Career</Navbar.Brand>
+        </div>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
@@ -19,15 +27,15 @@ export function CollapsibleNavbar() {
             <Nav.Link as={Link} to="/AboutMe">About Me</Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Item>
+          </Nav>
+        </Navbar.Collapse>   
+        <Nav.Item className='navbar-item'>
               <img
-                src={logo}
+                src={logo} 
                 alt="logo"
                 id="logo-pic"
               />
-            </Nav.Item>
-          </Nav>
-        </Navbar.Collapse>   
+      </Nav.Item>
       </Container>
     </Navbar>
   );

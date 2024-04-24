@@ -15,6 +15,7 @@
 }
 
 .homepage-body{
+  background-color: #F2EDDA;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -73,3 +74,41 @@
 .homepage-buttons:hover{
   background-color: #F4A2A2;
 }
+
+@media screen and (max-width: 910px){
+  .homepage-body{
+    display: flex;
+    flex-direction: column;
+    background-color: #F2EDDA;
+    justify-content: space-evenly;
+    margin: 5%;
+  }
+
+  .homepage-quiz-section{
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    margin-left: calc(20% - 2vw);
+    margin-right: calc(20% - 2vw);
+  }
+
+  .homepage-box{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 25vw;
+    padding: 20vw;
+    box-shadow: 3px 5px 10px grey;
+  }
+
+  .homepage-buttons{
+    max-width: 100%;
+    margin-top: 20px;
+    margin-bottom: 2vh;
+    margin-left: calc(25% - 2vw);
+    margin-right: calc(0.5% - 2vw);
+  }
+}
+

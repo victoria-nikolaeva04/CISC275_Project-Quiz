@@ -10,7 +10,9 @@ footer{
 }
 
 .footer-logo .footer-API .footer-gitHub{
+    display: flexbox;
     text-align: center;
+    justify-content: space-evenly;
 }
 
 .footer-logo .footer-gitHub{
