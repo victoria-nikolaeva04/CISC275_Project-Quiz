@@ -36,7 +36,7 @@
 
 .homepage-box{
   background-color: #FF914D;
-  box-shadow: 3px 5px 10px rgba(222, 100, 0, 0.801);
+  box-shadow: 3px 5px 10px rgba(191, 80, 0, 0.801);
   padding: 20px;
   border-radius: 16px;
   position: relative;
@@ -50,27 +50,6 @@
     justify-content: space-evenly;
     margin: 5%;
   }
-  
-  .homepage-body .homepage-quiz-section{
-    flex: 1;
-    padding: 20px;
-  }
-  
-  .homepage-quiz-section{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    margin: 0px 5vw 0px 5vw;
-  }
-  
-  .homepage-box{
-    background-color: #FF914D;
-    box-shadow: 3px 5px 10px rgba(222, 100, 0, 0.801);
-    padding: 20px;
-    border-radius: 16px;
-    position: relative;
-  }
-
   .homepage-buttons{
     max-width: 100%;
     margin-top: 20px;
@@ -80,7 +59,6 @@
   }
 
 }
-
 
 .image-easy{
   content: '';
