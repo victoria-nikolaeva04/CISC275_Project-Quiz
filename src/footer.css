@@ -1,29 +1,38 @@
+/* Import alien fonts */
+@font-face { font-family: Minecraft; src: url('/src/fonts/Minecraft.ttf'); } 
+@font-face { font-family: Minecraft2; src: url('/src/fonts/easvhs.ttf'); } 
+
 footer{
     background-color:#68BFD6;
+    height: 50%;
+    text-align: center;
+    font-family: 'Minecraft2';
+    color: whitesmoke;
+    
+  }
+  
+  .footer-logo{
+    width: 20%;
+  }
+  
+  .footer-decorative{
+    display: flex;
+  }
+  
+  #logo-text-footer{
     display: flex;
     flex-direction: row;
-    color: whitesmoke;
-    font-family: 'Minecraft2';
-    padding: 10px;
-    justify-content: space-evenly;
     align-items: center;
-}
-
-.footer-logo .footer-API .footer-gitHub{
-    display: flexbox;
-    text-align: center;
-    justify-content: space-evenly;
-}
-
-.footer-logo .footer-gitHub{
-    width: 90px;
-}
-
-.footer-API{
-    width: 100%;
-    margin: 7px 42% 5px 42%;
-    flex-grow: 2;
-}
+    margin-left: 6px;
+  }
+  
+  .contact-info-footer{
+    width:100%;
+    height: auto;
+    text-align:right;
+    margin-top: 10px;
+    margin-right: 10px;
+  }
 
 .Submit-Button {
     margin-top: 20px;
@@ -39,4 +48,10 @@ footer{
 
 .Submit-Button:hover{
     background-color: #EE6B2C;
+}
+
+.API-form{
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
 }

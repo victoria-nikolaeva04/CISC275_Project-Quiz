@@ -27,34 +27,32 @@ function Footer() {
   }
   return(
     <footer>
-        <div className="footer">
-          <div id="footer-logo">
-              <img
-                src={simple_logo}
-                alt="Hard Pic"
+    <div className="footer-decorative">
+      <div id="logo-text-footer">
+          <img
+            src={simple_logo}
+            alt="small-logo"
+            className ="footer-logo"
+          />
+           <p className="team-name-footer">@SWE TEAM</p>
+      </div>
+      <a href='https://github.com/VikiNiki123/starter_helpi' className="contact-info-footer">
+        <img
+                src={github}
+                alt="GitHub"
                 className ="footer-logo"
-              />
-               <p className="team-name-footer">@SWE TEAM</p>
-          </div>
-        
-        <div className="footer-API">
-          <Form>
-            <Form.Label>API Key: </Form.Label>
-            <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
-            <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
-          </Form>
-        </div>
-            <div className='footer-gitHub'>
-                <a href='https://github.com/VikiNiki123/starter_helpi' className="contact-info-footer">
-                    <img
-                        src={github}
-                        alt="GitHub"
-                        className ="footer-logo"
-                    />
-                </a>
-            </div>
-        </div>
-    </footer>
+            />
+      </a>
+    </div>
+    <div className="API-footer">
+      <Form className="API-form">
+        <Form.Label>API Key: </Form.Label>
+        <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
+        <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
+      </Form>
+    </div>
+
+  </footer>
   );
 }
 export default Footer;
