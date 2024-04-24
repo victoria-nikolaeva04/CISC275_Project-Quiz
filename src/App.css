@@ -36,20 +36,70 @@
 
 .homepage-box{
   background-color: #FF914D;
-  box-shadow: 3px 5px 10px grey;
+  box-shadow: 3px 5px 10px rgba(222, 100, 0, 0.801);
   padding: 20px;
   border-radius: 16px;
   position: relative;
 }
 
-.image-structure{
+@media screen and (max-width: 800px){
+  .homepage-body{
+    background-color: #F2EDDA;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 5%;
+  }
+  
+  .homepage-body .homepage-quiz-section{
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .homepage-quiz-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 0px 5vw 0px 5vw;
+  }
+  
+  .homepage-box{
+    background-color: #FF914D;
+    box-shadow: 3px 5px 10px rgba(222, 100, 0, 0.801);
+    padding: 20px;
+    border-radius: 16px;
+    position: relative;
+  }
+
+  .homepage-buttons{
+    max-width: 100%;
+    margin-top: 20px;
+    margin-bottom: 2vh;
+    margin-left: calc(25% - 2vw);
+    margin-right: calc(0.5% - 2vw);
+  }
+
+}
+
+
+.image-easy{
   content: '';
   display: block;
-  width: 50px;
+  width: 25%;
   height: auto;
   position: absolute;
-  bottom: -50px;
-  right: -68px;
+  bottom: -25px;
+  right: -60px;
+}
+
+.image-hard{
+  content: '';
+  display: block;
+  width: 25%;
+  height: auto;
+  position: absolute;
+  bottom: -30px;
+  right: -70px;
 }
 
 .homepage-buttons{
@@ -73,42 +123,5 @@
 
 .homepage-buttons:hover{
   background-color: #F4A2A2;
-}
-
-@media screen and (max-width: 910px){
-  .homepage-body{
-    display: flex;
-    flex-direction: column;
-    background-color: #F2EDDA;
-    justify-content: space-evenly;
-    margin: 5%;
-  }
-
-  .homepage-quiz-section{
-    display: flex;
-    flex-direction: column;
-    max-width: 50%;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
-    margin-left: calc(20% - 2vw);
-    margin-right: calc(20% - 2vw);
-  }
-
-  .homepage-box{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    width: 25vw;
-    padding: 20vw;
-    box-shadow: 3px 5px 10px grey;
-  }
-
-  .homepage-buttons{
-    max-width: 100%;
-    margin-top: 20px;
-    margin-bottom: 2vh;
-    margin-left: calc(25% - 2vw);
-    margin-right: calc(0.5% - 2vw);
-  }
 }
 

@@ -4,11 +4,11 @@
 
 footer{
     background-color:#68BFD6;
-    height: 50%;
     padding: 4px;
     text-align: center;
     font-family: 'Minecraft2';
     color: whitesmoke;
+    bottom: 0;
     /*
     margin-left: 50px;
     margin-right: 50px;
@@ -33,9 +33,6 @@ footer{
     margin-left: 15px;
   }
   
-  .contact-info-footer{
-    
-  }
 
 .submit-Button {
     margin-top: 20px;
