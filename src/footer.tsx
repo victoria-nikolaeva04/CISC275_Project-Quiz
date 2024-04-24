@@ -27,15 +27,20 @@ function Footer() {
   }
   return(
     <footer>
-    <div className="footer-decorative">
       <div id="logo-text-footer">
           <img
             src={simple_logo}
             alt="small-logo"
             className ="footer-logo"
           />
-           <p className="team-name-footer">@SWE TEAM</p>
-      </div>
+      <div className="API-footer">
+        <Form className="API-form">
+            <Form.Label>API Key: </Form.Label>
+            <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
+            <Button className="submit-Button" onClick={handleSubmit}>Submit</Button>
+        </Form>
+     </div>
+      
       <a href='https://github.com/VikiNiki123/starter_helpi' className="contact-info-footer">
         <img
                 src={github}
@@ -44,13 +49,7 @@ function Footer() {
             />
       </a>
     </div>
-    <div className="API-footer">
-      <Form className="API-form">
-        <Form.Label>API Key: </Form.Label>
-        <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
-        <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
-      </Form>
-    </div>
+    
 
   </footer>
   );

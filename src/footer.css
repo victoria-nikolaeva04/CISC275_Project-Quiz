@@ -18,7 +18,7 @@ footer{
   }
   
   .footer-logo{
-    width: 20%;
+    width: 100px;
   }
   
   .footer-decorative{
@@ -29,18 +29,15 @@ footer{
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-left: 6px;
+    justify-content: space-between;
+    margin-left: 15px;
   }
   
   .contact-info-footer{
-    width:100%;
-    height: auto;
-    text-align:right;
-    margin-top: 10px;
-    margin-right: 10px;
+    
   }
 
-.Submit-Button {
+.submit-Button {
     margin-top: 20px;
     margin-left: 5px;
     padding: 10px 15px;
@@ -52,12 +49,10 @@ footer{
     cursor: pointer;
 }
 
-.Submit-Button:hover{
+.submit-Button:hover{
     background-color: #EE6B2C;
 }
 
 .API-form{
-    width: 50%;
-    margin-left: 25%;
-    margin-right: 25%;
+    
 }

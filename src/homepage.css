@@ -168,14 +168,7 @@ h3{
   margin-right: auto;
 }
 
-footer{
-  background-color:#68BFD6;
-  height: 100%;
-  padding: 15px;
-  text-align: center;
-}
-
-.footer-logo{
+.footer_logo{
   width: 80px;
 }
 
@@ -183,14 +176,14 @@ footer{
   display: flex;
 }
 
-#logo-text-footer{
+#logo_text_footer{
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-left: 6px;
 }
 
-.contact-info-footer{
+.contact_info_footer{
   width:100%;
   height: auto;
   text-align:right;

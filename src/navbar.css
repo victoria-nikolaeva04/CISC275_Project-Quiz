@@ -107,4 +107,9 @@
     width: 35%;
     margin-right: calc(25vw - 5%);
     margin-left : calc(10vw - 5%);
+    width:100%;
+    height: auto;
+    text-align:right;
+    margin-top: 10px;
+    margin-right: 10px;
   }
