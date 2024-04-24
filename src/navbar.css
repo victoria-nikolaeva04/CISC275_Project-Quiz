@@ -6,19 +6,6 @@
     background-color: #f7caf2 !important;
     padding: 18px 0 !important;
   }
-
-.cat-header-img{
-  position: relative;
-  text-align: baseline;
-  color: white;
-  height: auto;
-  
-}
-
-#cat-header{
-  width: 120%;
-  margin-top: -35px;
-}
   
 .navbar-brand {
     color: #fff !important;
@@ -27,9 +14,9 @@
     font-style: normal;
     position: absolute;
     top: 55%;
-    left: 65%;
+    left: 15%;
     transform: translate(-50%, -50%);
-    
+    margin-left: 10px;
   }
   
 .navbar-nav .nav-link {
@@ -41,9 +28,13 @@
     font-weight: 300;
     font-style: bold;
   }
+
+  .nav-link{
+    margin: 20%;
+    font-style: bold;
+  }
   
   #container{
-    background-color: #f7caf2!important;
     padding-left: 50px;
     padding-right: 50px;
     display: flex;
@@ -53,19 +44,6 @@
   .navbar-nav .nav-link:hover,
   .navbar-nav .nav-link.active {
     opacity: 1;
-  }
-  
-  .social-icon a {
-    width: 42px;
-    height: 42px;
-    background: rgba(217, 217, 217, 0.1);
-    display: inline-flex;
-    border-radius: 50%;
-    margin-right: 6px;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
-    border: 1px solid rgba(255, 255, 255, 0.5);
   }
   
   .navbar-text button {
@@ -101,12 +79,12 @@
     background-color:#000;
   }
 
-  #logo-pic{
+  .logo{
     display: flex;
     flex-direction: row;
-    width: 22%;
-    margin-right: calc(25vw - 5%);
-    margin-left : calc(10vw - 5%);
+    width: 25%;
+    /*margin-right: calc(25vw - 5%);*/
+    margin-left : 80%;
     height: auto;
-    text-align:right;
+    /*text-align:right;*/
   }
