@@ -10,6 +10,7 @@ import { BrowserRouter as HashRouter,Routes, Route} from 'react-router-dom'; // 
 import BasicResult from './basicresult';
 import DetailedQuestions from './DetailedQuestions';
 import AboutMe from './AboutMe';
+import Result from './result';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -25,6 +26,7 @@ root.render(
           <Route path="/basicresult" element={<BasicResult/>} />
           <Route path="/homepage" element={<Homepage/>} />
           <Route path="/AboutMe" element={<AboutMe/>} />
+          <Route path="/result" element={<Result/>} />
           {/* Add more routes as needed */}
           </Routes>
   <React.StrictMode>
