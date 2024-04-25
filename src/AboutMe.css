@@ -7,6 +7,22 @@
   background-color: #F2EDDA;
 }
 
+.AboutMe-container{
+  margin-left: 15%;
+  margin-right: 15%;
+}
+  /*display: flex;
+  flex-direction: row;
+}
+
+.team-container{
+
+}
+
+.card-collection{
+
+}*/
+
 .AboutMe-heading{
   font-family: 'Minecraft';
   color: #F4A2A2;
@@ -45,15 +61,17 @@
 /* Display the columns below each other instead of side by side on small screens */
 @media screen and (max-width: 910px) {
   .column {
-    width: 50%;
+    width: 75%;
     display: block;
-    margin-left:25%;
+    margin-left:15%;
   }
 }
 
 /* Add some shadows to create a card effect */
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: #FAC264;
+  color: black;
 }
 
 /* Some left and right padding inside the container */
@@ -69,6 +87,6 @@
 }
 
 .title-position {
-  color: grey;
+  color: rgb(255, 255, 255);
   font-style: italic;
 }

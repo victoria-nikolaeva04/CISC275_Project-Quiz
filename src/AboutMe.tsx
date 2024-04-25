@@ -9,17 +9,20 @@ const AboutMe: React.FC = () => {
       <br></br>
       <br></br>
       <div className="AboutMe-container">
-        <h3 className="AboutMe-heading">Meet the Team!</h3>
-        <p className="AboutMe-text">
-          A cohesive and dynamic four-person team can be a powerful force within an organization. 
-          Each member brings unique skills, experiences, and perspectives to the table, contributing 
-          to the team's overall success. With clear communication channels and a shared vision, they 
-          collaborate efficiently, leveraging their individual strengths to tackle complex challenges 
-          and achieve collective goals. The team's diversity fosters creativity and innovation, leading
-          to well-rounded solutions and continuous improvement. Through mutual support, trust, and 
-          effective leadership, this team cultivates a positive work environment where everyone feels 
-          valued and motivated, paving the way for sustained growth and success."
-        </p>
+        <div className="team-container">
+          <h3 className="AboutMe-heading">Meet the Team!</h3>
+          <p className="AboutMe-text">
+            A cohesive and dynamic four-person team can be a powerful force within an organization. 
+            Each member brings unique skills, experiences, and perspectives to the table, contributing 
+            to the team's overall success. With clear communication channels and a shared vision, they 
+            collaborate efficiently, leveraging their individual strengths to tackle complex challenges 
+            and achieve collective goals. The team's diversity fosters creativity and innovation, leading
+            to well-rounded solutions and continuous improvement. Through mutual support, trust, and 
+            effective leadership, this team cultivates a positive work environment where everyone feels 
+            valued and motivated, paving the way for sustained growth and success."
+          </p>
+        </div>
+        <div className="card-collection">
         <div className="row">
           <div className="column">
             <div className="card">
@@ -81,6 +84,7 @@ const AboutMe: React.FC = () => {
               <p className="title-position">Router Guy</p>
               <p>Some text that describes me lorem ipsum ipsum lorem.</p>
               <p>example@example.com</p>
+            </div>
             </div>
           </div>
         </div>
