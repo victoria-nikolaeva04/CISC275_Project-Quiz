@@ -11,7 +11,7 @@ export function CollapsibleNavbar() {
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand as={Link} to="/homepage">Career Quiz</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/homepage">⚞ Cat-ylist Quiz ⚟</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
