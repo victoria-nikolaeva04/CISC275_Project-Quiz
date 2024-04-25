@@ -92,8 +92,7 @@ if (prevKey !== null) {
       } catch (error) {
         console.error('Error in OpenAI integration:', error);
       }
-    };
-    
+    };    
     return (
       <div>
         <img className="cat-logo" alt="con meo cute" />
