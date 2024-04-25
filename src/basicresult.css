@@ -26,6 +26,7 @@
 }
 .cat-logo2 {
     content: url('images/calico_cat_sitting.webp');
+    content: url('/src/images/calico_cat_sitting.webp');
     max-width: 200px;
     position: absolute;
     align-items: left;
