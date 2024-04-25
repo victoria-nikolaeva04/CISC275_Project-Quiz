@@ -82,7 +82,7 @@ function handleSubmit() {
     
         const completion = await openAI.chat.completions.create({
           messages: [
-            { role: 'system', content: 'You are a helpful career. You will be provided a top 5 student results to a career quiz' },
+            { role: 'system', content: 'You are a helpful career. You will be provided a top 5 student results to a career quiz with as well as providing some basic details such as salary and degree requirements' },
             { role: 'user', content: `My answers are: ${selectedAnswers.join('\n')}` }
           ],
           model: 'gpt-4-turbo',
