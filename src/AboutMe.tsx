@@ -1,12 +1,4 @@
-<<<<<<< HEAD
-import React, { useState } from 'react';
-import logo  from "./images/CISC-Logo.png";
-import temp from "./images/temp_image.png";
-import simple_logo  from "./images/CISC-Footer-Logo.png";
-import github from "./images/CISC-Footer-GIT.png";
-=======
 import React from 'react';
->>>>>>> origin
 import './AboutMe.css';
 import temp from './images/temp_image.png';
 import kitty from './images/Lying_down_Calico_Cat_with_Red_Collar.webp';

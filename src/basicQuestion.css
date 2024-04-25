@@ -142,7 +142,7 @@
 }
 
 .cat-logo {
-  content: url('/Users/dustintran13/starter_helpi-1/src/images/Lying_down_Calico_Cat_with_Red_Collar.webp');
+  content: url('/src/images/Lying_down_Calico_Cat_with_Red_Collar.webp');
   max-width: 200px;
   position: absolute;
   align-items: left;
