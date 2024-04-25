@@ -151,7 +151,7 @@ body {
 
   .Cat-header {
     content: url('images/cat-header.png');
-    max-width: 700px;
-    position: relative;
-    margin-left: 31%;
+    max-width: 40%;
+    display: block; 
+    margin: 0 auto; 
   }
