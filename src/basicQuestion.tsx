@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate instead of useHistory
 import './basicQuestion.css';
 import OpenAI from 'openai';
+//Hello 
 
 const questions = [
   {
@@ -46,13 +47,9 @@ if (prevKey !== null) {
     const [selectedAnswers, setSelectedAnswers] = useState<string[]>(Array(questions.length).fill(''));
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const navigate = useNavigate(); // Use useNavigate instead of useHistory
-    const [key, setKey] = useState<string>(keyData); //for api key input
+    const [key] = useState<string>(keyData); //for api key input
   
 //sets the local storage item to the api key the user inputed
-function handleSubmit() {
-  localStorage.setItem(saveKeyData, JSON.stringify(key));
-  window.location.reload(); //when making a mistake and changing the key again, I found that I have to reload the whole site before openai refreshes what it has stores for the local storage variable
-}
     
     const handleAnswerSelection = (answerIndex: number) => {
       const newSelectedAnswers = [...selectedAnswers];
@@ -96,8 +93,7 @@ function handleSubmit() {
       } catch (error) {
         console.error('Error in OpenAI integration:', error);
       }
-    };
-    
+    };    
     return (
       <div>
         <img className="cat-logo" alt="con meo cute" />
