@@ -2,7 +2,8 @@ import easy_cat  from "./images/Lying_down_Calico_Cat_with_Red_Collar.webp";
 import hard_cat from "./images/calico_cat_sitting.webp";
 import './App.css';
 import Footer from './footer';
-import { Button} from 'react-bootstrap';
+import {Button} from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Homepage: React.FC = () => {
   return (
@@ -57,8 +58,10 @@ const Homepage: React.FC = () => {
                   className ="image-easy"
             />
             </div>
-
-            <Button className="homepage-buttons">Take Basic Questions</Button>
+            
+            <Link to = "/BasicQuestion">
+              <Button className="homepage-buttons">Take Basic Questions</Button>
+            </Link>
           </div>
 
           <div className="homepage-quiz-section">
@@ -78,7 +81,9 @@ const Homepage: React.FC = () => {
                     className ="image-hard"
                 />
               </div>
-            <Button className="homepage-buttons">Take Detailed Questions</Button>
+              <Link to = "/DetailedQuestion">
+                <Button className="homepage-buttons">Take Detailed Questions</Button>
+              </Link>
           </div>
         </div>
       </body>
