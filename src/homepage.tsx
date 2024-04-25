@@ -39,7 +39,7 @@ const Homepage: React.FC = () => {
       <body>
         <div className="homepage-body">
           <div className="homepage-quiz-section">
-          <h3 className='heading'>THE EASY ROUTE</h3>
+          <h3 className='heading'>THE EASY ROUTE  <br></br>  (=˃ᆺ˂=)</h3>
 
             <div className="homepage-box">
 
@@ -62,7 +62,7 @@ const Homepage: React.FC = () => {
           </div>
 
           <div className="homepage-quiz-section">
-            <h3 className='heading'>THE JOURNEY</h3>
+            <h3 className='heading'>THE JOURNEY <br></br> (=✪ᆽ✪=)</h3>
               <div className="homepage-box">
                 <p>
                   The Journey is meant to be more thought-provoking type of quiz. This quiz is designed to have
