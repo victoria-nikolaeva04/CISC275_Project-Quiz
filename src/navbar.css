@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 .navbar.bg-body-tertiary {
-    background-color: #f7caf2 !important;
+    background-color: #68BFD6 !important;
     padding: 18px 0 !important;
   }
   
@@ -91,7 +91,7 @@
     padding: 5px;
     border-radius: 5px;
     cursor: pointer;
-    z-index: 1000; /* Ensure it's above other content */
+    z-index: 1000;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -121,7 +121,7 @@
     /*text-align:right;*/
   }
 
-  /*
+  
   @media screen and (max-width: 900px){
     .navbar-nav{
       display: flex;
@@ -129,11 +129,28 @@
       position: absolute;
       bottom: -5px;
       left: 0;
-      min-width: 200px; 
+      min-width: calc(20px + 2vmin);
       transition: transform 0.3s ease-in-out;
       transform: translateY(-10px);
       opacity: 1;
       z-index: 1000;
     }
+
+    .navbar-brand {
+      color: #fff !important;
+      font-family: 'Minecraft2';
+      font-size: calc(20px + 2vmin);
+      margin-left: 15%;
+      top: 40%;
+    }
+
+    .nav-link{
+      font-style: bold;
+      background-color: #FAC264;
+      border-radius: 10px;
+      right: 13%;
+      margin: 4px;
+      padding: 5px;
+    }
     
-  }*/
+  }
