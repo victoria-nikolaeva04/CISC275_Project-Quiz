@@ -1,125 +1,105 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import logo  from "./images/CISC-Logo.png";
 import temp from "./images/temp_image.png";
 import simple_logo  from "./images/CISC-Footer-Logo.png";
 import github from "./images/CISC-Footer-GIT.png";
+=======
+import React from 'react';
+>>>>>>> origin
 import './AboutMe.css';
-import { Button, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-//import Questionnaire from './basicQuestion';
+import temp from './images/temp_image.png';
+import kitty from './images/Lying_down_Calico_Cat_with_Red_Collar.webp';
 
-//local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
-let keyData = "";
-const saveKeyData = "MYKEY";
-const prevKey = localStorage.getItem(saveKeyData); //so it'll look like: MYKEY: <api_key_value here> in the local storage when you inspect
-if (prevKey !== null) {
-  keyData = JSON.parse(prevKey);
-}
-
-function AboutMe() {
-  const [key, setKey] = useState<string>(keyData); //for api key input
-  
-  //sets the local storage item to the api key the user inputed
-  function handleSubmit() {
-    localStorage.setItem(saveKeyData, JSON.stringify(key));
-    window.location.reload(); //when making a mistake and changing the key again, I found that I have to reload the whole site before openai refreshes what it has stores for the local storage variable
-  }
-
-  //whenever there's a change it'll store the api key in a local state called key but it won't be set in the local storage until the user clicks the submit button
-  function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
-    setKey(event.target.value);
-  }
+const AboutMe: React.FC = () => {
   return (
-    <><div className="AboutMe">
-      <header className="App-header">
-        <div className="image">
-          <img
-              src={logo}
-              alt="logo"
-              id="logo-pic"
-          />
+    <div className="AboutMe-body">
+      <br></br>
+      <br></br>
+      <div className="AboutMe-container">
+        <div className="team-container">
+          <h3 className="AboutMe-heading">Meet the Team!</h3>
+          <p className="AboutMe-text">
+            A cohesive and dynamic four-person team can be a powerful force within an organization. 
+            Each member brings unique skills, experiences, and perspectives to the table, contributing 
+            to the team's overall success. With clear communication channels and a shared vision, they 
+            collaborate efficiently, leveraging their individual strengths to tackle complex challenges 
+            and achieve collective goals. The team's diversity fosters creativity and innovation, leading
+            to well-rounded solutions and continuous improvement. Through mutual support, trust, and 
+            effective leadership, this team cultivates a positive work environment where everyone feels 
+            valued and motivated, paving the way for sustained growth and success."
+          </p>
         </div>
-        <div className="text">
-          <h1>Career Cat-ylist Quiz</h1> 
-          <nav>
-            <Link to ="/homepage">
-            <Button className='nav-btn'>Home</Button>
-            </Link>
-            <Link to ="/basicQuestion">
-            <Button className='nav-btn'>Basic Quiz</Button>
-            </Link>
-            <Link to = "/DetailedQuestion">
-            <Button className='nav-btn'>Detailed Quiz</Button>
-            </Link>
-            <Link to ="/AboutMe">
-            <Button className='nav-btn'>About</Button>
-            </Link>
-          </nav>
-        </div>
-      </header>
-
-      <body>
-        <div className="aboutMe_body">
-            <h3>MEET THE TEAM</h3>
-            <div className="container">
-                <div className="team-text">
-                    <p>This is the team page</p>
-                    <p>Team Members:</p>
-                    <ul>
-                        <li>Victoria</li>
-                        <li>Gia</li>
-                        <li>Dustin</li>
-                        <li>Dustine</li>
-                    </ul>
-                </div>
-                <div className="team-image">
-                    <img
-                        src={temp}
-                        alt="logo"
-                        id="team-image"
-                    />
-                </div>
+        <div className="card-collection">
+        <div className="row">
+          <div className="column">
+            <div className="card">
+              <img
+                  src={temp}
+                  alt="logo"
+                  id="card-pic"
+              />
+              <div className="container-card">
+                <h2>Victoria</h2>
+                  <p className="title-position">Manager</p>
+                  <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                  <p>example@example.com</p>
+              </div>
             </div>
         </div>
 
-        <br></br>
-        <br></br>
-        <br></br>
-      </body>
-
-      <footer>
-        <div className="footer_decorative">
-          <div id="logo-text-footer">
-              <img
-                src={simple_logo}
-                alt="small-logo"
-                className ="footer-logo"
-              />
-               <p className="team-name-footer">@SWE TEAM</p>
-          </div>
-          <a href='https://github.com/VikiNiki123/starter_helpi' className="contact-info-footer">
+        <div className="column">
+          <div className="card">
             <img
-                    src={github}
-                    alt="GitHub"
-                    className ="footer-logo"
-                />
-          </a>
-        </div>
-        <div className="API_footer">
-          <Form>
-            <Form.Label>API Key: </Form.Label>
-            <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
-            <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
-          </Form>
+                src={temp}
+                alt="logo"
+                id="card-pic"
+            />
+            <div className="container-card">
+              <h2>Dustin</h2>
+              <p className="title-position">The Fruit in the Basket</p>
+              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+              <p>example@example.com</p>
+            </div>
+          </div>
         </div>
 
-      </footer>
-        {/*
-           <Link to="/basic-quiz"><Button>Basic Quiz</Button></Link>
-           <Routes><Route path="/basic-quiz" element={<Questionnaire />} /></Routes>
-        */}
-        <br></br>
-    </div></>
+        <div className="column">
+          <div className="card">
+            <img
+                src={temp}
+                alt="logo"
+                id="card-pic"
+            />
+            <div className="container-card">
+              <h2>Gia</h2>
+              <p className="title-position">A Jack of All-Traits!</p>
+              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+              <p>example@example.com</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="column">
+          <div className="card">
+            <img
+                src={temp}
+                alt="logo"
+                id="card-pic"
+            />
+            <div className="container-card">
+              <h2>Dustine</h2>
+              <p className="title-position">Router Guy</p>
+              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+              <p>example@example.com</p>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   );
-}
+};
+  
 export default AboutMe;
