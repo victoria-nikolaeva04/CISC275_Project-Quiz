@@ -1,7 +1,6 @@
 import React from 'react';
 import './AboutMe.css';
 import temp from './images/temp_image.png';
-import kitty from './images/Lying_down_Calico_Cat_with_Red_Collar.webp';
 
 const AboutMe: React.FC = () => {
   return (
