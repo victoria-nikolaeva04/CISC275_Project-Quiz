@@ -1,7 +1,9 @@
 /* Import alien fonts */
-@font-face { font-family: Minecraft; src: url('/Users/dustintran13/starter_helpi-1/src/fonts/Minecraft.ttf'); } 
-@font-face { font-family: Minecraft2; src: url('/Users/dustintran13/starter_helpi-1/src/fonts/easvhs.ttf'); } 
+@font-face { font-family: Minecraft; src: url('fonts/Minecraft.ttf') format('truetype'); } 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+body{
+  background-color: #F2EDDA;
+}
 .questionnaire-container {
     padding-left: 7vw;
     padding-top: 5vw;
@@ -13,7 +15,7 @@
     font-family: "Minecraft";
     font-weight: 700;
     font-style: normal;
-    color:#0F14B7;
+    color:#000;
     animation: fadeInAnimation ease 2s;
     animation-iteration-count: 1;
   }
@@ -44,14 +46,14 @@
     margin-top: 20px;
     padding: 10px 20px;
     font-size: 16px;
-    background-color:#0F14B7;
+    background-color:#f7caf2;
     color: #fff;
     border: none;
     border-radius: 10px;
     cursor: pointer;
     margin-bottom: 5vw;
     position: center;
-    margin-left: 45%;
+    margin-left: 40%;
   }
 .submit-button:hover {
     background-color: #4f5152;
@@ -89,10 +91,10 @@
 .next-button{
   position: fixed;
   right: 7%;
-  margin-top: 10px;
+  margin-top: 25px;
 }
 .previous-button{
-  margin-top: 5px;
+  margin-top: 25px;
 }
 .answer-option{
   display: inline-flex;
@@ -128,7 +130,7 @@
 .previous-button:hover {
   color: #fff;
   /*background-color: #1A1A1A;*/
-  background-color: #0F14B7;
+  background-color: #f7caf2;
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
   transform: translateY(-2px);
 }
@@ -137,20 +139,29 @@
   color: #fff;
   box-shadow: none;
   transform: translateY(0);
-  background-color: #0F14B7;
+  background-color: #f7caf2;
 }
 
 .cat-logo {
-  content: url('/Users/dustintran13/starter_helpi-1/src/images/Lying_down_Calico_Cat_with_Red_Collar.webp');
-  max-width: 200px;
+  content: url('images/Lying_down_Calico_Cat_with_Red_Collar.webp');
+  max-width: 170px;
   position: absolute;
   align-items: left;
-  margin-left: 190px !important;  /* 50% of your logo width */
+  margin-left: 300px !important;  /* 50% of your logo width */
   display: block;
   margin-top:20px;
   animation: fadeInAnimation ease 1s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+}
+.progress{
+  margin-top: 25px;
+  background-color: #f7caf2;
+  max-width: 60%;
+  margin-left: 20%;
+}
+.progress-bar{
+  background-color: #000;
 }
 @keyframes fadeInAnimation {
   0% {
