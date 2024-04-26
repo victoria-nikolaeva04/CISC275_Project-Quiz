@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate instead of useHistory
 import './basicQuestion.css';
+import OpenAI from 'openai';
+//Hello 
 
 const questions = [
   {
@@ -33,31 +36,67 @@ const questions = [
 ];
   // Add more questions here...
 
+let keyData = "";
+const saveKeyData = "MYKEY";
+const prevKey = localStorage.getItem(saveKeyData); //so it'll look like: MYKEY: <api_key_value here> in the local storage when you inspect
+if (prevKey !== null) {
+  keyData = JSON.parse(prevKey);
+}
+
   const Questionnaire: React.FC = () => {
     const [selectedAnswers, setSelectedAnswers] = useState<string[]>(Array(questions.length).fill(''));
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+    const navigate = useNavigate(); // Use useNavigate instead of useHistory
+    const [key] = useState<string>(keyData); //for api key input
   
+//sets the local storage item to the api key the user inputed
+    
     const handleAnswerSelection = (answerIndex: number) => {
       const newSelectedAnswers = [...selectedAnswers];
       newSelectedAnswers[currentQuestionIndex] = questions[currentQuestionIndex].answers[answerIndex];
       setSelectedAnswers(newSelectedAnswers);
     };
-  
+    
     const handleNextQuestion = () => {
       if (currentQuestionIndex < questions.length - 1) {
         setCurrentQuestionIndex(currentQuestionIndex + 1);
       }
     };
-  
+    
     const handlePreviousQuestion = () => {
       if (currentQuestionIndex > 0) {
         setCurrentQuestionIndex(currentQuestionIndex - 1);
       }
     };
-  
+    
+    const handleSubmission = async () => {
+      console.log('Submitting...');
+      try {
+        const openAI = new OpenAI({
+          apiKey: key,
+          dangerouslyAllowBrowser: true,
+        });
+    
+        const completion = await openAI.chat.completions.create({
+          messages: [
+            { role: 'system', content: 'You are a helpful career. You will be provided a top 5 student results to a career quiz with as well as providing some basic details such as salary and degree requirements' },
+            { role: 'user', content: `My answers are: ${selectedAnswers.join('\n')}` }
+          ],
+          model: 'gpt-4-turbo',
+        });
+    
+        if (completion.choices[0].message.content != null) {
+          navigate('/result', { state: { result: completion.choices[0].message.content } });
+        } else {
+          console.log('Error! Maybe you forgot the API key.');
+        }
+      } catch (error) {
+        console.error('Error in OpenAI integration:', error);
+      }
+    };    
     return (
       <div>
-         <img className="cat-logo" alt = "con meo cute"></img>
+        <img className="cat-logo" alt="con meo cute" />
         <div className="questionnaire-container">
           <h1 className="questionnaire-heading">BASIC QUESTION</h1>
           <div key={currentQuestionIndex} className="question">
@@ -78,12 +117,12 @@ const questions = [
             <button onClick={handlePreviousQuestion} className="previous-button">Previous</button>
           )}
           {currentQuestionIndex === questions.length - 1 && (
-            <button onClick={() => console.log(selectedAnswers)} className="submit-button">Submit</button>
+            <button onClick={handleSubmission} className="submit-button">Submit</button>
           )}
           {currentQuestionIndex !== questions.length - 1 && (
             <button onClick={handleNextQuestion} className="next-button">Next</button>
-          )}        
-          </div>
+          )}
+        </div>
       </div>
     );
   };
