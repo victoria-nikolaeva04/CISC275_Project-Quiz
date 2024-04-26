@@ -1,13 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+  background-color:#F2EDDA;
+  font-family: 'Roboto';
+}
+
 .Question-row {
-    background-color:white;
+    margin-top: 20px; 
   }
+
   
   .Horizontal-questions {
-    display: flex; 
-    margin-left: 10%;
-    margin-right: 10%;
     padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    border-radius: 16px;
   }
+
   
   .Question-1,
   .Question-2,
@@ -32,13 +44,14 @@
     margin-left: 20%;
     margin-right: 20%;
     margin-top: 2%;
-    margin-bottom: 3%;
-    background-color: #61dafb;
+    margin-bottom: 1%;
+    background-color: #FAC264;
     height: 40vh;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 25px;
+    outline: 5px solid #FF914D; /* Example outline with solid style, 2px width, and #F0BA66 color */
   }
   
   .Progress-bar {
@@ -61,8 +74,9 @@
   }
   
   .Question-textbox-text {
-    padding: 20px;
-    font-size: large;
+    padding: 30px;
+    font-size: x-large;
+    text-align: center;
   }
   .Answer-choices {
     display: flex;
@@ -101,13 +115,45 @@
   
   .custom-radio {
     display: inline-block;
-    width: 50%;
+    width: 96%;
     height: 125px;
-    border: 1px solid #ccc;
+    border: 5px solid #FFA3B1;
     padding-top: 15px;
-    margin-right: 10px;
+    margin-right: 20px;
     margin-left: 10px;
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
     border-radius: 15px;
     text-align: center;
+    background-color: #F3CACA;
+  }
+
+  .custom-radio:hover {
+    opacity: 0.9; /* Reduce opacity on hover */
+    background-color: #f5afaf; /* Change background color on hover */
+    transition: background-color 0.5s ease; /* Add transition for smooth background color change */
+    outline: 3px solid #f1c4c4; /* Example outline with solid style, 2px width, and #F0BA66 color */
+
+  }
+  .custom-radio.selected{
+    background-color: #000 !important;
+
+  }
+
+ custom-radio form-check {
+  background-color: #61dafb;
+ }
+
+  
+  input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+
+  .Cat-header {
+    content: url('images/cat-header.png');
+    max-width: 40%;
+    display: block; 
+    margin: 0 auto; 
   }
