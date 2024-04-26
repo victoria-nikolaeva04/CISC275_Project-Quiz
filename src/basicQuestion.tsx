@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate instead of useHistory
 import './basicQuestion.css';
+import OpenAI from 'openai';
+//Hello 
+
 const questions = [
   {
     question: 'Question 1: If you have a year paid-time off and the company gives you money to pursue every interest you want, what would you choose to do with that time?',
-    answers: ['Learn pottery', 'Learn programming', 'Travel', 'Go to workshops and make more connections', 'I do not know yet, will go with the flow', 'Learn several sports']
+    answers: ['Learn programming', 'Travel', 'Go to workshops and make more connections', 'I do not know yet, will go with the flow', 'Learn several sports']
   },
   {
     question: 'Question 2: When working on a team project, you are most likely to:',
@@ -30,40 +34,104 @@ const questions = [
     answers: ['Learn pottery', 'Learn programming', 'Travel', 'Go to workshops and make more connections', 'I do not know yet, will go with the flow', 'Learn several sports']
   },
 ];
+  // Add more questions here...
 
-const Questionnaire: React.FC = () => {
-  const [selectedAnswers, setSelectedAnswers] = useState<string[]>(Array(questions.length).fill(''));
-  // Function to handle selecting an answer
-    const handleAnswerSelection = (questionIndex: number, answerIndex: number) => {
-    const newSelectedAnswers = [...selectedAnswers];
-    newSelectedAnswers[questionIndex] = questions[questionIndex].answers[answerIndex];
-    setSelectedAnswers(newSelectedAnswers);
-  };
+let keyData = "";
+const saveKeyData = "MYKEY";
+const prevKey = localStorage.getItem(saveKeyData); //so it'll look like: MYKEY: <api_key_value here> in the local storage when you inspect
+if (prevKey !== null) {
+  keyData = JSON.parse(prevKey);
+}
 
-  return (
-    <div>
-      <div className="questionnaire-container">
-        <h1 className="questionnaire-heading">Basic Questions</h1>
-        {questions.map((question, questionIndex) => (
-          <div key={questionIndex} className="question">
-            <h3 className="question-text">{question.question}</h3>
+  const Questionnaire: React.FC = () => {
+    const [selectedAnswers, setSelectedAnswers] = useState<string[]>(Array(questions.length).fill(''));
+    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+    const navigate = useNavigate(); // Use useNavigate instead of useHistory
+    const [key] = useState<string>(keyData); //for api key input
+  
+//sets the local storage item to the api key the user inputed
+    
+    const handleAnswerSelection = (answerIndex: number) => {
+      const newSelectedAnswers = [...selectedAnswers];
+      newSelectedAnswers[currentQuestionIndex] = questions[currentQuestionIndex].answers[answerIndex];
+      setSelectedAnswers(newSelectedAnswers);
+    };
+    
+    const handleNextQuestion = () => {
+      if (currentQuestionIndex < questions.length - 1) {
+        setCurrentQuestionIndex(currentQuestionIndex + 1);
+      }
+    };
+    
+    const handlePreviousQuestion = () => {
+      if (currentQuestionIndex > 0) {
+        setCurrentQuestionIndex(currentQuestionIndex - 1);
+      }
+    };
+    const progress = Math.round(((currentQuestionIndex+1)/questions.length)*100);
+      
+    const handleSubmission = async () => {
+      console.log('Submitting...');
+      try {
+        const openAI = new OpenAI({
+          apiKey: key,
+          dangerouslyAllowBrowser: true,
+        });
+    
+        const completion = await openAI.chat.completions.create({
+          messages: [
+            { role: 'system', content: 'You are a helpful career. You will be provided a top 5 student results to a career quiz with as well as providing some basic details such as salary and degree requirements' },
+            { role: 'user', content: `My answers are: ${selectedAnswers.join('\n')}` }
+          ],
+          model: 'gpt-4-turbo',
+        });
+    
+        if (completion.choices[0].message.content != null) {
+          navigate('/result', { state: { result: completion.choices[0].message.content } });
+        } else {
+          console.log('Error! Maybe you forgot the API key.');
+        }
+      } catch (error) {
+        console.error('Error in OpenAI integration:', error);
+      }
+    };    
+    return (
+      <div>
+        <img className="cat-logo" alt="con meo cute" />
+        <div className="questionnaire-container">
+          <h1 className="questionnaire-heading">BASIC QUESTION</h1>
+          <div key={currentQuestionIndex} className="question">
+            <h3 className="question-text">{questions[currentQuestionIndex].question}</h3>
             <div className="answer-options">
-              {question.answers.map((answer, answerIndex) => (
+              {questions[currentQuestionIndex].answers.map((answer, answerIndex) => (
                 <button
                   key={answerIndex}
-                  onClick={() => handleAnswerSelection(questionIndex, answerIndex)}
-                  className={`answer-option ${selectedAnswers[questionIndex] === answer ? 'selected' : ''}`}
+                  onClick={() => handleAnswerSelection(answerIndex)}
+                  className={`answer-option ${selectedAnswers[currentQuestionIndex] === answer ? 'selected' : ''}`}
                 >
                   {answer}
                 </button>
               ))}
             </div>
           </div>
-        ))}
-        <button onClick={() => console.log(selectedAnswers)} className="submit-button">Submit</button>
+          <div className="progress">
+  <div className="progress-bar" role="progressbar" aria-valuenow= {progress}
+       aria-valuemin= {0} aria-valuemax= {101} style={{ width: `${progress}%` }}>
+    <span className="sr-only">{progress}% Complete</span>
+  </div>
+  </div>
+          {currentQuestionIndex > 0 && (
+            <button onClick={handlePreviousQuestion} className="previous-button">Previous</button>
+          )}
+          {currentQuestionIndex === questions.length - 1 && (
+            <button onClick={handleSubmission} className="submit-button">Submit</button>
+          )}
+          {currentQuestionIndex !== questions.length - 1 && (
+            <button onClick={handleNextQuestion} className="next-button">Next</button>
+          )}
+        </div>
       </div>
-    </div>
-  );
-};
-
-export default Questionnaire;
+    );
+  };
+  
+  export default Questionnaire;

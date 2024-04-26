@@ -19,28 +19,33 @@ export function DetailedQuestions(): JSX.Element {
         },
         {
             question: "Describe the overarching goals, values, and aspirations that resonate with you. Consider the impact you aim to make and the principles that guide your actions and decisions.",
-            possibleAnswers: ['I aspire to be a leader in my field, innovating and driving positive change, inspiring others to make a difference in the world.', 'I am driven by a desire to make an impact on society, addressing social and environmental challenges and creating sustainable future for all.', 
+            possibleAnswers: ['I aspire to be a leader in my field, innovating and driving positive change, inspiring others to make a difference in the world. I feel fulfilled when I manage others.', 'I am driven by a desire to make an impact on society, addressing social and environmental challenges and creating sustainable future for all. I want my work to be utilized throughout years to come.', 
             'I am committed to personal and professional growth, continuously challenging myself to learn, striving for excellence and continuous improvement.', 'I prioritize work-life balance and well-being, valuing fulfillment, happiness, and harmony in all aspects of my life. My life does not have to revolve around my career.']
         },
         {
-            question: "Meow",
-            possibleAnswers: ['Answer 1 for question 3', 'Answer 2 for question 3', 'Answer 3 for question 3', 'Answer 3 for question 2']
+            question: "Envisioning your ideal work environment, describe the specific attributes, culture, and values that would foster your professional growth and fulfillment. Consider elements such as organizational structure, leadership style, communication channels, and opportunities for autonomy and collaboration.",
+            possibleAnswers: ['I thrive in dynamic environments that embrace change and innovation, where adaptability and forward-thinking are encouraged, and where leadership empowers employees to take ownership of their work. ', 'I value a culture of inclusivity and diversity, where all voices are heard and respected, and where collaboration and teamwork are foundational principles.',
+             'I seek a structured and organized work environment with clearly defined roles and responsibilities, where expectations are clear, ensuring that efforts are recognized and rewarded accordingly.', 'I prioritize flexibility and independence in my work, seeking opportunities for self-directed learning and creative expression, balanced with opportunities for collaboration and mentorship that facilitate growth and development.']
         },
         {
-            question: "Woof",
-            possibleAnswers: ['Answer 1 for question 3', 'Answer 2 for question 3', 'Answer 3 for question 3', 'Answer 3 for question 2']
+            question: "Imagine you have the opportunity to design your ideal physical work environment. Which setting would you find most conducive to your productivity and well-being?",
+            possibleAnswers: ['An outdoor workspace surrounded by nature, offering fresh air, natural light, and opportunities for relaxation and rejuvenation. I enjoy working on outdoor tasks and activities.', 'An open-floor-plan office with collaborative workspaces and communal areas, encouraging interaction, creativity, and spontaneous idea-sharing among team members. ', 'A traditional office setting with private workstations or cubicles, providing quiet and focused environments for individual concentration and productivity.',
+             'A flexible workspace with a mix of private offices, open areas, and breakout rooms, accommodating diverse work styles and preferences while fostering collaboration and teamwork.']
         },
         {
-            question: "Yasss",
-            possibleAnswers: ['Answer 1 for question 3', 'Answer 2 for question 3', 'Answer 3 for question 3', 'Answer 3 for question 2']
+            question: "Imagine you're presented with an opportunity to pursue further education or training to advance your career. Which option would you be most inclined to choose?",
+            possibleAnswers: ['Enrolling in specialized courses or workshops to deepen your expertise and skills in a specific area relevant to your field, or putting time into learning a new skill.', 'Pursuing a degree or certification program that offers a broader understanding of various disciplines, providing versatility and adaptability in your career.',
+             'Participating in leadership development programs or executive coaching to enhance your management and decision-making abilities, building my leadership skills.', 'Engaging in experiential learning opportunities such as internships or apprenticeships to gain hands-on experience and practical knowledge in real-world settings.']
         },
         {
-            question: "Errrr",
-            possibleAnswers: ['Answer 1 for question 3', 'Answer 2 for question 3', 'Answer 3 for question 3', 'Answer 3 for question 2']
+            question: "Reflect on your preferred communication style and interpersonal interactions in a professional setting. Which approach resonates most with you?",
+            possibleAnswers: ['Engaging in open and transparent communication, fostering trust and mutual respect by sharing thoughts, ideas, and feedback openly with colleagues and stakeholders.', 'Cultivating empathy and active listening skills, seeking to understand other perspectives and experiences to build meaningful connections and collaboration.',
+             'Demonstrating assertiveness and confidence in expressing opinions and advocating for ideas, contributing to constructive dialogue and decision-making processes.', 'Adapting communication styles to suit different audiences and situations, effectively conveying information and ideas through verbal, written, and non-verbal cues as needed.']
         },
         {
-            question: "K",
-            possibleAnswers: ['Answer 1 for question 3', 'Answer 2 for question 3', 'Answer 3 for question 3', 'Answer 3 for question 2']
+            question: "Imagine you're offered two job opportunities: one with a well-established company known for its stability and benefits, and the other with a startup known for its innovation and risk-taking culture. Which factors would weigh most heavily in your decision-making process?",
+            possibleAnswers: ['Stability and job security, prioritizing a steady income and established benefits package to support financial stability and long-term career growth.', 'Innovation and growth potential, valuing the opportunity to contribute to groundbreaking projects and shape the future of a dynamic and rapidly evolving industry.', 'Company culture and values, seeking alignment with your personal beliefs and principles, and prioritizing a supportive and inclusive work environment that fosters collaboration and creativity.',
+             'Career advancement opportunities, considering factors such as growth trajectory, leadership development programs, and potential for skill development and upward mobility within the organization.']
         }
     ];
 
@@ -75,6 +80,7 @@ export function DetailedQuestions(): JSX.Element {
                                     backgroundColor: '#FFA3B1',
                                     fontSize: '24px',
                                     color: 'black',
+                                    borderRadius: '50%',
                                 }}
                             >
                                 {index + 1}
