@@ -61,7 +61,6 @@
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
   }
-
   .cat-logo3 {
     content: url('images/Sitting_orange.webp');
     max-width: 150px;
