@@ -7,7 +7,7 @@ import OpenAI from 'openai';
 const questions = [
   {
     question: 'Question 1: If you have a year paid-time off and the company gives you money to pursue every interest you want, what would you choose to do with that time?',
-    answers: ['Learn pottery', 'Learn programming', 'Travel', 'Go to workshops and make more connections', 'I do not know yet, will go with the flow', 'Learn several sports']
+    answers: ['Learn programming', 'Travel', 'Go to workshops and make more connections', 'I do not know yet, will go with the flow', 'Learn several sports']
   },
   {
     question: 'Question 2: When working on a team project, you are most likely to:',
@@ -68,7 +68,8 @@ if (prevKey !== null) {
         setCurrentQuestionIndex(currentQuestionIndex - 1);
       }
     };
-    
+    const progress = Math.round(((currentQuestionIndex+1)/questions.length)*100);
+      
     const handleSubmission = async () => {
       console.log('Submitting...');
       try {
@@ -113,6 +114,12 @@ if (prevKey !== null) {
               ))}
             </div>
           </div>
+          <div className="progress">
+  <div className="progress-bar" role="progressbar" aria-valuenow= {progress}
+       aria-valuemin= {0} aria-valuemax= {101} style={{ width: `${progress}%` }}>
+    <span className="sr-only">{progress}% Complete</span>
+  </div>
+  </div>
           {currentQuestionIndex > 0 && (
             <button onClick={handlePreviousQuestion} className="previous-button">Previous</button>
           )}

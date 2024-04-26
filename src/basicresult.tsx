@@ -5,10 +5,14 @@ import './basicresult.css';
 function BasicResult() {
   return (
     <div>
-    <Container className ="job-and-salary-area">
+      <Container className = "head-result">
+        <h1 className="result-h1">Result analysis</h1>
+        <img className='cat-title' alt="meomeo"></img>
+      </Container>
+      <Container className ="job-and-salary-area">
         <Row md={6}>
           <Card className="salary">
-            <img className="cat-logo" alt="con meo"></img>
+            <img className="cat-logo2" alt="con meo"></img>
             <Card.Body>
               <Card.Title>Average Salaries</Card.Title>
               <Card.Text>
@@ -17,6 +21,7 @@ function BasicResult() {
             </Card.Body>
           </Card>
           <Card className="job">
+            <img className="cat-logo3" alt="con meo2"></img>
             <Card.Body>
               <Card.Title>Available Jobs</Card.Title>
               <Card.Text>
