@@ -1,12 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@font-face { font-family: Minecraft; src: url('/src/fonts/Minecraft.ttf'); } 
+@font-face { font-family: Minecraft2; src: url('/src/fonts/easvhs.ttf'); } 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 .App{
-  background-color: #D3D9E7;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: #F2EDDA;
+  font-family: "Minecraft";
   color: #F6F6F6;
   text-align: center;
 }
 
+/*
 .App-header {
   background-color: #6B7AA3;
   min-height: 20vh;
@@ -15,6 +18,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 2px;
 }
+*/
 
 .image{
   width: calc(1000px - 20px);
@@ -30,7 +34,7 @@
   justify-content: center;
   font-size: calc(20px + 2vmin);
   margin-bottom: 3px;
-  color: #003555;
+  color: #68BFD6;
 }
 
 nav{
@@ -107,8 +111,8 @@ h3{
   flex-direction: column;
   background-color: #8D99BA;
   text-align: center;
-  padding: 5vw;
   width: 20vw;
+
   box-shadow: 3px 5px 10px grey;
   color: whitesmoke;
 }
@@ -154,8 +158,7 @@ h3{
   max-width: calc(20vmin - 5%);
   margin-right: calc(25vw - 5%);
   margin-left : calc(10vw - 5%);
-  margin-top: 5px;
-  
+  margin-top: 5px; 
 }
 
 .image-structure{
@@ -165,14 +168,7 @@ h3{
   margin-right: auto;
 }
 
-footer{
-  background-color: #6B7AA3;
-  height: 100%;
-  padding: 15px;
-  text-align: center;
-}
-
-.footer-logo{
+.footer_logo{
   width: 80px;
 }
 
@@ -180,14 +176,14 @@ footer{
   display: flex;
 }
 
-#logo-text-footer{
+#logo_text_footer{
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-left: 6px;
 }
 
-.contact-info-footer{
+.contact_info_footer{
   width:100%;
   height: auto;
   text-align:right;
