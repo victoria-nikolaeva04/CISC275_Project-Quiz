@@ -1,6 +1,6 @@
 import easy_cat  from "./images/Lying_down_Calico_Cat_with_Red_Collar.webp";
 import hard_cat from "./images/calico_cat_sitting.webp";
-import './App.css';
+import './homepage.css';
 import {Button} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
