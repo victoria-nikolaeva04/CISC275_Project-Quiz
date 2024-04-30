@@ -20,14 +20,14 @@ root.render(
   <HashRouter>
   <CollapsibleNavbar></CollapsibleNavbar>
      <Routes>
-          <Route path="/" element={<Homepage />} /> 
-          <Route path="/basicQuestion" element={<Questionnaire />} />
-          <Route path="/App" element={<App/>} />
-          <Route path="/DetailedQuestion" element={<DetailedQuestions/>} />
-          <Route path="/basicresult" element={<BasicResult/>} />
-          <Route path="/homepage" element={<Homepage/>} />
-          <Route path="/AboutMe" element={<AboutMe/>} />
-          <Route path="/result" element={<Result/>} />
+          <Route path="" element={<Homepage/>} /> 
+          <Route path="basicQuestion" element={<Questionnaire />} />
+          <Route path="App" element={<App/>} />
+          <Route path="DetailedQuestion" element={<DetailedQuestions/>} />
+          <Route path="basicresult" element={<BasicResult/>} />
+          <Route path="homepage" element={<Homepage/>} />
+          <Route path="AboutMe" element={<AboutMe/>} />
+          <Route path="result" element={<Result/>} />
           {/* Add more routes as needed */}
           </Routes>
           <Footer></Footer>
