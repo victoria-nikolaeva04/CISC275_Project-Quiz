@@ -58,7 +58,7 @@ export function DetailedQuestions(): JSX.Element {
 
     return (
         <div style={{ width: '100%' }}>
-
+        
         <img className="Cat-header" alt="Cat header"></img>
 
         <div>
@@ -93,7 +93,7 @@ export function DetailedQuestions(): JSX.Element {
                 </Row>
             </Container>
         </div>
-
+        
         <div className="Progress-bar">
             <div className="update-progress-bar" style={{ width: `${progress}%` }}>
                 <p> </p>
