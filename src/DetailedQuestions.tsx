@@ -50,9 +50,10 @@ export function DetailedQuestions(): JSX.Element {
         }
     ];
 
-    const handleAnswerSelection = (answer: string) => { // Saves answer selection
+    const handleAnswerSelection = (answer: string) => { 
         setSelectedAnswers({ ...selectedAnswers, [`Question${questionIndex + 1}`]: answer });
-        const newProgress = ((questionIndex + 1) / questions.length) * 100;
+        const answeredQuestionsCount = Object.keys(selectedAnswers).length + 1;
+        const newProgress = (answeredQuestionsCount / questions.length) * 100;
         setProgress(newProgress);
     };
 
@@ -98,7 +99,6 @@ export function DetailedQuestions(): JSX.Element {
             <div className="update-progress-bar" style={{ width: `${progress}%` }}>
                 <p> </p>
             </div>
-            <p>Progress Bar</p>
         </div>
 
         <div className="Question-textbox">
