@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import './DetailedQuestions.css';
 import paw_button  from "./images/cat-paw-button.png";
-
-
 import { Button, Container, Row , Col, Form } from "react-bootstrap";
 
 export function DetailedQuestions(): JSX.Element {
-    const [questionIndex, setQuestionIndex] = useState<number>(0);
-    const [selectedAnswers, setSelectedAnswers] = useState<{ [key: string]: string }>({}); // Dictionary implementation in state, question -> selected answer
+
+    // States
+    const [questionIndex, setQuestionIndex] = useState<number>(0); // Current question state
+    const [selectedAnswers, setSelectedAnswers] = useState<{ [key: string]: string }>({}); // Dictionary, used to correlate question -> selected answer
     const [progress, setProgress] = useState<number>(0); // Progress bar state
 
+    // 7 questions and their possible answers
     const questions = [
         {
             question: "Imagine you are assigned to a project team in which you will be creating a marketing campaign for a new product launch. Which aspect of the project would you most enjoy focusing on?",
@@ -50,110 +51,121 @@ export function DetailedQuestions(): JSX.Element {
         }
     ];
 
+    /*
+        Handles selection of an answer for a question. Updates state to record selected answer
+        and updates the progress bar based on the number of questions answered.
+        Parameters: 
+            -answer (string): the selected answer
+        Returns:
+            -N/A
+    */
     const handleAnswerSelection = (answer: string) => { 
-        setSelectedAnswers({ ...selectedAnswers, [`Question${questionIndex + 1}`]: answer });
+        // Records selected answer
+        setSelectedAnswers({ ...selectedAnswers, [`Question${questionIndex + 1}`]: answer }); 
+        
+        // Updates progress bar
         const answeredQuestionsCount = Object.keys(selectedAnswers).length + 1;
         const newProgress = (answeredQuestionsCount / questions.length) * 100;
-        setProgress(newProgress);
+        if (!selectedAnswers[`Question${questionIndex + 1}`]) {
+            setProgress(newProgress);
+        }
     };
 
+    // Component return
     return (
         <div style={{ width: '100%' }}>
-        
-        <img className="Cat-header" alt="Cat header"></img>
+            <img className="cat-header" alt="Cat header"></img> 
+            <div>
+                <Container className="question-row">
+                    <Row className="horizontal-questions">
+                        {questions.map((_, index) => ( // Creates question navigation buttons 1-7
+                            <Col
+                                style={{ display: 'flex', justifyContent: 'center' }}
+                                className={`question-${index + 1}`}
+                                xs={2}
+                                key={index}
+                            > 
+                                <Button
+                                    onClick={() => setQuestionIndex(index)}
+                                    style={{
+                                        backgroundImage: `url(${paw_button})`, 
+                                        backgroundSize: 'cover',
+                                        backgroundPosition: 'center',
+                                        width: '75px',
+                                        height: '75px',
+                                        borderColor: '#FFA3B1',
+                                        backgroundColor: '#FFA3B1',
+                                        fontSize: '24px',
+                                        color: 'black',
+                                        borderRadius: '50%',
+                                    }}
+                                >
+                                    {index + 1}
+                                </Button>
+                            </Col>
+                        ))}
+                    </Row>
+                </Container>
+            </div>
+            
+            <div className="progress-bar">
+                <div className="update-progress-bar" style={{ width: `${progress}%` }}>
+                </div>
+            </div>
 
-        <div>
-            <Container className="Question-row">
-                <Row className="Horizontal-questions">
-                    {questions.map((_, index) => (
-                        <Col
-                            style={{ display: 'flex', justifyContent: 'center' }}
-                            className={`Question-${index + 1}`}
-                            xs={2}
-                            key={index}
-                        >
-                            <Button
-                                onClick={() => setQuestionIndex(index)}
-                                style={{
-                                    backgroundImage: `url(${paw_button})`, 
-                                    backgroundSize: 'cover',
-                                    backgroundPosition: 'center',
-                                    width: '75px',
-                                    height: '75px',
-                                    borderColor: '#FFA3B1',
-                                    backgroundColor: '#FFA3B1',
-                                    fontSize: '24px',
-                                    color: 'black',
-                                    borderRadius: '50%',
-                                }}
-                            >
-                                {index + 1}
-                            </Button>
+            <div className="question-textbox">
+                <p className="question-text">{questions[questionIndex].question}</p>
+            </div>
+
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <Container className = "answer-row" style={{ width: '75%', justifyContent: 'center', display: 'flex'}}>
+                    <Row style={{ display: 'flex', height: 'auto', width: '100%' }}>
+                        {questions[questionIndex].possibleAnswers.slice(0, 2).map((possibleAnswer, j) => ( // Creates 1st row of answers for each question
+                        <Col key={j} style={{ width: '50%'}}>
+                            <Form.Check
+                                type="radio"
+                                name="selectedAnswer"
+                                id={`answer-${j+2}`}
+                                label={<span style={{ display: 'inline-block', textAlign: 'center', padding: '10px', backgroundColor: selectedAnswers[`Question${questionIndex + 1}`] === possibleAnswer ? '#f5afaf' : 'transparent' }}>{possibleAnswer}</span>}
+                                className="custom-radio"
+                                onChange={() => handleAnswerSelection(possibleAnswer)}
+                                checked={selectedAnswers[`Question${questionIndex + 1}`] === possibleAnswer}
+                            />
                         </Col>
                     ))}
-                </Row>
-            </Container>
-        </div>
-        
-        <div className="Progress-bar">
-            <div className="update-progress-bar" style={{ width: `${progress}%` }}>
-                <p> </p>
+                    </Row>
+                </Container>
             </div>
-        </div>
-
-        <div className="Question-textbox">
-            <p className="Question-textbox-text">{questions[questionIndex].question}</p>
-        </div>
-
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <Container className = "Answer-row" style={{ width: '75%', justifyContent: 'center', display: 'flex'}}>
-                <Row style={{ display: 'flex', height: 'auto', width: '100%' }}>
-                    {questions[questionIndex].possibleAnswers.slice(0, 2).map((possibleAnswer, j) => (
-                    <Col key={j} style={{ width: '50%'}}>
-                        <Form.Check
-                            type="radio"
-                            name="selectedAnswer"
-                            id={`answer-${j+2}`}
-                            label={<span style={{ display: 'inline-block', textAlign: 'center', padding: '10px', backgroundColor: selectedAnswers[`Question${questionIndex + 1}`] === possibleAnswer ? '#f5afaf' : 'transparent' }}>{possibleAnswer}</span>}
-                            className="custom-radio"
-                            onChange={() => handleAnswerSelection(possibleAnswer)}
-                            checked={selectedAnswers[`Question${questionIndex + 1}`] === possibleAnswer}
-                        />
-                </Col>
-                ))}
-            </Row>
-        </Container>
-    </div>
 
 
-    <div style={{ display: 'flex', justifyContent: 'center' }}>
-        <Container className = "Answer-row" style={{ width: '75%', justifyContent: 'center', display: 'flex'}}>
-            <Row style={{ display: 'flex', height: 'auto', width: '100%' }}>
-                {questions[questionIndex].possibleAnswers.slice(2, 4).map((possibleAnswer, j) => (
-                <Col key={j} style={{ width: '50%', marginLeft: "1px", marginRight: "1px" }}>
-                    <Form.Check
-                        type="radio"
-                        name="selectedAnswer"
-                        id={`answer-${j}`}
-                        label={<span style={{ display: 'inline-block', textAlign: 'center', padding: '10px', backgroundColor: selectedAnswers[`Question${questionIndex + 1}`] === possibleAnswer ? '#f5afaf' : 'transparent' }}>{possibleAnswer}</span>}
-                        className="custom-radio"
-                        onChange={() => handleAnswerSelection(possibleAnswer)}
-                        checked={selectedAnswers[`Question${questionIndex + 1}`] === possibleAnswer}
-                    />
-                </Col>
-                ))}
-            </Row>
-        </Container>
-    </div>
-            
-    <div style={{ textAlign: 'center', marginBottom: '50px', marginTop: '20px' }}>
-    {Object.keys(selectedAnswers).length === questions.length ? (
-        <Button>Get Answers</Button>
-    ) : (
-        <Button disabled>Get Answers</Button>
-    )}
-</div>
-</div>   
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <Container className = "Answer-row" style={{ width: '75%', justifyContent: 'center', display: 'flex'}}>
+                    <Row style={{ display: 'flex', height: 'auto', width: '100%' }}>
+                        {questions[questionIndex].possibleAnswers.slice(2, 4).map((possibleAnswer, j) => ( // Creates 2nd row of answers for each question
+                        <Col key={j} style={{ width: '50%', marginLeft: "1px", marginRight: "1px" }}>
+                            <Form.Check
+                                type="radio"
+                                name="selectedAnswer"
+                                id={`answer-${j}`}
+                                label={<span style={{ display: 'inline-block', textAlign: 'center', padding: '10px', backgroundColor: selectedAnswers[`Question${questionIndex + 1}`] === possibleAnswer ? '#f5afaf' : 'transparent' }}>{possibleAnswer}</span>}
+                                className="custom-radio"
+                                onChange={() => handleAnswerSelection(possibleAnswer)}
+                                checked={selectedAnswers[`Question${questionIndex + 1}`] === possibleAnswer}
+                            />
+                        </Col>
+                        ))}
+                    </Row>
+                </Container>
+            </div>
+                
+            <div className = "get-answers-button">
+                {Object.keys(selectedAnswers).length === questions.length ? (
+                    <Button>Get Answers</Button>
+                ) : (
+                    <Button disabled>Get Answers</Button>
+                )}
+            </div>
+        </div>   
     );
 }
 
