@@ -33,12 +33,11 @@ body {
     margin-right: 1%;
   }
   
-  /*
   .btn {
     border-radius: 50%;
     size: 150%;
   }
-  */
+  
   
   .Question-textbox {
     margin-left: 20%;
@@ -51,28 +50,18 @@ body {
     justify-content: center;
     align-items: center;
     border-radius: 25px;
-    outline: 5px solid #FF914D; /* Example outline with solid style, 2px width, and #F0BA66 color */
+    outline: 5px solid #FF914D;
   }
   
   .Progress-bar {
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-top: 1%;
-    margin-bottom: 1%;
-    background-color: white;
-    height: 5vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 10px;
   }
-  
-  .Progress-14 {
-    width: 14%;
-    justify-content: left;
-    background-color: #61dafb;
-  
-  }
-  
+ 
+
   .Question-textbox-text {
     padding: 30px;
     font-size: x-large;
@@ -128,10 +117,10 @@ body {
   }
 
   .custom-radio:hover {
-    opacity: 0.9; /* Reduce opacity on hover */
-    background-color: #f5afaf; /* Change background color on hover */
-    transition: background-color 0.5s ease; /* Add transition for smooth background color change */
-    outline: 3px solid #f1c4c4; /* Example outline with solid style, 2px width, and #F0BA66 color */
+    opacity: 0.9; 
+    background-color: #f5afaf; 
+    transition: background-color 0.5s ease;
+    outline: 3px solid #f1c4c4; 
 
   }
   .custom-radio.selected{
@@ -150,10 +139,23 @@ body {
     pointer-events: none;
   }
 
-
   .Cat-header {
     content: url('images/cat-header.png');
     max-width: 40%;
     display: block; 
     margin: 0 auto; 
+  }
+
+.update-progress-bar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to right, #FFA3B1, #F3CACA);
+    border-radius: 10px;
+    transition: width 0.5s ease;
+  }
+
+  .top-section {
+    background-color: #FFA3B1;
   }

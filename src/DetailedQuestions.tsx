@@ -8,6 +8,7 @@ import { Button, Container, Row , Col, Form } from "react-bootstrap";
 export function DetailedQuestions(): JSX.Element {
     const [questionIndex, setQuestionIndex] = useState<number>(0);
     const [selectedAnswers, setSelectedAnswers] = useState<{ [key: string]: string }>({}); // Dictionary implementation in state, question -> selected answer
+    const [progress, setProgress] = useState<number>(0); // Progress bar state
 
     const questions = [
         {
@@ -51,6 +52,8 @@ export function DetailedQuestions(): JSX.Element {
 
     const handleAnswerSelection = (answer: string) => { // Saves answer selection
         setSelectedAnswers({ ...selectedAnswers, [`Question${questionIndex + 1}`]: answer });
+        const newProgress = ((questionIndex + 1) / questions.length) * 100;
+        setProgress(newProgress);
     };
 
     return (
@@ -92,10 +95,10 @@ export function DetailedQuestions(): JSX.Element {
         </div>
 
         <div className="Progress-bar">
-                <div className="Progress-14">
-                    <p> </p>
-                </div>
-                <p>Progress Bar</p>
+            <div className="update-progress-bar" style={{ width: `${progress}%` }}>
+                <p> </p>
+            </div>
+            <p>Progress Bar</p>
         </div>
 
         <div className="Question-textbox">
