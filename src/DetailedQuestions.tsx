@@ -146,9 +146,13 @@ export function DetailedQuestions(): JSX.Element {
         </Container>
     </div>
             
-    <div style={{textAlign: 'center', marginBottom: '50px', marginTop: '20px' }}>
+    <div style={{ textAlign: 'center', marginBottom: '50px', marginTop: '20px' }}>
+    {Object.keys(selectedAnswers).length === questions.length ? (
         <Button>Get Answers</Button>
-    </div>
+    ) : (
+        <Button disabled>Get Answers</Button>
+    )}
+</div>
 </div>   
     );
 }
