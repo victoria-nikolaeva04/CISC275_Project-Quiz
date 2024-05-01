@@ -50,26 +50,59 @@ if (prevKey !== null) {
     const [key] = useState<string>(keyData); //for api key input
   
 //sets the local storage item to the api key the user inputed
-    
+    /*
+Handles the selection of an answer for a question in the questionnaire. This function updates the state to record the selected answer and adjusts the progress bar based on the number of questions answered.
+
+Parameters:
+    - answerIndex (number): Index of the selected answer in the answers array for the current question.
+
+Returns:
+    - N/A
+*/
     const handleAnswerSelection = (answerIndex: number) => {
       const newSelectedAnswers = [...selectedAnswers];
       newSelectedAnswers[currentQuestionIndex] = questions[currentQuestionIndex].answers[answerIndex];
       setSelectedAnswers(newSelectedAnswers);
     };
-    
+/*
+Handles the navigation to the next question in the questionnaire. It checks if there are more questions available and updates the current question index accordingly.
+
+Parameters:
+    - None
+
+Returns:
+    - N/A
+*/
     const handleNextQuestion = () => {
       if (currentQuestionIndex < questions.length - 1) {
         setCurrentQuestionIndex(currentQuestionIndex + 1);
       }
     };
-    
+
+/*
+Handles the navigation to the previous question in the questionnaire. It checks if there are previous questions available and updates the current question index accordingly.
+
+Parameters:
+    - None
+
+Returns:
+    - N/A
+*/
     const handlePreviousQuestion = () => {
       if (currentQuestionIndex > 0) {
         setCurrentQuestionIndex(currentQuestionIndex - 1);
       }
     };
     const progress = Math.round(((currentQuestionIndex+1)/questions.length)*100);
-      
+/*
+Handles the submission of the questionnaire. It sends the selected answers to OpenAI for completion and navigates to the result page with the received content.
+
+Parameters:
+    - None
+
+Returns:
+    - N/A
+*/ 
     const handleSubmission = async () => {
       console.log('Submitting...');
       try {
@@ -94,6 +127,7 @@ if (prevKey !== null) {
       } catch (error) {
         console.error('Error in OpenAI integration:', error);
       }
+
     };    
     return (
       <div>
@@ -129,8 +163,8 @@ if (prevKey !== null) {
           {currentQuestionIndex !== questions.length - 1 && (
             <button onClick={handleNextQuestion} className="next-button">Next</button>
           )}
+          </div>
         </div>
-      </div>
     );
   };
   
