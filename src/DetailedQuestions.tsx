@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import './DetailedQuestions.css';
 import paw_button  from "./images/cat-paw-button.png";
+import OpenAI from 'openai';
 
 
 import { Button, Container, Row , Col, Form } from "react-bootstrap";
