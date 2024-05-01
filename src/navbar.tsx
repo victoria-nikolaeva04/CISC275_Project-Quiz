@@ -15,9 +15,11 @@ export function CollapsibleNavbar() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link as={Link} to="BasicQuestion">Basic Question</Nav.Link>
-            <Nav.Link as={Link} to="DetailedQuestion">Detail Question</Nav.Link>
-            <Nav.Link as={Link} to="AboutMe">About Me</Nav.Link>
+            <Nav.Link as={Link} to="/BasicQuestion">Basic Question</Nav.Link>
+            <Nav.Link as={Link} to="/DetailedQuestion">Detail Question</Nav.Link>
+            <Nav.Link as={Link} to="/AboutMe">About Me</Nav.Link>
+            <Nav.Link as={Link} to="/App"></Nav.Link>
+            <Nav.Link as={Link} to="/BasicResult">Result</Nav.Link>
           </Nav>
         </Navbar.Collapse>
         <Nav.Item>
