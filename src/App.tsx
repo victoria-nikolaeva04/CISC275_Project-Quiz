@@ -14,7 +14,7 @@ function App() {
   const [key, setKey] = useState<string>(keyData); // for api key input
   const [loading, setLoading] = useState(true);
 
-  const progressValue = 10; // Change this value as needed
+  const progressValue = 50; // Change this value as needed
 
   useEffect(() => {
     setTimeout(() => setLoading(false), 3300);
