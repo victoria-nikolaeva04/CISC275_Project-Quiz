@@ -123,7 +123,7 @@ export function DetailedQuestions(): JSX.Element {
     
             if (completion.choices[0].message.content != null) {
                 /*Takes what gpt prints out and routes it the result page which will then displays the result  */
-                navigate('/basicresult', { state: { result: completion.choices[0].message.content } });
+                navigate('/result', { state: { result: completion.choices[0].message.content } });
             } else {
                 /*Error handling */
                 console.log('Error! Maybe you forgot the API key.');
