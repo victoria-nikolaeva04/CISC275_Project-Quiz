@@ -90,31 +90,32 @@ export function DetailedQuestions(): JSX.Element {
             <div>
                 <Container className="question-row">
                     <Row className="horizontal-questions">
-                        {questions.map((_, index) => ( // Creates question navigation buttons 1-7
-                            <Col
-                                style={{ display: 'flex', justifyContent: 'center' }}
-                                className={`question-${index + 1}`}
-                                xs={2}
-                                key={index}
-                            > 
-                                <Button
-                                    onClick={() => setQuestionIndex(index)}
-                                    style={{
-                                        backgroundImage: `url(${paw_button})`, 
-                                        backgroundSize: 'cover',
-                                        backgroundPosition: 'center',
-                                        width: '75px',
-                                        height: '75px',
-                                        borderColor: '#FFA3B1',
-                                        backgroundColor: '#FFA3B1',
-                                        fontSize: '24px',
-                                        color: 'black',
-                                        borderRadius: '50%',
-                                    }}
-                                >
-                                    {index + 1}
-                                </Button>
-                            </Col>
+                        {questions.map((_, index) => (
+                        <Col
+                            style={{ display: 'flex', justifyContent: 'center' }}
+                            className={`question-${index + 1}`}
+                            xs={2}
+                            key={index}
+                        >
+                            <Button
+                            onClick={() => setQuestionIndex(index)}
+                            style={{
+                                backgroundImage: `url(${paw_button})`,
+                                backgroundSize: 'cover',
+                                backgroundPosition: 'center',
+                                width: '75px',
+                                height: '75px',
+                                borderColor: selectedAnswers[`Question${index + 1}`] ? '#92b8ec' : '#FFA3B1', // Adds border to indicate question was answered
+                                borderWidth: selectedAnswers[`Question${index + 1}`] ? '5px' : '0px',
+                                backgroundColor: '#FFA3B1',
+                                fontSize: '24px',
+                                color: 'black',
+                                borderRadius: '50%',
+                            }}
+                            >
+                            {index + 1}
+                            </Button>
+                        </Col>
                         ))}
                     </Row>
                 </Container>
@@ -137,9 +138,21 @@ export function DetailedQuestions(): JSX.Element {
                             <Form.Check
                                 type="radio"
                                 name="selectedAnswer"
-                                id={`answer-${j+2}`}
-                                label={<span style={{ display: 'inline-block', textAlign: 'center', padding: '10px', backgroundColor: selectedAnswers[`Question${questionIndex + 1}`] === possibleAnswer ? '#f5afaf' : 'transparent' }}>{possibleAnswer}</span>}
+                                id={`answer-${j + 2}`}
+                                label={<span style={{
+                                    display: 'inline-block',
+                                    textAlign: 'center',
+                                    padding: '10px',
+                                    width: '100%' 
+                                  }}>
+                                    {possibleAnswer}
+                                  </span>}
                                 className="custom-radio"
+                                style={{
+                                textAlign: 'center',
+                                padding: '10px',
+                                backgroundColor: selectedAnswers[`Question${questionIndex + 1}`] === possibleAnswer ? '#f5afaf' : '#F3CACA'
+                                }}
                                 onChange={() => handleAnswerSelection(possibleAnswer)}
                                 checked={selectedAnswers[`Question${questionIndex + 1}`] === possibleAnswer}
                             />
@@ -159,11 +172,24 @@ export function DetailedQuestions(): JSX.Element {
                                 type="radio"
                                 name="selectedAnswer"
                                 id={`answer-${j}`}
-                                label={<span style={{ display: 'inline-block', textAlign: 'center', padding: '10px', backgroundColor: selectedAnswers[`Question${questionIndex + 1}`] === possibleAnswer ? '#f5afaf' : 'transparent' }}>{possibleAnswer}</span>}
+                                label={<span style={{
+                                    display: 'inline-block',
+                                    textAlign: 'center',
+                                    padding: '10px',
+                                    width: '100%'
+                                  }}>
+                                    {possibleAnswer}
+                                  </span>}
                                 className="custom-radio"
+                                style={{
+                                    display: 'inline-block',
+                                    textAlign: 'center',
+                                    padding: '10px',
+                                    backgroundColor: selectedAnswers[`Question${questionIndex + 1}`] === possibleAnswer ? '#f5afaf' : '#F3CACA'
+                                }}
                                 onChange={() => handleAnswerSelection(possibleAnswer)}
                                 checked={selectedAnswers[`Question${questionIndex + 1}`] === possibleAnswer}
-                            />
+                                />
                         </Col>
                         ))}
                     </Row>
