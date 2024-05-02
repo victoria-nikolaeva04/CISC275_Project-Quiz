@@ -1,0 +1,13 @@
+.progress{
+    max-width: 300%; 
+    height: 500%;
+    background-color: #F2EDDA;
+}
+
+.progress-bar{
+    background-color:#FAC264;
+}
+
+.cat-progress{
+    width: 10%;
+}

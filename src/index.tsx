@@ -11,13 +11,13 @@ import BasicResult from './basicresult';
 import DetailedQuestions from './DetailedQuestions';
 import AboutMe from './AboutMe';
 import Result from './result';
-import Footer from './footer'
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <HashRouter>
+
   <CollapsibleNavbar></CollapsibleNavbar>
      <Routes>
           <Route path="" element={<Homepage/>} /> 
@@ -30,7 +30,6 @@ root.render(
           <Route path="result" element={<Result/>} />
           {/* Add more routes as needed */}
           </Routes>
-          <Footer></Footer>
   <React.StrictMode>
   </React.StrictMode>
   </HashRouter>

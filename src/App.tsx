@@ -3,6 +3,7 @@ import Loading from "./Loading";
 import logo from './logo.svg';
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
+import ProgressBar from './ProgressBar';
 
 // Local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 const saveKeyData = "MYKEY";
@@ -12,6 +13,8 @@ const keyData = prevKey !== null ? JSON.parse(prevKey) : "";
 function App() {
   const [key, setKey] = useState<string>(keyData); // for api key input
   const [loading, setLoading] = useState(true);
+
+  const progressValue = 20; // Change this value as needed
 
   useEffect(() => {
     setTimeout(() => setLoading(false), 3300);
@@ -36,6 +39,12 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+
+        <div className="container">
+          <h1>Progress Bar Example</h1>
+          <ProgressBar progress={progressValue} />
+        </div>
+
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>

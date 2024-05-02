@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import simple_logo  from "./images/CISC-Footer-Logo.png";
 import github from "./images/CISC-Footer-GIT.png";
 import { Button, Form } from 'react-bootstrap';
-import './footer.css';
+import './Footer.css';
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
