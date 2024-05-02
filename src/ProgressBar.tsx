@@ -6,7 +6,6 @@ import catWalk from './images/CISC-progress-cat-walking.gif';
 import catFight from './images/CISC-progress-cat-fight.gif';
 import catEat from './images/CISC-progress-cat-eat.gif';
 import mouseEat from './images/CISC-progress-mouse-eat.gif';
-
 import './ProgressBar.css';
 
 interface ProgressBarProps {
@@ -18,17 +17,21 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ progress }) => {
 
     if (progress === 0) {
         imageSrc = catSleep;
-    } else if (progress < 33) {
+      } else if (progress >= 1 && progress <= 13) {
+        imageSrc = catSleep;
+      } else if (progress >= 14 && progress <= 27) {
         imageSrc = catWakeUp;
-    } else if (progress >= 33 && progress < 66) {
+      } else if (progress >= 28 && progress <= 41) {
         imageSrc = catYawn;
-    } else if (progress >= 66 && progress < 80) {
+      } else if (progress >= 42 && progress <= 83) {
         imageSrc = catWalk;
-    } else if (progress >= 80 && progress < 90) {
+      } else if (progress >= 84 && progress <= 95) {
         imageSrc = catFight;
-    } else {
+      } else if (progress >= 96 && progress <= 100) {
         imageSrc = catEat;
-    }
+      } else {
+        imageSrc = catEat;
+      }
   
     return (
     <div>
