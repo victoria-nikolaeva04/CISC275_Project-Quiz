@@ -110,9 +110,11 @@ Returns:
           apiKey: key,
           dangerouslyAllowBrowser: true,
         });
-    
+
+        /*Open AI set up*/
         const completion = await openAI.chat.completions.create({
           messages: [
+            /*Sets up the system and user roles for gpt-4-turbo*/ 
             { role: 'system', content: 'You are a helpful career. You will be provided a top 5 student results to a career quiz with as well as providing some basic details such as salary and degree requirements' },
             { role: 'user', content: `My answers are: ${selectedAnswers.join('\n')}` }
           ],
@@ -120,8 +122,10 @@ Returns:
         });
     
         if (completion.choices[0].message.content != null) {
+          /*Takes what gpt prints out and routes it the result page which will then displays the result  */
           navigate('/result', { state: { result: completion.choices[0].message.content } });
         } else {
+          /*Error handling */
           console.log('Error! Maybe you forgot the API key.');
         }
       } catch (error) {
