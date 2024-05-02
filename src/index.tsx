@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import Homepage from './homepage';
 import CollapsibleNavbar from './navbar'
 import Questionnaire from './basicQuestion';
-import { BrowserRouter as HashRouter,Routes, Route} from 'react-router-dom'; // Import BrowserRouter and other necessary components
+import { HashRouter,Routes, Route} from 'react-router-dom'; // Import BrowserRouter and other necessary components
 import BasicResult from './basicresult';
 import DetailedQuestions from './DetailedQuestions';
 import AboutMe from './AboutMe';
