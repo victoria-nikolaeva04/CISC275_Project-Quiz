@@ -21,47 +21,48 @@ const ProgressBar: React.FC<ProgressBarProps> = ({progress}) => {
     setCurrentProgress(progress);
   }, [progress]);
 
-  if (progress === 0) {
+  if (currentProgress === 0) {
     imageSrc = catSleep;
-  } else if (progress >= 1 && progress <= 13) {
+  } else if (currentProgress >= 1 && currentProgress <= 13) {
     imageSrc = catWakeUp;
-  } else if (progress >= 14 && progress <= 28) {
+  } else if (currentProgress >= 14 && currentProgress <= 28) {
     imageSrc = catYawn;
-  } else if (progress >= 29 && progress <= 83) {
+  } else if (currentProgress >= 29 && currentProgress <= 83) {
     imageSrc = catWalk;
-  } else if (progress >= 84 && progress <= 95) {
+  } else if (currentProgress >= 84 && currentProgress <= 95) {
     imageSrc = catFight;
-  } else if (progress >= 96 && progress <= 100) {
+  } else if (currentProgress >= 96 && currentProgress <= 100) {
     imageSrc = catEat;
   } else {
     imageSrc = catEat; // Default image if progress is out of range
   }
 
-  /*
-  const calculateFrontPosition = () => {
-    const containerWidth = document.querySelector('.cat-progress-container')?.clientWidth || 0;
-    const progressBarWidth = (progress / 100) * containerWidth;
-    return progressBarWidth;
+  const catStyle = {
+    left: `${currentProgress}%`, // Set the left position based on progress
   };
- */
 
   return (
     <div className="progress-container">
         <div className="progress-cat">
-            <div className="progress-bar-cat" 
+            <div 
+                className="progress-bar-cat" 
                 role="progressbar" 
-                aria-valuenow= {progress}
+                aria-valuenow= {currentProgress}
                 aria-valuemin= {0} 
                 aria-valuemax= {100} 
-                style={{ width: `${progress}%` }}
+                style={{ width: `${currentProgress}%` }}
             >
-                <span className="sr-only">{progress}%</span>
+                <span className="sr-only">
+                    {currentProgress}%
+                </span>
 
-                <img
-                    src={imageSrc}
-                    alt="Progress-cat"
-                    className="progress-asset-cat"
-                ></img>
+            <img
+                src={imageSrc}
+                alt="Progress-cat"
+                className="progress-asset-cat"
+                style={{alignContent: `${currentProgress}%` }}
+            ></img>
+                
             </div>
         </div>
     </div>

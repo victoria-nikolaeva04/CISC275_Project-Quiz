@@ -6,11 +6,9 @@
     margin-top: 25px;
     background-color: #ffd388;
     max-width: 100%;
-    margin-bottom: 100px;
+    margin-bottom: 25px;
     max-height: 30%;
     border-radius: 10px;
-    color: rgb(0, 0, 0);
-    margin-left: 5px;
 }
   
 .progress-bar-cat{
@@ -22,19 +20,9 @@
     margin-top: 3px;
     width: 90px;
     margin-left: 5px;
-    object-position: right 50%;
-
-    animation-name: moveCat;
-    animation-duration: 1s;
-    animation-timing-function: ease;
-    animation-fill-mode: forwards;
 }
 
-@keyframes moveCat {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(0);
-    }
+.sr-only{
+    color: rgb(0, 0, 0);
+    margin-left: 5px;
 }
