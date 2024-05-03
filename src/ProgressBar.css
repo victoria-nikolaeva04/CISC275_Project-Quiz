@@ -1,16 +1,30 @@
+.progress-container{
+    height: 50%;
+}
+
 .progress{
-    height: 15%;
-    max-width: 300%;
-    background-color: #F2EDDA;
-    border-width:10px; 
-    border-color: #FAC264;
-}
+    margin-top: 25px;
+    background-color: #414fec;
+    max-width: 100%;
+    margin-left: 20%;
+    margin-bottom: 100px;
+    max-height: 30%;
+  }
+  
+  .progress-bar{
+    background-color: #FAC264;
+    border-radius: 10px;
+  }
 
-.progress-bar{
-    background-color:#FAC264;
-    width: 100%;
-}
+  @keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+  }
 
-.cat-progress{
-    width: 35%;
+.cat-progress-asset{
+    width: 50%;
 }

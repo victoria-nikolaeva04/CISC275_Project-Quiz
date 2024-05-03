@@ -19,6 +19,7 @@ export function CollapsibleNavbar() {
             <Nav.Link as={Link} to="DetailedQuestion">Detail Question</Nav.Link>
             <Nav.Link as={Link} to="AboutMe">About Me</Nav.Link>
             <Nav.Link as={Link} to="BasicResult">Result</Nav.Link>
+            <Nav.Link as={Link} to="App">App</Nav.Link>
             
           </Nav>
         </Navbar.Collapse>

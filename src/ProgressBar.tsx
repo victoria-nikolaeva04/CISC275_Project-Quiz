@@ -41,28 +41,24 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ progress}) => {
   return (
     <div className="progress-container">
         <div className="progress">
-            <div
-                className="progress-bar"
-                role="progressbar"
+            <div className="progress-bar" 
+                role="progressbar" 
+                aria-valuenow= {progress}
+                aria-valuemin= {0} 
+                aria-valuemax= {101} 
                 style={{ width: `${progress}%` }}
-                aria-valuenow={progress}
-                aria-valuemin={0}
-                aria-valuemax={100}
             >
-            </div>
-
-            <div className="cat-progress-animation">
+                <span className="sr-only">{progress}% Complete</span>
                 <img
                     src={imageSrc}
                     alt="Progress-cat"
-                    className="cat-progress"
-                    //style={{left: `${calculateFrontPosition()}px`}}
-                />
+                    className="cat-progress-asset"
+                ></img>
             </div>
-            
         </div>
-</div>
+    </div>
   );
 };
 
 export default ProgressBar;
+            
