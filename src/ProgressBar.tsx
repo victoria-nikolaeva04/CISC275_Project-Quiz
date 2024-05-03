@@ -13,7 +13,7 @@ interface ProgressBarProps {
   progress: number;
 }
 
-const ProgressBar: React.FC<ProgressBarProps> = ({ progress}) => {
+const ProgressBar: React.FC<ProgressBarProps> = ({progress}) => {
   let imageSrc: string;
 
   if (progress === 0) {
@@ -32,27 +32,30 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ progress}) => {
     imageSrc = catEat; // Default image if progress is out of range
   }
 
+  /*
   const calculateFrontPosition = () => {
     const containerWidth = document.querySelector('.cat-progress-container')?.clientWidth || 0;
     const progressBarWidth = (progress / 100) * containerWidth;
     return progressBarWidth;
-};
+  };
+ */
 
   return (
     <div className="progress-container">
-        <div className="progress">
-            <div className="progress-bar" 
+        <div className="progress-cat">
+            <div className="progress-bar-cat" 
                 role="progressbar" 
                 aria-valuenow= {progress}
                 aria-valuemin= {0} 
-                aria-valuemax= {101} 
+                aria-valuemax= {100} 
                 style={{ width: `${progress}%` }}
             >
-                <span className="sr-only">{progress}% Complete</span>
+                <span className="sr-only">{progress}%</span>
+
                 <img
                     src={imageSrc}
                     alt="Progress-cat"
-                    className="cat-progress-asset"
+                    className="progress-asset-cat"
                 ></img>
             </div>
         </div>

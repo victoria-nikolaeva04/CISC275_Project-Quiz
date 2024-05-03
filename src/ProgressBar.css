@@ -2,29 +2,39 @@
     height: 50%;
 }
 
-.progress{
+.progress-cat{
     margin-top: 25px;
-    background-color: #414fec;
+    background-color: #ffd388;
     max-width: 100%;
-    margin-left: 20%;
     margin-bottom: 100px;
     max-height: 30%;
-  }
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    margin-left: 5px;
+}
   
-  .progress-bar{
+.progress-bar-cat{
     background-color: #FAC264;
     border-radius: 10px;
-  }
+}
 
-  @keyframes fadeInAnimation {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-  }
+.progress-asset-cat{
+    margin-top: 3px;
+    width: 90px;
+    margin-left: 5px;
+    object-position: right 50%;
 
-.cat-progress-asset{
-    width: 50%;
+    animation-name: moveCat;
+    animation-duration: 4s; /* Adjust duration as needed */
+    animation-timing-function: ease; /* Optional: specify timing function */
+    animation-fill-mode: forwards; /* Optional: keeps the final state after animation */
+}
+
+@keyframes moveCat{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
 }
