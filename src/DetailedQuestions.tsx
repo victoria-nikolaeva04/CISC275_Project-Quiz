@@ -20,6 +20,17 @@ export function DetailedQuestions(): JSX.Element {
     const [progress, setProgress] = useState<number>(0); // Progress bar state
     const navigate = useNavigate(); // Use useNavigate instead of useHistory
     const [key] = useState<string>(keyData); //for api key input
+    const prompt = `You are tasked with creating a concise and readable career suggestions report.You will be provided quiz-takers answers to career-based questions. You will use this information to generate the suggestions. Below is the format you should follow when giving the report. Text in quotation marks should appear in the report itself. Text without quotation marks and without parentheses are your instructions on what you are generating. Text within parentheses are stylization instructions (for example, “(bolded)”, “(italicized)”, “(enter key)”, etc.). Do not include any quotation marks in the report.
+    For the following section, you should generate a short paragraph containing the following information:
+    “Based on your quiz answers, your (strengths (bolded)) include: “ then list 3 of their personal strengths that do not include work environments. “You may enjoy a (work environment (bolded)) that contains“ then list 3 things. “Below, you can find specific industry and job suggestions that may fit your interests, along with their descriptions.”
+    For the following section, you should list 3 Industries that match the quiz-takers in the following format:
+    “Your Possible Career Industries” (bolded)
+    (bullet point) “Top Suggestion: “ Best suited industry for the quiz taker  (bolded)
+    (bullet point) A different industry that may fit the quiz taker
+    For the following section, you will list 5 well-fitting jobs in their top career industry you generated prior. You should make a table with one column for job name, and one column for average salary. Label these appropriately (bolded).
+    “Jobs In The” add their top career industry (bolded) then in parentheses the job title of their top career industry (bolded)
+    For the following section, you create a description for each job you listed above. Expand on description, write more than one sentence, they should be at least five sentences long. They should follow the format of: (Job title (bolded)) “: “ description
+     Below are the quiz questions along with the quiz-takers answers. Use this information to generate the report following the format above.`; 
 
 
 
@@ -115,7 +126,7 @@ export function DetailedQuestions(): JSX.Element {
             const completion = await openAI.chat.completions.create({
                 messages: [
                     /*Sets up the system and user roles for gpt-4-turbo*/ 
-                    { role: 'system', content: 'You are a helpful career. You will be provided a top 5 student results to a career quiz with as well as providing some basic details such as salary and degree requirements' },
+                    { role: 'system', content: prompt },
                     { role: 'user', content: `My answers are:\n${answersString}` }
                 ],
                 model: 'gpt-4-turbo',
