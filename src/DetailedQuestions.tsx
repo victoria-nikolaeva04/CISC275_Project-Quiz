@@ -2,13 +2,26 @@ import React, { useState } from "react";
 import './DetailedQuestions.css';
 import paw_button  from "./images/cat-paw-button.png";
 import { Button, Container, Row , Col, Form } from "react-bootstrap";
+import { useNavigate } from 'react-router-dom';
+import OpenAI from "openai";
 
+
+let keyData = "";
+const saveKeyData = "MYKEY";
+const prevKey = localStorage.getItem(saveKeyData); //so it'll look like: MYKEY: <api_key_value here> in the local storage when you inspect
+if (prevKey !== null) {
+  keyData = JSON.parse(prevKey);
+}
 export function DetailedQuestions(): JSX.Element {
 
     // States
     const [questionIndex, setQuestionIndex] = useState<number>(0); // Current question state
     const [selectedAnswers, setSelectedAnswers] = useState<{ [key: string]: string }>({}); // Dictionary, used to correlate question -> selected answer
     const [progress, setProgress] = useState<number>(0); // Progress bar state
+    const navigate = useNavigate(); // Use useNavigate instead of useHistory
+    const [key] = useState<string>(keyData); //for api key input
+
+
 
     // 7 questions and their possible answers
     const questions = [
@@ -80,6 +93,43 @@ export function DetailedQuestions(): JSX.Element {
         const newProgress = (answeredQuestionsCount / questions.length) * 100;
         if (!selectedAnswers[`Question${questionIndex + 1}`]) {
             setProgress(newProgress);
+        }
+    };
+
+    const handleSubmission = async () => {
+        console.log('Submitting...');
+        try {
+            const openAI = new OpenAI({
+                apiKey: key,
+                dangerouslyAllowBrowser: true,
+            });
+    
+            // Prepare the answers string with formatted questions and answers
+            let answersString = '';
+            Object.keys(selectedAnswers).forEach((questionKey, index) => {
+                answersString += `Question ${index + 1}: ${questions[index].question}\n`;
+                answersString += `Answer: ${selectedAnswers[questionKey]}\n\n`;
+            });
+    
+            /*Open AI set up*/
+            const completion = await openAI.chat.completions.create({
+                messages: [
+                    /*Sets up the system and user roles for gpt-4-turbo*/ 
+                    { role: 'system', content: 'You are a helpful career. You will be provided a top 5 student results to a career quiz with as well as providing some basic details such as salary and degree requirements' },
+                    { role: 'user', content: `My answers are:\n${answersString}` }
+                ],
+                model: 'gpt-4-turbo',
+            });
+    
+            if (completion.choices[0].message.content != null) {
+                /*Takes what gpt prints out and routes it the result page which will then displays the result  */
+                navigate('/result', { state: { result: completion.choices[0].message.content } });
+            } else {
+                /*Error handling */
+                console.log('Error! Maybe you forgot the API key.');
+            }
+        } catch (error) {
+            console.error('Error in OpenAI integration:', error);
         }
     };
 
@@ -198,9 +248,9 @@ export function DetailedQuestions(): JSX.Element {
                 
             <div className = "get-answers-button">
                 {Object.keys(selectedAnswers).length === questions.length ? (
-                    <Button>Get Answers</Button>
+                    <Button onClick={handleSubmission}>Get Answers</Button>
                 ) : (
-                    <Button disabled>Get Answers</Button>
+                    <Button onClick={handleSubmission}>Get Answers</Button>
                 )}
             </div>
         </div>   
