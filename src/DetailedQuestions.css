@@ -38,12 +38,31 @@ body {
   margin-right: 1%;
 }
 
+.progress-bar-section {
+  width: 100%;
+  height: 125px;
+  display: flex; 
+  align-items: center; 
+}
+
+.progress-bar-shape {
+  width: 80%;
+  margin: 0 auto;
+  padding-left: 16%;
+}
+
+.cat-gifs {
+  width: 16%;
+  padding-bottom: 2%;
+}
+
 .progress-bar {
   position: relative;
   width: 100%;
   height: 20px;
   background-color: #ccc;
   border-radius: 10px;
+
 }
  
 .update-progress-bar {
