@@ -25,16 +25,16 @@
     object-position: right 50%;
 
     animation-name: moveCat;
-    animation-duration: 4s; /* Adjust duration as needed */
-    animation-timing-function: ease; /* Optional: specify timing function */
-    animation-fill-mode: forwards; /* Optional: keeps the final state after animation */
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
 }
 
-@keyframes moveCat{
-    0%{
-        transform: translateX(-100%);
+@keyframes moveCat {
+    0% {
+      transform: translateX(-100%);
     }
-    100%{
-        transform: translateX(0);
+    100% {
+      transform: translateX(0);
     }
 }

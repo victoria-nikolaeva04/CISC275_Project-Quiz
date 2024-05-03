@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 //import 'bootstrap/dist/css/bootstrap.min.css';
 import './ProgressBar.css';
 import catSleep from './images/CISC-progress-cat-sleep.png';
@@ -14,7 +14,12 @@ interface ProgressBarProps {
 }
 
 const ProgressBar: React.FC<ProgressBarProps> = ({progress}) => {
+  const [currentProgress, setCurrentProgress] = useState(progress);
   let imageSrc: string;
+
+  useEffect(() => {
+    setCurrentProgress(progress);
+  }, [progress]);
 
   if (progress === 0) {
     imageSrc = catSleep;
