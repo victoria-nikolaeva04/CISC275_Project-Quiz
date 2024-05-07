@@ -4,14 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Homepage from './homepage';
-import CollapsibleNavbar from './Navbar'
+import CollapsibleNavbar from './navbar'
 import Questionnaire from './basicQuestion';
 import { HashRouter,Routes, Route} from 'react-router-dom'; // Import BrowserRouter and other necessary components
 import BasicResult from './basicresult';
 import DetailedQuestions from './DetailedQuestions';
 import AboutMe from './AboutMe';
 import Result from './result';
-import Footer from './Footer';
+import Footer from './footer';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

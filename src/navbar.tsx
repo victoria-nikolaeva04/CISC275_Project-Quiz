@@ -3,8 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import logo  from "./images/CISC-Logo.png";
 import Navbar from 'react-bootstrap/Navbar';
-
-import './Navbar.css'
+import './navbar.css'
 import { Link } from 'react-router-dom'; // Import BrowserRouter and other necessary components
 
 export function CollapsibleNavbar() {
