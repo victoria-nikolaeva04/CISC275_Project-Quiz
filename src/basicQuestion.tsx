@@ -56,7 +56,7 @@ if (prevKey !== null) {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const navigate = useNavigate(); // Use useNavigate instead of useHistory
     const [key] = useState<string>(keyData); //for api key input
-    const [questionsState, setQuestionsState] = useState(questions);
+    //const [questionsState, setQuestionsState] = useState(questions);
   
 //sets the local storage item to the api key the user inputed
     /*

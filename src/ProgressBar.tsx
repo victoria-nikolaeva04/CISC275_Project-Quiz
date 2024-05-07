@@ -16,7 +16,7 @@ interface ProgressBarProps {
 
 const ProgressBar: React.FC<ProgressBarProps> = ({progress}) => {
   const [currentProgress, setCurrentProgress] = useState(progress);
-  const showMouse = currentProgress < 84; // Show mouse when progress is less than 84%
+  const showMouse = currentProgress < 58; // Show mouse when progress is less than 84%
   let imageSrc: string;
 
   useEffect(() => {
@@ -25,19 +25,19 @@ const ProgressBar: React.FC<ProgressBarProps> = ({progress}) => {
 
   if (currentProgress === 0) {
     imageSrc = catSleep;
-  } else if (currentProgress >= 1 && currentProgress <= 13) {
+  } else if (currentProgress >= 1 && currentProgress <= 14) {
     imageSrc = catWakeUp;
-  } else if (currentProgress >= 14 && currentProgress <= 28) {
+  } else if (currentProgress >= 15 && currentProgress <= 28) {
     imageSrc = catYawn;
-  } else if (currentProgress >= 29 && currentProgress <= 83) {
+  } else if (currentProgress >= 29 && currentProgress <= 57) {
     imageSrc = catWalk;
-  } else if (currentProgress >= 84 && currentProgress <= 95) {
+  } else if (currentProgress >= 58 && currentProgress <= 71) {
     imageSrc = catFight;
-  } else if (currentProgress >= 96 && currentProgress <= 100) {
+  } else if (currentProgress >= 72 && currentProgress <= 100) {
     imageSrc = catEat;
   } else {
-    imageSrc = catEat; // Default image if progress is out of range
-  }
+    imageSrc = catEat;
+  }  
 
   return (
     <div className="progress-container">
@@ -45,7 +45,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({progress}) => {
                 src={imageSrc}
                 alt="Progress-cat"
                 className="progress-asset-cat"
-                style={{width: `(${currentProgress}%)`}}
+                style={{transform: `translateX(${currentProgress}%)`}}
             ></img>
 
             {showMouse && (
