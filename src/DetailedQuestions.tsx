@@ -5,11 +5,10 @@ import { Button, Container, Row , Col, Form } from "react-bootstrap";
 import catSleep from './images/CISC-progress-cat-sleep.png';
 import catWakeUp from './images/CISC-progress-cat-wakeUp.png';
 import catYawn from './images/CISC-progress-cat-yawn.png';
-import catWalking from './images/CISC-progress-cat-walking.gif';
+import catWalking from './images/trythis.gif';
 import mouseEat from './images/CISC-progress-mouse-eat.gif';
 import catFight from './images/CISC-progress-cat-fight.gif';
 import catEat from './images/CISC-progress-cat-eat.gif';
-import tryThis from './images/trythis.gif';
 
 
 
@@ -20,10 +19,12 @@ export function DetailedQuestions(): JSX.Element {
     const [questionIndex, setQuestionIndex] = useState<number>(0); // Current question state
     const [selectedAnswers, setSelectedAnswers] = useState<{ [key: string]: string }>({}); // Dictionary, used to correlate question -> selected answer
     const [progress, setProgress] = useState<number>(0); // Progress bar state
-    const [catImagesIndex, setCatImagesIndex] = useState<number>(0); // Cat image array indexing
+    const [imagesIndex, setImagesIndex] = useState<number>(0); // Cat image array indexing
 
     // Cat image array
-    const catImages = [catSleep, catWakeUp, catYawn, tryThis, tryThis, mouseEat, catFight, catEat];
+    const catImages = [catSleep, catWakeUp, catYawn, catWalking, catWalking, mouseEat, catFight, catEat];
+    const mouseImages = [mouseEat, mouseEat, mouseEat, mouseEat, mouseEat, mouseEat, catFight, catEat];
+
 
     // 7 questions and their possible answers
     const questions = [
@@ -89,17 +90,20 @@ export function DetailedQuestions(): JSX.Element {
     const handleAnswerSelection = (answer: string) => { 
         // Records selected answer
         setSelectedAnswers({ ...selectedAnswers, [`Question${questionIndex + 1}`]: answer }); 
-        
-        
 
         // Updates progress bar
         const answeredQuestionsCount = Object.keys(selectedAnswers).length + 1;
         const newProgress = (answeredQuestionsCount / questions.length) * 100;
         if (!selectedAnswers[`Question${questionIndex + 1}`]) {
             setProgress(newProgress);
-            
-            // Updates cat image next to progress bar
-            setCatImagesIndex(catImagesIndex + 1);
+            // Updates gif images in textbox
+            setImagesIndex(imagesIndex + 1);
+
+            // Move cat towards mouse in textbox
+            if(imagesIndex === 3) {
+                let currClass = document.querySelector("#cat-gifs");
+                currClass?.classList.replace("cat-gifs", "cat-walk-1")
+            }
         }
     };
 
@@ -147,20 +151,26 @@ export function DetailedQuestions(): JSX.Element {
                         <div className="update-progress-bar" style={{ width: `${progress}%` }}></div>
                     </div>
                 </div>
-
-                <div className="cat-gifs">
-                    <img
-                        src={catImages[catImagesIndex]}
-                        alt="logo"
-                        id="card-pic"
-                    />
-                </div>
             </div>
-
-            
 
             <div className="question-textbox">
                 <p className="question-text">{questions[questionIndex].question}</p>
+                <div className="gifs">
+                    <div className="cat-gifs" id="cat-gifs">
+                        <img
+                            src={catImages[imagesIndex]}
+                            alt="logo"
+                            id="cat-image"
+                        />
+                    </div>
+                    <div className="mouse-gifs" id="mouse-gifs">
+                        <img
+                            src={mouseImages[imagesIndex]}
+                            alt="logo"
+                            id="mouse-image"
+                        />
+                    </div>
+                </div>
             </div>
 
             <div style={{ display: 'flex', justifyContent: 'center' }}>
