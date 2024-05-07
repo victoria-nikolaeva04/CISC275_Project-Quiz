@@ -107,6 +107,7 @@ Returns:
         setCurrentQuestionIndex(currentQuestionIndex - 1);
       }
     };
+    
     const progress = Math.round(((currentQuestionIndex)/questions.length)*100);
 /*
 Handles the submission of the questionnaire. It sends the selected answers to OpenAI for completion and navigates to the result page with the received content.
