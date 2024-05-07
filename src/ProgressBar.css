@@ -4,9 +4,9 @@
 
 .progress-cat{
     margin-top: 25px;
-    background-color: #ffd388;
+    background-color: #F2EDDA;
     max-width: 100%;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
     max-height: 30%;
     border-radius: 10px;
 }
@@ -25,4 +25,9 @@
 .sr-only{
     color: rgb(0, 0, 0);
     margin-left: 5px;
+}
+
+.progress-asset-mouse{
+    float: right;
+    width: 50px;
 }

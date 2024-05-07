@@ -4,13 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Homepage from './homepage';
-import CollapsibleNavbar from './navbar'
+import CollapsibleNavbar from './Navbar'
 import Questionnaire from './basicQuestion';
 import { HashRouter,Routes, Route} from 'react-router-dom'; // Import BrowserRouter and other necessary components
 import BasicResult from './basicresult';
 import DetailedQuestions from './DetailedQuestions';
 import AboutMe from './AboutMe';
 import Result from './result';
+import Footer from './Footer';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -32,6 +33,7 @@ root.render(
           </Routes>
   <React.StrictMode>
   </React.StrictMode>
+  <Footer></Footer>
   </HashRouter>
   
 );

@@ -7,6 +7,7 @@ import catYawn from './images/CISC-progress-cat-yawn.png';
 import catWalk from './images/CISC-progress-cat-walking.gif';
 import catFight from './images/CISC-progress-cat-fight.gif';
 import catEat from './images/CISC-progress-cat-eat.gif';
+import mouse from './images/CISC-progress-mouse-eat.gif';
 
 
 interface ProgressBarProps {
@@ -15,6 +16,7 @@ interface ProgressBarProps {
 
 const ProgressBar: React.FC<ProgressBarProps> = ({progress}) => {
   const [currentProgress, setCurrentProgress] = useState(progress);
+  const showMouse = currentProgress < 84; // Show mouse when progress is less than 84%
   let imageSrc: string;
 
   useEffect(() => {
@@ -37,32 +39,41 @@ const ProgressBar: React.FC<ProgressBarProps> = ({progress}) => {
     imageSrc = catEat; // Default image if progress is out of range
   }
 
-  const catStyle = {
-    left: `${currentProgress}%`, // Set the left position based on progress
-  };
-
   return (
     <div className="progress-container">
+            <img
+                src={imageSrc}
+                alt="Progress-cat"
+                className="progress-asset-cat"
+                style={{width: `(${currentProgress}%)`}}
+            ></img>
+
+            {showMouse && (
+                <img
+                    src={mouse}
+                    alt="Mouse"
+                    className="progress-asset-mouse"
+                />
+            )}
+
         <div className="progress-cat">
             <div 
                 className="progress-bar-cat" 
                 role="progressbar" 
                 aria-valuenow= {currentProgress}
                 aria-valuemin= {0} 
-                aria-valuemax= {100} 
+                aria-valuemax= {101} 
                 style={{ width: `${currentProgress}%` }}
             >
-                <span className="sr-only">
-                    {currentProgress}%
-                </span>
-
             <img
+            /*
                 src={imageSrc}
                 alt="Progress-cat"
                 className="progress-asset-cat"
-                style={{alignContent: `${currentProgress}%` }}
+                style={{transform: `translateX(${currentProgress}%)`}}
+            */
             ></img>
-                
+
             </div>
         </div>
     </div>
