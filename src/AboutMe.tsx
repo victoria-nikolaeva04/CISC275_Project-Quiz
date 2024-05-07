@@ -1,6 +1,10 @@
 import React from 'react';
 import './AboutMe.css';
-import temp from './images/temp_image.png';
+import VikiPhoto from'./images/Viki-Photo.png';
+import GiaPhoto from'./images/Gia-Photo.png';
+import DustinPhoto from'./images/Dustin-Photo.png';
+import DustinePhoto from'./images/Dustine-Photo.png';
+
 
 const AboutMe: React.FC = () => {
   return (
@@ -26,7 +30,7 @@ const AboutMe: React.FC = () => {
           <div className="column">
             <div className="card">
               <img
-                  src={temp}
+                  src={VikiPhoto}
                   alt="logo"
                   id="card-pic"
               />
@@ -34,7 +38,7 @@ const AboutMe: React.FC = () => {
                 <h2>Victoria</h2>
                   <p className="title-position">Manager</p>
                   <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                  <p>example@example.com</p>
+                  <p>vniko@udel.edu</p>
               </div>
             </div>
         </div>
@@ -42,7 +46,7 @@ const AboutMe: React.FC = () => {
         <div className="column">
           <div className="card">
             <img
-                src={temp}
+                src={DustinPhoto}
                 alt="logo"
                 id="card-pic"
             />
@@ -58,7 +62,7 @@ const AboutMe: React.FC = () => {
         <div className="column">
           <div className="card">
             <img
-                src={temp}
+                src={GiaPhoto}
                 alt="logo"
                 id="card-pic"
             />
@@ -74,13 +78,13 @@ const AboutMe: React.FC = () => {
         <div className="column">
           <div className="card">
             <img
-                src={temp}
+                src={DustinePhoto}
                 alt="logo"
                 id="card-pic"
             />
             <div className="container-card">
               <h2>Dustine</h2>
-              <p className="title-position">Router Guy</p>
+              <p className="title-position">IT Department</p>
               <p>Some text that describes me lorem ipsum ipsum lorem.</p>
               <p>example@example.com</p>
             </div>
