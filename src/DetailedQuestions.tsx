@@ -9,7 +9,7 @@ import catWalking from './images/trythis.gif';
 import mouseEat from './images/CISC-progress-mouse-eat.gif';
 import catFight from './images/CISC-progress-cat-fight.gif';
 import catEat from './images/CISC-progress-cat-eat.gif';
-
+import transparent from './images/transparent.png';
 
 
 
@@ -22,7 +22,7 @@ export function DetailedQuestions(): JSX.Element {
     const [imagesIndex, setImagesIndex] = useState<number>(0); // Cat image array indexing
 
     // Cat image array
-    const catImages = [catSleep, catWakeUp, catYawn, catWalking, catWalking, mouseEat, catFight, catEat];
+    const catImages = [catSleep, catWakeUp, catYawn, catWalking, catWalking, catWalking, transparent, transparent];
     const mouseImages = [mouseEat, mouseEat, mouseEat, mouseEat, mouseEat, mouseEat, catFight, catEat];
 
 
@@ -100,9 +100,15 @@ export function DetailedQuestions(): JSX.Element {
             setImagesIndex(imagesIndex + 1);
 
             // Move cat towards mouse in textbox
-            if(imagesIndex === 3) {
+            if(imagesIndex === 2) {
                 let currClass = document.querySelector("#cat-gifs");
                 currClass?.classList.replace("cat-gifs", "cat-walk-1")
+            } else if(imagesIndex === 3) {
+                let currClass = document.querySelector("#cat-gifs");
+                currClass?.classList.replace("cat-gifs", "cat-walk-2")
+            } else if(imagesIndex === 4) {
+                let currClass = document.querySelector("#cat-gifs");
+                currClass?.classList.replace("cat-gifs", "cat-walk-3")
             }
         }
     };

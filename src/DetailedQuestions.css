@@ -98,30 +98,63 @@ body {
   position: absolute;
   bottom: 0;
   display: flex;
-  justify-content: space-between; /* Align items with space between them */
+  justify-content: space-between; 
 }
 
 .cat-gifs {
   transform: scale(0.75);
   position: absolute;
   bottom: 0;
-  left: 0; /* Adjust the left position as needed */
+  left: 0; 
 }
-
 .cat-walk-1 {
   transform: scale(0.75);
   position: absolute;
   bottom: 0;
-  left: 50%; /* Adjust the left position as needed */
-  animation: slideAnimation 1s forwards; /* Apply slide animation */
+  left: 0; /* Initial position for slideAnimation1 */
+  animation: slideAnimation1 1s forwards; 
 }
 
-@keyframes slideAnimation {
+.cat-walk-2 {
+  transform: scale(0.75);
+  position: absolute;
+  bottom: 0;
+  left: 20%; /* Initial position for slideAnimation2 */
+  animation: slideAnimation2 1s forwards; 
+}
+
+.cat-walk-3 {
+  transform: scale(0.75);
+  position: absolute;
+  bottom: 0;
+  left: 40%; /* Initial position for slideAnimation3 */
+  animation: slideAnimation3 1s forwards; 
+}
+
+@keyframes slideAnimation1 {
   from {
-    left: 0; /* Starting position */
+    left: 0;
   }
   to {
-    left: 50%; /* Final position */
+    left: 20%; 
+  }
+}
+
+@keyframes slideAnimation2 {
+  from {
+    left: 20%;
+  }
+  to {
+    left: 40%; 
+  }
+}
+
+@keyframes slideAnimation3 {
+  from {
+    left: 40%;
+  }
+  to {
+    left: 60%; 
   }
 }
 
@@ -129,7 +162,7 @@ body {
   transform: scale(0.75);
   position: absolute;
   bottom: 0;
-  right: 0; /* Adjust the right position as needed */
+  right: 0; 
 }
   
 .answer-row {
