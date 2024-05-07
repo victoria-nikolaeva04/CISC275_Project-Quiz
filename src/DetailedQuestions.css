@@ -69,6 +69,12 @@ body {
   border-radius: 10px;
   transition: width 0.5s ease;
 }
+
+.detailed-prev-button {
+  position: absolute;
+  left: 10%;
+  bottom: 5%;
+}
   
 .question-textbox {
   width: 60%;
@@ -136,25 +142,25 @@ body {
     left: 0;
   }
   to {
-    left: 20%; 
+    left: 25%; 
   }
 }
 
 @keyframes slideAnimation2 {
   from {
-    left: 20%;
+    left: 25%;
   }
   to {
-    left: 40%; 
+    left: 50%; 
   }
 }
 
 @keyframes slideAnimation3 {
   from {
-    left: 40%;
+    left: 50%;
   }
   to {
-    left: 60%; 
+    left: 75%; 
   }
 }
 
@@ -163,6 +169,12 @@ body {
   position: absolute;
   bottom: 0;
   right: 0; 
+}
+
+.detailed-next-button {
+  position: absolute;
+  right: 10%;
+  bottom: 5%;
 }
   
 .answer-row {

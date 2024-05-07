@@ -100,18 +100,34 @@ export function DetailedQuestions(): JSX.Element {
             setImagesIndex(imagesIndex + 1);
 
             // Move cat towards mouse in textbox
+            let currClass = document.querySelector("#cat-gifs");
             if(imagesIndex === 2) {
-                let currClass = document.querySelector("#cat-gifs");
                 currClass?.classList.replace("cat-gifs", "cat-walk-1")
-            } else if(imagesIndex === 3) {
-                let currClass = document.querySelector("#cat-gifs");
-                currClass?.classList.replace("cat-gifs", "cat-walk-2")
-            } else if(imagesIndex === 4) {
-                let currClass = document.querySelector("#cat-gifs");
-                currClass?.classList.replace("cat-gifs", "cat-walk-3")
+            } 
+            if(imagesIndex === 3) {
+                currClass?.classList.replace("cat-walk-1", "cat-walk-2")
+            } 
+            if(imagesIndex === 4) {
+                currClass?.classList.replace("cat-walk-2", "cat-walk-3")
             }
         }
-    };
+    };  
+
+    const prevButton = (index: number) => {
+        if(index === 0){
+            return;
+        } else {
+            setQuestionIndex(index-1);
+        }
+    }
+
+    const nextButton = (index: number) => {
+        if(index === 6){
+            return;
+        } else {
+            setQuestionIndex(index+1);
+        }
+    }
 
     // Component return
     return (
@@ -158,24 +174,59 @@ export function DetailedQuestions(): JSX.Element {
                     </div>
                 </div>
             </div>
+            <div>
+                <div className="detailed-prev-button">
+                    <Button
+                        onClick={() => prevButton(questionIndex)}
+                        style={{
+                                backgroundImage: `url(${paw_button})`,
+                                backgroundSize: 'cover',
+                                backgroundPosition: 'center',
+                                width: '75px',
+                                height: '75px',
+                                backgroundColor: '#FFA3B1',
+                                fontSize: '24px',
+                                color: 'black',
+                                borderRadius: '50%',
+                            }}
+                    />
+                </div>
 
-            <div className="question-textbox">
-                <p className="question-text">{questions[questionIndex].question}</p>
-                <div className="gifs">
-                    <div className="cat-gifs" id="cat-gifs">
-                        <img
-                            src={catImages[imagesIndex]}
-                            alt="logo"
-                            id="cat-image"
-                        />
+                <div className="question-textbox">
+                    <p className="question-text">{questions[questionIndex].question}</p>
+                    <div className="gifs">
+                        <div className="cat-gifs" id="cat-gifs">
+                            <img
+                                src={catImages[imagesIndex]}
+                                alt="logo"
+                                id="cat-image"
+                            />
+                        </div>
+                        <div className="mouse-gifs" id="mouse-gifs">
+                            <img
+                                src={mouseImages[imagesIndex]}
+                                alt="logo"
+                                id="mouse-image"
+                            />
+                        </div>
                     </div>
-                    <div className="mouse-gifs" id="mouse-gifs">
-                        <img
-                            src={mouseImages[imagesIndex]}
-                            alt="logo"
-                            id="mouse-image"
-                        />
-                    </div>
+                </div>
+
+                <div className="detailed-next-button">
+                    <Button
+                            onClick={() => nextButton(questionIndex)}
+                            style={{
+                                    backgroundImage: `url(${paw_button})`,
+                                    backgroundSize: 'cover',
+                                    backgroundPosition: 'center',
+                                    width: '75px',
+                                    height: '75px',
+                                    backgroundColor: '#FFA3B1',
+                                    fontSize: '24px',
+                                    color: 'black',
+                                    borderRadius: '50%',
+                                }}
+                    />
                 </div>
             </div>
 
