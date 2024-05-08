@@ -1,71 +1,88 @@
+/* Import alien fonts */
 @font-face { font-family: Minecraft; src: url('/src/fonts/Minecraft.ttf'); } 
 @font-face { font-family: Minecraft2; src: url('/src/fonts/easvhs.ttf'); } 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-.App{
+#home-page{
   background-color: #F2EDDA;
-  font-family: "Minecraft";
-  color: #F6F6F6;
+}
+
+.heading{
+  font-family: 'Minecraft';
+  color: #F4A2A2;
+  font-size: 30px;
   text-align: center;
 }
 
-/*
-.App-header {
-  background-color: #6B7AA3;
-  min-height: 20vh;
-  display: grid;
-  align-items: center; 
-  grid-template-columns: 1fr 1fr 1fr;
-  column-gap: 2px;
-}
-*/
-
-.image{
-  width: calc(1000px - 20px);
-  max-width: 20px;
-  margin-bottom: 5px;
-  margin-top: 5px;
+.homepage-body{
+  background-color: #F2EDDA;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 5%;
 }
 
-.text{
+.homepage-body .homepage-quiz-section{
+  flex: 1;
+  padding: 20px;
+}
+
+.homepage-quiz-section{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(20px + 2vmin);
-  margin-bottom: 3px;
-  color: #68BFD6;
+  justify-content: space-evenly;
+  margin: 0px 5vw 0px 5vw;
 }
 
-nav{
-  display: flex;
-  flex-direction:row;
-  text-align: center;
-  justify-content: space-around;
+.homepage-box{
+  background-color: #FF914D;
+  box-shadow: 3px 5px 10px rgba(191, 80, 0, 0.801);
+  padding: 10%;
+  border-radius: 20px;
+  position: relative;
 }
 
-.nav-btn{
-  padding: 2vh;
-  margin: 2px;
-  text-align: center;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  background-color: #F09738;
-  color: black;
-  font-size: 14px;
+@media screen and (max-width: 900px){
+  .homepage-body{
+    background-color: #F2EDDA;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 5%;
+  }
+  .homepage-buttons{
+    max-width: 100%;
+    margin-top: 20px;
+    margin-bottom: 2vh;
+    margin-left: calc(25% - 2vw);
+    margin-right: calc(0.5% - 2vw);
+  }
+
 }
 
-.nav-btn:hover{
-  background-color: #EE6B2C;
+.image-easy{
+  content: '';
+  display: block;
+  width: 25%;
+  height: auto;
+  position: absolute;
+  bottom: -25px;
+  right: -60px;
+  z-index: 1;
 }
 
-h3{
-  color: #C92A00;
-  font-style: bold;
+.image-hard{
+  content: '';
+  display: block;
+  width: 25%;
+  height: auto;
+  position: absolute;
+  bottom: -40px;
+  right: -70px;
+  z-index: 1;
 }
 
-.homepage_buttons{
+.homepage-buttons{
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -79,130 +96,12 @@ h3{
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  background-color: #F09738;
+  background-color: whitesmoke;
   color: black;
   font-size: 14px;
 }
 
-.homepage_buttons:hover{
-  background-color: #EE6B2C;
+.homepage-buttons:hover{
+  background-color: #F4A2A2;
 }
 
-.homepage_body{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.homepage_quiz_section{
-  display: flex;
-  flex-direction: column;
-  margin-top: 3vh;
-  margin-right: 10vw;
-  margin-left: 10vw;
-  justify-content: space-evenly;
-
-}
-
-.homepage_box{
-  display: flex;
-  flex-direction: column;
-  background-color: #8D99BA;
-  text-align: center;
-  width: 20vw;
-
-  box-shadow: 3px 5px 10px grey;
-  color: whitesmoke;
-}
-
-@media screen and (max-width: 910px){
-  .homepage_body{
-    display: flex;
-    flex-direction: column;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .homepage_quiz_section{
-    display: flex;
-    flex-direction: column;
-    max-width: 50%;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
-    margin-left: calc(20% - 2vw);
-    margin-right: calc(20% - 2vw);
-  }
-
-  .homepage_box{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    width: 25vw;
-    padding: 20vw;
-    box-shadow: 3px 5px 10px grey;
-  }
-
-  .homepage_buttons{
-    max-width: 100%;
-    margin-top: 20px;
-    margin-bottom: 2vh;
-    margin-left: calc(25% - 2vw);
-    margin-right: calc(0.5% - 2vw);
-  }
-
-}
-
-#logo-pic{
-  max-width: calc(20vmin - 5%);
-  margin-right: calc(25vw - 5%);
-  margin-left : calc(10vw - 5%);
-  margin-top: 5px; 
-}
-
-.image-structure{
-  width: 20vh;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.footer_logo{
-  width: 80px;
-}
-
-.footer_decorative{
-  display: flex;
-}
-
-#logo_text_footer{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-left: 6px;
-}
-
-.contact_info_footer{
-  width:100%;
-  height: auto;
-  text-align:right;
-  margin-top: 25px;
-  margin-right: 10px;
-}
-
-.Submit-Button {
-  margin-top: 20px;
-  margin-left: 5px;
-  padding: 10px 15px;
-  font-size: 12px;
-  background-color: #F09738;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.Submit-Button:hover{
-  background-color: #EE6B2C;
-}
