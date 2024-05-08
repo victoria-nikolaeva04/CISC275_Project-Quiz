@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@font-face { font-family: Minecraft; src: url('fonts/Minecraft.ttf') format('truetype'); } 
+
 
 body {
   background-color:#F2EDDA;
@@ -90,6 +92,19 @@ body {
   border-radius: 25px;
   outline: 5px solid #FF914D;
   position: relative;
+}
+
+.question-number {
+  display: flex;
+  top: 0;
+  position: absolute; 
+  justify-content: center; 
+  align-items: center; 
+  width: 100%; 
+  margin-top: 20px; 
+  font-size: 25px; 
+  font-family: Minecraft;
+  color: rgb(62, 61, 61)
 }
 
 .question-text {

@@ -196,15 +196,26 @@ export function DetailedQuestions(): JSX.Element {
                 </div>
 
                 <div className="question-textbox">
-                <CSSTransition // Question text fade-in
-                    key={questionIndex} 
-                    in={true} 
-                    appear={true} 
-                    timeout={1000} 
-                    classNames="fade" 
-                >
-                    <p className="question-text">{questions[questionIndex].question}</p>
-                </CSSTransition>
+                    <CSSTransition // Question text fade-in
+                        key={`question-${questionIndex}`} // Change key to include questionIndex
+                        in={true} 
+                        appear={true} 
+                        timeout={1000} 
+                        classNames="fade" 
+                    >
+                        <p className="question-number">QUESTION #{questionIndex+1}</p>
+                    </CSSTransition>
+
+                    <CSSTransition // Question text fade-in
+                        key={questionIndex} 
+                        in={true} 
+                        appear={true} 
+                        timeout={1000} 
+                        classNames="fade" 
+                    >
+                        <p className="question-text">{questions[questionIndex].question}</p>
+                    </CSSTransition>
+
                     <div className="gifs">
                         <div className="cat-gifs" id="cat-gifs">
                             <img
