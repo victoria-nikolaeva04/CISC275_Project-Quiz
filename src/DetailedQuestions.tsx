@@ -10,8 +10,9 @@ import mouseEat from './images/CISC-progress-mouse-eat.gif';
 import catFight from './images/CISC-progress-cat-fight.gif';
 import catEat from './images/CISC-progress-cat-eat.gif';
 import transparent from './images/transparent.png';
-import { useEffect } from 'react';
-
+import prevButtonImage from './images/detailed_prev_button.png';
+import nextButtonImage from './images/detailed_next_button.png';
+import { CSSTransition } from "react-transition-group";
 
 
 export function DetailedQuestions(): JSX.Element {
@@ -21,7 +22,6 @@ export function DetailedQuestions(): JSX.Element {
     const [selectedAnswers, setSelectedAnswers] = useState<{ [key: string]: string }>({}); // Dictionary, used to correlate question -> selected answer
     const [progress, setProgress] = useState<number>(0); // Progress bar state
     const [imagesIndex, setImagesIndex] = useState<number>(0); // Cat image array indexing
-    const [fadeKey, setFadeKey] = useState<number>(0); // Key to trigger text fade animation
 
     // Cat image array
     const catImages = [catSleep, catWakeUp, catYawn, catWalking, catWalking, catWalking, transparent, transparent];
@@ -130,12 +130,8 @@ export function DetailedQuestions(): JSX.Element {
             setQuestionIndex(index+1);
         }
     }
-
-    useEffect(() => {
-        // Update the fadeKey whenever the component updates to trigger the fade-in animation
-        setFadeKey(prevKey => prevKey + 1);
-    }, [questionIndex]); // Only trigger when the questionIndex changes
-
+    
+ 
     // Component return
     return (
         <div style={{ width: '100%' }}>
@@ -186,11 +182,11 @@ export function DetailedQuestions(): JSX.Element {
                     <Button
                         onClick={() => prevButton(questionIndex)}
                         style={{
-                                backgroundImage: `url(${paw_button})`,
+                                backgroundImage: `url(${prevButtonImage})`,
                                 backgroundSize: 'cover',
                                 backgroundPosition: 'center',
-                                width: '75px',
-                                height: '75px',
+                                width: '125px',
+                                height: '125px',
                                 backgroundColor: '#FFA3B1',
                                 fontSize: '24px',
                                 color: 'black',
@@ -200,7 +196,15 @@ export function DetailedQuestions(): JSX.Element {
                 </div>
 
                 <div className="question-textbox">
-                <p className="question-text" key={fadeKey}>{questions[questionIndex].question}</p>
+                <CSSTransition // Question text fade-in
+                    key={questionIndex} 
+                    in={true} 
+                    appear={true} 
+                    timeout={1000} 
+                    classNames="fade" 
+                >
+                    <p className="question-text">{questions[questionIndex].question}</p>
+                </CSSTransition>
                     <div className="gifs">
                         <div className="cat-gifs" id="cat-gifs">
                             <img
@@ -223,11 +227,11 @@ export function DetailedQuestions(): JSX.Element {
                     <Button
                             onClick={() => nextButton(questionIndex)}
                             style={{
-                                    backgroundImage: `url(${paw_button})`,
+                                    backgroundImage: `url(${nextButtonImage})`,
                                     backgroundSize: 'cover',
                                     backgroundPosition: 'center',
-                                    width: '75px',
-                                    height: '75px',
+                                    width: '125px',
+                                    height: '125px',
                                     backgroundColor: '#FFA3B1',
                                     fontSize: '24px',
                                     color: 'black',
