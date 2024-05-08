@@ -23,15 +23,15 @@ const questions = [
   },
   {
     question: 'Question 5: Reflect on your organizational skills. Do you thrive in environments where you can meticulously plan and organize tasks, ensuring everything runs smoothly, or do you prefer more flexibility and adaptability, thriving in situations that require quick decision-making and problem-solving?',
-    answers: ['Learn pottery', 'Learn programming', 'Travel', 'Go to workshops and make more connections', 'I do not know yet, will go with the flow', 'Learn several sports']
+    answers: ['I want to make detailed plans and make sure everything is super organized','I want to focus more on adaptability and problem solving on the spot'],
   },
   {
-    question: 'Question 6: If you have a year paid-time off and the company gives you money to pursue every interest you want, what would you choose to do with that time?',
-    answers: ['Learn pottery', 'Learn programming', 'Travel', 'Go to workshops and make more connections', 'I do not know yet, will go with the flow', 'Learn several sports']
+    question: 'Question 6: "What motivates you the most in your career: achieving recognition and success, making a positive impact on others or society, or continuous learning and growth?',
+    answers: ['I want to have achievements and recognition', 'I want to make a positive impact on the world', 'I want to learn and grow during my career trajectory']
   },
   {
-    question: 'Question 7: If you have a year paid-time off and the company gives you money to pursue every interest you want, what would you choose to do with that time?',
-    answers: ['Learn pottery', 'Learn programming', 'Travel', 'Go to workshops and make more connections', 'I do not know yet, will go with the flow', 'Learn several sports']
+    question: 'Question 7: How do you prefer to communicate with colleagues and clients: face-to-face interactions, written communication (emails, reports), or virtual meetings and video calls?',
+    answers: ['I definitely want to meet them in person', 'Written communication is my strong suits', 'I prefer having virtual meeting and video calls']
   },
 ];
   // Add more questions here...
@@ -50,26 +50,59 @@ if (prevKey !== null) {
     const [key] = useState<string>(keyData); //for api key input
   
 //sets the local storage item to the api key the user inputed
-    
+    /*
+Handles the selection of an answer for a question in the questionnaire. This function updates the state to record the selected answer and adjusts the progress bar based on the number of questions answered.
+
+Parameters:
+    - answerIndex (number): Index of the selected answer in the answers array for the current question.
+
+Returns:
+    - N/A
+*/
     const handleAnswerSelection = (answerIndex: number) => {
       const newSelectedAnswers = [...selectedAnswers];
       newSelectedAnswers[currentQuestionIndex] = questions[currentQuestionIndex].answers[answerIndex];
       setSelectedAnswers(newSelectedAnswers);
     };
-    
+/*
+Handles the navigation to the next question in the questionnaire. It checks if there are more questions available and updates the current question index accordingly.
+
+Parameters:
+    - None
+
+Returns:
+    - N/A
+*/
     const handleNextQuestion = () => {
       if (currentQuestionIndex < questions.length - 1) {
         setCurrentQuestionIndex(currentQuestionIndex + 1);
       }
     };
-    
+
+/*
+Handles the navigation to the previous question in the questionnaire. It checks if there are previous questions available and updates the current question index accordingly.
+
+Parameters:
+    - None
+
+Returns:
+    - N/A
+*/
     const handlePreviousQuestion = () => {
       if (currentQuestionIndex > 0) {
         setCurrentQuestionIndex(currentQuestionIndex - 1);
       }
     };
     const progress = Math.round(((currentQuestionIndex+1)/questions.length)*100);
-      
+/*
+Handles the submission of the questionnaire. It sends the selected answers to OpenAI for completion and navigates to the result page with the received content.
+
+Parameters:
+    - None
+
+Returns:
+    - N/A
+*/ 
     const handleSubmission = async () => {
       console.log('Submitting...');
       try {
@@ -77,9 +110,11 @@ if (prevKey !== null) {
           apiKey: key,
           dangerouslyAllowBrowser: true,
         });
-    
+
+        /*Open AI set up*/
         const completion = await openAI.chat.completions.create({
           messages: [
+            /*Sets up the system and user roles for gpt-4-turbo*/ 
             { role: 'system', content: 'You are a helpful career. You will be provided a top 5 student results to a career quiz with as well as providing some basic details such as salary and degree requirements' },
             { role: 'user', content: `My answers are: ${selectedAnswers.join('\n')}` }
           ],
@@ -87,13 +122,16 @@ if (prevKey !== null) {
         });
     
         if (completion.choices[0].message.content != null) {
-          navigate('/result', { state: { result: completion.choices[0].message.content } });
+          /*Takes what gpt prints out and routes it the result page which will then displays the result  */
+          navigate('/basicresult', { state: { result: completion.choices[0].message.content } });
         } else {
+          /*Error handling */
           console.log('Error! Maybe you forgot the API key.');
         }
       } catch (error) {
         console.error('Error in OpenAI integration:', error);
       }
+
     };    
     return (
       <div>
@@ -129,8 +167,8 @@ if (prevKey !== null) {
           {currentQuestionIndex !== questions.length - 1 && (
             <button onClick={handleNextQuestion} className="next-button">Next</button>
           )}
+          </div>
         </div>
-      </div>
     );
   };
   

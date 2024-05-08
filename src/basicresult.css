@@ -16,8 +16,10 @@
     margin-bottom: 20px;
 }
 .salary{
+    margin-bottom: 150px;
+    margin-left: 200px;
     margin-right: 200px;
-    min-width: 400px;
+    min-width: 40%;
     border-radius: 25px;
     border: 0.5px;
     background: #f7caf2;
@@ -32,7 +34,8 @@
              -28px -28px 56px #fffffb;
 }
 .job{
-    min-width: 400px;
+    margin-bottom:150px;
+    min-width: 40%;
     border-radius: 25px;
     border: 0.5px;
     background: #f7caf2;
