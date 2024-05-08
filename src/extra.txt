@@ -6,3 +6,12 @@
           <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
         </Form>
       </div>
+
+
+**Gia's OG Progress**
+// Updates progress bar
+        const answeredQuestionsCount = Object.keys(selectedAnswers).length + 1;
+        const newProgress = (answeredQuestionsCount / questions.length) * 100;
+        if (!selectedAnswers[`Question${questionIndex + 1}`]) {
+            setProgress(newProgress);
+        }

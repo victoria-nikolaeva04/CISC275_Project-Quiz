@@ -65,14 +65,6 @@ const ProgressBar: React.FC<ProgressBarProps> = ({progress}) => {
                 aria-valuemax= {101} 
                 style={{ width: `${currentProgress}%` }}
             >
-            <img
-            /*
-                src={imageSrc}
-                alt="Progress-cat"
-                className="progress-asset-cat"
-                style={{transform: `translateX(${currentProgress}%)`}}
-            */
-            ></img>
 
             </div>
         </div>
