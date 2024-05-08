@@ -10,6 +10,7 @@ import mouseEat from './images/CISC-progress-mouse-eat.gif';
 import catFight from './images/CISC-progress-cat-fight.gif';
 import catEat from './images/CISC-progress-cat-eat.gif';
 import transparent from './images/transparent.png';
+import { useEffect } from 'react';
 
 
 
@@ -20,6 +21,7 @@ export function DetailedQuestions(): JSX.Element {
     const [selectedAnswers, setSelectedAnswers] = useState<{ [key: string]: string }>({}); // Dictionary, used to correlate question -> selected answer
     const [progress, setProgress] = useState<number>(0); // Progress bar state
     const [imagesIndex, setImagesIndex] = useState<number>(0); // Cat image array indexing
+    const [fadeKey, setFadeKey] = useState<number>(0); // Key to trigger text fade animation
 
     // Cat image array
     const catImages = [catSleep, catWakeUp, catYawn, catWalking, catWalking, catWalking, transparent, transparent];
@@ -129,6 +131,11 @@ export function DetailedQuestions(): JSX.Element {
         }
     }
 
+    useEffect(() => {
+        // Update the fadeKey whenever the component updates to trigger the fade-in animation
+        setFadeKey(prevKey => prevKey + 1);
+    }, [questionIndex]); // Only trigger when the questionIndex changes
+
     // Component return
     return (
         <div style={{ width: '100%' }}>
@@ -193,7 +200,7 @@ export function DetailedQuestions(): JSX.Element {
                 </div>
 
                 <div className="question-textbox">
-                    <p className="question-text">{questions[questionIndex].question}</p>
+                <p className="question-text" key={fadeKey}>{questions[questionIndex].question}</p>
                     <div className="gifs">
                         <div className="cat-gifs" id="cat-gifs">
                             <img

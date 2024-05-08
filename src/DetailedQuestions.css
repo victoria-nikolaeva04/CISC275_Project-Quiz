@@ -97,6 +97,16 @@ body {
   font-size: x-large;
   text-align: center;
   width: 100%;
+  animation: fadeInAnimation 1s ease-in-out; /* Adjust the duration and timing function as needed */
+}
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .gifs {
@@ -218,3 +228,6 @@ input[type="radio"] {
   margin-top: 20px;
   border-radius: 2px;
 }
+
+
+
