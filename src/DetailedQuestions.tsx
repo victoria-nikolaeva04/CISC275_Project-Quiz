@@ -15,6 +15,7 @@ import nextButtonImage from './images/detailed_next_button.png';
 import { CSSTransition } from "react-transition-group";
 
 
+
 export function DetailedQuestions(): JSX.Element {
 
     // States
@@ -160,6 +161,7 @@ export function DetailedQuestions(): JSX.Element {
                                 fontSize: '24px',
                                 color: 'black',
                                 borderRadius: '50%',
+                                fontFamily: 'Minecraft'
                             }}
                             >
                             {index + 1}
