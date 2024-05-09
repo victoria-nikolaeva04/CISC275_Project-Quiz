@@ -139,7 +139,7 @@ Returns:
         <img
           src={catHeader}
           alt="cat-header"
-          className='cat-header-basic'
+          className='cat-header'
         />
         <img className="cat-logo" alt="con meo cute" />
         <div className="questionnaire-container">

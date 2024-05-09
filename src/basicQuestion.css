@@ -60,7 +60,6 @@ body{
   }
 .previous-button,
 .next-button{
-  display: inline-flex;
   cursor: pointer;
   width: 80px;
 }
