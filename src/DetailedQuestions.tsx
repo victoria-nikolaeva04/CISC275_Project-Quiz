@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import './DetailedQuestions.css';
 import paw_button  from "./images/cat-paw-button.png";
 import { Button, Container, Row , Col, Form } from "react-bootstrap";
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import OpenAI from "openai";
+import { resolve } from "path";
 
 
 let keyData = "";
@@ -31,7 +32,7 @@ export function DetailedQuestions(): JSX.Element {
     “Jobs In The” add their top career industry (bolded) then in parentheses the job title of their top career industry (bolded)
     For the following section, you create a description for each job you listed above. Expand on description, write more than one sentence, they should be at least five sentences long. They should follow the format of: (Job title (bolded)) “: “ description
      Below are the quiz questions along with the quiz-takers answers. Use this information to generate the report following the format above.`; 
-
+     const [isLoading,setIsLoading] = useState(false);
 
 
     // 7 questions and their possible answers
@@ -108,13 +109,16 @@ export function DetailedQuestions(): JSX.Element {
     };
 
     const handleSubmission = async () => {
+        setIsLoading(true);
         console.log('Submitting...');
         try {
             const openAI = new OpenAI({
                 apiKey: key,
                 dangerouslyAllowBrowser: true,
             });
-    
+            await new Promise(resolve => setTimeout(resolve,2000));
+            setIsLoading(false);
+
             // Prepare the answers string with formatted questions and answers
             let answersString = '';
             Object.keys(selectedAnswers).forEach((questionKey, index) => {
@@ -141,6 +145,7 @@ export function DetailedQuestions(): JSX.Element {
             }
         } catch (error) {
             console.error('Error in OpenAI integration:', error);
+            setIsLoading(false);
         }
     };
 

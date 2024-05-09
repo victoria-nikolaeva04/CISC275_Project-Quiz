@@ -12,6 +12,7 @@ import DetailedQuestions from './DetailedQuestions';
 import AboutMe from './AboutMe';
 import Result from './result';
 import Footer from './footer'
+import Loading from './Loading';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -28,6 +29,7 @@ root.render(
           <Route path="homepage" element={<Homepage/>} />
           <Route path="AboutMe" element={<AboutMe/>} />
           <Route path="result" element={<Result/>} />
+          <Route path="Loading" element={<Loading/>} />
           {/* Add more routes as needed */}
           </Routes>
           <Footer></Footer>
