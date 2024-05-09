@@ -15,7 +15,6 @@ import nextButtonImage from './images/detailed_next_button.png';
 import { CSSTransition } from "react-transition-group";
 import { useNavigate } from 'react-router-dom';
 import OpenAI from "openai";
-import { resolve } from "path";
 import Loading from "./Loading";
 
 let keyData = "";
