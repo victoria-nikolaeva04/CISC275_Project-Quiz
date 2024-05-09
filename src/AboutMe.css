@@ -11,17 +11,6 @@
   margin-left: 15%;
   margin-right: 15%;
 }
-  /*display: flex;
-  flex-direction: row;
-}
-
-.team-container{
-
-}
-
-.card-collection{
-
-}*/
 
 .AboutMe-heading{
   font-family: 'Minecraft';
@@ -89,4 +78,15 @@
 .title-position {
   color: rgb(255, 255, 255);
   font-style: italic;
+}
+
+.linkin-logo{
+  width: 50px;
+  padding-bottom: 10px;
+}
+
+.contact-box{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
