@@ -36,7 +36,7 @@ export function DetailedQuestions(): JSX.Element {
     const catImages = [catSleep, catWakeUp, catYawn, catWalking, catWalking, catWalking, transparent, transparent];
     const mouseImages = [mouseEat, mouseEat, mouseEat, mouseEat, mouseEat, mouseEat, catFight, catEat];
 
-    const navigate = useNavigate(); // Use useNavigate instead of useHistory
+    const navigate = useNavigate(); 
     const [key] = useState<string>(keyData); //for api key input
     const prompt = `You are tasked with creating a concise and readable career suggestions report.You will be provided quiz-takers answers to career-based questions. You will use this information to generate the suggestions. Below is the format you should follow when giving the report. Text in quotation marks should appear in the report itself. Text without quotation marks and without parentheses are your instructions on what you are generating. Text within parentheses are stylization instructions (for example, “(bolded)”, “(italicized)”, “(enter key)”, etc.). Do not include any quotation marks in the report.
     For the following section, you should generate a short paragraph containing the following information:
