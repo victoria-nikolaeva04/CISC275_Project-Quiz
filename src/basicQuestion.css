@@ -167,22 +167,3 @@ body{
   margin: 0 auto; 
 }
 
-.progress{
-  margin-top: 25px;
-  background-color: #f7caf2;
-  max-width: 60%;
-  margin-left: 20%;
-  margin-bottom: 100px;
-}
-.progress-bar{
-  background-color: #000;
-}
-@keyframes fadeInAnimation {
-  0% {
-      opacity: 0;
-  }
-  100% {
-      opacity: 1;
-  }
-}
-
