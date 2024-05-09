@@ -16,7 +16,6 @@ import { CSSTransition } from "react-transition-group";
 import { useNavigate } from 'react-router-dom';
 import OpenAI from "openai";
 
-
 let keyData = "";
 const saveKeyData = "MYKEY";
 const prevKey = localStorage.getItem(saveKeyData); //so it'll look like: MYKEY: <api_key_value here> in the local storage when you inspect
@@ -109,6 +108,8 @@ export function DetailedQuestions(): JSX.Element {
         const answeredQuestionsCount = Object.keys(selectedAnswers).length + 1;
         const newProgress = (answeredQuestionsCount / questions.length) * 100;
         if (!selectedAnswers[`Question${questionIndex + 1}`]) {
+
+            
             setProgress(newProgress);
             // Updates gif images in textbox
             setImagesIndex(imagesIndex + 1);
@@ -233,8 +234,8 @@ export function DetailedQuestions(): JSX.Element {
                                 backgroundImage: `url(${prevButtonImage})`,
                                 backgroundSize: 'cover',
                                 backgroundPosition: 'center',
-                                width: '125px',
-                                height: '125px',
+                                width: '75px',
+                                height: '75px',
                                 backgroundColor: '#FFA3B1',
                                 fontSize: '24px',
                                 color: 'black',
@@ -289,8 +290,8 @@ export function DetailedQuestions(): JSX.Element {
                                     backgroundImage: `url(${nextButtonImage})`,
                                     backgroundSize: 'cover',
                                     backgroundPosition: 'center',
-                                    width: '125px',
-                                    height: '125px',
+                                    width: '75px',
+                                    height: '75px',
                                     backgroundColor: '#FFA3B1',
                                     fontSize: '24px',
                                     color: 'black',
