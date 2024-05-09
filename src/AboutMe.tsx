@@ -48,8 +48,6 @@ const AboutMe: React.FC = () => {
                         />
                       </a>
                   </div>
-                  
-
               </div>
             </div>
         </div>
@@ -74,8 +72,7 @@ const AboutMe: React.FC = () => {
                             className='linkin-logo'
                         />
                       </a>
-                  </div>
-              
+              </div>
             </div>
           </div>
         </div>
@@ -100,7 +97,7 @@ const AboutMe: React.FC = () => {
                             className='linkin-logo'
                         />
                       </a>
-                  </div>
+              </div>
             </div>
           </div>
         </div>
@@ -125,7 +122,7 @@ const AboutMe: React.FC = () => {
                             className='linkin-logo'
                         />
                       </a>
-                  </div>
+              </div>
             </div>
             </div>
           </div>
