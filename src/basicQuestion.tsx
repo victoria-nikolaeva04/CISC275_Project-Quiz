@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate instead of useHistory
 import './basicQuestion.css';
 import catHeaderBasic from './images/basic-cat-header.webp'
+import pawButtonNext from './images/detailed_next_button.png'
+import pawButtonPrev from './images/detailed_prev_button.png'
 import OpenAI from 'openai';
 //Hello 
 
@@ -138,8 +140,8 @@ Returns:
       <div>
         <img
           src={catHeaderBasic}
-          alt="cat-header"
-          className='cat-header'
+          alt="cat-header-basic"
+          className='cat-header-basic'
         />
         <img className="cat-logo" alt="con meo cute" />
         <div className="questionnaire-container">
@@ -164,13 +166,39 @@ Returns:
   </div>
   </div>
           {currentQuestionIndex > 0 && (
-            <button onClick={handlePreviousQuestion} className="previous-button">Previous</button>
+            <button 
+                onClick={handlePreviousQuestion}
+                className='previous-button'
+                style={{
+                  backgroundImage: `url(${pawButtonPrev})`,
+                  backgroundSize: 'cover',
+                  width: '80px',
+                  height: '80px',
+                  backgroundColor: '#FFA3B1',
+                  fontSize: '15px',
+                  color: 'black',
+                  borderRadius: '50%',
+              }}
+            ></button>
           )}
           {currentQuestionIndex === questions.length - 1 && (
             <button onClick={handleSubmission} className="submit-button">Submit</button>
           )}
           {currentQuestionIndex !== questions.length - 1 && (
-            <button onClick={handleNextQuestion} className="next-button">Next</button>
+            <button 
+                onClick={handleNextQuestion} 
+                className="next-button"
+                style={{
+                  backgroundImage: `url(${pawButtonNext})`,
+                  backgroundSize: 'cover',
+                  width: '80px',
+                  height: '80px',
+                  backgroundColor: '#FFA3B1',
+                  fontSize: '15px',
+                  color: 'black',
+                  borderRadius: '50%',
+              }}
+                ></button>
           )}
           </div>
         </div>
