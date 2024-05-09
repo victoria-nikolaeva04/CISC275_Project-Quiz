@@ -131,7 +131,7 @@ body {
 }
 
 .cat-gifs {
-  transform: scale(0.75);
+  transform: scale(0.6);
   position: absolute;
   bottom: 0;
   left: 0; 
@@ -188,7 +188,7 @@ body {
 }
 
 .mouse-gifs {
-  transform: scale(0.75);
+  transform: scale(0.6);
   position: absolute;
   bottom: 0;
   right: 0; 
