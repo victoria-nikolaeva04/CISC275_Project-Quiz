@@ -126,7 +126,6 @@ Returns:
           apiKey: key,
           dangerouslyAllowBrowser: true,
         });
-
         /*Open AI set up*/
         const completion = await openAI.chat.completions.create({
           messages: [
@@ -138,7 +137,6 @@ Returns:
         });
         await new Promise(resolve => setTimeout(resolve, 2000));
         console.log('API call completed');
-
         if (completion.choices[0].message.content != null) {
           /*Takes what gpt prints out and routes it the result page which will then displays the result  */
           navigate('/basicresult', { state: { result: completion.choices[0].message.content } });
@@ -152,14 +150,13 @@ Returns:
         setIsLoading(false); // Set loading to false after API call completes
         console.log('Loading set to false');
       }
-
     };    
     return (
       <div>
         {isLoading ? (
                 <Loading></Loading>
             ):(
-                <>
+            <>
         <img
           src={catHeaderBasic}
           alt="cat-header-basic"
