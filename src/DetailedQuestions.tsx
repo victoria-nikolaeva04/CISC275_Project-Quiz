@@ -16,6 +16,7 @@ import { CSSTransition } from "react-transition-group";
 import { useNavigate } from 'react-router-dom';
 import OpenAI from "openai";
 import { resolve } from "path";
+import Loading from "./Loading";
 
 let keyData = "";
 const saveKeyData = "MYKEY";
@@ -164,9 +165,6 @@ export function DetailedQuestions(): JSX.Element {
                 apiKey: key,
                 dangerouslyAllowBrowser: true,
             });
-            await new Promise(resolve => setTimeout(resolve,2000));
-            setIsLoading(false);
-
             // Prepare the answers string with formatted questions and answers
             let answersString = '';
             Object.keys(selectedAnswers).forEach((questionKey, index) => {
@@ -183,7 +181,9 @@ export function DetailedQuestions(): JSX.Element {
                 ],
                 model: 'gpt-4-turbo',
             });
-    
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            console.log('API call completed');
+
             if (completion.choices[0].message.content != null) {
                 /*Takes what gpt prints out and routes it the result page which will then displays the result  */
                 navigate('/result', { state: { result: completion.choices[0].message.content } });
@@ -193,13 +193,19 @@ export function DetailedQuestions(): JSX.Element {
             }
         } catch (error) {
             console.error('Error in OpenAI integration:', error);
-            setIsLoading(false);
+        }finally{
+            setIsLoading(false); // Set loading to false after API call completes
+            console.log('Loading set to false');
         }
     };
 
     // Component return
     return (
         <div style={{ width: '100%' }}>
+            {isLoading ? (
+                <Loading></Loading>
+            ):(
+                <>
             <img className="cat-header" alt="Cat header"></img> 
             <div>
                 <Container className="question-row">
@@ -395,6 +401,8 @@ export function DetailedQuestions(): JSX.Element {
                     <Button onClick={handleSubmission}>Get Answers</Button>
                 )}
             </div>
+            </>
+        )}
         </div>   
     );
 }
