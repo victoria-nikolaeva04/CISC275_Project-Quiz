@@ -1,7 +1,7 @@
 import './Loading.css'
 const Loading=()=>{
   return(
-    <><h1 className="intro"></h1><div className="box">
+    <><h1 className="intro"> Loading...</h1><div className="box">
       <div className="cat">
         <div className="cat__body"></div>
         <div className="cat__body"></div>
