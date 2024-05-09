@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate instead of useHistory
 import './basicQuestion.css';
-import catHeader from './images/basic-cat-header.webp'
+import catHeaderBasic from './images/basic-cat-header.webp'
 import OpenAI from 'openai';
 //Hello 
 
@@ -137,7 +137,7 @@ Returns:
     return (
       <div>
         <img
-          src={catHeader}
+          src={catHeaderBasic}
           alt="cat-header"
           className='cat-header'
         />
