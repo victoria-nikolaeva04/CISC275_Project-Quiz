@@ -83,7 +83,6 @@ const ProgressBar: React.FC<ProgressBarProps> = ({progress}) => {
                 aria-valuemax= {101} 
                 style={{ width: `${currentProgress}%` }}
             >
-
             </div>
         </div>
     </div>
