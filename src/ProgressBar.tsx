@@ -39,13 +39,31 @@ const ProgressBar: React.FC<ProgressBarProps> = ({progress}) => {
     imageSrc = catEat;
   }  
 
+  const calculateCatPosition = () => {
+    if (currentProgress >= 0 && currentProgress <= 16) {
+      return 0;
+    } else if (currentProgress > 16 && currentProgress <= 30) {
+      return 25;
+    } else if (currentProgress > 30 && currentProgress <= 41) {
+      return 45;
+    } else if (currentProgress > 41 && currentProgress <= 50) {
+      return 60;
+    } else if (currentProgress > 50 && currentProgress <= 57) {
+      return 75;
+    }
+    else {
+      return 90;
+    }
+  };
+
+
   return (
     <div className="progress-container">
             <img
                 src={imageSrc}
                 alt="Progress-cat"
                 className="progress-asset-cat"
-                style={{transform: `translateX(${currentProgress}%)`}}
+                style={{ marginLeft: `${calculateCatPosition()}%`, transition: 'margin-left 0.5s ease-in-out'}}
             ></img>
 
             {showMouse && (

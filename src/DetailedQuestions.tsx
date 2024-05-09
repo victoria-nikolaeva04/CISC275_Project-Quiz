@@ -108,6 +108,8 @@ export function DetailedQuestions(): JSX.Element {
         const answeredQuestionsCount = Object.keys(selectedAnswers).length + 1;
         const newProgress = (answeredQuestionsCount / questions.length) * 100;
         if (!selectedAnswers[`Question${questionIndex + 1}`]) {
+
+            
             setProgress(newProgress);
             // Updates gif images in textbox
             setImagesIndex(imagesIndex + 1);
@@ -232,8 +234,8 @@ export function DetailedQuestions(): JSX.Element {
                                 backgroundImage: `url(${prevButtonImage})`,
                                 backgroundSize: 'cover',
                                 backgroundPosition: 'center',
-                                width: '125px',
-                                height: '125px',
+                                width: '75px',
+                                height: '75px',
                                 backgroundColor: '#FFA3B1',
                                 fontSize: '24px',
                                 color: 'black',
@@ -288,8 +290,8 @@ export function DetailedQuestions(): JSX.Element {
                                     backgroundImage: `url(${nextButtonImage})`,
                                     backgroundSize: 'cover',
                                     backgroundPosition: 'center',
-                                    width: '125px',
-                                    height: '125px',
+                                    width: '75px',
+                                    height: '75px',
                                     backgroundColor: '#FFA3B1',
                                     fontSize: '24px',
                                     color: 'black',

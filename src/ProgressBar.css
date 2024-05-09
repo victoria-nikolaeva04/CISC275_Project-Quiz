@@ -16,12 +16,6 @@
     border-radius: 10px;
 }
 
-.progress-asset-cat{
-    margin-top: 3px;
-    width: 90px;
-    margin-left: 5px;
-}
-
 .sr-only{
     color: rgb(0, 0, 0);
     margin-left: 5px;
@@ -30,4 +24,38 @@
 .progress-asset-mouse{
     float: right;
     width: 50px;
+    animation: slideAnimation1 1s forwards; 
 }
+
+.progress-asset-cat{
+    margin-top: 3px;
+    width: 90px;
+    margin-left: 5px; 
+}
+
+@keyframes slideAnimation1 {
+    from {
+      left: 0;
+    }
+    to {
+      left: 25%; 
+    }
+  }
+  
+  @keyframes slideAnimation2 {
+    from {
+      left: 25%;
+    }
+    to {
+      left: 50%; 
+    }
+  }
+  
+  @keyframes slideAnimation3 {
+    from {
+      left: 50%;
+    }
+    to {
+      left: 75%; 
+    }
+  }

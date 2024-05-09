@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Homepage from './homepage';
 import CollapsibleNavbar from './navbar'
@@ -23,7 +22,6 @@ root.render(
      <Routes>
           <Route path="" element={<Homepage/>} /> 
           <Route path="basicQuestion" element={<Questionnaire />} />
-          <Route path="App" element={<App/>} />
           <Route path="DetailedQuestion" element={<DetailedQuestions/>} />
           <Route path="basicresult" element={<BasicResult/>} />
           <Route path="homepage" element={<Homepage/>} />

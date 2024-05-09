@@ -84,6 +84,7 @@ Returns:
       /*const updatedQuestions = [...questionsState];
       updatedQuestions[currentQuestionIndex].progress += 13;
       setQuestionsState(updatedQuestions);*/
+      
     };
 
 /*
@@ -145,7 +146,7 @@ Returns:
       <div>
         <img className="cat-logo" alt="con meo cute" />
         <div className="questionnaire-container">
-          <h1 className="questionnaire-heading">BASIC QUESTION</h1>
+          <h1 className="questionnaire-heading">BASIC QUESTIONS</h1>
           <div key={currentQuestionIndex} className="question">
             <h3 className="question-text">{questions[currentQuestionIndex].question}</h3>
             <div className="answer-options">

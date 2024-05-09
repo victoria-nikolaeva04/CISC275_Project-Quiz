@@ -156,24 +156,3 @@ body{
   animation-fill-mode: forwards;
 }
 
-.progress{
-  margin-top: 25px;
-  background-color: #f7caf2;
-  max-width: 60%;
-  margin-left: 20%;
-  margin-bottom: 100px;
-  max-height: 30%;
-}
-
-.progress-bar{
-  background-color: #000;
-}
-@keyframes fadeInAnimation {
-  0% {
-      opacity: 0;
-  }
-  100% {
-      opacity: 1;
-  }
-}
-
