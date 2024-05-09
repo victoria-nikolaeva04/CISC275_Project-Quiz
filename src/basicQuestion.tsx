@@ -6,6 +6,7 @@ import pawButtonNext from './images/detailed_next_button.png'
 import pawButtonPrev from './images/detailed_prev_button.png'
 import OpenAI from 'openai';
 import ProgressBar from './ProgressBar';
+import Loading from './Loading';
 //Hello 
 
 const questions = [
@@ -52,6 +53,8 @@ if (prevKey !== null) {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const navigate = useNavigate(); // Use useNavigate instead of useHistory
     const [key] = useState<string>(keyData); //for api key input
+    const [isLoading,setIsLoading] = useState(false);
+
     //const [questionsState, setQuestionsState] = useState(questions);
   
 //sets the local storage item to the api key the user inputed
@@ -116,6 +119,7 @@ Returns:
     - N/A
 */ 
     const handleSubmission = async () => {
+      setIsLoading(true);
       console.log('Submitting...');
       try {
         const openAI = new OpenAI({
@@ -132,7 +136,9 @@ Returns:
           ],
           model: 'gpt-4-turbo',
         });
-    
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        console.log('API call completed');
+
         if (completion.choices[0].message.content != null) {
           /*Takes what gpt prints out and routes it the result page which will then displays the result  */
           navigate('/basicresult', { state: { result: completion.choices[0].message.content } });
@@ -142,13 +148,14 @@ Returns:
         }
       } catch (error) {
         console.error('Error in OpenAI integration:', error);
+      }finally{
+        setIsLoading(false); // Set loading to false after API call completes
+        console.log('Loading set to false');
       }
 
     };    
     return (
       <div>
-
-       <img
           src={catHeaderBasic}
           alt="cat-header-basic"
           className='cat-header-basic'
@@ -207,6 +214,8 @@ Returns:
                 ></button>
           )}
           </div>
+          </>
+          )}
         </div>
     );
   };
