@@ -145,16 +145,22 @@ body{
 
 .cat-logo {
   content: url('images/Lying_down_Calico_Cat_with_Red_Collar.webp');
-  max-width: 170px;
+  max-width: 10%;
   position: absolute;
-  align-items: left;
-  margin-left: 300px !important;  /* 50% of your logo width */
+  align-items: center;
+  margin-left: 60% !important;  /* 50% of your logo width */
   display: block;
-  margin-top:20px;
   animation: fadeInAnimation ease 1s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
+
+.cat-header-basic{
+  max-width: 40%;
+  display: block; 
+  margin: 0 auto; 
+}
+
 .progress{
   margin-top: 25px;
   background-color: #f7caf2;

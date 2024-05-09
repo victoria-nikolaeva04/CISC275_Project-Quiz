@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate instead of useHistory
 import './basicQuestion.css';
+import catHeader from './images/basic-cat-header.webp'
 import OpenAI from 'openai';
 //Hello 
 
@@ -135,9 +136,13 @@ Returns:
     };    
     return (
       <div>
+        <img
+          src={catHeader}
+          alt="cat-header"
+          className='cat-header-basic'
+        />
         <img className="cat-logo" alt="con meo cute" />
         <div className="questionnaire-container">
-          <h1 className="questionnaire-heading">BASIC QUESTION</h1>
           <div key={currentQuestionIndex} className="question">
             <h3 className="question-text">{questions[currentQuestionIndex].question}</h3>
             <div className="answer-options">
