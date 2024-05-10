@@ -15,6 +15,7 @@ import nextButtonImage from './images/detailed_next_button.png';
 import { CSSTransition } from "react-transition-group";
 import { useNavigate } from 'react-router-dom';
 import OpenAI from "openai";
+import Loading from "./Loading";
 
 
 let keyData = "";
@@ -212,8 +213,12 @@ export function DetailedQuestions(): JSX.Element {
     };
 
     // Component return
-    return (
+    return (      
         <div style={{ width: '100%' }}>
+            {isLoading ? (
+                <Loading></Loading>
+            ):(
+                <>
             <img className="cat-header" alt="Cat header"></img> 
             <div>
                 <Container className="question-row">
@@ -239,7 +244,6 @@ export function DetailedQuestions(): JSX.Element {
                                 fontSize: '24px',
                                 color: 'black',
                                 borderRadius: '50%',
-                                fontFamily: 'Minecraft'
                             }}
                             >
                             {index + 1}
@@ -265,8 +269,8 @@ export function DetailedQuestions(): JSX.Element {
                                 backgroundImage: `url(${prevButtonImage})`,
                                 backgroundSize: 'cover',
                                 backgroundPosition: 'center',
-                                width: '125px',
-                                height: '125px',
+                                width: '75px',
+                                height: '75px',
                                 backgroundColor: '#FFA3B1',
                                 fontSize: '24px',
                                 color: 'black',
@@ -293,7 +297,7 @@ export function DetailedQuestions(): JSX.Element {
                         timeout={1000} 
                         classNames="fade" 
                     >
-                        <p className="question-text">{questions[questionIndex].question}</p>
+                        <p className="question-text-detailed">{questions[questionIndex].question}</p>
                     </CSSTransition>
 
                     <div className="gifs">
@@ -321,8 +325,8 @@ export function DetailedQuestions(): JSX.Element {
                                     backgroundImage: `url(${nextButtonImage})`,
                                     backgroundSize: 'cover',
                                     backgroundPosition: 'center',
-                                    width: '125px',
-                                    height: '125px',
+                                    width: '75px',
+                                    height: '75px',
                                     backgroundColor: '#FFA3B1',
                                     fontSize: '24px',
                                     color: 'black',
@@ -410,6 +414,8 @@ export function DetailedQuestions(): JSX.Element {
                     <Button onClick={handleSubmission}>Get Answers</Button>
                 )}
             </div>
+            </>
+        )}
         </div>   
     );
 }

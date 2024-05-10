@@ -78,21 +78,22 @@ body {
   bottom: 0;
 }
   
-.question-textbox {
-  width: 60%;
-  margin: auto; 
-  margin-top: 2%;
-  margin-bottom: 1%;
-  background-color: #FAC264;
-  height: 40vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 25px;
-  outline: 5px solid #FF914D;
-  position: relative;
-}
+  .question-textbox {
+    width: 60%;
+    margin: auto; 
+    margin-top: 2%;
+    margin-bottom: 1%;
+    background-color: #FAC264;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    outline: 5px solid #FF914D;
+    position: relative;
+    text-align: center;
+  }
 
 .question-number {
   display: flex;
@@ -107,7 +108,7 @@ body {
   color: rgb(62, 61, 61)
 }
 
-.question-text {
+.question-text-detailed {
   padding: 30px;
   font-size: xx-large;
   text-align: center;
@@ -131,13 +132,13 @@ body {
 }
 
 .cat-gifs {
-  transform: scale(0.6);
+  transform: scale(0.4);
   position: absolute;
   bottom: 0;
   left: 0; 
 }
 .cat-walk-1 {
-  transform: scale(0.75);
+  transform: scale(0.5);
   position: absolute;
   bottom: 0;
   left: 0; 
@@ -145,7 +146,7 @@ body {
 }
 
 .cat-walk-2 {
-  transform: scale(0.75);
+  transform: scale(0.5);
   position: absolute;
   bottom: 0;
   left: 20%; 
@@ -153,7 +154,7 @@ body {
 }
 
 .cat-walk-3 {
-  transform: scale(0.75);
+  transform: scale(0.5);
   position: absolute;
   bottom: 0;
   left: 40%; 
@@ -188,7 +189,7 @@ body {
 }
 
 .mouse-gifs {
-  transform: scale(0.6);
+  transform: scale(0.4);
   position: absolute;
   bottom: 0;
   right: 0; 
