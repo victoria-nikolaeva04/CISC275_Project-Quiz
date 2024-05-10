@@ -40,16 +40,20 @@ export function DetailedQuestions(): JSX.Element {
     const prompt = `You are tasked with creating a concise and readable career suggestions report fully in HTML format stylized with CSS. All text should be black using CSS.
     You will be provided quiz-takers answers to career-based questions. You will use this information to generate the suggestions. Below is the format you should follow when 
     giving the report. Text in quotation marks should appear in the report itself. Text without quotation marks and without parentheses are your instructions on what you are generating. 
-    Text within parentheses are stylization or font size instructions that you must follow (for example, “(bolded)”, “(italicized)”, “(enter key)”, etc.). Do not include any quotation marks in the report.
+    Text within parentheses are stylization or font size instructions that you must follow (for example, “(bolded)”, “(italicized)”, “(enter key)”, etc.). 
+    Do not include any quotation marks in the report. Do not include any html tags in the report. Do not preset the font size in any css styling.
 
-    For the following section, you should generate a short paragraph with size 30px font containing the following information:
-    “Based on your quiz answers, your (strengths (bolded)) include: “ then list 3 of their personal strengths that do not include work environments. “You may enjoy a (work environment (bolded)) that contains“ then list 3 things. “Below, you can find specific industry and job suggestions that may fit your interests, along with their descriptions.”
+    For the following section, you should generate a short paragraph with size 30px font containing the following information. Only bold where directly indicated:
+    “Based on your quiz answers, your (strengths (bolded)) include: “ then list 3 of their personal strengths that do not include work environments. 
+    “You may enjoy a (work environment (bolded)) that contains“ then list 3 things. “Below, you can find specific industry and job suggestions that may fit your interests, 
+    along with their descriptions.” 
     
     For the following section, you should list 3 Industries that match the quiz-takers in the following format. You must use the size font given:
-    “Your Possible Career Industries” (bolded, NO BULLET POINT, size 26px font)
-    (bullet point) “Top Suggestion: “ Best suited industry for the quiz taker (bolded, size 20px font)
-    (bullet point) A different industry that may fit the quiz taker (size 20px font)
-    (bullet point) A different industry that may fit the quiz taker (size 20px font)
+    “Your Possible Career Industries” (bolded, NO BULLET POINT, size 30px font)
+    “Top Suggestion: “ Best suited industry for the quiz taker (bolded)
+    A different industry that may fit the quiz taker (on a new line)
+    A different industry that may fit the quiz taker (on a new line)
+    
 
     For the following section, you will list 5 well-fitting jobs in their top career industry you generated prior. You must use the size font given.
     “Jobs In (add top industry here)” (bolded, size 26px font).
@@ -58,7 +62,7 @@ export function DetailedQuestions(): JSX.Element {
     Include the black lines that mark each row and column. Bold the Job Name and Average Salary text.
 
     For the following section, you create a description for each job you listed above. Expand on description, write more than one sentence, they should be at 
-    least five sentences long. They should follow the format of: (Job title (bolded)) “: “ description (in size 20px font). Begin the section with "Job Descriptions" (bolded, size 26px font)
+    least five sentences long. They should follow the format of: (Job title (bolded)) “: “ description (unbolded). Begin the section with "Job Descriptions" (bolded, size 26px font)
 
      Below are the quiz questions along with the quiz-takers answers. Use this information to generate the report following the format above.`; 
      const [isLoading,setIsLoading] = useState(false);

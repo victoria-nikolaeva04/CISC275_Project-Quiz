@@ -11,7 +11,7 @@
 
     return (
       <div>
-        <h1 className="questionnaire-heading">Your Quiz Result</h1>
+      <h1 className="questionnaire-heading" style={{ textAlign: 'center', fontSize: '75px', margin: '40px' }}>Your Quiz Results</h1>
         <div
           style={{
             fontSize: '24px',
@@ -20,7 +20,8 @@
             font: '-moz-initial',
             height: '75%',
             padding: '40px', // Added padding for better readability
-            margin: '200px',
+            marginLeft: '200px',
+            marginRight: '200px',
             borderRadius: '20px'
             
           }}
