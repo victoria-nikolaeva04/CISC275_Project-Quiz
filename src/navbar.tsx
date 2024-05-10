@@ -3,7 +3,6 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import logo  from "./images/CISC-Logo.png";
 import Navbar from 'react-bootstrap/Navbar';
-
 import './navbar.css'
 import { Link } from 'react-router-dom'; // Import BrowserRouter and other necessary components
 
@@ -14,11 +13,17 @@ export function CollapsibleNavbar() {
         <Navbar.Brand as={Link} to="homepage">⚞ Cat-ylist Quiz ⚟</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
+          <Nav className="me-auto" id="navlink-container">
+            <button id ="nav-basic">
             <Nav.Link as={Link} to="BasicQuestion">Basic Question</Nav.Link>
+            </button>
+            <button id="nav-detail">
             <Nav.Link as={Link} to="DetailedQuestion">Detail Question</Nav.Link>
+            </button>
+            <button id="nav-aboutme">
             <Nav.Link as={Link} to="AboutMe">About Me</Nav.Link>
-            <Nav.Link as={Link} to="BasicResult">Result</Nav.Link>
+            </button>
+           
             
           </Nav>
         </Navbar.Collapse>

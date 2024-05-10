@@ -15,7 +15,7 @@ import nextButtonImage from './images/detailed_next_button.png';
 import { CSSTransition } from "react-transition-group";
 import { useNavigate } from 'react-router-dom';
 import OpenAI from "openai";
-
+import Loading from "./Loading";
 
 let keyData = "";
 const saveKeyData = "MYKEY";
@@ -35,9 +35,20 @@ export function DetailedQuestions(): JSX.Element {
     const catImages = [catSleep, catWakeUp, catYawn, catWalking, catWalking, catWalking, transparent, transparent];
     const mouseImages = [mouseEat, mouseEat, mouseEat, mouseEat, mouseEat, mouseEat, catFight, catEat];
 
-    const navigate = useNavigate(); // Use useNavigate instead of useHistory
+    const navigate = useNavigate(); 
     const [key] = useState<string>(keyData); //for api key input
-
+    const prompt = `You are tasked with creating a concise and readable career suggestions report.You will be provided quiz-takers answers to career-based questions. You will use this information to generate the suggestions. Below is the format you should follow when giving the report. Text in quotation marks should appear in the report itself. Text without quotation marks and without parentheses are your instructions on what you are generating. Text within parentheses are stylization instructions (for example, “(bolded)”, “(italicized)”, “(enter key)”, etc.). Do not include any quotation marks in the report.
+    For the following section, you should generate a short paragraph containing the following information:
+    “Based on your quiz answers, your (strengths (bolded)) include: “ then list 3 of their personal strengths that do not include work environments. “You may enjoy a (work environment (bolded)) that contains“ then list 3 things. “Below, you can find specific industry and job suggestions that may fit your interests, along with their descriptions.”
+    For the following section, you should list 3 Industries that match the quiz-takers in the following format:
+    “Your Possible Career Industries” (bolded)
+    (bullet point) “Top Suggestion: “ Best suited industry for the quiz taker  (bolded)
+    (bullet point) A different industry that may fit the quiz taker
+    For the following section, you will list 5 well-fitting jobs in their top career industry you generated prior. You should make a table with one column for job name, and one column for average salary. Label these appropriately (bolded).
+    “Jobs In The” add their top career industry (bolded) then in parentheses the job title of their top career industry (bolded)
+    For the following section, you create a description for each job you listed above. Expand on description, write more than one sentence, they should be at least five sentences long. They should follow the format of: (Job title (bolded)) “: “ description
+     Below are the quiz questions along with the quiz-takers answers. Use this information to generate the report following the format above.`; 
+     const [isLoading,setIsLoading] = useState(false);
 
 
     // 7 questions and their possible answers
@@ -109,6 +120,8 @@ export function DetailedQuestions(): JSX.Element {
         const answeredQuestionsCount = Object.keys(selectedAnswers).length + 1;
         const newProgress = (answeredQuestionsCount / questions.length) * 100;
         if (!selectedAnswers[`Question${questionIndex + 1}`]) {
+
+            
             setProgress(newProgress);
             // Updates gif images in textbox
             setImagesIndex(imagesIndex + 1);
@@ -144,13 +157,13 @@ export function DetailedQuestions(): JSX.Element {
     }
     
     const handleSubmission = async () => {
+        setIsLoading(true);
         console.log('Submitting...');
         try {
             const openAI = new OpenAI({
                 apiKey: key,
                 dangerouslyAllowBrowser: true,
             });
-    
             // Prepare the answers string with formatted questions and answers
             let answersString = '';
             Object.keys(selectedAnswers).forEach((questionKey, index) => {
@@ -162,12 +175,13 @@ export function DetailedQuestions(): JSX.Element {
             const completion = await openAI.chat.completions.create({
                 messages: [
                     /*Sets up the system and user roles for gpt-4-turbo*/ 
-                    { role: 'system', content: 'You are a helpful career. You will be provided a top 5 student results to a career quiz with as well as providing some basic details such as salary and degree requirements' },
+                    { role: 'system', content: prompt },
                     { role: 'user', content: `My answers are:\n${answersString}` }
                 ],
                 model: 'gpt-4-turbo',
             });
-    
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            console.log('API call completed');
             if (completion.choices[0].message.content != null) {
                 /*Takes what gpt prints out and routes it the result page which will then displays the result  */
                 navigate('/result', { state: { result: completion.choices[0].message.content } });
@@ -177,12 +191,19 @@ export function DetailedQuestions(): JSX.Element {
             }
         } catch (error) {
             console.error('Error in OpenAI integration:', error);
+        }finally{
+            setIsLoading(false); // Set loading to false after API call completes
+            console.log('Loading set to false');
         }
     };
 
     // Component return
     return (
         <div style={{ width: '100%' }}>
+            {isLoading ? (
+                <Loading></Loading>
+            ):(
+                <>
             <img className="cat-header" alt="Cat header"></img> 
             <div>
                 <Container className="question-row">
@@ -234,8 +255,8 @@ export function DetailedQuestions(): JSX.Element {
                                 backgroundImage: `url(${prevButtonImage})`,
                                 backgroundSize: 'cover',
                                 backgroundPosition: 'center',
-                                width: '125px',
-                                height: '125px',
+                                width: '75px',
+                                height: '75px',
                                 backgroundColor: '#FFA3B1',
                                 fontSize: '24px',
                                 color: 'black',
@@ -290,8 +311,8 @@ export function DetailedQuestions(): JSX.Element {
                                     backgroundImage: `url(${nextButtonImage})`,
                                     backgroundSize: 'cover',
                                     backgroundPosition: 'center',
-                                    width: '125px',
-                                    height: '125px',
+                                    width: '75px',
+                                    height: '75px',
                                     backgroundColor: '#FFA3B1',
                                     fontSize: '24px',
                                     color: 'black',
@@ -379,6 +400,8 @@ export function DetailedQuestions(): JSX.Element {
                     <Button onClick={handleSubmission}>Get Answers</Button>
                 )}
             </div>
+            </>
+        )}
         </div>   
     );
 }
