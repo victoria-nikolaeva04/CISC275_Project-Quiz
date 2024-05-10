@@ -17,13 +17,15 @@
             fontSize: '24px',
             color: 'black',
             backgroundColor: '#F09738',
-            font: '-moz-initial',
+            font: 'Roboto',
             height: '75%',
             padding: '40px', // Added padding for better readability
             marginLeft: '200px',
             marginRight: '200px',
-            borderRadius: '20px'
-            
+            marginBottom: '100px',
+            borderRadius: '30px',
+            border: "10px solid", 
+            borderColor: '#EF751B'
           }}
           dangerouslySetInnerHTML={htmlContent}
         ></div>
