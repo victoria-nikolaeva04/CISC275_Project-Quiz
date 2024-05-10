@@ -350,7 +350,7 @@ export function DetailedQuestions(): JSX.Element {
                                     padding: '10px',
                                     width: '100%', 
                                     fontSize: '18px',
-                                    fontWeight: '600'
+                                    fontWeight: '500'
                                   }}>
                                     {possibleAnswer}
                                   </span>}
@@ -385,7 +385,7 @@ export function DetailedQuestions(): JSX.Element {
                                     padding: '10px',
                                     width: '100%',
                                     fontSize: '18px',
-                                    fontWeight: '600'
+                                    fontWeight: '500'
 
                                   }}>
                                     {possibleAnswer}
