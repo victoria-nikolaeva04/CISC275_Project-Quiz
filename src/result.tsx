@@ -4,7 +4,7 @@ import './basicQuestion.css';
 
 const Result: React.FC = () => {
   const location = useLocation();
-  const { result, isLoading } = location.state;
+  const { result} = location.state;
 
   // Format the result into paragraphs for better readability
   const formattedResult = result.split('\n').map(
