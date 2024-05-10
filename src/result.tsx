@@ -19,9 +19,6 @@ const Result: React.FC = () => {
     return <p key={index}>{cleanLine}</p>;
   }
 );
-
-  
-
   return (
     <div>
           <h1 className="questionnaire-heading ">Your Quiz Result</h1>
