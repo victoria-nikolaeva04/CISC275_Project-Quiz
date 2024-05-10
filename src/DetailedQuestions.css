@@ -112,6 +112,7 @@ body {
   padding: 30px;
   font-size: xx-large;
   text-align: center;
+  font-weight: 500;
   width: 100%;
   opacity: 0; 
   animation: fadeInAnimation 1s ease-in-out forwards; 
@@ -132,31 +133,30 @@ body {
 }
 
 .cat-gifs {
-  transform: scale(0.4);
-  position: absolute;
-  bottom: 0;
-  left: 0; 
-}
-.cat-walk-1 {
   transform: scale(0.5);
   position: absolute;
-  bottom: 0;
+  bottom: -70px;
+}
+.cat-walk-1 {
+  transform: scale(0.6);
+  position: absolute;
+  bottom: -30px;
   left: 0; 
   animation: slideAnimation1 1s forwards; 
 }
 
 .cat-walk-2 {
-  transform: scale(0.5);
+  transform: scale(0.6);
   position: absolute;
-  bottom: 0;
+  bottom: -30px;
   left: 20%; 
   animation: slideAnimation2 1s forwards; 
 }
 
 .cat-walk-3 {
-  transform: scale(0.5);
+  transform: scale(0.6);
   position: absolute;
-  bottom: 0;
+  bottom: -30px;
   left: 40%; 
   animation: slideAnimation3 1s forwards; 
 }
@@ -184,14 +184,14 @@ body {
     left: 50%;
   }
   to {
-    left: 75%; 
+    left: 60%; 
   }
 }
 
 .mouse-gifs {
-  transform: scale(0.4);
+  transform: scale(0.5);
   position: absolute;
-  bottom: 0;
+  bottom: -60px;
   right: 0; 
 }
 
