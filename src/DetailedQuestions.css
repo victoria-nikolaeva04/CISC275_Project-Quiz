@@ -167,22 +167,22 @@ body {
     left: 0;
   }
   to {
-    left: 25%; 
+    left: 20%; 
   }
 }
 
 @keyframes slideAnimation2 {
   from {
-    left: 25%;
+    left: 20%;
   }
   to {
-    left: 50%; 
+    left: 40%; 
   }
 }
 
 @keyframes slideAnimation3 {
   from {
-    left: 50%;
+    left: 40%;
   }
   to {
     left: 60%; 

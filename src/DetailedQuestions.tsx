@@ -40,7 +40,8 @@ export function DetailedQuestions(): JSX.Element {
     const [key] = useState<string>(keyData); //for api key input
     const prompt = `You are tasked with creating a concise and readable career suggestions report fully in HTML format stylized with CSS. All text should be black using CSS.
     You will be provided quiz-takers answers to career-based questions. You will use this information to generate the suggestions. Center all text.
-    Do not include any quotation marks in the report. Do not include any html tags in the report. Do not preset the font size in any css styling.
+    Do not include any quotation marks in the report. Do not include any html tags in the report. Do not preset the font size in any css styling. 
+    Add padding to each section title. Only include what I tell you to.
 
     Strengths and Work Environment: Generate a personal paragraph with a 30px font size that includes the quiz-taker's personal strengths and preferences for a work environment. 
     Use "you" statements. Add bold to the title of the section and style the title fontFamily: "Minecraft". Center all content.
