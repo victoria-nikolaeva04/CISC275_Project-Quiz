@@ -14,12 +14,16 @@
       <h1 className="questionnaire-heading" style={{ textAlign: 'center', fontSize: '75px', margin: '40px' }}>Your Quiz Results</h1>
         <div
           style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center', // Center items horizontally
+            justifyContent: 'center', // Center items vertically
             fontSize: '24px',
             color: 'black',
             backgroundColor: '#F09738',
-            font: 'Roboto',
+            fontFamily: 'Roboto', // Changed from 'font' to 'fontFamily'
             height: '75%',
-            padding: '40px', // Added padding for better readability
+            padding: '40px',
             marginLeft: '200px',
             marginRight: '200px',
             marginBottom: '100px',
