@@ -214,9 +214,11 @@ export function DetailedQuestions(): JSX.Element {
 
     // Component return
     return (      
-        <div style={{ width: '100%' }}>
+        <div style={{ width: '100%'}}>
             {isLoading ? (
+                <div style={{width:'100%',backgroundColor:'#e6dcdc'}}>
                 <Loading></Loading>
+                </div>
             ):(
                 <>
             <img className="cat-header" alt="Cat header"></img> 
