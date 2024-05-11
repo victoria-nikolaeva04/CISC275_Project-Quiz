@@ -408,7 +408,7 @@ export function DetailedQuestions(): JSX.Element {
                 
             <div className = "get-answers-button">
                 {Object.keys(selectedAnswers).length === questions.length ? (
-                    <Button onClick={handleSubmission}>Get Answers</Button>
+                    <Button id="activate-answers-button" onClick={handleSubmission}>Get Answers</Button>
                 ) : (
                     <Button onClick={handleSubmission} style={{ display: 'none' }}>Get Answers</Button>
                 )}
