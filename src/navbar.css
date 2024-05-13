@@ -21,7 +21,7 @@
   
 .navbar-nav .nav-link {
     color: black !important;
-    font-size: 18px;
+    font-size: 25px;
     opacity: 0.75;
     font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
     font-weight: 300;
@@ -29,18 +29,27 @@
     display: flex;
     flex-direction: row;
     position: relative;
-    
+    padding: 5px;
+    z-index: 3;
   }
 
   .nav-link{
     font-style: bold;
-    background-color: #FAC264;
+    background-color: transparent;
     border-radius: 10px;
     padding-left: 10px;
-    padding-right: 10px;
+    padding-right: 40px;
     margin: 10px;
     padding: 20;
   }
+  .me-auto{
+    margin-right: 200px;
+  }
+/*
+  .nav-link:hover{
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+  }*/
 
   .navbar-nav{
     position:absolute;
@@ -119,7 +128,7 @@
     flex-direction: row;
     width: 25%;
     /*margin-right: calc(25vw - 5%);*/
-    margin-left : 80%;
+    margin-left : 100%;
     height: auto;
     /*text-align:right;*/
   }
@@ -157,3 +166,49 @@
     }
     
   }
+  #navlink-container{
+    margin-right: 50%;
+  }
+
+#nav-basic,#nav-detail,#nav-aboutme{
+  margin-right: 25px;
+  background-color: #fbeee0;
+  /*background-color: #fbeee0;*/
+  border: 2px solid #422800;
+  border-radius: 30px;
+  box-shadow: #422800 4px 4px 0 0;
+  color: #422800;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 20px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  min-width: 200px;
+  max-height: 60px;
+  padding: -30px 18px;
+}
+#nav-basic:hover,#nav-detail:hover,#nav-aboutme:hover {
+  background-color:#FAC264;
+}
+#nav-basic{
+  margin-left: -35%;
+}
+#nav-button:active {
+  box-shadow: #422800 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+#nav-aboutme{
+  padding-left: 25px;
+}
+
+@media (min-width: 768px) {
+  #nav-button {
+    min-width: 120px;
+    padding: 0 25px;
+  }
+}

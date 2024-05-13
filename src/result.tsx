@@ -1,23 +1,36 @@
-import React from 'react';
-import { useLocation } from 'react-router-dom';
+  import React from 'react';
+  import { useLocation } from 'react-router-dom';
+  import './basicQuestion.css';
 
-const Result: React.FC = () => {
-  const location = useLocation();
-  const result = location.state?.result || '';
+  const Result: React.FC = () => {
+    const location = useLocation();
+    const { result } = location.state;
 
-  // Format the result into paragraphs for better readability
-  const formattedResult = result.split('\n').map((line: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | null | undefined, index: React.Key | null | undefined) => (
-    <p key={index}>{line}</p>
-  ));
+    // Inject the HTML response into the component
+    const htmlContent = { __html: result };
 
-  return (
-    <div>
-      <h1 className="result-heading">Your Quiz Result</h1>
-      <div className="result-content">
-        {formattedResult}
+    return (
+      <div>
+      <h1 className="questionnaire-heading" style={{ textAlign: 'center', fontSize: '75px', margin: '40px' }}>Your Quiz Results</h1>
+        <div
+          style={{
+            fontSize: '24px',
+            color: 'black',
+            backgroundColor: '#F09738',
+            font: 'Roboto',
+            height: '75%',
+            padding: '40px', // Added padding for better readability
+            marginLeft: '200px',
+            marginRight: '200px',
+            marginBottom: '100px',
+            borderRadius: '30px',
+            border: "10px solid", 
+            borderColor: '#EF751B'
+          }}
+          dangerouslySetInnerHTML={htmlContent}
+        ></div>
       </div>
-    </div>
-  );
-};
+    );
+  };
 
-export default Result;
+  export default Result;

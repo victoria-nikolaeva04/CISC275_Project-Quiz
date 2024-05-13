@@ -1,43 +1,37 @@
 import React from 'react';
-import { Container, Row, Card } from 'react-bootstrap';
+import { Container, Card } from 'react-bootstrap';
 import { useLocation } from 'react-router-dom'; // Import useLocation
 import 'bootstrap/dist/css/bootstrap.css';
 import './basicresult.css';
 
 function BasicResult() {
   const location = useLocation(); // Get the location object
-  const result = location.state?.result; // Retrieve the result from the location state
-
+  const { result} = location.state;
+  const formattedResult = result.split('\n').map(
+    (
+      line: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | null | undefined,
+      index: React.Key | null | undefined
+    ) => {
+      if (line == null) {
+        return null; 
+      }
+      const cleanLine = line.toString().replace(/\*/g, ''); // Remove asterisks from the line
+      return <p key={index}>{cleanLine}</p>;
+    }
+  );
   return (
     <div>
-      <Container className="head-result">
-        <h1 className="result-h1">Result analysis</h1>
-        <img className='cat-title' alt="meomeo"></img>
-      </Container>
       <Container className="job-and-salary-area">
-        <Row md={6}>
-          <Card className="salary">
-            <img className="cat-logo2" alt="con meo"></img>
-            <Card.Body>
-              <Card.Title>Average Salaries</Card.Title>
-              <Card.Text>
-                Average salaries for different job roles...
-              </Card.Text>
-            </Card.Body>
-          </Card>
           <Card className="job">
-            <img className="cat-logo3" alt="con meo2"></img>
             <Card.Body>
-              <Card.Title>Available Jobs</Card.Title>
+              <Card.Title id ="title">Result analysis</Card.Title>
               <Card.Text>
-                List of available jobs based on your quiz result...
                 {/* Display the result received from the Questionnaire */}
-                <p>{result}</p>
+                <p className='result-text'>{formattedResult}</p>
               </Card.Text>
             </Card.Body>
           </Card>
-        </Row>
-      </Container>
+          </Container>
     </div>
   );
 }
