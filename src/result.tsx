@@ -1,30 +1,40 @@
-import React from 'react';
-import { useLocation } from 'react-router-dom';
-import Loading from './Loading';
+  import React from 'react';
+  import { useLocation } from 'react-router-dom';
+  import './basicQuestion.css';
 
-const Result: React.FC = () => {
-  const location = useLocation();
-  const { result, isLoading } = location.state;
+  const Result: React.FC = () => {
+    const location = useLocation();
+    const { result } = location.state;
 
-  // Format the result into paragraphs for better readability
-  const formattedResult = result.split('\n').map((line: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | null | undefined, index: React.Key | null | undefined) => (
-    <p key={index}>{line}</p>
-  ));
+    // Inject the HTML response into the component
+    const htmlContent = { __html: result };
 
-  return (
-    <div>
-      {isLoading ? (
-        <div><Loading></Loading></div>
-      ) : (
-        <>
-          <h1 className="result-heading">Your Quiz Result</h1>
-          <div className="result-content">
-            {formattedResult}
-          </div>
-        </>
-      )}
-    </div>
-  );
-};
+    return (
+      <div>
+      <h1 className="questionnaire-heading" style={{ textAlign: 'center', fontSize: '75px', margin: '40px' }}>Your Quiz Results</h1>
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center', // Center items horizontally
+            justifyContent: 'center', // Center items vertically
+            fontSize: '24px',
+            color: 'black',
+            backgroundColor: '#F09738',
+            fontFamily: 'Roboto', // Changed from 'font' to 'fontFamily'
+            height: '75%',
+            padding: '40px',
+            marginLeft: '200px',
+            marginRight: '200px',
+            marginBottom: '100px',
+            borderRadius: '30px',
+            border: "10px solid", 
+            borderColor: '#EF751B'
+          }}
+          dangerouslySetInnerHTML={htmlContent}
+        ></div>
+      </div>
+    );
+  };
 
-export default Result;
+  export default Result;

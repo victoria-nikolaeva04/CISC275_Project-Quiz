@@ -15,8 +15,8 @@ import nextButtonImage from './images/detailed_next_button.png';
 import { CSSTransition } from "react-transition-group";
 import { useNavigate } from 'react-router-dom';
 import OpenAI from "openai";
-import { resolve } from "path";
 import Loading from "./Loading";
+
 
 let keyData = "";
 const saveKeyData = "MYKEY";
@@ -38,25 +38,43 @@ export function DetailedQuestions(): JSX.Element {
 
     const navigate = useNavigate(); 
     const [key] = useState<string>(keyData); //for api key input
-    const prompt = `You are tasked with creating a concise and readable career suggestions report.You will be provided quiz-takers answers to career-based questions. You will use this information to generate the suggestions. Below is the format you should follow when giving the report. Text in quotation marks should appear in the report itself. Text without quotation marks and without parentheses are your instructions on what you are generating. Text within parentheses are stylization instructions (for example, “(bolded)”, “(italicized)”, “(enter key)”, etc.). Do not include any quotation marks in the report.
-    For the following section, you should generate a short paragraph containing the following information:
-    “Based on your quiz answers, your (strengths (bolded)) include: “ then list 3 of their personal strengths that do not include work environments. “You may enjoy a (work environment (bolded)) that contains“ then list 3 things. “Below, you can find specific industry and job suggestions that may fit your interests, along with their descriptions.”
-    For the following section, you should list 3 Industries that match the quiz-takers in the following format:
-    “Your Possible Career Industries” (bolded)
-    (bullet point) “Top Suggestion: “ Best suited industry for the quiz taker  (bolded)
-    (bullet point) A different industry that may fit the quiz taker
-    For the following section, you will list 5 well-fitting jobs in their top career industry you generated prior. You should make a table with one column for job name, and one column for average salary. Label these appropriately (bolded).
-    “Jobs In The” add their top career industry (bolded) then in parentheses the job title of their top career industry (bolded)
-    For the following section, you create a description for each job you listed above. Expand on description, write more than one sentence, they should be at least five sentences long. They should follow the format of: (Job title (bolded)) “: “ description
+    const prompt = `You are tasked with creating a concise and readable career suggestions report fully in HTML format stylized with CSS. All text should be black using CSS.
+    You will be provided quiz-takers answers to career-based questions. You will use this information to generate the suggestions. Center all text.
+    Do not include any quotation marks in the report. Do not include any html tags in the report. Do not preset the font size in any css styling. 
+    Add padding to each section title. Only include what I tell you to.
+
+    Strengths and Work Environment: Generate a personal paragraph with a 30px font size that includes the quiz-taker's personal strengths and preferences for a work environment. 
+    Use "you" statements. Add bold to the title of the section and style the title fontFamily: "Minecraft". Center all content.
+
+    Possible Career Industries: List 3 industries that match the quiz-taker, along with 3 famous people in each industry. They should be labeled "Famous people: " directly underneath the industry name.
+    Do not use bullet points, just list the famous people in one line.
+    The first industry should be their top match and
+    should be labeled as "Top Industry Match: ", bolded. Bold each industry name. Use a font size of 30px and no bullet points.
+    Add bold to the title of the section and style the title fontFamily: "Minecraft". Center all content.
+
+    Jobs in Top Career Industry: List 5 well-fitting jobs in the top career industry identified in the previous section, 
+    along with their average salary in an HTML table. Use a font size of 26px and create an HTML table with the following specifications:
+    Job Name and Average Salary boxes should have a background color of #FFA3B1.
+    Rest of the table boxes should have a background color of #F3CACA.
+    Include black lines that mark each row and column.
+    Bold the Job Name and Average Salary text.
+    Add bold to the title of the section and style the title fontFamily: "Minecraft". Center all content.
+    
+
+    Job Descriptions: Provide descriptions for each of the listed jobs, with each description being at least five sentences long. 
+    Use a font size of 26px and bold the job titles. Add bold to the title of the section and style the title fontFamily: "Minecraft". Center all content.
+
+
      Below are the quiz questions along with the quiz-takers answers. Use this information to generate the report following the format above.`; 
      const [isLoading,setIsLoading] = useState(false);
+
 
 
     // 7 questions and their possible answers
     const questions = [
         {
             question: "You are placed in a project team tasked with creating a marketing campaign for a new product launch; which part of the project would you most enjoy focusing on?",
-            possibleAnswers: ['Crafting a compelling message and storytelling to communicate the product\'s unique value, helping it resonate and connect with the target audience through a commercial.', 
+            possibleAnswers: ['Crafting a compelling message and storytelling to communicate the product\'s unique value, helping it resonate and connect with the target audience.', 
             'Collaborating with creative teams to design visually appealing graphics, videos, and other multimedia content that capture attention and drive engagement.', 
             'Providing strategic direction and guidance to team members, ensuring alignment with overall campaign objectives, efficiency, and good-quality work.', 
             'Conducting market research and consumer behavior analysis to identify key insights and opportunities, analyzing the data and creating reports.']
@@ -64,7 +82,7 @@ export function DetailedQuestions(): JSX.Element {
         {
             question: "What overarching goals, values, and aspirations resonate with you? Consider the impact you'd like to make and what guides your actions and decisions.",
             possibleAnswers: ['I aspire to be a leader in my field, innovating and driving positive change, inspiring others to make a difference in the world. I feel fulfilled when I manage others.', 
-            'I am driven by a desire to make an impact on society, addressing social and environmental challenges and creating sustainable future for all. I want my work to be utilized for years to come.', 
+            'I am driven by a desire to make an impact on society, addressing social and environmental challenges and creating sustainable future.', 
             'I am committed to personal and professional growth, continuously challenging myself to learn, striving for excellence and continuous improvement.', 
             'I prioritize work-life balance and well-being, valuing fulfillment, happiness, and harmony in all aspects of my life. My life does not have to revolve around my career.']
         },
@@ -72,35 +90,35 @@ export function DetailedQuestions(): JSX.Element {
             question: "Imagining your ideal work environment, describe the cultures and values that would help you thrive. Think about organizational structure, leadership style, communication, and opportunities for collaboration.",
             possibleAnswers: ['I thrive in dynamic environments that embrace change and innovation, where adaptability and forward-thinking is encouraged and employees are supported.', 
             'I value a culture of inclusivity and diversity, where all voices are heard and respected, and where collaboration and teamwork are foundational principles.',
-            'I seek a structured and organized work environment with clearly defined roles and responsibilities, where expectations are clear, ensuring that efforts are recognized and rewarded accordingly.', 
-            'I prioritize flexibility and independence in my work, seeking opportunities for self-directed learning and creative expression, balanced with opportunities for collaboration and mentorship.']
+            'I seek a structured and organized work environment with clearly defined roles and responsibilities, ensuring that efforts are recognized and rewarded.', 
+            'I prioritize flexibility and independence in my work as well as creative expression, balanced with opportunities for collaboration and mentorship.']
         },
         {
             question: "Imagine you have the opportunity to design your ideal physical work environment. In which setting would you find yourself the most productive and happy?",
-            possibleAnswers: ['An outdoor workspace surrounded by nature, offering fresh air, natural light, and opportunities for relaxation and rejuvenation. I enjoy working on outdoor tasks and activities.', 
+            possibleAnswers: ['An outdoor workspace surrounded by nature, offering fresh air, natural light, and opportunities for relaxation and rejuvenation. I enjoy working with nature.', 
             'An open-floor-plan office with collaborative workspaces and communal areas, encouraging interaction, creativity, and spontaneous idea-sharing among team members. ',
             'A traditional office setting with private workstations or cubicles, providing quiet and focused environments for individual concentration and productivity.',
-            'A flexible workspace with a mix of private offices, open areas, and breakout rooms, accommodating diverse work styles and preferences while fostering collaboration and teamwork.']
+            'A flexible workspace with a mix of private offices, open areas, and breakout rooms, fostering collaboration and teamwork amongst coworkers and leadership.']
         },
         {
             question: "Imagine you're presented with an opportunity to pursue further education or training to advance your career. Which option would you be most inclined to choose?",
             possibleAnswers: ['Enrolling in specialized courses or workshops to deepen my expertise and skills in a specific area relevant to my field, or putting time into learning a new skill.',
              'Pursuing a degree or certification program that offers a broader understanding of various disciplines, providing versatility and adaptability in my career.',
              'Participating in leadership development programs or executive coaching to enhance my management and decision-making abilities, building my leadership skills.',
-             'Engaging in experiential learning opportunities such as internships or apprenticeships to gain hands-on experience and practical knowledge in real-world settings.']
+             'Engaging in experiential learning opportunities such as internships or apprenticeships to gain hands-on experience and practical knowledge.']
         },
         {
             question: "Reflect on your preferred communication style and interpersonal interactions in a professional setting. Which approach resonates most with you?",
-            possibleAnswers: ['Engaging in open and transparent communication, fostering trust and mutual respect by sharing thoughts, ideas, and feedback openly with colleagues and stakeholders.', 
+            possibleAnswers: ['Engaging in open and transparent communication, fostering trust and mutual respect by sharing ideas and feedback openly with colleagues and stakeholders.', 
              'Cultivating empathy and active listening skills, seeking to understand other perspectives and experiences to build meaningful connections and collaboration.',
-             'Demonstrating assertiveness and confidence in expressing opinions and advocating for ideas, contributing to constructive dialogue and decision-making processes.', 
-             'Adapting communication styles to suit different audiences and situations, effectively conveying information and ideas through both verbal and written cues as needed.']
+             'Demonstrating assertiveness and confidence in expressing opinions and advocating for ideas, contributing to dialogue and decision-making processes.', 
+             'Adapting communication styles to suit different audiences and situations, effectively conveying information and ideas comfortably as needed.']
         },
         {
             question: "Imagine you're offered two job opportunities: one with a well-established company known for its stability and benefits, and the other with a startup known for its innovation and risk-taking culture. Which factors would most influence your decision?",
             possibleAnswers: ['Stability and job security, prioritizing a steady income and established benefits package to support financial stability and long-term career growth.', 
              'Innovation and growth potential, valuing the opportunity to contribute to groundbreaking projects and shape the future of a dynamic and rapidly evolving industry.', 
-             'Company culture and values, seeking alignment with my personal beliefs and principles, and prioritizing a supportive and inclusive work environment that fosters collaboration and creativity.',
+             'Company culture and values, prioritizing a supportive and inclusive work environment that fosters both collaboration and creativity amongst employees.',
              'Career advancement opportunities, such as leadership development programs, and potential for skill development and promotion within the organization.']
         }
     ];
@@ -121,8 +139,6 @@ export function DetailedQuestions(): JSX.Element {
         const answeredQuestionsCount = Object.keys(selectedAnswers).length + 1;
         const newProgress = (answeredQuestionsCount / questions.length) * 100;
         if (!selectedAnswers[`Question${questionIndex + 1}`]) {
-
-            
             setProgress(newProgress);
             // Updates gif images in textbox
             setImagesIndex(imagesIndex + 1);
@@ -183,7 +199,6 @@ export function DetailedQuestions(): JSX.Element {
             });
             await new Promise(resolve => setTimeout(resolve, 2000));
             console.log('API call completed');
-
             if (completion.choices[0].message.content != null) {
                 /*Takes what gpt prints out and routes it the result page which will then displays the result  */
                 navigate('/result', { state: { result: completion.choices[0].message.content } });
@@ -200,7 +215,7 @@ export function DetailedQuestions(): JSX.Element {
     };
 
     // Component return
-    return (
+    return (      
         <div style={{ width: '100%' }}>
             {isLoading ? (
                 <Loading></Loading>
@@ -284,9 +299,8 @@ export function DetailedQuestions(): JSX.Element {
                         timeout={1000} 
                         classNames="fade" 
                     >
-                        <p className="question-text">{questions[questionIndex].question}</p>
+                        <p className="question-text-detailed">{questions[questionIndex].question}</p>
                     </CSSTransition>
-
                     <div className="gifs">
                         <div className="cat-gifs" id="cat-gifs">
                             <img
@@ -338,7 +352,7 @@ export function DetailedQuestions(): JSX.Element {
                                     padding: '10px',
                                     width: '100%', 
                                     fontSize: '18px',
-                                    fontWeight: '600'
+                                    fontWeight: '500'
                                   }}>
                                     {possibleAnswer}
                                   </span>}
@@ -373,7 +387,7 @@ export function DetailedQuestions(): JSX.Element {
                                     padding: '10px',
                                     width: '100%',
                                     fontSize: '18px',
-                                    fontWeight: '600'
+                                    fontWeight: '500'
 
                                   }}>
                                     {possibleAnswer}
@@ -396,9 +410,9 @@ export function DetailedQuestions(): JSX.Element {
                 
             <div className = "get-answers-button">
                 {Object.keys(selectedAnswers).length === questions.length ? (
-                    <Button onClick={handleSubmission}>Get Answers</Button>
+                    <Button id="activate-answers-button" onClick={handleSubmission}>Get Answers</Button>
                 ) : (
-                    <Button onClick={handleSubmission}>Get Answers</Button>
+                    <Button onClick={handleSubmission} style={{ display: 'none' }}>Get Answers</Button>
                 )}
             </div>
             </>
