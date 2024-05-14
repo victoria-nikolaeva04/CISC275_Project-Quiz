@@ -20,7 +20,7 @@ const AboutMe: React.FC = () => {
             young developers from Univeristy of Delaware. This site is the hardwork of our final project for our 275 - Intro to Software Development.
             Together, we have worked and learn many things, not only as programmers, but as team. We learned to manage, communicate, and resolve issues
             with both within ourselves but also with our 'client' (aka our fun Professor Armanando). This project, isn't about the code itself, but the 
-            processes and thinking that leads us to implementing. We are not code-monkeys, we are engineers (even if UD hardly recognize that). Our team
+            processes and thinking that leads us to implementing. We are not code-monkeys, we are engineers and more importantly, computer scientists! Our team
             is full of strong minds and creative thinkers, leading to our well-rounded solutions and continous improvement. Even if our journey started off
             shakey, by the end we have become solid as gold. Hopeful, you will see the work we put into the site.<br></br> Thank you!
           </p>
@@ -129,6 +129,88 @@ const AboutMe: React.FC = () => {
         </div>
       </div>
     </div>
+    <div className="paw-group">
+              <div className="paw-print-1">
+                <div className="pad large"></div>
+                <div className="pad small-1"></div>
+                <div className="pad small-2"></div>
+                <div className="pad small-3"></div>
+                <div className="pad small-4"></div>
+              </div>
+                
+              <div className="paw-print-2">
+                <div className="pad large"></div>
+                <div className="pad small-1"></div>
+                <div className="pad small-2"></div>
+                <div className="pad small-3"></div>
+                <div className="pad small-4"></div>
+              </div>    
+                
+              <div className="paw-print-3">
+                <div className="pad large"></div>
+                <div className="pad small-1"></div>
+                <div className="pad small-2"></div>
+                <div className="pad small-3"></div>
+                <div className="pad small-4"></div>
+              </div>    
+                
+              <div className="paw-print-4">
+                <div className="pad large"></div>
+                <div className="pad small-1"></div>
+                <div className="pad small-2"></div>
+                <div className="pad small-3"></div>
+                <div className="pad small-4"></div>
+              </div>
+
+              <div className="paw-print-5">
+                <div className="pad large"></div>
+                <div className="pad small-1"></div>
+                <div className="pad small-2"></div>
+                <div className="pad small-3"></div>
+                <div className="pad small-4"></div>
+              </div>
+
+              <div className="paw-print-6">
+                <div className="pad large"></div>
+                <div className="pad small-1"></div>
+                <div className="pad small-2"></div>
+                <div className="pad small-3"></div>
+                <div className="pad small-4"></div>
+              </div>
+
+              <div className="paw-print-7">
+                <div className="pad large"></div>
+                <div className="pad small-1"></div>
+                <div className="pad small-2"></div>
+                <div className="pad small-3"></div>
+                <div className="pad small-4"></div>
+              </div>
+
+              <div className="paw-print-8">
+                <div className="pad large"></div>
+                <div className="pad small-1"></div>
+                <div className="pad small-2"></div>
+                <div className="pad small-3"></div>
+                <div className="pad small-4"></div>
+              </div>
+
+              <div className="paw-print-9">
+                <div className="pad large"></div>
+                <div className="pad small-1"></div>
+                <div className="pad small-2"></div>
+                <div className="pad small-3"></div>
+                <div className="pad small-4"></div>
+              </div> 
+
+              <div className="paw-print-10">
+                <div className="pad large"></div>
+                <div className="pad small-1"></div>
+                <div className="pad small-2"></div>
+                <div className="pad small-3"></div>
+                <div className="pad small-4"></div>
+              </div>              
+        </div>
+
   </div>
   );
 };
