@@ -181,7 +181,6 @@ export function DetailedQuestions(): JSX.Element {
         return;
         }
 
-
         setIsLoading(true);
         console.log('Submitting...');
         try {
