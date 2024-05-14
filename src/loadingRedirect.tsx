@@ -12,7 +12,7 @@ const LoadingAndRedirect: React.FC = () => {
   }, []);
 
   return (
-    <div>
+    <div style={{ backgroundColor: '#e6dcdc !important' }}>
       {isLoading ? (
         <div>Loading...</div>
       ) : (
