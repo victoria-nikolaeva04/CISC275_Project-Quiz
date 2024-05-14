@@ -188,4 +188,7 @@ body{
   margin: 0 auto; 
 
 }
-
+#chatbox-container{
+  margin-top: 500px;
+  background-color: #000 !important;
+}

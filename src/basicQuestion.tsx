@@ -7,8 +7,11 @@ import pawButtonPrev from './images/detailed_prev_button.png'
 import OpenAI from 'openai';
 import ProgressBar from './ProgressBar';
 import Loading from './Loading';
-//Hello 
-
+const playClickSound = () => {
+  const url = "sounds/ButtonPlate Click (Minecraft Sound) - Sound Effect for editing.mp3";
+  const audio = new Audio(url);
+  audio.play();
+};
 const questions = [
   {
     question: 'Question 1: If you have a year paid-time off and the company gives you money to pursue every interest you want, what would you choose to do with that time?',
@@ -54,7 +57,59 @@ if (prevKey !== null) {
     const navigate = useNavigate(); // Use useNavigate instead of useHistory
     const [key] = useState<string>(keyData); //for api key input
     const [isLoading,setIsLoading] = useState(false);
-
+    /*const Assistant = async (userInput: string) => {
+      const client = new OpenAI({
+        apiKey: key,
+        dangerouslyAllowBrowser: true,
+       });
+      const assistant = await client.beta.assistants.create({
+        name: "Career Assistant",
+        instructions: "You are the best career consultant",
+        model: "gpt-3.5-turbo-16k"
+      })
+      const assistantID = assistant.id;
+      console.log(assistant.id);
+      console.log("Hello There");
+      const thread = await client.beta.threads.create({
+        messages:[
+          {
+            "role": "user",
+            "content": userInput
+          }
+        ]
+    });
+    console.log(thread);
+    const threadID = thread.id;
+    /*const message = await client.beta.threads.messages.create(
+      threadID,
+      {
+      role: "user",
+      content: "What are the best career paths for a Computer Science major?"
+      }
+    )
+    const run = await client.beta.threads.runs.create(
+      threadID,{
+        assistant_id: assistantID,
+        instructions: "Please address the user as Cutie"
+      }
+    )
+    const runInfo = await client.beta.threads.runs.retrieve(threadID,run.id);
+        if (runInfo.status === 'completed') {
+          const messages = await client.beta.threads.messages.list(
+            threadID
+          );
+          for (const message of messages.data.reverse()) {
+            console.log(`${message.role} > ${message.content[0]}`);
+          }
+        } else {
+          console.log(runInfo.status);
+        }
+  }
+    // this will help to debug-print the async function above
+    useEffect(() => {
+      Assistant(userInput);
+    }, []); 
+    */
     //const [questionsState, setQuestionsState] = useState(questions);
   
 //sets the local storage item to the api key the user inputed
@@ -68,6 +123,7 @@ Returns:
     - N/A
 */
     const handleAnswerSelection = (answerIndex: number) => {
+      playClickSound();
       const newSelectedAnswers = [...selectedAnswers];
       newSelectedAnswers[currentQuestionIndex] = questions[currentQuestionIndex].answers[answerIndex];
       setSelectedAnswers(newSelectedAnswers);
@@ -82,6 +138,7 @@ Returns:
     - N/A
 */
     const handleNextQuestion = () => {
+      playClickSound();
       if (currentQuestionIndex < questions.length - 1) {
         setCurrentQuestionIndex(currentQuestionIndex + 1);
       }
@@ -103,6 +160,7 @@ Returns:
     - N/A
 */
     const handlePreviousQuestion = () => {
+      playClickSound();
       if (currentQuestionIndex > 0) {
         setCurrentQuestionIndex(currentQuestionIndex - 1);
       }
@@ -119,6 +177,7 @@ Returns:
     - N/A
 */ 
     const handleSubmission = async () => {
+      playClickSound();
       setIsLoading(true);
       console.log('Submitting...');
       try {
@@ -126,7 +185,6 @@ Returns:
           apiKey: key,
           dangerouslyAllowBrowser: true,
         });
-
         /*Open AI set up*/
         const completion = await openAI.chat.completions.create({
           messages: [
@@ -138,7 +196,6 @@ Returns:
         });
         await new Promise(resolve => setTimeout(resolve, 2000));
         console.log('API call completed');
-
         if (completion.choices[0].message.content != null) {
           /*Takes what gpt prints out and routes it the result page which will then displays the result  */
           navigate('/basicresult', { state: { result: completion.choices[0].message.content } });
@@ -152,10 +209,14 @@ Returns:
         setIsLoading(false); // Set loading to false after API call completes
         console.log('Loading set to false');
       }
-
     };    
     return (
       <div>
+        {isLoading ? (
+                <Loading></Loading>
+            ):(
+            <>
+        <img
           src={catHeaderBasic}
           alt="cat-header-basic"
           className='cat-header-basic'
