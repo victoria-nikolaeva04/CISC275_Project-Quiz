@@ -60,6 +60,9 @@
     margin-right: calc(0.5% - 2vw);
   }
 
+  .paw-group{
+    display: none;
+  }
 }
 
 .image-easy{
