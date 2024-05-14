@@ -119,6 +119,13 @@ Returns:
     - N/A
 */ 
     const handleSubmission = async () => {
+      // Check if all questions have been answered
+      const unansweredQuestions = selectedAnswers.findIndex(answer => answer === '');
+      if (unansweredQuestions !== -1) {
+        alert(`Please answer question ${unansweredQuestions + 1} before submitting.`);
+      return;
+      }
+
       setIsLoading(true);
       console.log('Submitting...');
       try {

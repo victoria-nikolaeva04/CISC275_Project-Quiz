@@ -172,6 +172,14 @@ export function DetailedQuestions(): JSX.Element {
     }
     
     const handleSubmission = async () => {
+        // Check if all questions have been answered
+        const unansweredQuestionIndex = questions.findIndex(question => !selectedAnswers[`Question${questions.indexOf(question) + 1}`]);
+        if (unansweredQuestionIndex !== -1) {
+            alert(`Please answer question ${unansweredQuestionIndex + 1} before submitting.`);
+        return;
+        }
+
+
         setIsLoading(true);
         console.log('Submitting...');
         try {
