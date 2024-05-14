@@ -1,7 +1,6 @@
 import easy_cat  from "./images/Lying_down_Calico_Cat_with_Red_Collar.webp";
 import hard_cat from "./images/calico_cat_sitting.webp";
 import './homepage.css';
-import {Button} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Homepage: React.FC = () => {
@@ -43,7 +42,7 @@ const Homepage: React.FC = () => {
 
             <div className="homepage-box">
 
-            <p>
+            <p style={{textAlign: 'center'}}>
               This is the basic version of our career quiz. It consists of simple multiple choice
               The purpose of this quiz is meant to have more generic questions with a more limited answer
               choices. It prioritized to be answered relatively quickly and easy to answer with a quick glance.
@@ -66,7 +65,7 @@ const Homepage: React.FC = () => {
           <div className="homepage-quiz-section">
             <h3 className='heading'>THE JOURNEY <br></br> (=✪ᆽ✪=)</h3>
               <div className="homepage-box">
-                <p>
+                <p style={{textAlign: 'center'}}>
                   The Journey is meant to be more thought-provoking type of quiz. This quiz is designed to have
                   more complex and demanding questions that needs a deep reflection into your own soul to respond
                   to these questions. This is meant for those that have the time and patience. These questions more
