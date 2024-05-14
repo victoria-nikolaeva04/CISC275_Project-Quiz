@@ -54,6 +54,7 @@ if (prevKey !== null) {
     const navigate = useNavigate(); // Use useNavigate instead of useHistory
     const [key] = useState<string>(keyData); //for api key input
     const [isLoading,setIsLoading] = useState(false);
+    const isSubmitDisabled = selectedAnswers.includes('');
 
     //const [questionsState, setQuestionsState] = useState(questions);
   
@@ -203,9 +204,19 @@ Returns:
               }}
             ></button>
           )}
-          {currentQuestionIndex === questions.length - 1 && (
-            <button onClick={handleSubmission} className="submit-button">Submit</button>
-          )}
+
+          <div className="get-submit-button">
+            <button
+              id="activate-submit-button"
+              onClick={handleSubmission}
+              disabled={isSubmitDisabled}
+              style={{
+                display: isSubmitDisabled ? 'none' : 'block'
+              }}
+            >
+            Submit Answers
+            </button>
+          </div>
 
           {currentQuestionIndex !== questions.length - 1 && (
             <button 
