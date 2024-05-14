@@ -28,7 +28,7 @@ body{
     margin-bottom: 40px;
     font-weight: 500;
     color: #000;
-    text-align: left important;
+    text-align: left !important;
   }
 .answer-options {
     font-size: 25px;
