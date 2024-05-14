@@ -206,6 +206,7 @@ Returns:
           {currentQuestionIndex === questions.length - 1 && (
             <button onClick={handleSubmission} className="submit-button">Submit</button>
           )}
+
           {currentQuestionIndex !== questions.length - 1 && (
             <button 
                 onClick={handleNextQuestion} 
