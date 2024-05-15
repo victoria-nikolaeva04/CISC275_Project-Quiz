@@ -195,7 +195,7 @@ export function DetailedQuestions(): JSX.Element {
                     { role: 'system', content: prompt },
                     { role: 'user', content: `My answers are:\n${answersString}` }
                 ],
-                model: 'gpt-4-o',
+                model: 'gpt-4o',
             });
             await new Promise(resolve => setTimeout(resolve, 2000));
             console.log('API call completed');

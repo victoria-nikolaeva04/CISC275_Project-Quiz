@@ -133,7 +133,7 @@ Returns:
             { role: 'system', content: 'You are a helpful career. You will be provided a top 5 student results to a career quiz with as well as providing some basic details such as salary and degree requirements' },
             { role: 'user', content: `My answers are: ${selectedAnswers.join('\n')}` }
           ],
-          model: 'gpt-4-o',
+          model: 'gpt-4o',
         });
         await new Promise(resolve => setTimeout(resolve, 2000));
         console.log('API call completed');
