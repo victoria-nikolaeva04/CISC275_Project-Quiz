@@ -151,6 +151,7 @@ Returns:
         } else {
           /*Error handling */
           console.log('Error! Maybe you forgot the API key.');
+          alert('Error! Maybe you forgot the API key.')
         }
       } catch (error) {
         console.error('Error in OpenAI integration:', error);
