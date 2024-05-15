@@ -20,7 +20,7 @@
             justifyContent: 'center', // Center items vertically
             fontSize: '24px',
             color: 'black',
-            backgroundColor: '#F09738',
+            backgroundColor: '#FFB96F;',
             fontFamily: 'Roboto', // Changed from 'font' to 'fontFamily'
             height: '75%',
             padding: '40px',
