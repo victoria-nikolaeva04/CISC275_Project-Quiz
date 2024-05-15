@@ -1,7 +1,6 @@
 import easy_cat  from "./images/Lying_down_Calico_Cat_with_Red_Collar.webp";
 import hard_cat from "./images/calico_cat_sitting.webp";
 import './homepage.css';
-import {Button} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Homepage: React.FC = () => {
@@ -59,7 +58,7 @@ const Homepage: React.FC = () => {
             </div>
             
             <Link to = "/BasicQuestion">
-              <Button className="homepage-buttons">Take Basic Questions</Button>
+              <button className="homepage-buttons">Take Basic Questions</button>
             </Link>
           </div>
 
@@ -81,9 +80,90 @@ const Homepage: React.FC = () => {
                 />
               </div>
               <Link to = "/DetailedQuestion">
-                <Button className="homepage-buttons">Take Detailed Questions</Button>
+                <button className="homepage-buttons">Take Detailed Questions</button>
               </Link>
-          </div>
+        </div>
+        <div className="paw-group">
+              <div className="paw-print-1">
+                <div className="pad large"></div>
+                <div className="pad small-1"></div>
+                <div className="pad small-2"></div>
+                <div className="pad small-3"></div>
+                <div className="pad small-4"></div>
+              </div>
+                
+              <div className="paw-print-2">
+                <div className="pad large"></div>
+                <div className="pad small-1"></div>
+                <div className="pad small-2"></div>
+                <div className="pad small-3"></div>
+                <div className="pad small-4"></div>
+              </div>    
+                
+              <div className="paw-print-3">
+                <div className="pad large"></div>
+                <div className="pad small-1"></div>
+                <div className="pad small-2"></div>
+                <div className="pad small-3"></div>
+                <div className="pad small-4"></div>
+              </div>    
+                
+              <div className="paw-print-4">
+                <div className="pad large"></div>
+                <div className="pad small-1"></div>
+                <div className="pad small-2"></div>
+                <div className="pad small-3"></div>
+                <div className="pad small-4"></div>
+              </div>
+
+              <div className="paw-print-5">
+                <div className="pad large"></div>
+                <div className="pad small-1"></div>
+                <div className="pad small-2"></div>
+                <div className="pad small-3"></div>
+                <div className="pad small-4"></div>
+              </div>
+
+              <div className="paw-print-6">
+                <div className="pad large"></div>
+                <div className="pad small-1"></div>
+                <div className="pad small-2"></div>
+                <div className="pad small-3"></div>
+                <div className="pad small-4"></div>
+              </div>
+
+              <div className="paw-print-7">
+                <div className="pad large"></div>
+                <div className="pad small-1"></div>
+                <div className="pad small-2"></div>
+                <div className="pad small-3"></div>
+                <div className="pad small-4"></div>
+              </div>
+
+              <div className="paw-print-8">
+                <div className="pad large"></div>
+                <div className="pad small-1"></div>
+                <div className="pad small-2"></div>
+                <div className="pad small-3"></div>
+                <div className="pad small-4"></div>
+              </div>
+
+              <div className="paw-print-9">
+                <div className="pad large"></div>
+                <div className="pad small-1"></div>
+                <div className="pad small-2"></div>
+                <div className="pad small-3"></div>
+                <div className="pad small-4"></div>
+              </div> 
+
+              <div className="paw-print-10">
+                <div className="pad large"></div>
+                <div className="pad small-1"></div>
+                <div className="pad small-2"></div>
+                <div className="pad small-3"></div>
+                <div className="pad small-4"></div>
+              </div>              
+        </div>
         </div>
       </body>
     </div></>

@@ -10,15 +10,15 @@ export function CollapsibleNavbar() {
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand as={Link} to="homepage">⚞ Cat-ylist Quiz ⚟</Navbar.Brand>
+        <Navbar.Brand as={Link} to="homepage">⚞ Cat-alyst Quiz ⚟</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto" id="navlink-container">
             <button id ="nav-basic">
-            <Nav.Link as={Link} to="BasicQuestion">Basic Question</Nav.Link>
+            <Nav.Link as={Link} to="BasicQuestion">Basic Questions</Nav.Link>
             </button>
             <button id="nav-detail">
-            <Nav.Link as={Link} to="DetailedQuestion">Detail Question</Nav.Link>
+            <Nav.Link as={Link} to="DetailedQuestion">Detail Questions</Nav.Link>
             </button>
             <button id="nav-aboutme">
             <Nav.Link as={Link} to="AboutMe">About Me</Nav.Link>
