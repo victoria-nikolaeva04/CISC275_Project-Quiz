@@ -23,7 +23,7 @@ export function CollapsibleNavbar() {
             <Nav.Link as={Link} to="BasicQuestion">Basic Questions</Nav.Link>
             </button>
             <button id="nav-detail">
-            <Nav.Link as={Link} to="DetailedQuestion">Detail Questions</Nav.Link>
+            <Nav.Link as={Link} to="DetailedQuestion">Detailed Questions</Nav.Link>
             </button>
             <button id="nav-aboutme">
             <Nav.Link as={Link} to="AboutMe">About Me</Nav.Link>

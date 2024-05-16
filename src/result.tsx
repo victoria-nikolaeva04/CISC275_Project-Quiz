@@ -57,7 +57,7 @@
                 minWidth: '200px',
                 marginBottom: '60px',
                 marginTop:'-40px',
-                marginLeft:'35%',
+                marginLeft:'70%',
               }}
             >
               Go Home
