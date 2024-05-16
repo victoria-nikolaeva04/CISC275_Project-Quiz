@@ -85,14 +85,14 @@ body{
   content: url(images/cat-paw-button.png);
   position: absolute;
   right: 3%;
-  bottom: 15%;
+  bottom: -15%;
 }
 
 .previous-button{
   content: url(images/cat-paw-button.png);
   position: absolute;
   left: 3%;
-  bottom: 15%;
+  bottom: -15%;
 }
 
 @media screen and (max-width: 800px) {
@@ -340,7 +340,7 @@ body{
 }
 #music-basic{
   position: sticky;
-  margin-left: 63%;
+  margin-left: 52%;
   z-index: 3;
   margin-top: 130px;
 }

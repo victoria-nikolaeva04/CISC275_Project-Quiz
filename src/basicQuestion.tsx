@@ -157,6 +157,8 @@ const Questionnaire: React.FC = () => {
   };
 
   const progress = Math.round(((currentQuestionIndex + 1)/ questions.length) * 100);
+  const answeredCount = selectedAnswers.filter(answer => answer !== '').length;
+  const progressPercentage = (answeredCount / questions.length) * 100;
 
   const handleSubmission = async () => {
     musicPlayerRef.current.stopMusic();
@@ -206,7 +208,7 @@ const Questionnaire: React.FC = () => {
             alt="cat-header-basic"
             className='cat-header-basic'
           />
-        <BootstrapProgressBar style={{ width: '30vw' }} className='simple-progress-bar' min={0} max={100} now={progress} animated striped />
+        <BootstrapProgressBar style={{ width: '30vw' }} className='simple-progress-bar' min={0} max={100} now={progressPercentage} animated striped />
           <div className="questionnaire-container">
            <div className="music-and-jump">
                 <div className="question-jump-buttons">
