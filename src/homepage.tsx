@@ -3,7 +3,6 @@ import hard_cat from "./images/calico_cat_sitting.webp";
 import './homepage.css';
 import { Link } from 'react-router-dom';
 import DoorSound from './sounds/Minecraft Door (Open and Close) - Sound Effect (HD).mp3';
-import icon from './images/CISC-Footer-Logo.png';
 const playClickSound = () => {
   const audio = new Audio(DoorSound);
   audio.play();
