@@ -179,7 +179,7 @@ const Questionnaire: React.FC = () => {
           { role: 'system', content: prompt },
           { role: 'user', content: `My answers are: ${selectedAnswers.join('\n')}` }
         ],
-        model: 'gpt-4-turbo',
+        model: 'gpt-4o',
       });
 
       await new Promise(resolve => setTimeout(resolve, 2000));
