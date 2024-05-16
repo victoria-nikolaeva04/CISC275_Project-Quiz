@@ -1,5 +1,6 @@
   import React from 'react';
   import { useLocation } from 'react-router-dom';
+  import { Link } from 'react-router-dom';
   import './basicQuestion.css';
 
   const Result: React.FC = () => {
@@ -33,6 +34,35 @@
           }}
           dangerouslySetInnerHTML={htmlContent}
         ></div>
+
+        <Link to = "/homepage">
+            <button
+              style={{
+                backgroundColor: '#fbeee0',
+                border: '2px solid #422800',
+                borderRadius: '30px',
+                boxShadow: '#422800 4px 4px 0 0',
+                color: '#422800',
+                cursor: 'pointer',
+                display: 'inline-block',
+                fontWeight: 600,
+                fontSize: '18px',
+                padding: '0 18px',
+                lineHeight: '50px',
+                textAlign: 'center',
+                textDecoration: 'none',
+                userSelect: 'none',
+                WebkitUserSelect: 'none',
+                touchAction: 'manipulation',
+                minWidth: '200px',
+                marginBottom: '60px',
+                marginTop:'-40px',
+                marginLeft:'35%',
+              }}
+            >
+              Go Home
+            </button>
+        </Link>
       </div>
     );
   };
