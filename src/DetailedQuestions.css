@@ -76,7 +76,7 @@ body {
 .detailed-prev-button {
   position: absolute;
   left: 10%;
-  bottom: 0;
+  bottom: -20%;
 }
   
   .question-textbox {
@@ -199,7 +199,7 @@ body {
 .detailed-next-button {
   position: absolute;
   right: 10%;
-  bottom: 0;
+  bottom: -20%;
 }
   
 .answer-row {
