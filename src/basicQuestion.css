@@ -97,11 +97,11 @@ body{
 
 @media screen and (max-width: 800px) {
   .next-button{
-    bottom: -15%;
+    bottom: 0%;
   }
 
   .previous-button{
-    bottom: -15%;
+    bottom: 0%;
   }
   .submit-button{
     margin-left: 200px;
