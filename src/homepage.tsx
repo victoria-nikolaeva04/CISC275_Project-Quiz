@@ -3,7 +3,12 @@ import hard_cat from "./images/calico_cat_sitting.webp";
 import './homepage.css';
 import {Button} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
+import DoorSound from './sounds/Minecraft Door (Open and Close) - Sound Effect (HD).mp3';
+const playClickSound = () => {
+  //const url = "./sounds/ButtonPlate Click (Minecraft Sound) - Sound Effect for editing.mp3";
+  const audio = new Audio(DoorSound);
+  audio.play();
+};
 const Homepage: React.FC = () => {
   return (
     <><div id="home-page">
@@ -59,7 +64,7 @@ const Homepage: React.FC = () => {
             </div>
             
             <Link to = "/BasicQuestion">
-              <Button className="homepage-buttons">Take Basic Questions</Button>
+              <Button className="homepage-buttons" onClick={playClickSound}>Take Basic Questions</Button>
             </Link>
           </div>
 
@@ -81,7 +86,7 @@ const Homepage: React.FC = () => {
                 />
               </div>
               <Link to = "/DetailedQuestion">
-                <Button className="homepage-buttons">Take Detailed Questions</Button>
+                <Button className="homepage-buttons" onClick={playClickSound}>Take Detailed Questions</Button>
               </Link>
           </div>
         </div>
