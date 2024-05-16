@@ -2,6 +2,11 @@ import easy_cat  from "./images/Lying_down_Calico_Cat_with_Red_Collar.webp";
 import hard_cat from "./images/calico_cat_sitting.webp";
 import './homepage.css';
 import { Link } from 'react-router-dom';
+import DoorSound from './sounds/Minecraft Door (Open and Close) - Sound Effect (HD).mp3';
+const playClickSound = () => {
+  const audio = new Audio(DoorSound);
+  audio.play();
+};
 
 const Homepage: React.FC = () => {
   return (
@@ -58,7 +63,7 @@ const Homepage: React.FC = () => {
             </div>
             
             <Link to = "/BasicQuestion">
-              <button className="homepage-buttons">Take Basic Questions</button>
+              <button className="homepage-buttons" onClick={playClickSound}>Take Basic Questions</button>
             </Link>
           </div>
 
@@ -80,7 +85,7 @@ const Homepage: React.FC = () => {
                 />
               </div>
               <Link to = "/DetailedQuestion">
-                <button className="homepage-buttons">Take Detailed Questions</button>
+                <button className="homepage-buttons" onClick={playClickSound}>Take Detailed Questions</button>
               </Link>
         </div>
         <div className="paw-group">

@@ -1,14 +1,60 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate instead of useHistory
+import React, { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './basicQuestion.css';
-import catHeaderBasic from './images/CatHeaderBasic (1).png'
-import pawButtonNext from './images/detailed_next_button.png'
-import pawButtonPrev from './images/detailed_prev_button.png'
+import catHeaderBasic from './images/headerbasicwithshadow.png';
+import pawButtonNext from './images/detailed_next_button.png';
+import pawButtonPrev from './images/detailed_prev_button.png';
+import minecraftSound from './sounds/ButtonClick.mp3';
+import loadingSound from './sounds/C418 - Haggstrom - Minecraft Volume Alpha-[AudioTrimmer.com].mp3';
 import OpenAI from 'openai';
-import CatProgressBar from './ProgressBar';
 import Loading from './Loading';
-import { ProgressBar } from 'react-bootstrap';
-//Hello 
+import MusicPlayer from './Music';
+import { ProgressBar as BootstrapProgressBar } from 'react-bootstrap';
+import MewSound from './sounds/Cat Meow - Minecraft Sound Effect (HD).mp3';
+import ProgressBar from './ProgressBar';
+const playClickSound = () => {
+  const audio = new Audio(minecraftSound);
+  audio.play();
+};
+const playSubmitSound = () => {
+  const audio = new Audio(MewSound);
+  audio.play();
+};
+const audio_wait = new Audio(loadingSound);
+const prompt = `You are tasked with creating a concise and readable career suggestions report fully in HTML format stylized with CSS. All text should be black using CSS.
+    You will be provided quiz-takers answers to career-based questions. You will use this information to generate the suggestions. Center all text.
+    Do not include any quotation marks in the report. Do not include any html tags in the report. Do not preset the font size in any css styling. 
+    Add padding to each section title. Only include what I tell you to.
+
+    There are 4 sections: Strengths and Work Environment, Possible Careeer Industries, and Jobs in Top Career Industry. 
+    For each section, wrap them in a seperate card component, each card should have a margin-bottom of 30px, a border-radius of 25px. 
+    The title of each section should have a margin-top of 15px.
+    Make the width of each section equals and wide, this is important!.
+    Each section background-color is: #FACB7F.
+    Include box shadow to each section.
+
+    Strengths and Work Environment: Generate a personal paragraph with a 30px font size that includes the quiz-taker's personal strengths and preferences for a work environment. 
+    Use "you" statements. Add bold to the title of the section, title of the section should have font-size of 40px, all Capitalized to the title of the section and style the title fontFamily: "Minecraft", this is important. Center all content.
+
+    Possible Career Industries: List 3 industries that match the quiz-taker, along with 3 famous people in each industry. They should be labeled "Famous people: " directly underneath the industry name.
+    Do not use bullet points, just list the famous people in one line.
+    The first industry should be their top match and
+    should be labeled as "Top Industry Match: ", bolded. Bold each industry name. Use a font size of 30px and no bullet points.
+    Add bold to the title of the section, title of the section should have font-size of 40px, all Capitalized to the title of the section and style the title fontFamily: "Minecraft",this is important. Center all content.
+
+    Jobs in Top Career Industry: List 5 well-fitting jobs in the top career industry identified in the previous section, 
+    along with their average salary in an HTML table. Use a font size of 26px and create an HTML table with the following specifications:
+    Job Name and Average Salary boxes should have a background color of #FFA3B1, this is important.
+    Rest of the table boxes should have a background color of #F3CACA.
+    Include black lines that mark each row and column.
+    The table should have a border-radius of 15px and margin-bottom 25px, this is important.
+    Bold the Job Name and Average Salary text.
+    Add bold to the title of the section,title of the section should have font-size of 40px, all Capitalized to the title of the section and style the title fontFamily: "Minecraft",this is important. Center all content.
+
+    Job Descriptions: Provide descriptions for each of the listed jobs, with each description being at least five sentences long. 
+    Use a font size of 26px for the description. Each job's title should be bold. Add bold to the title of the section, title of the section should have font-size of 40px, all Capitalized to the title of the section and style the title fontFamily: "Minecraft",this is important. Center all content.
+
+    Below are the quiz questions along with the quiz-takers answers. Use this information to generate the report following the format above.`;
 
 const questions = [
   {
@@ -25,14 +71,14 @@ const questions = [
   },
   {
     question: 'Question 4: Reflect on your problem-solving approach. Do you excel at finding innovative solutions to complex challenges, thinking outside the box and embracing ambiguity, or do you prefer to analyze data and follow established procedures to reach a solution?',
-    answers: ['I prefer making careful analytics and following an established procdedure', 'I love thinking of new ways to solve a problem'],
+    answers: ['I prefer making careful analytics and following an established procedure', 'I love thinking of new ways to solve a problem'],
   },
   {
     question: 'Question 5: Reflect on your organizational skills. Do you thrive in environments where you can meticulously plan and organize tasks, ensuring everything runs smoothly, or do you prefer more flexibility and adaptability, thriving in situations that require quick decision-making and problem-solving?',
     answers: ['I want to make detailed plans and make sure everything is super organized','I want to focus more on adaptability and problem solving on the spot'],
   },
   {
-    question: 'Question 6: "What motivates you the most in your career: achieving recognition and success, making a positive impact on others or society, or continuous learning and growth?',
+    question: 'Question 6: What motivates you the most in your career: achieving recognition and success, making a positive impact on others or society, or continuous learning and growth?',
     answers: ['I want to have achievements and recognition', 'I want to make a positive impact on the world', 'I want to learn and grow during my career trajectory'],
   },
   {
@@ -40,162 +86,165 @@ const questions = [
     answers: ['I definitely want to meet them in person', 'Written communication is my strong suits', 'I prefer having virtual meeting and video calls'],
   },
 ];
-  // Add more questions here...
 
 let keyData = "";
 const saveKeyData = "MYKEY";
-const prevKey = localStorage.getItem(saveKeyData); //so it'll look like: MYKEY: <api_key_value here> in the local storage when you inspect
+const prevKey = localStorage.getItem(saveKeyData);
 if (prevKey !== null) {
   keyData = JSON.parse(prevKey);
 }
 
-  const Questionnaire: React.FC = () => {
-    const [selectedAnswers, setSelectedAnswers] = useState<string[]>(Array(questions.length).fill(''));
-    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-    const navigate = useNavigate(); // Use useNavigate instead of useHistory
-    const [key] = useState<string>(keyData); //for api key input
-    const [isLoading,setIsLoading] = useState(false);
-    const isSubmitDisabled = selectedAnswers.includes('');
+const Questionnaire: React.FC = () => {
+  const [selectedAnswers, setSelectedAnswers] = useState<string[]>(Array(questions.length).fill(''));
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const navigate = useNavigate();
+  const [key] = useState<string>(keyData);
+  const [isLoading, setIsLoading] = useState(false);
+  const isSubmitDisabled = selectedAnswers.includes('');
+  const musicPlayerRef = useRef<any>(null);
 
-    //const [questionsState, setQuestionsState] = useState(questions);
-  
-//sets the local storage item to the api key the user inputed
-    /*
-Handles the selection of an answer for a question in the questionnaire. This function updates the state to record the selected answer and adjusts the progress bar based on the number of questions answered.
-
-Parameters:
-    - answerIndex (number): Index of the selected answer in the answers array for the current question.
-
-Returns:
-    - N/A
-*/
-    const handleAnswerSelection = (answerIndex: number) => {
-      const newSelectedAnswers = [...selectedAnswers];
-      newSelectedAnswers[currentQuestionIndex] = questions[currentQuestionIndex].answers[answerIndex];
-      setSelectedAnswers(newSelectedAnswers);
-    };
-/*
-Handles the navigation to the next question in the questionnaire. It checks if there are more questions available and updates the current question index accordingly.
-
-Parameters:
-    - None
-
-Returns:
-    - N/A
-*/
-    const handleNextQuestion = () => {
-      if (currentQuestionIndex < questions.length - 1) {
-        setCurrentQuestionIndex(currentQuestionIndex + 1);
-      }
-
-      // Update the progress of the current question
-      /*const updatedQuestions = [...questionsState];
-      updatedQuestions[currentQuestionIndex].progress += 13;
-      setQuestionsState(updatedQuestions);*/
-      
-    };
-
-/*
-Handles the navigation to the previous question in the questionnaire. It checks if there are previous questions available and updates the current question index accordingly.
-
-Parameters:
-    - None
-
-Returns:
-    - N/A
-*/
-    const handlePreviousQuestion = () => {
-      if (currentQuestionIndex > 0) {
-        setCurrentQuestionIndex(currentQuestionIndex - 1);
+  useEffect(() => {
+    if (isLoading) {
+      audio_wait.loop = true;
+      audio_wait.play();
+    } else if (audio_wait) {
+      audio_wait.pause();
+      audio_wait.currentTime = 0;
+    }
+    return () => {
+      if (audio_wait) {
+        audio_wait.pause();
+        audio_wait.currentTime = 0;
       }
     };
-    
-    const progress = Math.round(((currentQuestionIndex)/questions.length)*100);
-    const answeredCount = selectedAnswers.filter(answer => answer !== '').length;
-    const progressPercentage = (answeredCount / questions.length) * 100;
-/*  
-Handles the submission of the questionnaire. It sends the selected answers to OpenAI for completion and navigates to the result page with the received content.
+  }, [isLoading]);
+  const handleAnswerSelection = (answerIndex: number) => {
+    playClickSound();
+    const newSelectedAnswers = [...selectedAnswers];
+    newSelectedAnswers[currentQuestionIndex] = questions[currentQuestionIndex].answers[answerIndex];
+    setSelectedAnswers(newSelectedAnswers);
+  };
 
-Parameters:
-    - None
+  const validateAnswers = () => {
+    const missingQuestions = selectedAnswers
+      .map((answer, index) => (answer === '' ? index + 1 : null))
+      .filter((index) => index !== null);
 
-Returns:
-    - N/A
-*/ 
-    const handleSubmission = async () => {
-      // Check if all questions have been answered
-      const unansweredQuestions = selectedAnswers.findIndex(answer => answer === '');
-      if (unansweredQuestions !== -1) {
-        alert(`Please answer question ${unansweredQuestions + 1} before submitting.`);
+    if (missingQuestions.length > 0) {
+      window.alert(`You are missing answers for the following questions: ${missingQuestions.join(', ')}`);
+      return false;
+    }
+    return true;
+  };
+
+  const handleNextQuestion = () => {
+    playClickSound();
+    if (currentQuestionIndex < questions.length - 1) {
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
+    }
+  };
+
+  const handlePreviousQuestion = () => {
+    playClickSound();
+    if (currentQuestionIndex > 0) {
+      setCurrentQuestionIndex(currentQuestionIndex - 1);
+    }
+  };
+
+  const handleQuestionJump = (index: number) => {
+    playClickSound();
+    setCurrentQuestionIndex(index);
+  };
+
+  const progress = Math.round(((currentQuestionIndex + 1)/ questions.length) * 100);
+
+  const handleSubmission = async () => {
+    musicPlayerRef.current.stopMusic();
+    playSubmitSound();
+    if (!validateAnswers()) {
       return;
-      }
+    }
+    setIsLoading(true);
+    console.log('Submitting...');
+    try {
+      const openAI = new OpenAI({
+        apiKey: key,
+        dangerouslyAllowBrowser: true,
+      });
 
-      setIsLoading(true);
-      console.log('Submitting...');
-      try {
-        const openAI = new OpenAI({
-          apiKey: key,
-          dangerouslyAllowBrowser: true,
-        });
-        /*Open AI set up*/
-        const completion = await openAI.chat.completions.create({
-          messages: [
-            /*Sets up the system and user roles for gpt-4-turbo*/ 
-            { role: 'system', content: 'You are a helpful career. You will be provided a top 5 student results to a career quiz with as well as providing some basic details such as salary and degree requirements' },
-            { role: 'user', content: `My answers are: ${selectedAnswers.join('\n')}` }
-          ],
-          model: 'gpt-4-turbo',
-        });
-        await new Promise(resolve => setTimeout(resolve, 2000));
-        console.log('API call completed');
-        if (completion.choices[0].message.content != null) {
-          /*Takes what gpt prints out and routes it the result page which will then displays the result  */
-          navigate('/basicresult', { state: { result: completion.choices[0].message.content } });
-        } else {
-          /*Error handling */
-          console.log('Error! Maybe you forgot the API key.');
-          alert('Error! Maybe you forgot the API key.')
-        }
-      } catch (error) {
-        console.error('Error in OpenAI integration:', error);
-      }finally{
-        setIsLoading(false); // Set loading to false after API call completes
-        console.log('Loading set to false');
-      }
-    };    
-    return (
-      <div>
-        {isLoading ? (
-                <Loading></Loading>
-            ):(
-            <>
-        <img
-          src={catHeaderBasic}
-          alt="cat-header-basic"
-          className='cat-header-basic'
-        />
-         <ProgressBar style={{ width: '30vw' }} className='simple-progress-bar' min={0} max={100} now={progressPercentage} animated striped />
+      const completion = await openAI.chat.completions.create({
+        messages: [
+          { role: 'system', content: prompt },
+          { role: 'user', content: `My answers are: ${selectedAnswers.join('\n')}` }
+        ],
+        model: 'gpt-4-turbo',
+      });
 
-        <div className="questionnaire-container">
-          <div key={currentQuestionIndex} className="question">
-            <h3 className="question-text">{questions[currentQuestionIndex].question}</h3>
-            <div className="answer-options">
-              {questions[currentQuestionIndex].answers.map((answer, answerIndex) => (
-                <button
-                  key={answerIndex}
-                  onClick={() => handleAnswerSelection(answerIndex)}
-                  className={`answer-option ${selectedAnswers[currentQuestionIndex] === answer ? 'selected' : ''}`}
-                >
-                  {answer}
-                </button>
-              ))}
-            </div>
-          </div>
-          <div>
-            <CatProgressBar progress={progress}></CatProgressBar>
-          </div>
-          {currentQuestionIndex > 0 && (
-            <button 
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      console.log('API call completed');
+      if (completion.choices[0].message.content != null) {
+        navigate('/basicresult', { state: { result: completion.choices[0].message.content } });
+      } else {
+        console.log('Error! Maybe you forgot the API key.');
+      }
+    } catch (error) {
+      console.error('Error in OpenAI integration:', error);
+    } finally {
+      setIsLoading(false);
+      console.log('Loading set to false');
+    }
+  };
+
+  return (
+    <div>
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <>
+          <img
+            src={catHeaderBasic}
+            alt="cat-header-basic"
+            className='cat-header-basic'
+          />
+        <BootstrapProgressBar style={{ width: '30vw' }} className='simple-progress-bar' min={0} max={100} now={progress} animated striped />
+          <div className="questionnaire-container">
+           <div className="music-and-jump">
+                <div className="question-jump-buttons">
+                  {questions.map((_, index) => (
+                    <button
+                      id="each-jump"
+                      key={index}
+                      onClick={() => handleQuestionJump(index)}
+                      className={`question-jump-button ${currentQuestionIndex === index ? 'active' : ''}`}
+                      style={{
+                        backgroundColor: selectedAnswers[index] !== '' ? '#FAA4A4' : '',
+                      }}
+                    >
+                      #{index + 1}
+                    </button>
+                  ))}
+                </div>
+              <div id="music-basic">
+              <MusicPlayer ref={musicPlayerRef} />
+              </div>
+              </div>
+                <div key={currentQuestionIndex} className="question">
+                  <h3 className="question-text">{questions[currentQuestionIndex].question}</h3>
+                  <div className="answer-options">
+                    {questions[currentQuestionIndex].answers.map((answer, answerIndex) => (
+                      <button
+                        key={answerIndex}
+                        onClick={() => handleAnswerSelection(answerIndex)}
+                        className={`answer-option ${selectedAnswers[currentQuestionIndex] === answer ? 'selected' : ''}`}
+                      >
+                        {answer}
+                      </button>
+                    ))}
+                  </div>
+                  <ProgressBar progress={progress} />
+                </div>
+            {currentQuestionIndex > 0 && (
+              <button
                 onClick={handlePreviousQuestion}
                 className='previous-button'
                 style={{
@@ -207,26 +256,24 @@ Returns:
                   fontSize: '15px',
                   color: 'black',
                   borderRadius: '50%',
-              }}
-            ></button>
-          )}
-
-          <div className="get-submit-button">
-            <button
-              id="activate-submit-button"
-              onClick={handleSubmission}
-              disabled={isSubmitDisabled}
-              style={{
-                display: isSubmitDisabled ? 'none' : 'block'
-              }}
-            >
-            Submit Answers
-            </button>
-          </div>
-
-          {currentQuestionIndex !== questions.length - 1 && (
-            <button 
-                onClick={handleNextQuestion} 
+                }}
+              ></button>
+            )}
+            {currentQuestionIndex === questions.length - 1 && (
+              <button
+                onClick={handleSubmission}
+                className="submit-button"
+                disabled={isSubmitDisabled}
+                style={{
+                  display: isSubmitDisabled ? 'none' : 'block'
+                }}
+              >
+                Submit
+              </button>
+            )}
+            {currentQuestionIndex !== questions.length - 1 && (
+              <button
+                onClick={handleNextQuestion}
                 className="next-button"
                 style={{
                   backgroundImage: `url(${pawButtonNext})`,
@@ -237,14 +284,14 @@ Returns:
                   fontSize: '15px',
                   color: 'black',
                   borderRadius: '50%',
-              }}
-                ></button>
-          )}
+                }}
+              ></button>
+            )}
           </div>
-          </>
-          )}
-        </div>
-    );
-  };
-  
-  export default Questionnaire;
+        </>
+      )}
+    </div>
+  );
+};
+
+export default Questionnaire;
