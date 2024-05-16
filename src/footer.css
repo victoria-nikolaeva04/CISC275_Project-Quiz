@@ -3,6 +3,7 @@
 @font-face { font-family: Minecraft2; src: url('/src/fonts/easvhs.ttf'); } 
 
 footer{
+    width: 100%;
     background-color:#68BFD6;
     padding: 4px;
     text-align: center;

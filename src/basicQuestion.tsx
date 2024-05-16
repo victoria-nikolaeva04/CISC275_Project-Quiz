@@ -5,8 +5,9 @@ import catHeaderBasic from './images/CatHeaderBasic (1).png'
 import pawButtonNext from './images/detailed_next_button.png'
 import pawButtonPrev from './images/detailed_prev_button.png'
 import OpenAI from 'openai';
-import ProgressBar from './ProgressBar';
+import CatProgressBar from './ProgressBar';
 import Loading from './Loading';
+import { ProgressBar } from 'react-bootstrap';
 //Hello 
 
 const questions = [
@@ -54,6 +55,7 @@ if (prevKey !== null) {
     const navigate = useNavigate(); // Use useNavigate instead of useHistory
     const [key] = useState<string>(keyData); //for api key input
     const [isLoading,setIsLoading] = useState(false);
+    const isSubmitDisabled = selectedAnswers.includes('');
 
     //const [questionsState, setQuestionsState] = useState(questions);
   
@@ -109,7 +111,9 @@ Returns:
     };
     
     const progress = Math.round(((currentQuestionIndex)/questions.length)*100);
-/*
+    const answeredCount = selectedAnswers.filter(answer => answer !== '').length;
+    const progressPercentage = (answeredCount / questions.length) * 100;
+/*  
 Handles the submission of the questionnaire. It sends the selected answers to OpenAI for completion and navigates to the result page with the received content.
 
 Parameters:
@@ -119,6 +123,13 @@ Returns:
     - N/A
 */ 
     const handleSubmission = async () => {
+      // Check if all questions have been answered
+      const unansweredQuestions = selectedAnswers.findIndex(answer => answer === '');
+      if (unansweredQuestions !== -1) {
+        alert(`Please answer question ${unansweredQuestions + 1} before submitting.`);
+      return;
+      }
+
       setIsLoading(true);
       console.log('Submitting...');
       try {
@@ -143,6 +154,7 @@ Returns:
         } else {
           /*Error handling */
           console.log('Error! Maybe you forgot the API key.');
+          alert('Error! Maybe you forgot the API key.')
         }
       } catch (error) {
         console.error('Error in OpenAI integration:', error);
@@ -162,6 +174,8 @@ Returns:
           alt="cat-header-basic"
           className='cat-header-basic'
         />
+         <ProgressBar style={{ width: '30vw' }} className='simple-progress-bar' min={0} max={100} now={progressPercentage} animated striped />
+
         <div className="questionnaire-container">
           <div key={currentQuestionIndex} className="question">
             <h3 className="question-text">{questions[currentQuestionIndex].question}</h3>
@@ -178,7 +192,7 @@ Returns:
             </div>
           </div>
           <div>
-            <ProgressBar progress={progress}></ProgressBar>
+            <CatProgressBar progress={progress}></CatProgressBar>
           </div>
           {currentQuestionIndex > 0 && (
             <button 
@@ -196,9 +210,20 @@ Returns:
               }}
             ></button>
           )}
-          {currentQuestionIndex === questions.length - 1 && (
-            <button onClick={handleSubmission} className="submit-button">Submit</button>
-          )}
+
+          <div className="get-submit-button">
+            <button
+              id="activate-submit-button"
+              onClick={handleSubmission}
+              disabled={isSubmitDisabled}
+              style={{
+                display: isSubmitDisabled ? 'none' : 'block'
+              }}
+            >
+            Submit Answers
+            </button>
+          </div>
+
           {currentQuestionIndex !== questions.length - 1 && (
             <button 
                 onClick={handleNextQuestion} 
