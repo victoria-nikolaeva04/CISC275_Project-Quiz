@@ -1,9 +1,9 @@
 import easy_cat  from "./images/Lying_down_Calico_Cat_with_Red_Collar.webp";
 import hard_cat from "./images/calico_cat_sitting.webp";
 import './homepage.css';
-import {Button} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import DoorSound from './sounds/Minecraft Door (Open and Close) - Sound Effect (HD).mp3';
+import { Button } from "react-bootstrap";
 const playClickSound = () => {
   //const url = "./sounds/ButtonPlate Click (Minecraft Sound) - Sound Effect for editing.mp3";
   const audio = new Audio(DoorSound);
@@ -48,7 +48,7 @@ const Homepage: React.FC = () => {
 
             <div className="homepage-box">
 
-            <p>
+            <p style={{textAlign: 'center'}}>
               This is the basic version of our career quiz. It consists of simple multiple choice
               The purpose of this quiz is meant to have more generic questions with a more limited answer
               choices. It prioritized to be answered relatively quickly and easy to answer with a quick glance.
@@ -71,7 +71,7 @@ const Homepage: React.FC = () => {
           <div className="homepage-quiz-section">
             <h3 className='heading'>THE JOURNEY <br></br> (=✪ᆽ✪=)</h3>
               <div className="homepage-box">
-                <p>
+                <p style={{textAlign: 'center'}}>
                   The Journey is meant to be more thought-provoking type of quiz. This quiz is designed to have
                   more complex and demanding questions that needs a deep reflection into your own soul to respond
                   to these questions. This is meant for those that have the time and patience. These questions more
@@ -88,7 +88,88 @@ const Homepage: React.FC = () => {
               <Link to = "/DetailedQuestion">
                 <Button className="homepage-buttons" onClick={playClickSound}>Take Detailed Questions</Button>
               </Link>
-          </div>
+        </div>
+        <div className="paw-group">
+              <div className="paw-print-1">
+                <div className="pad large"></div>
+                <div className="pad small-1"></div>
+                <div className="pad small-2"></div>
+                <div className="pad small-3"></div>
+                <div className="pad small-4"></div>
+              </div>
+                
+              <div className="paw-print-2">
+                <div className="pad large"></div>
+                <div className="pad small-1"></div>
+                <div className="pad small-2"></div>
+                <div className="pad small-3"></div>
+                <div className="pad small-4"></div>
+              </div>    
+                
+              <div className="paw-print-3">
+                <div className="pad large"></div>
+                <div className="pad small-1"></div>
+                <div className="pad small-2"></div>
+                <div className="pad small-3"></div>
+                <div className="pad small-4"></div>
+              </div>    
+                
+              <div className="paw-print-4">
+                <div className="pad large"></div>
+                <div className="pad small-1"></div>
+                <div className="pad small-2"></div>
+                <div className="pad small-3"></div>
+                <div className="pad small-4"></div>
+              </div>
+
+              <div className="paw-print-5">
+                <div className="pad large"></div>
+                <div className="pad small-1"></div>
+                <div className="pad small-2"></div>
+                <div className="pad small-3"></div>
+                <div className="pad small-4"></div>
+              </div>
+
+              <div className="paw-print-6">
+                <div className="pad large"></div>
+                <div className="pad small-1"></div>
+                <div className="pad small-2"></div>
+                <div className="pad small-3"></div>
+                <div className="pad small-4"></div>
+              </div>
+
+              <div className="paw-print-7">
+                <div className="pad large"></div>
+                <div className="pad small-1"></div>
+                <div className="pad small-2"></div>
+                <div className="pad small-3"></div>
+                <div className="pad small-4"></div>
+              </div>
+
+              <div className="paw-print-8">
+                <div className="pad large"></div>
+                <div className="pad small-1"></div>
+                <div className="pad small-2"></div>
+                <div className="pad small-3"></div>
+                <div className="pad small-4"></div>
+              </div>
+
+              <div className="paw-print-9">
+                <div className="pad large"></div>
+                <div className="pad small-1"></div>
+                <div className="pad small-2"></div>
+                <div className="pad small-3"></div>
+                <div className="pad small-4"></div>
+              </div> 
+
+              <div className="paw-print-10">
+                <div className="pad large"></div>
+                <div className="pad small-1"></div>
+                <div className="pad small-2"></div>
+                <div className="pad small-3"></div>
+                <div className="pad small-4"></div>
+              </div>              
+        </div>
         </div>
       </body>
     </div></>

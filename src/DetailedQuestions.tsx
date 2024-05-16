@@ -41,31 +41,30 @@ export function DetailedQuestions(): JSX.Element {
     const prompt = `You are tasked with creating a concise and readable career suggestions report fully in HTML format stylized with CSS. All text should be black using CSS.
     You will be provided quiz-takers answers to career-based questions. You will use this information to generate the suggestions. Center all text.
     Do not include any quotation marks in the report. Do not include any html tags in the report. Do not preset the font size in any css styling. 
-    Add padding to each section title. Only include what I tell you to.
+    Add padding of 5px to each section title. Only include what I tell you to.
 
-    Strengths and Work Environment: Generate a personal paragraph with a 30px font size that includes the quiz-taker's personal strengths and preferences for a work environment. 
-    Use "you" statements. Add bold to the title of the section and style the title fontFamily: "Minecraft". Center all content.
+    Strengths and Work Environment: Generate a personal paragraph with a 25px font size that includes the quiz-taker's personal strengths and preferences for a work environment. 
+    Use "you" statements. Add the title of the section and style the title fontFamily: "Minecraft". Center all content. Add padding-bottom of 6 pixels.
 
     Possible Career Industries: List 3 industries that match the quiz-taker, along with 3 famous people in each industry. They should be labeled "Famous people: " directly underneath the industry name.
-    Do not use bullet points, just list the famous people in one line.
+    Do not use bullet points, just list the famous people in one line. Add padding-bottom of 4 pixels after each list of famous people.
     The first industry should be their top match and
-    should be labeled as "Top Industry Match: ", bolded. Bold each industry name. Use a font size of 30px and no bullet points.
-    Add bold to the title of the section and style the title fontFamily: "Minecraft". Center all content.
+    should be labeled as "Top Industry Match: ", bolded. Bold each industry name. Use a font size of 25px and no bullet points.
+    Add the title of the section and style the title fontFamily: "Minecraft". Center all content.
 
     Jobs in Top Career Industry: List 5 well-fitting jobs in the top career industry identified in the previous section, 
-    along with their average salary in an HTML table. Use a font size of 26px and create an HTML table with the following specifications:
+    along with their average salary in an HTML table. <br> Use a font size of 26px and create an HTML table with the following specifications:
     Job Name and Average Salary boxes should have a background color of #FFA3B1.
     Rest of the table boxes should have a background color of #F3CACA.
     Include black lines that mark each row and column.
-    Bold the Job Name and Average Salary text.
-    Add bold to the title of the section and style the title fontFamily: "Minecraft". Center all content.
+    Add padding-top of 3px, padding-bottom of 3px, padding-left of 3px, padding-right of 3 px for the table cells.
+    Bold the Job Name and Average Salary titles.
+    Add the title of the section and style the title fontFamily: "Minecraft". Center all content.
     
-
     Job Descriptions: Provide descriptions for each of the listed jobs, with each description being at least five sentences long. 
-    Use a font size of 26px and bold the job titles. Add bold to the title of the section and style the title fontFamily: "Minecraft". Center all content.
+    Use a font size of 23px and bold the job titles only. Add the title of the section and style the title fontFamily: "Minecraft".
 
-
-     Below are the quiz questions along with the quiz-takers answers. Use this information to generate the report following the format above.`; 
+    Below are the quiz questions along with the quiz-takers answers. Use this information to generate the report following the format above.`; 
      const [isLoading,setIsLoading] = useState(false);
 
 
@@ -174,6 +173,13 @@ export function DetailedQuestions(): JSX.Element {
     }
     
     const handleSubmission = async () => {
+        // Check if all questions have been answered
+        const unansweredQuestionIndex = questions.findIndex(question => !selectedAnswers[`Question${questions.indexOf(question) + 1}`]);
+        if (unansweredQuestionIndex !== -1) {
+            alert(`Please answer question ${unansweredQuestionIndex + 1} before submitting.`);
+        return;
+        }
+
         setIsLoading(true);
         console.log('Submitting...');
         try {
@@ -205,6 +211,7 @@ export function DetailedQuestions(): JSX.Element {
             } else {
                 /*Error handling */
                 console.log('Error! Maybe you forgot the API key.');
+                alert('Error! Maybe you forgot the API key.');
             }
         } catch (error) {
             console.error('Error in OpenAI integration:', error);

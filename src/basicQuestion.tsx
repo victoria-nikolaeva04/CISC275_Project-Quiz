@@ -8,6 +8,8 @@ import minecraftSound from './sounds/ButtonClick.mp3';
 import OpenAI from 'openai';
 import ProgressBar from './ProgressBar';
 import Loading from './Loading';
+import { ProgressBar as BootstrapProgressBar } from 'react-bootstrap';
+
 const playClickSound = () => {
   const audio = new Audio(minecraftSound);
   audio.play();
@@ -92,6 +94,7 @@ const Questionnaire: React.FC = () => {
   const navigate = useNavigate();
   const [key] = useState<string>(keyData);
   const [isLoading, setIsLoading] = useState(false);
+  const isSubmitDisabled = selectedAnswers.includes('');
 
   const handleAnswerSelection = (answerIndex: number) => {
     playClickSound();
@@ -180,17 +183,17 @@ const Questionnaire: React.FC = () => {
             alt="cat-header-basic"
             className='cat-header-basic'
           />
+          <BootstrapProgressBar style={{ width: '30vw' }} className='simple-progress-bar' min={0} max={100} now={progress} animated striped />
           <div className="questionnaire-container">
             <div className="question-jump-buttons">
               {questions.map((_, index) => (
                 <button
-                  id = "each-jump"
+                  id="each-jump"
                   key={index}
                   onClick={() => handleQuestionJump(index)}
                   className={`question-jump-button ${currentQuestionIndex === index ? 'active' : ''}`}
                 >
                   #{index + 1}
-                  
                 </button>
               ))}
             </div>
@@ -228,7 +231,16 @@ const Questionnaire: React.FC = () => {
               ></button>
             )}
             {currentQuestionIndex === questions.length - 1 && (
-              <button onClick={handleSubmission} className="submit-button">Submit</button>
+              <button
+                onClick={handleSubmission}
+                className="submit-button"
+                disabled={isSubmitDisabled}
+                style={{
+                  display: isSubmitDisabled ? 'none' : 'block'
+                }}
+              >
+                Submit
+              </button>
             )}
             {currentQuestionIndex !== questions.length - 1 && (
               <button

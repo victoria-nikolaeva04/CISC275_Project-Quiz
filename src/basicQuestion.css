@@ -8,7 +8,7 @@ body{
     padding-left: 9vw;
     padding-top: 5vw;
     padding-right: 9vw;
-    margin-top: -150px;
+    margin-top: -65px;
   }
 .questionnaire-heading {
     font-size: 35px;
@@ -46,9 +46,13 @@ body{
     margin-right: 10px;
   }
   
-  .submit-button{
+  .get-submit-button {
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 20px;
+  }
+  #activate-submit-button {
     background-color: #fbeee0;
-    /*background-color: #fbeee0;*/
     border: 2px solid #422800;
     border-radius: 30px;
     box-shadow: #422800 4px 4px 0 0;
@@ -65,16 +69,14 @@ body{
     -webkit-user-select: none;
     touch-action: manipulation;
     min-width: 200px;
-    margin-left: 45%;
-    margin-bottom: 45px;
+    margin-left: 42%;
+    margin-bottom: 60px;
+    margin-top: 10px;
   }
-  .submit-button:hover {
+  #activate-submit-button:hover {
     background-color:#FAC264;
   }
-.submit-button:active {
-    box-shadow: #422800 2px 2px 0 0;
-    transform: translate(2px, 2px);
-  }
+
 .previous-button,
 .next-button{
   cursor: pointer;
@@ -194,7 +196,15 @@ body{
   display: block; 
   margin: 0 auto; 
   z-index: 5;
-
+}
+ 
+.simple-progress-bar{
+  position: center;
+  margin-left: 35%;
+  margin-top: 3px;
+  background: linear-gradient(to right, #68BFD6, #bcdfe8);
+  border-radius: 10px;
+  transition: width 0.5s ease;
 }
 #chatbox-container{
   margin-top: 500px;

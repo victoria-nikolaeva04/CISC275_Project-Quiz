@@ -2,7 +2,7 @@
     height: 50%;
 }
 
-.progress-cat{
+.progress-bar-comp{
     margin-top: 25px;
     background-color: #F2EDDA;
     max-width: 100%;
@@ -11,7 +11,7 @@
     border-radius: 10px;
 }
   
-.progress-bar-cat{
+.progress-bar-active-comp{
     background-color: #FAC264;
     border-radius: 10px;
 }
@@ -29,7 +29,7 @@
 
 .progress-asset-cat{
     margin-top: 3px;
-    width: 90px;
+    width: 100px;
     margin-left: 5px; 
 }
 
