@@ -335,6 +335,8 @@ body{
 }
 .music-and-jump{
   display: flex;
+  margin-top: -70px;
+  margin-right: 10px;
 }
 #music-basic{
   position: sticky;
