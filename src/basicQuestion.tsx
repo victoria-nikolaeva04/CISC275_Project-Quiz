@@ -5,8 +5,9 @@ import catHeaderBasic from './images/CatHeaderBasic (1).png'
 import pawButtonNext from './images/detailed_next_button.png'
 import pawButtonPrev from './images/detailed_prev_button.png'
 import OpenAI from 'openai';
-import ProgressBar from './ProgressBar';
+import CatProgressBar from './ProgressBar';
 import Loading from './Loading';
+import { ProgressBar } from 'react-bootstrap';
 //Hello 
 
 const questions = [
@@ -110,7 +111,9 @@ Returns:
     };
     
     const progress = Math.round(((currentQuestionIndex)/questions.length)*100);
-/*
+    const answeredCount = selectedAnswers.filter(answer => answer !== '').length;
+    const progressPercentage = (answeredCount / questions.length) * 100;
+/*  
 Handles the submission of the questionnaire. It sends the selected answers to OpenAI for completion and navigates to the result page with the received content.
 
 Parameters:
@@ -171,13 +174,8 @@ Returns:
           alt="cat-header-basic"
           className='cat-header-basic'
         />
-        <div className="basic-progress-bar-section">
-          <div className="basic-progress-bar-shape">
-              <div className="basic-progress-bar">
-                  <div className="basic-update-progress-bar" style={{ width: `${progress}%` }}></div>
-              </div>
-          </div>
-        </div>
+         <ProgressBar style={{ width: '30vw' }} className='simple-progress-bar' min={0} max={100} now={progressPercentage} animated striped />
+
         <div className="questionnaire-container">
           <div key={currentQuestionIndex} className="question">
             <h3 className="question-text">{questions[currentQuestionIndex].question}</h3>
@@ -194,7 +192,7 @@ Returns:
             </div>
           </div>
           <div>
-            <ProgressBar progress={progress}></ProgressBar>
+            <CatProgressBar progress={progress}></CatProgressBar>
           </div>
           {currentQuestionIndex > 0 && (
             <button 
