@@ -1,20 +1,26 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './basicQuestion.css';
 import catHeaderBasic from './images/headerbasicwithshadow.png';
 import pawButtonNext from './images/detailed_next_button.png';
 import pawButtonPrev from './images/detailed_prev_button.png';
 import minecraftSound from './sounds/ButtonClick.mp3';
+import loadingSound from './sounds/C418 - Haggstrom - Minecraft Volume Alpha-[AudioTrimmer.com].mp3';
 import OpenAI from 'openai';
-import ProgressBar from './ProgressBar';
 import Loading from './Loading';
+import MusicPlayer from './Music';
 import { ProgressBar as BootstrapProgressBar } from 'react-bootstrap';
-
+import MewSound from './sounds/Cat Meow - Minecraft Sound Effect (HD).mp3';
+import ProgressBar from './ProgressBar';
 const playClickSound = () => {
   const audio = new Audio(minecraftSound);
   audio.play();
 };
-
+const playSubmitSound = () => {
+  const audio = new Audio(MewSound);
+  audio.play();
+};
+const audio_wait = new Audio(loadingSound);
 const prompt = `You are tasked with creating a concise and readable career suggestions report fully in HTML format stylized with CSS. All text should be black using CSS.
     You will be provided quiz-takers answers to career-based questions. You will use this information to generate the suggestions. Center all text.
     Do not include any quotation marks in the report. Do not include any html tags in the report. Do not preset the font size in any css styling. 
@@ -28,13 +34,13 @@ const prompt = `You are tasked with creating a concise and readable career sugge
     Include box shadow to each section.
 
     Strengths and Work Environment: Generate a personal paragraph with a 30px font size that includes the quiz-taker's personal strengths and preferences for a work environment. 
-    Use "you" statements. Add bold to the title of the section, title of the section should have font-size of 40px, all Capitalized to the title of the section and style the title fontFamily: "Minecraft". Center all content.
+    Use "you" statements. Add bold to the title of the section, title of the section should have font-size of 40px, all Capitalized to the title of the section and style the title fontFamily: "Minecraft", this is important. Center all content.
 
     Possible Career Industries: List 3 industries that match the quiz-taker, along with 3 famous people in each industry. They should be labeled "Famous people: " directly underneath the industry name.
     Do not use bullet points, just list the famous people in one line.
     The first industry should be their top match and
     should be labeled as "Top Industry Match: ", bolded. Bold each industry name. Use a font size of 30px and no bullet points.
-    Add bold to the title of the section, title of the section should have font-size of 40px, all Capitalized to the title of the section and style the title fontFamily: "Minecraft". Center all content.
+    Add bold to the title of the section, title of the section should have font-size of 40px, all Capitalized to the title of the section and style the title fontFamily: "Minecraft",this is important. Center all content.
 
     Jobs in Top Career Industry: List 5 well-fitting jobs in the top career industry identified in the previous section, 
     along with their average salary in an HTML table. Use a font size of 26px and create an HTML table with the following specifications:
@@ -43,10 +49,10 @@ const prompt = `You are tasked with creating a concise and readable career sugge
     Include black lines that mark each row and column.
     The table should have a border-radius of 15px and margin-bottom 25px, this is important.
     Bold the Job Name and Average Salary text.
-    Add bold to the title of the section,title of the section should have font-size of 40px, all Capitalized to the title of the section and style the title fontFamily: "Minecraft". Center all content.
+    Add bold to the title of the section,title of the section should have font-size of 40px, all Capitalized to the title of the section and style the title fontFamily: "Minecraft",this is important. Center all content.
 
     Job Descriptions: Provide descriptions for each of the listed jobs, with each description being at least five sentences long. 
-    Use a font size of 26px for the description. Each job's title should be bold. Add bold to the title of the section, title of the section should have font-size of 40px, all Capitalized to the title of the section and style the title fontFamily: "Minecraft". Center all content.
+    Use a font size of 26px for the description. Each job's title should be bold. Add bold to the title of the section, title of the section should have font-size of 40px, all Capitalized to the title of the section and style the title fontFamily: "Minecraft",this is important. Center all content.
 
     Below are the quiz questions along with the quiz-takers answers. Use this information to generate the report following the format above.`;
 
@@ -95,7 +101,23 @@ const Questionnaire: React.FC = () => {
   const [key] = useState<string>(keyData);
   const [isLoading, setIsLoading] = useState(false);
   const isSubmitDisabled = selectedAnswers.includes('');
+  const musicPlayerRef = useRef<any>(null);
 
+  useEffect(() => {
+    if (isLoading) {
+      audio_wait.loop = true;
+      audio_wait.play();
+    } else if (audio_wait) {
+      audio_wait.pause();
+      audio_wait.currentTime = 0;
+    }
+    return () => {
+      if (audio_wait) {
+        audio_wait.pause();
+        audio_wait.currentTime = 0;
+      }
+    };
+  }, [isLoading]);
   const handleAnswerSelection = (answerIndex: number) => {
     playClickSound();
     const newSelectedAnswers = [...selectedAnswers];
@@ -134,10 +156,11 @@ const Questionnaire: React.FC = () => {
     setCurrentQuestionIndex(index);
   };
 
-  const progress = Math.round((currentQuestionIndex / questions.length) * 100);
+  const progress = Math.round(((currentQuestionIndex + 1)/ questions.length) * 100);
 
   const handleSubmission = async () => {
-    playClickSound();
+    musicPlayerRef.current.stopMusic();
+    playSubmitSound();
     if (!validateAnswers()) {
       return;
     }
@@ -183,37 +206,43 @@ const Questionnaire: React.FC = () => {
             alt="cat-header-basic"
             className='cat-header-basic'
           />
-          <BootstrapProgressBar style={{ width: '30vw' }} className='simple-progress-bar' min={0} max={100} now={progress} animated striped />
+        <BootstrapProgressBar style={{ width: '30vw' }} className='simple-progress-bar' min={0} max={100} now={progress} animated striped />
           <div className="questionnaire-container">
-            <div className="question-jump-buttons">
-              {questions.map((_, index) => (
-                <button
-                  id="each-jump"
-                  key={index}
-                  onClick={() => handleQuestionJump(index)}
-                  className={`question-jump-button ${currentQuestionIndex === index ? 'active' : ''}`}
-                >
-                  #{index + 1}
-                </button>
-              ))}
-            </div>
-            <div key={currentQuestionIndex} className="question">
-              <h3 className="question-text">{questions[currentQuestionIndex].question}</h3>
-              <div className="answer-options">
-                {questions[currentQuestionIndex].answers.map((answer, answerIndex) => (
-                  <button
-                    key={answerIndex}
-                    onClick={() => handleAnswerSelection(answerIndex)}
-                    className={`answer-option ${selectedAnswers[currentQuestionIndex] === answer ? 'selected' : ''}`}
-                  >
-                    {answer}
-                  </button>
-                ))}
+           <div className="music-and-jump">
+                <div className="question-jump-buttons">
+                  {questions.map((_, index) => (
+                    <button
+                      id="each-jump"
+                      key={index}
+                      onClick={() => handleQuestionJump(index)}
+                      className={`question-jump-button ${currentQuestionIndex === index ? 'active' : ''}`}
+                      style={{
+                        backgroundColor: selectedAnswers[index] !== '' ? '#FAA4A4' : '',
+                      }}
+                    >
+                      #{index + 1}
+                    </button>
+                  ))}
+                </div>
+              <div id="music-basic">
+              <MusicPlayer ref={musicPlayerRef} />
               </div>
-            </div>
-            <div>
-              <ProgressBar progress={progress} />
-            </div>
+              </div>
+                <div key={currentQuestionIndex} className="question">
+                  <h3 className="question-text">{questions[currentQuestionIndex].question}</h3>
+                  <div className="answer-options">
+                    {questions[currentQuestionIndex].answers.map((answer, answerIndex) => (
+                      <button
+                        key={answerIndex}
+                        onClick={() => handleAnswerSelection(answerIndex)}
+                        className={`answer-option ${selectedAnswers[currentQuestionIndex] === answer ? 'selected' : ''}`}
+                      >
+                        {answer}
+                      </button>
+                    ))}
+                  </div>
+                  <ProgressBar progress={progress} />
+                </div>
             {currentQuestionIndex > 0 && (
               <button
                 onClick={handlePreviousQuestion}

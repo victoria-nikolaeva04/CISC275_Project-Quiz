@@ -4,6 +4,7 @@
   max-width: 20em;
   overflow: hidden;
   background-color: #F2EDDA;
+  margin-bottom: 35%;
 }
 .cat::before {
   content: "";

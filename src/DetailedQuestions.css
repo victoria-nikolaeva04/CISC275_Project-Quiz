@@ -8,7 +8,7 @@ body {
 }
 
 .cat-header {
-  content: url('images/cat-header.png');
+  content: url('images/CatDetailHeader.png');
   max-width: 40%;
   display: block; 
   margin: 0 auto; 
@@ -265,6 +265,7 @@ input[type="radio"] {
 #activate-answers-button:hover {
   background-color:#FAC264;
 }
-
-
+.music-detail{
+  margin-left: 45%;
+}
 
