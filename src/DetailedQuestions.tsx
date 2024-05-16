@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import './DetailedQuestions.css';
 import paw_button  from "./images/cat-paw-button.png";
 import { Button, Container, Row , Col, Form } from "react-bootstrap";
@@ -16,8 +16,19 @@ import { CSSTransition } from "react-transition-group";
 import { useNavigate } from 'react-router-dom';
 import OpenAI from "openai";
 import Loading from "./Loading";
-
-
+import MewSound from './sounds/Cat Meow - Minecraft Sound Effect (HD).mp3';
+import minecraftSound from './sounds/ButtonClick.mp3';
+import loadingSound from './sounds/C418 - Haggstrom - Minecraft Volume Alpha-[AudioTrimmer.com].mp3';
+import MusicPlayer from "./Music";
+const playClickSound = () => {
+    const audio = new Audio(minecraftSound);
+    audio.play();
+  };
+  const playSubmitSound = () => {
+    const audio = new Audio(MewSound);
+    audio.play();
+  };
+  const audio_wait = new Audio(loadingSound);
 let keyData = "";
 const saveKeyData = "MYKEY";
 const prevKey = localStorage.getItem(saveKeyData); //so it'll look like: MYKEY: <api_key_value here> in the local storage when you inspect
@@ -35,6 +46,7 @@ export function DetailedQuestions(): JSX.Element {
     // Cat image array
     const catImages = [catSleep, catWakeUp, catYawn, catWalking, catWalking, catWalking, transparent, transparent];
     const mouseImages = [mouseEat, mouseEat, mouseEat, mouseEat, mouseEat, mouseEat, catFight, catEat];
+    const musicPlayerRef = useRef<any>(null);
 
     const navigate = useNavigate(); 
     const [key] = useState<string>(keyData); //for api key input
@@ -43,29 +55,35 @@ export function DetailedQuestions(): JSX.Element {
     Do not include any quotation marks in the report. Do not include any html tags in the report. Do not preset the font size in any css styling. 
     Add padding to each section title. Only include what I tell you to.
 
+    There are 4 sections: Strengths and Work Environment, Possible Careeer Industries, and Jobs in Top Career Industry. 
+    For each section, wrap them in a seperate card component, each card should have a margin-bottom of 30px, a border-radius of 25px. 
+    The title of each section should have a margin-top of 15px.
+    Make the width of each section equals and wide, this is important!.
+    Each section background-color is: #FACB7F.
+    Include box shadow to each section.
+
     Strengths and Work Environment: Generate a personal paragraph with a 30px font size that includes the quiz-taker's personal strengths and preferences for a work environment. 
-    Use "you" statements. Add bold to the title of the section and style the title fontFamily: "Minecraft". Center all content.
+    Use "you" statements. Add bold to the title of the section, title of the section should have font-size of 40px, all Capitalized to the title of the section and style the title fontFamily: "Minecraft", this is important. Center all content.
 
     Possible Career Industries: List 3 industries that match the quiz-taker, along with 3 famous people in each industry. They should be labeled "Famous people: " directly underneath the industry name.
     Do not use bullet points, just list the famous people in one line.
     The first industry should be their top match and
     should be labeled as "Top Industry Match: ", bolded. Bold each industry name. Use a font size of 30px and no bullet points.
-    Add bold to the title of the section and style the title fontFamily: "Minecraft". Center all content.
+    Add bold to the title of the section, title of the section should have font-size of 40px, all Capitalized to the title of the section and style the title fontFamily: "Minecraft",this is important. Center all content.
 
     Jobs in Top Career Industry: List 5 well-fitting jobs in the top career industry identified in the previous section, 
     along with their average salary in an HTML table. Use a font size of 26px and create an HTML table with the following specifications:
-    Job Name and Average Salary boxes should have a background color of #FFA3B1.
+    Job Name and Average Salary boxes should have a background color of #FFA3B1, this is important.
     Rest of the table boxes should have a background color of #F3CACA.
     Include black lines that mark each row and column.
+    The table should have a border-radius of 15px and margin-bottom 25px, this is important.
     Bold the Job Name and Average Salary text.
-    Add bold to the title of the section and style the title fontFamily: "Minecraft". Center all content.
-    
+    Add bold to the title of the section,title of the section should have font-size of 40px, all Capitalized to the title of the section and style the title fontFamily: "Minecraft",this is important. Center all content.
 
     Job Descriptions: Provide descriptions for each of the listed jobs, with each description being at least five sentences long. 
-    Use a font size of 26px and bold the job titles. Add bold to the title of the section and style the title fontFamily: "Minecraft". Center all content.
+    Use a font size of 26px for the description. Each job's title should be bold. Add bold to the title of the section, title of the section should have font-size of 40px, all Capitalized to the title of the section and style the title fontFamily: "Minecraft",this is important. Center all content.
 
-
-     Below are the quiz questions along with the quiz-takers answers. Use this information to generate the report following the format above.`; 
+    Below are the quiz questions along with the quiz-takers answers. Use this information to generate the report following the format above.`;
      const [isLoading,setIsLoading] = useState(false);
 
 
@@ -131,7 +149,23 @@ export function DetailedQuestions(): JSX.Element {
         Returns:
             -N/A
     */
+    useEffect(() => {
+        if (isLoading) {
+            audio_wait.loop = true;
+            audio_wait.play();
+        } else if (audio_wait) {
+            audio_wait.pause();
+            audio_wait.currentTime = 0;
+        }
+        return () => {
+            if (audio_wait) {
+                audio_wait.pause();
+                audio_wait.currentTime = 0;
+            }
+        };
+    }, [isLoading]);
     const handleAnswerSelection = (answer: string) => { 
+        playClickSound();
         // Records selected answer
         setSelectedAnswers({ ...selectedAnswers, [`Question${questionIndex + 1}`]: answer }); 
 
@@ -158,6 +192,7 @@ export function DetailedQuestions(): JSX.Element {
     };  
 
     const prevButton = (index: number) => {
+        playClickSound();
         if(index === 0){
             return;
         } else {
@@ -166,6 +201,7 @@ export function DetailedQuestions(): JSX.Element {
     }
 
     const nextButton = (index: number) => {
+        playClickSound();
         if(index === 6){
             return;
         } else {
@@ -174,6 +210,15 @@ export function DetailedQuestions(): JSX.Element {
     }
     
     const handleSubmission = async () => {
+        musicPlayerRef.current.stopMusic();
+        playSubmitSound();
+        // Check if all questions have been answered
+        const unansweredQuestionIndex = questions.findIndex(question => !selectedAnswers[`Question${questions.indexOf(question) + 1}`]);
+        if (unansweredQuestionIndex !== -1) {
+            alert(`Please answer question ${unansweredQuestionIndex + 1} before submitting.`);
+        return;
+        }
+
         setIsLoading(true);
         console.log('Submitting...');
         try {
@@ -205,6 +250,7 @@ export function DetailedQuestions(): JSX.Element {
             } else {
                 /*Error handling */
                 console.log('Error! Maybe you forgot the API key.');
+                alert('Error! Maybe you forgot the API key.');
             }
         } catch (error) {
             console.error('Error in OpenAI integration:', error);
@@ -224,6 +270,9 @@ export function DetailedQuestions(): JSX.Element {
             ):(
                 <>
             <img className="cat-header" alt="Cat header"></img> 
+            <div className = "music-detail">
+            <MusicPlayer ref={musicPlayerRef} />
+            </div>
             <div>
                 <Container className="question-row">
                     <Row className="horizontal-questions">

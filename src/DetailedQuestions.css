@@ -8,7 +8,7 @@ body {
 }
 
 .cat-header {
-  content: url('images/cat-header.png');
+  content: url('images/CatDetailHeader.png');
   max-width: 40%;
   display: block; 
   margin: 0 auto; 
@@ -58,7 +58,7 @@ body {
   position: relative;
   width: 100%;
   height: 20px;
-  background-color: #e79522;
+  background-color: #dca75c;
   border-radius: 10px;
 
 }
@@ -76,7 +76,7 @@ body {
 .detailed-prev-button {
   position: absolute;
   left: 10%;
-  bottom: 0;
+  bottom: -20%;
 }
   
   .question-textbox {
@@ -199,7 +199,7 @@ body {
 .detailed-next-button {
   position: absolute;
   right: 10%;
-  bottom: 0;
+  bottom: -20%;
 }
   
 .answer-row {
@@ -265,6 +265,7 @@ input[type="radio"] {
 #activate-answers-button:hover {
   background-color:#FAC264;
 }
-
-
+.music-detail{
+  margin-left: 45%;
+}
 

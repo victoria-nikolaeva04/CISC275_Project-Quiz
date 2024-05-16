@@ -98,7 +98,6 @@
 }
 
 /* Cat Paws CSS */
-
 .paw-group{
   position:absolute;
   left: -10%;
@@ -252,4 +251,3 @@ animation: walk 3s linear infinite 1.75s;
 /* disappear */
 100% {opacity: 0;}
 }
-

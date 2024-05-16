@@ -3,7 +3,8 @@
   width: 100%;
   max-width: 20em;
   overflow: hidden;
-  background-color: #e6dcdc;
+  background-color: #F2EDDA;
+  margin-bottom: 35%;
 }
 .cat::before {
   content: "";
@@ -35,7 +36,7 @@
   height: 50%;
   background-size: 200%;
   background-repeat: no-repeat;
-  background-image: url("https://images.weserv.nl/?url=i.imgur.com/M1raXX3.png&il");
+  background-image: url(images/loader-cat.png);
 }
 
 .cat__head::before {
@@ -97,7 +98,7 @@
   justify-content: flex-start;
   justify-content: center;
   align-items: center;
-  background-color: #e6dcdc;
+  background-color: #F2EDDA;
 }
 
 *,
