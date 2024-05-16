@@ -171,6 +171,13 @@ Returns:
           alt="cat-header-basic"
           className='cat-header-basic'
         />
+        <div className="basic-progress-bar-section">
+          <div className="basic-progress-bar-shape">
+              <div className="basic-progress-bar">
+                  <div className="basic-update-progress-bar" style={{ width: `${progress}%` }}></div>
+              </div>
+          </div>
+        </div>
         <div className="questionnaire-container">
           <div key={currentQuestionIndex} className="question">
             <h3 className="question-text">{questions[currentQuestionIndex].question}</h3>

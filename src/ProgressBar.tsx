@@ -74,9 +74,9 @@ const ProgressBar: React.FC<ProgressBarProps> = ({progress}) => {
                 />
             )}
 
-        <div className="progress-cat">
+        <div className="progress-bar-com">
             <div 
-                className="progress-bar-cat" 
+                className="progress-bar-active-comp" 
                 role="progressbar" 
                 aria-valuenow= {currentProgress}
                 aria-valuemin= {0} 
