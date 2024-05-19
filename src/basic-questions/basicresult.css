@@ -40,7 +40,7 @@
     min-width: 400px;
  }
   .cat-logo3 {
-    content: url('images/Sitting_orange.webp');
+    content: url('../images/Sitting_orange.webp');
     max-width: 150px;
     position: absolute;
     align-items: left;
