@@ -8,7 +8,7 @@ import Questionnaire from './basicQuestion';
 import { HashRouter,Routes, Route} from 'react-router-dom'; // Import BrowserRouter and other necessary components
 import BasicResult from './basicresult';
 import DetailedQuestions from './DetailedQuestions';
-import AboutMe from './AboutMe';
+import AboutMe from './about-me/AboutMe';
 import Result from './result';
 import Footer from './footer';
 import Loading from './Loading';
