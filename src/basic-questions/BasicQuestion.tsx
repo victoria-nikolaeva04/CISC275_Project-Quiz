@@ -196,6 +196,7 @@ const Questionnaire: React.FC = () => {
       await new Promise(resolve => setTimeout(resolve, 2000));
       console.log('API call completed');
       //Pass the result to the address of the basicresult page
+      /*Code generated from GPT: Redirects the user and the result generated from GPT to a result page after the user hits the submit button */
       if (completion.choices[0].message.content != null) {
         navigate('/BasicResult', { state: { result: completion.choices[0].message.content } });
       } else {
@@ -203,6 +204,7 @@ const Questionnaire: React.FC = () => {
       }
     } catch (error) {
       console.error('Error in OpenAI integration:', error);
+    /*Code generated from GPT: Catches when there is an error and ensures that the loading state is set to false and prints it to the console */
     } finally {
       setIsLoading(false);
       console.log('Loading set to false');
