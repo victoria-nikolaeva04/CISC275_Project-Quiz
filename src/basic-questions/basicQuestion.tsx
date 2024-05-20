@@ -11,7 +11,7 @@ import Loading from '../Loading';
 import MusicPlayer from '../Music';
 import { ProgressBar as BootstrapProgressBar } from 'react-bootstrap';
 import MewSound from '../sounds/Cat Meow - Minecraft Sound Effect (HD).mp3';
-import ProgressBar from '../ProgressBar';
+import ProgressBar from '../components/ProgressBar';
 const playClickSound = () => {
   const audio = new Audio(minecraftSound);
   audio.play();

@@ -10,7 +10,7 @@ import BasicResult from './basic-questions/basicresult';
 import DetailedQuestions from './detailed-questions/DetailedQuestions';
 import AboutMe from './about-me/AboutMe';
 import Result from './result';
-import Footer from './footer';
+import Footer from './components/footer';
 import Loading from './Loading';
 
 const root = ReactDOM.createRoot(
