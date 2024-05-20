@@ -22,9 +22,9 @@ root.render(
   <CollapsibleNavbar></CollapsibleNavbar>
      <Routes>
           <Route path="" element={<Homepage/>} /> 
-          <Route path="basicQuestion" element={<Questionnaire />} />
+          <Route path="BasicQuestion" element={<Questionnaire />} />
           <Route path="DetailedQuestion" element={<DetailedQuestions/>} />
-          <Route path="basicresult" element={<BasicResult/>} />
+          <Route path="BasicResult" element={<BasicResult/>} />
           <Route path="homepage" element={<Homepage/>} />
           <Route path="AboutMe" element={<AboutMe/>} />
           <Route path="result" element={<Result/>} />

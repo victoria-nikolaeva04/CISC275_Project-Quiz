@@ -1,6 +1,6 @@
   import React from 'react';
   import { useLocation } from 'react-router-dom';
-  import './basic-questions/basicQuestion.css';
+  import './basic-questions/BasicQuestion.css';
 
   const Result: React.FC = () => {
     const location = useLocation();
