@@ -25,9 +25,12 @@ const AboutMe: React.FC = () => {
             shakey, by the end we have become solid as gold. Hopeful, you will see the work we put into the site.<br></br> Thank you!
           </p>
         </div>
+
+        {/*Card Formating and assocated CSS from https://www.w3schools.com/howto/howto_css_cards.asp*/}
         <div className="card-collection">
         <div className="row">
           <div className="column">
+            {/*Viki's Card*/}
             <div className="card">
               <img
                   src={VikiPhoto}
@@ -52,6 +55,7 @@ const AboutMe: React.FC = () => {
             </div>
         </div>
 
+        {/*Dustin's Card*/}
         <div className="column">
           <div className="card">
             <img
@@ -77,6 +81,7 @@ const AboutMe: React.FC = () => {
           </div>
         </div>
 
+        {/*Gia's Card*/}
         <div className="column">
           <div className="card">
             <img
@@ -102,6 +107,7 @@ const AboutMe: React.FC = () => {
           </div>
         </div>
 
+        {/*Dustine Card*/}
         <div className="column">
           <div className="card">
             <img
@@ -129,6 +135,8 @@ const AboutMe: React.FC = () => {
         </div>
       </div>
     </div>
+
+    {/*Cat Paw Print Animation and associated CSS is taken from https://codepen.io/kylojen/pen/VxXXNm*/}
     <div className="paw-group">
               <div className="paw-print-1">
                 <div className="pad large"></div>

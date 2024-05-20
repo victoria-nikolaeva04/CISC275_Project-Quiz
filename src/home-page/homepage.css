@@ -46,6 +46,7 @@ body{
   z-index: 2;
 }
 
+/*Shifting the Quiz Boxes into Columns when the screen shrinks*/
 @media screen and (max-width: 900px){
   .homepage-body{
     background-color: #F2EDDA;
@@ -126,7 +127,7 @@ body{
   z-index: -0.9;
 }
 
-
+/*Cat Paw Print Animation CSS and associated HTML is taken from https://codepen.io/kylojen/pen/VxXXNm*/
 /* create the paw prints */
 .pad {
   width: 25px;
