@@ -20,11 +20,11 @@ const Homepage: React.FC = () => {
             <div className="homepage-box">
 
             <p style={{textAlign: 'center'}}>
-              This is the basic version of our career quiz. It consists of simple multiple choice
-              The purpose of this quiz is meant to have more generic questions with a more limited answer
-              choices. It prioritized to be answered relatively quickly and easy to answer with a quick glance.
-              This can be useful for those that already have confidence within their desired career and want
-              reassurance or need specification in what they want.
+              This is the basic version of our career quiz. It consists of simple multiple choice questions.
+              The purpose of this quiz is to have more generic questions with limited answer
+              choices that will still provide accurate career results. The questions can be answered relatively quickly.
+              This quiz is a good fit for those that are curious what careers might suit them that don't have as much time to invest, or
+              for those who want to try out the site!
             </p>
 
             <img
@@ -44,10 +44,10 @@ const Homepage: React.FC = () => {
             <h3 className='heading'>THE JOURNEY <br></br> (=✪ᆽ✪=)</h3>
               <div className="homepage-box">
                 <p style={{textAlign: 'center'}}>
-                  The Journey is meant to be more thought-provoking type of quiz. This quiz is designed to have
-                  more complex and demanding questions that needs a deep reflection into your own soul to respond
-                  to these questions. This is meant for those that have the time and patience. These questions more
-                  reflect questions that follow more a personailty style rather than those of 'would-you-rathers' to
+                  The Journey is meant to be a more thought-provoking type of quiz. This quiz is designed to have
+                  more complex, scenario-based questions that require deep reflection into your own soul. 
+                  We recommend this quiz if you have more time to invest. The questions on this quiz
+                  focus more on your personality and how you handle situations, rather than 'would-you-rather's to
                   really encourage a deeper connection with the results.
                 </p>
                 

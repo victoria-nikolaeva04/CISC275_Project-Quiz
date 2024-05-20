@@ -16,13 +16,13 @@ const AboutMe: React.FC = () => {
         <div className="team-container">
           <h3 className="AboutMe-heading">Meet the Team!</h3>
           <p className="AboutMe-text">
-            HEY, Welcome to Cat-lyis Quiz!To get to know te site a little bit better and to have a face behind the site, meet the team of
-            young developers from Univeristy of Delaware. This site is the hardwork of our final project for our 275 - Intro to Software Development.
-            Together, we have worked and learn many things, not only as programmers, but as team. We learned to manage, communicate, and resolve issues
-            with both within ourselves but also with our 'client' (aka our fun Professor Armanando). This project, isn't about the code itself, but the 
-            processes and thinking that leads us to implementing. We are not code-monkeys, we are engineers and more importantly, computer scientists! Our team
-            is full of strong minds and creative thinkers, leading to our well-rounded solutions and continous improvement. Even if our journey started off
-            shakey, by the end we have become solid as gold. Hopeful, you will see the work we put into the site.<br></br> Thank you!
+            HEY, Welcome to Cat-alyst Quiz! To get to know the site a little bit better and have a face behind its makers, meet the team of
+            young developers from Univeristy of Delaware. This site is the result of our hard work on our final project for our CISC275 - Intro to Software Development course.
+            Together, we have collaborated and learned many things, not only as programmers, but as team. We learned to manage, communicate, and resolve issues
+            both within ourselves but also with our 'clients/stakeholders' (a.k.a our fun Professor Armanando and fellow peers). This project isn't about the code itself, but the 
+            processes and thinking that lead us to implementing. We are not code-monkeys, we are engineers, and more importantly, computer scientists! Our team
+            is full of strong minds and creative thinkers, leading to our well-rounded solutions and continuous improvement. Even if our journey started off
+            shaky, by the end we have become solid as gold. Hopefully you will see the work we put into the site.<br></br> Thank you!
           </p>
         </div>
 
