@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './BasicQuestion.css';
+import './basicQuestion.css';
 import catHeaderBasic from '../images/headerbasicwithshadow.png';
 import pawButtonNext from '../images/detailed_next_button.png';
 import pawButtonPrev from '../images/detailed_prev_button.png';
