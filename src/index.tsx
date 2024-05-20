@@ -7,7 +7,7 @@ import CollapsibleNavbar from './navbar'
 import Questionnaire from './basic-questions/basicQuestion';
 import { HashRouter,Routes, Route} from 'react-router-dom'; // Import BrowserRouter and other necessary components
 import BasicResult from './basic-questions/basicresult';
-import DetailedQuestions from './DetailedQuestions';
+import DetailedQuestions from './detailed-questions/DetailedQuestions';
 import AboutMe from './about-me/AboutMe';
 import Result from './result';
 import Footer from './footer';
