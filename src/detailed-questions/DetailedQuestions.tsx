@@ -258,6 +258,7 @@ export function DetailedQuestions(): JSX.Element {
             console.log('API call completed');
             if (completion.choices[0].message.content != null) {
                 /*Takes what gpt prints out and routes it the result page which will then displays the result  */
+                /*Code generated from GPT: Redirects the user and the result generated from GPT to a result page after the user hits the submit button */
                 navigate('/result', { state: { result: completion.choices[0].message.content } });
             } else {
                 /*Error handling */
@@ -266,6 +267,7 @@ export function DetailedQuestions(): JSX.Element {
             }
         } catch (error) {
             console.error('Error in OpenAI integration:', error);
+        /*Code generated from GPT: Catches when there is an error and ensures that the loading state is set to false and prints it to the console */
         }finally{
             setIsLoading(false); // Set loading to false after API call completes
             console.log('Loading set to false');
