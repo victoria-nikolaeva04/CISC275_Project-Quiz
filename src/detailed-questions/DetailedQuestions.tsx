@@ -19,7 +19,7 @@ import Loading from "../loading-results/Loading";
 import MewSound from '../sounds/Cat Meow - Minecraft Sound Effect (HD).mp3';
 import minecraftSound from '../sounds/ButtonClick.mp3';
 import loadingSound from '../sounds/C418 - Haggstrom - Minecraft Volume Alpha-[AudioTrimmer.com].mp3';
-import MusicPlayer from "../Music";
+import MusicPlayer from "../minecraft-music/Music";
 
 const playClickSound = () => {
     const audio = new Audio(minecraftSound);

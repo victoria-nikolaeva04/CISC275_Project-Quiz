@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef, useImperativeHandle, forwardRef } from 'react';
 import { Dropdown, DropdownButton, ButtonGroup, Container } from 'react-bootstrap';
-import playIcon from './images/Jukebox_JE2_BE2.webp';
-import stopIcon from './images/stop-song.png';
-import nextIcon from './images/Music_Disc_Creator_(Music_Box)_JE1_BE1.webp';
+import playIcon from '../images/Jukebox_JE2_BE2.webp';
+import stopIcon from '../images/stop-song.png';
+import nextIcon from '../images/Music_Disc_Creator_(Music_Box)_JE1_BE1.webp';
 import './Music.css';
-import Subwoofer from './sounds/C418 - Subwoofer Lullaby - Minecraft Volume Alpha.mp3';
-import BestMiner from './sounds/C418 - Moog City - Minecraft Volume Alpha.mp3';
-import DefaultAlpha from './sounds/C418 - Minecraft - Minecraft Volume Alpha.mp3';
+import Subwoofer from '../sounds/C418 - Subwoofer Lullaby - Minecraft Volume Alpha.mp3';
+import BestMiner from '../sounds/C418 - Moog City - Minecraft Volume Alpha.mp3';
+import DefaultAlpha from '../sounds/C418 - Minecraft - Minecraft Volume Alpha.mp3';
 const tracks = [BestMiner, Subwoofer, DefaultAlpha];
 const MusicPlayer = forwardRef((props, ref) => {
   // eslint-disable-next-line react-hooks/exhaustive-deps

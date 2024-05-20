@@ -8,7 +8,7 @@ import minecraftSound from '../sounds/ButtonClick.mp3';
 import loadingSound from '../sounds/C418 - Haggstrom - Minecraft Volume Alpha-[AudioTrimmer.com].mp3';
 import OpenAI from 'openai';
 import Loading from '../loading-results/Loading';
-import MusicPlayer from '../Music';
+import MusicPlayer from '../minecraft-music/Music';
 import { ProgressBar as BootstrapProgressBar } from 'react-bootstrap';
 import MewSound from '../sounds/Cat Meow - Minecraft Sound Effect (HD).mp3';
 import ProgressBar from '../components/ProgressBar';
