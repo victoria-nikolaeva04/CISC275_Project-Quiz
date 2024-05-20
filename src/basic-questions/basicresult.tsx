@@ -2,23 +2,12 @@ import React from 'react';
 import { Container} from 'react-bootstrap';
 import { useLocation } from 'react-router-dom'; // Import useLocation
 import 'bootstrap/dist/css/bootstrap.css';
-import './basicresult.css';
+import './BasicResult.css';
 
 function BasicResult() {
   const location = useLocation(); // Get the location object
   const { result} = location.state;
-  /*const formattedResult = result.split('\n').map(
-    (
-      line: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | null | undefined,
-      index: React.Key | null | undefined
-    ) => {
-      if (line == null) {
-        return null; 
-      }
-      const cleanLine = line.toString().replace(//g, '');
-      //return <p key={index}>{cleanLine}</p>;
-   // }
-  //);*/
+  //Getting HTML code from the api call (By giving it a specific prompt) then get the html code to display
   const htmlContent = { __html: result };
   return (
     <div>
