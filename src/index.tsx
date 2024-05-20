@@ -11,7 +11,7 @@ import DetailedQuestions from './detailed-questions/DetailedQuestions';
 import AboutMe from './about-me/AboutMe';
 import Result from './result';
 import Footer from './components/footer';
-import Loading from './Loading';
+import Loading from './loading-results/Loading';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

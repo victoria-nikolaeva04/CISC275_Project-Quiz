@@ -15,11 +15,12 @@ import nextButtonImage from '../images/detailed_next_button.png';
 import { CSSTransition } from "react-transition-group";
 import { useNavigate } from 'react-router-dom';
 import OpenAI from "openai";
-import Loading from "../Loading";
+import Loading from "../loading-results/Loading";
 import MewSound from '../sounds/Cat Meow - Minecraft Sound Effect (HD).mp3';
 import minecraftSound from '../sounds/ButtonClick.mp3';
 import loadingSound from '../sounds/C418 - Haggstrom - Minecraft Volume Alpha-[AudioTrimmer.com].mp3';
 import MusicPlayer from "../Music";
+
 const playClickSound = () => {
     const audio = new Audio(minecraftSound);
     audio.play();
