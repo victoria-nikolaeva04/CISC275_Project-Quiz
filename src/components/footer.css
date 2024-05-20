@@ -9,12 +9,6 @@ footer{
     text-align: center;
     font-family: 'Minecraft2';
     color: whitesmoke;
-    /*
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-bottom: 7px;
-    border-radius: 50px;
-    */
   }
   
   .footer-logo{
@@ -33,7 +27,6 @@ footer{
     margin-left: 15px;
   }
   
-
 .submit-Button {
     margin-top: 20px;
     margin-left: 5px;

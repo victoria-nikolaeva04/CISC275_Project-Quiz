@@ -19,10 +19,12 @@ const ProgressBar: React.FC<ProgressBarProps> = ({progress}) => {
   const showMouse = currentProgress < 58; // Show mouse when progress is less than 84%
   let imageSrc: string;
 
+
   useEffect(() => {
     setCurrentProgress(progress);
   }, [progress]);
 
+  /*Code generated from GPT: Change the progress cat's animation/image when there is a shift in the progress bar*/
   if (currentProgress === 0) {
     imageSrc = catSleep;
   } else if (currentProgress >= 1 && currentProgress <= 14) {
@@ -39,6 +41,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({progress}) => {
     imageSrc = catEat;
   }  
 
+  /*Code generated from GPT and then modified: Helps move the cat in a dynamic order in 7 steps*/
   const calculateCatPosition = () => {
     if (currentProgress >= 0 && currentProgress <= 16) {
       return 0;
