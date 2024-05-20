@@ -29,7 +29,7 @@ root.render(
           <Route path="AboutMe" element={<AboutMe/>} />
           <Route path="result" element={<Result/>} />
           <Route path="Loading" element={<Loading/>} />
-          {/* Add more routes as needed */}
+          {/* Add more routes as needed    */}
           </Routes>
   <React.StrictMode>
   </React.StrictMode>
