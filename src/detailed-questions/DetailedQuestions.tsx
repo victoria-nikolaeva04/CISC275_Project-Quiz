@@ -21,18 +21,23 @@ import minecraftSound from '../sounds/ButtonClick.mp3';
 import loadingSound from '../sounds/C418 - Haggstrom - Minecraft Volume Alpha-[AudioTrimmer.com].mp3';
 import MusicPlayer from "../minecraft-music/Music";
 
+// Sound effect implementation
 const playClickSound = () => {
     const audio = new Audio(minecraftSound);
     audio.play();
-  };
-  const playSubmitSound = () => {
+};
+
+const playSubmitSound = () => {
     const audio = new Audio(MewSound);
     audio.play();
-  };
-  const audio_wait = new Audio(loadingSound);
+};
+  
+const audio_wait = new Audio(loadingSound);
+
 let keyData = "";
 const saveKeyData = "MYKEY";
-const prevKey = localStorage.getItem(saveKeyData); //so it'll look like: MYKEY: <api_key_value here> in the local storage when you inspect
+const prevKey = localStorage.getItem(saveKeyData); // will look like: MYKEY: <api_key_value here> in the local storage when you inspect
+
 if (prevKey !== null) {
   keyData = JSON.parse(prevKey);
 }
@@ -43,6 +48,8 @@ export function DetailedQuestions(): JSX.Element {
     const [selectedAnswers, setSelectedAnswers] = useState<{ [key: string]: string }>({}); // Dictionary, used to correlate question -> selected answer
     const [progress, setProgress] = useState<number>(0); // Progress bar state
     const [imagesIndex, setImagesIndex] = useState<number>(0); // Cat image array indexing
+    const [isLoading,setIsLoading] = useState(false); // Loading results
+
 
     // Cat image array
     const catImages = [catSleep, catWakeUp, catYawn, catWalking, catWalking, catWalking, transparent, transparent];
@@ -64,7 +71,8 @@ export function DetailedQuestions(): JSX.Element {
     Include box shadow to each section.
 
     Strengths and Work Environment: Generate a personal paragraph with a 30px font size that includes the quiz-taker's personal strengths and preferences for a work environment. 
-    Use "you" statements. Add bold to the title of the section, title of the section should have font-size of 40px, all Capitalized to the title of the section and style the title fontFamily: "Minecraft", this is important. Center all content.
+    Use "you" statements. Add bold to the title of the section, title of the section should have font-size of 40px, all Capitalized to the title of the section and style the title fontFamily: "Minecraft", this is important. 
+    Center all content.
 
     Possible Career Industries: List 3 industries that match the quiz-taker, along with 3 famous people in each industry. They should be labeled "Famous people: " directly underneath the industry name.
     Do not use bullet points, just list the famous people in one line.
@@ -82,12 +90,10 @@ export function DetailedQuestions(): JSX.Element {
     Add bold to the title of the section,title of the section should have font-size of 40px, all Capitalized to the title of the section and style the title fontFamily: "Minecraft",this is important. Center all content.
 
     Job Descriptions: Provide descriptions for each of the listed jobs, with each description being at least five sentences long. 
-    Use a font size of 26px for the description. Each job's title should be bold. Add bold to the title of the section, title of the section should have font-size of 40px, all Capitalized to the title of the section and style the title fontFamily: "Minecraft",this is important. Center all content.
+    Use a font size of 26px for the description. Each job's title should be bold. Add bold to the title of the section, title of the section should have font-size of 40px, all Capitalized to the title of the section and style the title 
+    fontFamily: "Minecraft",this is important. Center all content.
 
     Below are the quiz questions along with the quiz-takers answers. Use this information to generate the report following the format above.`;
-     const [isLoading,setIsLoading] = useState(false);
-
-
 
     // 7 questions and their possible answers
     const questions = [
@@ -142,14 +148,7 @@ export function DetailedQuestions(): JSX.Element {
         }
     ];
 
-    /*
-        Handles selection of an answer for a question. Updates state to record selected answer
-        and updates the progress bar based on the number of questions answered.
-        Parameters: 
-            -answer (string): the selected answer
-        Returns:
-            -N/A
-    */
+    // Music plays while results loading
     useEffect(() => {
         if (isLoading) {
             audio_wait.loop = true;
@@ -165,8 +164,19 @@ export function DetailedQuestions(): JSX.Element {
             }
         };
     }, [isLoading]);
+
+
+    /*
+        Handles selection of an answer for a question. Updates state to record selected answer
+        and updates the progress bar based on the number of questions answered.
+        Parameters: 
+            -answer (string): the selected answer
+        Returns:
+            -N/A
+    */
     const handleAnswerSelection = (answer: string) => { 
         playClickSound();
+
         // Records selected answer
         setSelectedAnswers({ ...selectedAnswers, [`Question${questionIndex + 1}`]: answer }); 
 
@@ -386,11 +396,11 @@ export function DetailedQuestions(): JSX.Element {
                     />
                 </div>
             </div>
-
+                                
             <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <Container className = "answer-row" style={{ width: '75%', justifyContent: 'center', display: 'flex'}}>
-                    <Row style={{ display: 'flex', height: 'auto', width: '100%' }}>
-                        {questions[questionIndex].possibleAnswers.slice(0, 2).map((possibleAnswer, j) => ( // Creates 1st row of answers for each question
+                    <Row style={{ display: 'flex', height: 'auto', width: '100%' }}> 
+                        {questions[questionIndex].possibleAnswers.slice(0, 2).map((possibleAnswer, j) => ( // Creates 1st row of answers for each question (LLM-generated)
                         <Col key={j} style={{ width: '50%'}}>
                             <Form.Check
                                 type="radio"
@@ -410,7 +420,7 @@ export function DetailedQuestions(): JSX.Element {
                                 style={{
                                 textAlign: 'center',
                                 padding: '10px',
-                                backgroundColor: selectedAnswers[`Question${questionIndex + 1}`] === possibleAnswer ? '#f5afaf' : '#F3CACA'
+                                backgroundColor: selectedAnswers[`Question${questionIndex + 1}`] === possibleAnswer ? '#f5afaf' : '#F3CACA' // background color changes when button is selected
                                 }}
                                 onChange={() => handleAnswerSelection(possibleAnswer)}
                                 checked={selectedAnswers[`Question${questionIndex + 1}`] === possibleAnswer}
@@ -425,7 +435,7 @@ export function DetailedQuestions(): JSX.Element {
             <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <Container className = "Answer-row" style={{ width: '75%', justifyContent: 'center', display: 'flex'}}>
                     <Row style={{ display: 'flex', height: 'auto', width: '100%' }}>
-                        {questions[questionIndex].possibleAnswers.slice(2, 4).map((possibleAnswer, j) => ( // Creates 2nd row of answers for each question
+                        {questions[questionIndex].possibleAnswers.slice(2, 4).map((possibleAnswer, j) => ( // Creates 2nd row of answers for each question (LLM-generated)
                         <Col key={j} style={{ width: '50%', marginLeft: "1px", marginRight: "1px" }}>
                             <Form.Check
                                 type="radio"
@@ -447,7 +457,7 @@ export function DetailedQuestions(): JSX.Element {
                                     display: 'inline-block',
                                     textAlign: 'center',
                                     padding: '10px',
-                                    backgroundColor: selectedAnswers[`Question${questionIndex + 1}`] === possibleAnswer ? '#f5afaf' : '#F3CACA'
+                                    backgroundColor: selectedAnswers[`Question${questionIndex + 1}`] === possibleAnswer ? '#f5afaf' : '#F3CACA' // background color changes when button is selected
                                 }}
                                 onChange={() => handleAnswerSelection(possibleAnswer)}
                                 checked={selectedAnswers[`Question${questionIndex + 1}`] === possibleAnswer}
