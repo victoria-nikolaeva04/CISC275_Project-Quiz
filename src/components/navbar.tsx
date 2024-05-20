@@ -1,11 +1,11 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
-import logo  from "./images/CISC-Logo.png";
+import logo  from "../images/CISC-Logo.png";
 import Navbar from 'react-bootstrap/Navbar';
 import './navbar.css'
 import { Link } from 'react-router-dom'; // Import BrowserRouter and other necessary components
-import CatMeow from './sounds/Cat Meow - Minecraft Sound Effect (HD).mp3';
+import CatMeow from '../sounds/Cat Meow - Minecraft Sound Effect (HD).mp3';
 const playClickSound = () => {
   //const url = "./sounds/ButtonPlate Click (Minecraft Sound) - Sound Effect for editing.mp3";
   const audio = new Audio(CatMeow);

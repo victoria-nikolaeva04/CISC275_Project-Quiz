@@ -1,26 +1,30 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './basicQuestion.css';
-import catHeaderBasic from './images/headerbasicwithshadow.png';
-import pawButtonNext from './images/detailed_next_button.png';
-import pawButtonPrev from './images/detailed_prev_button.png';
-import minecraftSound from './sounds/ButtonClick.mp3';
-import loadingSound from './sounds/C418 - Haggstrom - Minecraft Volume Alpha-[AudioTrimmer.com].mp3';
+import './BasicQuestion.css';
+import catHeaderBasic from '../images/headerbasicwithshadow.png';
+import pawButtonNext from '../images/detailed_next_button.png';
+import pawButtonPrev from '../images/detailed_prev_button.png';
+import minecraftSound from '../sounds/ButtonClick.mp3';
+import loadingSound from '../sounds/C418 - Haggstrom - Minecraft Volume Alpha-[AudioTrimmer.com].mp3';
 import OpenAI from 'openai';
-import Loading from './Loading';
-import MusicPlayer from './Music';
+import Loading from '../loading-results/Loading';
+import MusicPlayer from '../minecraft-music/Music';
 import { ProgressBar as BootstrapProgressBar } from 'react-bootstrap';
-import MewSound from './sounds/Cat Meow - Minecraft Sound Effect (HD).mp3';
-import ProgressBar from './ProgressBar';
+import MewSound from '../sounds/Cat Meow - Minecraft Sound Effect (HD).mp3';
+import ProgressBar from '../components/ProgressBar';
+
+//Global constant that embed the sound of Minecraft Click whenever any methods (associated with a button) are called 
 const playClickSound = () => {
   const audio = new Audio(minecraftSound);
   audio.play();
 };
+//Global constant that embed the sound of Minecraft Cat Meow whenever any methods (associated with a button) are called 
 const playSubmitSound = () => {
   const audio = new Audio(MewSound);
   audio.play();
 };
 const audio_wait = new Audio(loadingSound);
+//The prompt that will pass into Completion call
 const prompt = `You are tasked with creating a concise and readable career suggestions report fully in HTML format stylized with CSS. All text should be black using CSS.
     You will be provided quiz-takers answers to career-based questions. You will use this information to generate the suggestions. Center all text.
     Do not include any quotation marks in the report. Do not include any html tags in the report. Do not preset the font size in any css styling. 
@@ -55,7 +59,7 @@ const prompt = `You are tasked with creating a concise and readable career sugge
     Use a font size of 26px for the description. Each job's title should be bold. Add bold to the title of the section, title of the section should have font-size of 40px, all Capitalized to the title of the section and style the title fontFamily: "Minecraft",this is important. Center all content.
 
     Below are the quiz questions along with the quiz-takers answers. Use this information to generate the report following the format above.`;
-
+//An array of question with its answer choices
 const questions = [
   {
     question: 'Question 1: If you have a year paid-time off and the company gives you money to pursue every interest you want, what would you choose to do with that time?',
@@ -86,7 +90,7 @@ const questions = [
     answers: ['I definitely want to meet them in person', 'Written communication is my strong suits', 'I prefer having virtual meeting and video calls'],
   },
 ];
-
+//Getting API key from local storage
 let keyData = "";
 const saveKeyData = "MYKEY";
 const prevKey = localStorage.getItem(saveKeyData);
@@ -102,7 +106,7 @@ const Questionnaire: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const isSubmitDisabled = selectedAnswers.includes('');
   const musicPlayerRef = useRef<any>(null);
-
+//useEffect that checks the loading status (when hitting the submit button) in order to play the submitting music, ChatGPT assisted
   useEffect(() => {
     if (isLoading) {
       audio_wait.loop = true;
@@ -118,13 +122,14 @@ const Questionnaire: React.FC = () => {
       }
     };
   }, [isLoading]);
+  //Set the current selected answer
   const handleAnswerSelection = (answerIndex: number) => {
     playClickSound();
     const newSelectedAnswers = [...selectedAnswers];
     newSelectedAnswers[currentQuestionIndex] = questions[currentQuestionIndex].answers[answerIndex];
     setSelectedAnswers(newSelectedAnswers);
   };
-
+//Validate whether or not the user is missing an answer and alert them through a pop up window
   const validateAnswers = () => {
     const missingQuestions = selectedAnswers
       .map((answer, index) => (answer === '' ? index + 1 : null))
@@ -136,44 +141,50 @@ const Questionnaire: React.FC = () => {
     }
     return true;
   };
-
+//Increase the currnet question index by 1 when clicking the next button
   const handleNextQuestion = () => {
     playClickSound();
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     }
   };
-
+//Decrease the current question index by 1 when clicking the previous button
   const handlePreviousQuestion = () => {
     playClickSound();
     if (currentQuestionIndex > 0) {
       setCurrentQuestionIndex(currentQuestionIndex - 1);
     }
   };
-
+//Set the current question index to be the one that get passed in the parameter
   const handleQuestionJump = (index: number) => {
     playClickSound();
     setCurrentQuestionIndex(index);
   };
-
+//Round the percentage of the index to show on the progress bar
   const progress = Math.round(((currentQuestionIndex + 1)/ questions.length) * 100);
   const answeredCount = selectedAnswers.filter(answer => answer !== '').length;
   const progressPercentage = (answeredCount / questions.length) * 100;
-
+//Handling API call, detailed documentations below:
   const handleSubmission = async () => {
+    //Stop the current song that the Music Player component is playing
     musicPlayerRef.current.stopMusic();
+    //Play the cat meow sound
     playSubmitSound();
+    //Validation check to make sure the user has answered all the questions
     if (!validateAnswers()) {
       return;
     }
+    //Set the loading status to true to show the loading screen and play loading music
     setIsLoading(true);
     console.log('Submitting...');
+    //Creating a new openAI object with the given API key
     try {
       const openAI = new OpenAI({
         apiKey: key,
         dangerouslyAllowBrowser: true,
       });
-
+//Creating a new completion object and set the role of the system and user, passing in the 
+//prompt and selected answers
       const completion = await openAI.chat.completions.create({
         messages: [
           { role: 'system', content: prompt },
@@ -184,9 +195,9 @@ const Questionnaire: React.FC = () => {
 
       await new Promise(resolve => setTimeout(resolve, 2000));
       console.log('API call completed');
+      //Pass the result to the address of the basicresult page
       if (completion.choices[0].message.content != null) {
-        //GPT Generated code : After the user has submitted the quiz this will send the answers to GPT and redirect to a result page
-        navigate('/basicresult', { state: { result: completion.choices[0].message.content } });
+        navigate('/BasicResult', { state: { result: completion.choices[0].message.content } });
       } else {
         console.log('Error! Maybe you forgot the API key.');
       }

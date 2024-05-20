@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@font-face { font-family: Minecraft; src: url('fonts/Minecraft.ttf') format('truetype'); } 
-
+@font-face { font-family: Minecraft; src: url('../fonts/Minecraft.ttf') format('truetype'); } 
 
 body {
   background-color:#F2EDDA;
@@ -8,7 +7,7 @@ body {
 }
 
 .cat-header {
-  content: url('images/CatDetailHeader.png');
+  content: url('../images/CatDetailHeader.png');
   max-width: 40%;
   display: block; 
   margin: 0 auto; 
@@ -242,6 +241,7 @@ input[type="radio"] {
   margin-bottom: 50px;
   margin-top: 20px;
 }
+
 #activate-answers-button {
   background-color: #fbeee0;
   border: 2px solid #422800;
@@ -262,9 +262,11 @@ input[type="radio"] {
   max-height: 60px;
   padding: -30px 18px;
 }
+
 #activate-answers-button:hover {
   background-color:#FAC264;
 }
+
 .music-detail{
   margin-left: 45%;
 }

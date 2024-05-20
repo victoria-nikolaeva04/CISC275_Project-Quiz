@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import simple_logo  from "./images/CISC-Footer-Logo.png";
-import github from "./images/CISC-Footer-GIT.png";
+import simple_logo  from "../images/CISC-Footer-Logo.png";
+import github from "../images/CISC-Footer-GIT.png";
 import { Button, Form } from 'react-bootstrap';
 import './footer.css';
 

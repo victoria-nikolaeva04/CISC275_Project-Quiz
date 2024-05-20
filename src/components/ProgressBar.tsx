@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 //import 'bootstrap/dist/css/bootstrap.min.css';
 import './ProgressBar.css';
-import catSleep from './images/CISC-progress-cat-sleep.png';
-import catWakeUp from './images/CISC-progress-cat-wakeUp.png';
-import catYawn from './images/CISC-progress-cat-yawn.png';
-import catWalk from './images/CISC-progress-cat-walking.gif';
-import catFight from './images/CISC-progress-cat-fight.gif';
-import catEat from './images/CISC-progress-cat-eat.gif';
-import mouse from './images/CISC-progress-mouse-eat.gif';
+import catSleep from '../images/CISC-progress-cat-sleep.png';
+import catWakeUp from '../images/CISC-progress-cat-wakeUp.png';
+import catYawn from '../images/CISC-progress-cat-yawn.png';
+import catWalk from '../images/CISC-progress-cat-walking.gif';
+import catFight from '../images/CISC-progress-cat-fight.gif';
+import catEat from '../images/CISC-progress-cat-eat.gif';
+import mouse from '../images/CISC-progress-mouse-eat.gif';
 
 
 interface ProgressBarProps {
