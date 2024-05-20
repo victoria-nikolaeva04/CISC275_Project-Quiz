@@ -2,16 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Homepage from './homepage';
-import CollapsibleNavbar from './navbar'
-import Questionnaire from './basicQuestion';
+import Homepage from './home-page/homepage';
+import CollapsibleNavbar from './components/navbar'
+import Questionnaire from './basic-questions/basicQuestion';
 import { HashRouter,Routes, Route} from 'react-router-dom'; // Import BrowserRouter and other necessary components
-import BasicResult from './basicresult';
-import DetailedQuestions from './DetailedQuestions';
-import AboutMe from './AboutMe';
+import BasicResult from './basic-questions/basicresult';
+import DetailedQuestions from './detailed-questions/DetailedQuestions';
+import AboutMe from './about-me/AboutMe';
 import Result from './result';
-import Footer from './footer';
-import Loading from './Loading';
+import Footer from './components/footer';
+import Loading from './loading-results/Loading';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

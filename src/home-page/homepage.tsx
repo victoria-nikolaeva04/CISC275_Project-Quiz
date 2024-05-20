@@ -1,8 +1,8 @@
-import easy_cat  from "./images/Lying_down_Calico_Cat_with_Red_Collar.webp";
-import hard_cat from "./images/calico_cat_sitting.webp";
+import easy_cat  from "../images/Lying_down_Calico_Cat_with_Red_Collar.webp";
+import hard_cat from "../images/calico_cat_sitting.webp";
 import './homepage.css';
 import { Link } from 'react-router-dom';
-import DoorSound from './sounds/Minecraft Door (Open and Close) - Sound Effect (HD).mp3';
+import DoorSound from '../sounds/Minecraft Door (Open and Close) - Sound Effect (HD).mp3';
 const playClickSound = () => {
   const audio = new Audio(DoorSound);
   audio.play();

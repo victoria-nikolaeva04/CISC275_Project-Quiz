@@ -1,10 +1,10 @@
 import React from 'react';
 import './AboutMe.css';
-import VikiPhoto from'./images/Viki-Photo.png';
-import GiaPhoto from'./images/Gia-Photo.png';
-import DustinPhoto from'./images/Dustin-Photo.png';
-import DustinePhoto from'./images/Dustine-Photo.png';
-import linkinLogo from './images/linkin-logo.png';
+import VikiPhoto from '../images/Viki-Photo.png';
+import GiaPhoto from '../images/Gia-Photo.png';
+import DustinPhoto from '../images/Dustin-Photo.png';
+import DustinePhoto from '../images/Dustine-Photo.png';
+import linkinLogo from '../images/linkin-logo.png';
 
 
 const AboutMe: React.FC = () => {
