@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Homepage from './homepage';
+import Homepage from './home-page/homepage';
 import CollapsibleNavbar from './components/navbar'
 import Questionnaire from './basic-questions/basicQuestion';
 import { HashRouter,Routes, Route} from 'react-router-dom'; // Import BrowserRouter and other necessary components
