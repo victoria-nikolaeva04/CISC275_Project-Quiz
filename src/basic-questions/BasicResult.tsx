@@ -2,7 +2,7 @@ import React from 'react';
 import { Container} from 'react-bootstrap';
 import { useLocation } from 'react-router-dom'; // Import useLocation
 import 'bootstrap/dist/css/bootstrap.css';
-import './basicresult.css';
+import './BasicResult.css';
 
 function BasicResult() {
   const location = useLocation(); // Get the location object
