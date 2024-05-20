@@ -185,6 +185,7 @@ const Questionnaire: React.FC = () => {
       await new Promise(resolve => setTimeout(resolve, 2000));
       console.log('API call completed');
       if (completion.choices[0].message.content != null) {
+        //GPT Generated code : After the user has submitted the quiz this will send the answers to GPT and redirect to a result page
         navigate('/basicresult', { state: { result: completion.choices[0].message.content } });
       } else {
         console.log('Error! Maybe you forgot the API key.');
