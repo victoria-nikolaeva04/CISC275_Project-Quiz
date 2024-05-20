@@ -85,14 +85,14 @@ body{
   content: url(../images/cat-paw-button.png);
   position: absolute;
   right: 3%;
-  bottom: -15%;
+  bottom: 0%;
 }
 
 .previous-button{
   content: url(../images/cat-paw-button.png);
   position: absolute;
   left: 3%;
-  bottom: -15%;
+  bottom: 0%;
 }
 
 @media screen and (max-width: 800px) {

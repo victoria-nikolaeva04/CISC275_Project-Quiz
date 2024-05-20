@@ -39,6 +39,7 @@
   z-index: 100;
 }
 
+/*Card Formating and assocated CSS from https://www.w3schools.com/howto/howto_css_cards.asp*/
 /* Three columns side by side */
 .column {
   float: left;
@@ -105,6 +106,7 @@
   z-index: -0.9;
 }
 
+/*Cat Paw Print Animation CSS and associated HTML is taken from https://codepen.io/kylojen/pen/VxXXNm*/
 /* create the paw prints */
 .pad {
   width: 25px;

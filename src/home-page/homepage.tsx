@@ -11,40 +11,12 @@ const playClickSound = () => {
 const Homepage: React.FC = () => {
   return (
     <><div id="home-page">
-      {/*
-      <header className="App-header">
-        <div className="image">
-          <img
-              src={logo}
-              alt="logo"
-              id="logo-pic"
-          />
-          
-        </div>
-        <div className="text">
-          <h1>Cat-ylist Career</h1> 
-          <nav>
-            <Link to ="/homepage">
-            <Button className='nav-btn'>Home</Button>
-            </Link>
-            <Link to ="/basicQuestion">
-            <Button className='nav-btn'>Basic Quiz</Button>
-            </Link>
-            <Link to = "/DetailedQuestion">
-            <Button className='nav-btn'>Detailed Quiz</Button>
-            </Link>
-            <Link to ="/AboutMe">
-            <Button className='nav-btn'>About</Button>
-            </Link>
-          </nav>
-        </div>
-      </header>
-  */}
       <body>
         <div className="homepage-body">
+
+          {/*The Basic Questions Box*/}
           <div className="homepage-quiz-section">
           <h3 className='heading'>THE EASY ROUTE  <br></br>  (=˃ᆺ˂=)</h3>
-
             <div className="homepage-box">
 
             <p style={{textAlign: 'center'}}>
@@ -66,7 +38,8 @@ const Homepage: React.FC = () => {
               <button className="homepage-buttons" onClick={playClickSound}>Take Basic Questions</button>
             </Link>
           </div>
-
+          
+          {/*The Detailed Questions Box*/}
           <div className="homepage-quiz-section">
             <h3 className='heading'>THE JOURNEY <br></br> (=✪ᆽ✪=)</h3>
               <div className="homepage-box">
@@ -88,6 +61,8 @@ const Homepage: React.FC = () => {
                 <button className="homepage-buttons" onClick={playClickSound}>Take Detailed Questions</button>
               </Link>
         </div>
+
+        {/*Cat Paw Print Animation and associated CSS is taken from https://codepen.io/kylojen/pen/VxXXNm*/}
         <div className="paw-group">
               <div className="paw-print-1">
                 <div className="pad large"></div>
