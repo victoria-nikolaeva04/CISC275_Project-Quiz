@@ -48,7 +48,7 @@ const Homepage: React.FC = () => {
                   more complex, scenario-based questions that require deep reflection into your own soul. 
                   We recommend this quiz if you have more time to invest. The questions on this quiz
                   focus more on your personality and how you handle situations, rather than 'would-you-rather's to
-                  really encourage a deeper connection with the results.
+                  really encourage a deeper connection with the results. You are in it for the long run.
                 </p>
                 
                 <img
